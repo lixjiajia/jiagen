@@ -59,7 +59,6 @@
             <!-- Other links -->
             <li><a href="../../technology.html" class="block py-2 text-slate-800 hover:text-slate-900">TECHNOLOGY SERVICES</a></li>
             <li><a href="../../order.html" class="block py-2 text-slate-800 hover:text-slate-900">ORDER</a></li>
-            <li><a href="../../aboutus.html" class="block py-2 text-slate-800 hover:text-slate-900">ABOUT US</a></li>
         </ul>
         </div>
     </div>
@@ -99,7 +98,6 @@
   
           <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../technology.html">TECHNOLOGY SERVICES</a></li>
           <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../order.html">ORDER</a></li>
-          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../aboutus.html">ABOUT US</a></li>
         </ul>
         <div class="flex items-center space-x-1">
           <!-- Search -->
@@ -171,7 +169,7 @@
                 <td class="p-4 text-sm whitespace-nowrap" x-text="row.cas"></td>
                 <td class="p-4 text-sm" x-text="row.synonyms"></td>
                 <td class="p-4 text-sm" x-text="row.form"></td>
-                <td class="p-4 text-sm"><a href="#" class="font-semibold hover:underline" >View Details</a></td>
+                <td class="p-4 text-sm"><a :href="row.url" class="font-semibold hover:underline">View Details</a></td>
               </tr>
             </template>
           </tbody>
@@ -224,6 +222,7 @@
           { name: "FSH-Follicle Stimulating Hormone", cas: "9002-68-0", synonyms: "FSH, hFSH, huFSH, Urofollitropin", form: "Powder" },
           { name: "Porcine Gastric Mucin", cas: "84082-64-4", synonyms: "Hog gastric mucin, mucin from porcine stomach, mucin from porcine gastric mucosa, PMG", form: "Powder" },
           { name: "Human Chorionic Gonadotropin", cas: "9002-61-3", synonyms: "Human Chorionic Gonadotrophin, Gonadotropinum chorionicum, Choriogonin, HCG", form: "Powder" },
+          { name: "Collagen", cas: "9007-34-5", synonyms: " Hydrolyzed collagen, collagen peptides, gelatin, native collagen, Atelocollagen, type I/II/III collagen, bovine/porcine/fish collagen", form: "Powder", url:"collagen.html"},
           { name: "Cytochrome C", cas: "9007-43-6", synonyms: "Cyt C, Cytochrome C from porcine hearts, Cytochrome C from equine (horse) hearts, Cytochrome C from bovine hearts", form: "Powder" },
           { name: "Deoxyribonuclease (DNase I)", cas: "9003-98-9", synonyms: "Deoxyribonuclease I, Deoxyribonucleate 5'-oligonucleotido-hydrolase, Pancreatic deoxyribonuclease, Thymonuclease", form: "Powder" },
           { name: "Human Urokinase", cas: "9039-53-6", synonyms: "Urokinase, Urokinase type plasminogen activator, Urinary type plasminogen activitor, uPA, UK, hUK", form: "Powder"},
@@ -262,8 +261,7 @@
   <section
   class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 text-center md:text-left">
   <div class="md:flex md:items-center md:justify-center">
-    <h2 class="text-xl font-bold text-white">Contact us to place an order. <br class="block md:hidden">Call us on: +1
-      514-779-9623</h2>
+    <h2 class="text-xl font-bold text-white">Contact us at <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> to place an order.</h2>
     <a href="../../order.html"
       class="px-8 py-4 bg-white text-blue-600 rounded inline-block font-semibold md:ml-8 mt-4 md:mt-0 
       hover:bg-teal-500 hover:text-white transition-colors duration-300">Order</a>
