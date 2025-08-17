@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jiagen Biotechnologies</title>
+  <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <link href="../../dist/output.css" rel="stylesheet" />
+
+  
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Announcement Bar -->
+  <div class="bg-[#1058b2] text-white text-sm py-1 px-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <span>Empowering Life Science Research</span>
+      <div class="flex space-x-6">
+        <span>Phone: <span class="font-semibold">514-779-9623</span></span>
+        <span>Contact: <span class="font-semibold">info@jiagen.com</span></span>
+      </div>
+    </div>
+  </div>
+ <!-- Header -->
+<header class="sticky top-0 z-50 bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-1 flex justify-between items-center relative">
+      <a href="../../index.html">
+        <img src="../../assets/logo.svg" alt="Logo" class="h-20 w-auto" />
+      </a>
+      <!-- Mobile Menu Toggle Button -->
+    <div class="md:hidden" x-data="{ open: false }">
+        <button @click="open = !open" class="text-slate-800 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        </button>
+    
+        <!-- Mobile Dropdown Menu -->
+        <div x-show="open" @click.away="open = false" class="absolute left-0 top-full w-full bg-white shadow-md z-50 border-t mt-2">
+        <ul class="p-4 space-y-2 font-medium text-sm">
+            
+            <!-- PRODUCTS dropdown -->
+            <li x-data="{ openSub: false }">
+            <button @click="openSub = !openSub" class="w-full text-left flex justify-between items-center py-2 text-slate-800 hover:text-slate-900">
+                PRODUCTS
+                <svg class="w-4 h-4 transform transition-transform" :class="{ 'rotate-180': openSub }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+                </svg>
+            </button>
+            <ul x-show="openSub" class="pl-4 mt-2 space-y-1 text-sm" x-cloak>
+              <li><a href="../proteins/proteins.html" class="block py-1 hover:text-blue-700">Peptides / Proteins</a></li>
+              <li><a href="../enzymes/enzymes.html" class="block py-1 hover:text-blue-700">Enzymes</a></li>
+              <li><a href="../coenzymes/coenzymes.html" class="block py-1 hover:text-blue-700">Coenzymes</a></li>
+              <li><a href="../carbohydrates/carbohydrates.html" class="block py-1 hover:text-blue-700">Carbohydrates</a></li>
+              <li><a href="../antibodies/antibodies.html" class="block py-1 hover:text-blue-700">Antibodies</a></li>
+            </ul>
+            </li>
+    
+            <!-- Other links -->
+            <li><a href="../../technology.html" class="block py-2 text-slate-800 hover:text-slate-900">TECHNOLOGY SERVICES</a></li>
+            <li><a href="../../order.html" class="block py-2 text-slate-800 hover:text-slate-900">ORDER</a></li>
+            <li><a href="../../aboutus.html" class="block py-2 text-slate-800 hover:text-slate-900">ABOUT US</a></li>
+        </ul>
+        </div>
+    </div>
+    
+  
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-6 items-center w-full">
+        <ul class="flex flex-nowrap items-center font-medium text-sm">
+          <li class="p-4 lg:px-8 relative flex items-center space-x-1"
+              x-data="{ open: false }"
+              @mouseenter="open = true"
+              @mouseleave="open = false">
+            <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">PRODUCTS</a>
+            <button class="shrink-0 p-1" :aria-expanded="open">
+              <span class="sr-only">Show submenu for "products"</span>
+              <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                <path d="M10 2.586 11.414 4 6 9.414.586 4 2 2.586l4 4z" />
+              </svg>
+            </button>
+            <ul class="origin-top-right absolute top-full left-1/2 -translate-x-1/2 min-w-[240px] 
+                       bg-white border border-slate-200 p-2 rounded-lg shadow-xl [&[x-cloak]]:hidden"
+                x-show="open"
+                x-transition:enter="transition ease-out duration-200 transform"
+                x-transition:enter-start="opacity-0 -translate-y-2"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-out duration-200"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                x-cloak>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../proteins/proteins.html"><span>Peptides / Proteins</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../enzymes/enzymes.html"><span>Enzymes</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../coenzymes/coenzymes.html"><span>Coenzymes</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../carbohydrates/carbohydrates.html"><span>Carbohydrates</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../antibodies/antibodies.html"><span>Antibodies</span></a></li>
+            </ul>
+          </li>
+  
+          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../technology.html">TECHNOLOGY SERVICES</a></li>
+          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../order.html">ORDER</a></li>
+          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../aboutus.html">ABOUT US</a></li>
+        </ul>
+        <div class="flex items-center space-x-1">
+          <!-- Search -->
+          <div class="w-full max-w-xs min-w-[200px]">
+              <div class="relative flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="absolute w-5 h-5 top-2.5 left-2.5 text-slate-600">
+                  <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
+              </svg>
+          
+              <input
+              class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+              placeholder="Search Product" 
+              />
+      
+              </div>
+          </div>
+          <ul class="flex flex-nowrap items-center font-medium text-sm">
+              <li class="p-4 lg:px-8 relative flex items-center space-x-1"
+                  x-data="{ open: false }"
+                  @mouseenter="open = true"
+                  @mouseleave="open = false">
+                <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">EN</a>
+                <button class="shrink-0 p-1" :aria-expanded="open">
+                  <span class="sr-only">Show submenu for languages</span>
+                  <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                    <path d="M10 2.586 11.414 4 6 9.414.586 4 2 2.586l4 4z" />
+                  </svg>
+                </button>
+                <ul class="origin-top-right absolute top-full left-1/2 -translate-x-1/2 min-w-[120px] 
+                           bg-white border border-slate-200 p-2 rounded-lg shadow-xl [&[x-cloak]]:hidden"
+                    x-show="open"
+                    x-transition:enter="transition ease-out duration-200 transform"
+                    x-transition:enter-start="opacity-0 -translate-y-2"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-out duration-200"
+                    x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0"
+                    x-cloak>
+                    <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="enzymes.html"><span>English</span></a></li>
+                    <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="./french/order_fr.html"><span>Français</span></a></li>
+                </ul>
+              </li>
+            </ul>
+        </div>
+      </nav>
+
+    
+  </header>
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-6 py-12 text-slate-800 font-sans leading-relaxed">
+    <div class="mb-8">
+        <a href="carbohydrates.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+          </svg>
+          Carbohydrates
+        </a>
+      </div>
+      <section>
+        <h2 class="text-3xl font-bold text-brandblue border-b border-gray-300 pb-2 mb-4">Beta-Glucans</h2>
+        <p class="text-base text-gray-600 mb-2">
+          <strong>CAS No.:</strong> Varies by type (e.g., 9011-06-5 for barley-derived β-glucan, 9012-72-0 for β-glucan from yeast) &nbsp;|&nbsp;
+          <strong>EINECS No.:</strong> 232-546-4
+        </p>
+        <p class="mb-4"><strong>Synonyms:</strong> β-D-glucan, β-1,3/1,6-glucan, oats β-glucan, barley β-glucan, yeast β-glucan</p>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Product Summary</h3>
+        <p>
+          Beta-Glucans are a class of natural polysaccharides composed primarily of D-glucose units linked by β-glycosidic bonds. The primary linkages are β-(1→3), β-(1→4), or β-(1→6), depending on the biological source (yeast, fungi, oats, barley, or bacteria).
+        </p>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Function and Mechanism of Action</h3>
+        <ul class="list-disc list-inside space-y-1 text-base text-slate-700">
+          <li>In biological systems, beta-glucans function as immunomodulators, activating innate immune responses by binding to specific receptors such as Dectin-1, CR3, and TLR-2/6 on immune cells.</li>
+          <li>Their branched structure influences solubility, molecular weight, and biological activity.</li>
+          <li>In plants and cereals, β-glucans are major components of cell walls and influence water retention and viscosity.</li>
+        </ul>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Applications</h3>
+        <ul class="list-disc list-inside space-y-1 text-base text-slate-700">
+          <li>Widely used to study innate immune activation, particularly macrophage and dendritic cell function.</li>
+          <li>Investigated as adjuvant therapy in cancer immunotherapy for its ability to stimulate immune surveillance.</li>
+          <li>Used in fungal biology to study cell wall integrity and enzyme interactions (e.g., β-glucanase activity).</li>
+          <li>Explored for its effects on gut microbiota modulation and short-chain fatty acid production.</li>
+          <li>Used as a substrate for enzymatic studies involving β-glucanase and for developing controlled-release systems in drug delivery.</li>
+        </ul>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Packaging & Storage</h3>
+        <ul class="list-disc list-inside space-y-1 text-base text-slate-700">
+          <li>Store in an airtight container, in cool and dry place, protected from light.</li>
+        </ul>
+      </section>
+      
+      <section class="mt-10">
+        <h3 class="text-2xl font-semibold text-brandblue mb-4">References</h3>
+        <ol class="list-decimal list-inside space-y-2 text-sm text-slate-700">
+          <li>Wood PJ. 1990: <a href="https://pubmed.ncbi.nlm.nih.gov/1964000/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Physicochemical properties and physiological effects of the (1,3)(1,4)-beta-D-glucan from oats</a>, Adv Exp Med Biol 270:119-27.</li>
+          <li>Bell S, et al. 1999: <a href="https://pubmed.ncbi.nlm.nih.gov/10198754/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Effect of beta-glucan from oats and yeast on serum lipids</a>, Crit Rev Food Sci Nutr. 39(2):189-202.</li>
+          <li>Rampitsch C, et al. 2003: <a href="https://pubmed.ncbi.nlm.nih.gov/13129289/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Development of a monoclonal antibody-based ELISA to quantify soluble beta-glucans in oats and barley</a>, J Agric Food Chem. 51(20):5882-7.</li>
+          <li>Braaten JT, et al. 1994: <a href="https://pubmed.ncbi.nlm.nih.gov/7956987/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Oat beta-glucan reduces blood cholesterol concentration in hypercholesterolemic subjects</a>, Eur J Clin Nutri. 48(7):465-74.</li>
+          <li>Brown GD, Gordon S. 2005: <a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1462-5822.2005.00505.x" target="_blank" class="text-blue-600 underline hover:text-blue-800">Immune recognition of fungal β-glucans</a>, Cell Microbiol. 7(4):471-9.</li>
+          <li>Taylor PR, et al. 2007: <a href="https://pubmed.ncbi.nlm.nih.gov/17159984/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Dectin-1 is required for β-glucan recognition and control of fungal infection</a>, Nat Immunol. 8(1):31-8.</li>
+          <li>Chen J, Seviour R. 2007: <a href="https://pubmed.ncbi.nlm.nih.gov/17590323/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Medicinal importance of fungal β-(1→3), (1→6)-glucans</a>, Mycol Res. 111(Pt 6):635-52.</li>
+          <li>Zeković DB. 2005: <a href="https://pubmed.ncbi.nlm.nih.gov/16419618/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Natural and modified (1→3)-β-D-glucans in health promotion and disease alleviation</a>, Crit Rev Biotechnol. 25(4):205-30.</li>
+          <li>Du B, et al. 2015: <a href="https://www.researchgate.net/publication/265731586_An_insight_into_anti-inflammatory_effects_of_fungal_beta-glucans" target="_blank" class="text-blue-600 underline hover:text-blue-800">An insight into anti-inflammatory effects of fungal beta-glucans</a>, Trends Food Sci Technol. 41(1):49-59.</li>
+          <li>Han B, et al. 2020: <a href="https://pubmed.ncbi.nlm.nih.gov/32391005/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Structure-functional activity relationship of β-glucans from the perspective of immunomodulation</a>, Front Immunol. 11:658.</li>
+          <li>Mirończuk-Chodakowska I, et al. 2021: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8623785/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Beta-glucans from fungi: biological and health-promoting potential in the COVID-19 pandemic era</a>, Nutrients. 13(11):3960.</li>
+          <li>Aoe S. 2022: <a href="https://pubmed.ncbi.nlm.nih.gov/35010971/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Beta-glucan in foods and health benefits</a>, Nutrients. 14(1):96.</li>
+        </ol>
+      </section>      
+      
+  
+  </main>
+  
+  
+
+  <!-- start cta -->
+  <section
+  class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 text-center md:text-left">
+  <div class="md:flex md:items-center md:justify-center">
+    <h2 class="text-xl font-bold text-white">Contact us to place an order. <br class="block md:hidden">Call us on: +1
+      514-779-9623</h2>
+    <a href="../../order.html"
+      class="px-8 py-4 bg-white text-blue-600 rounded inline-block font-semibold md:ml-8 mt-4 md:mt-0 
+      hover:bg-teal-500 hover:text-white transition-colors duration-300">Order</a>
+  </div>
+</section>
+<!-- end cta -->
+
+<!-- start footer -->
+<footer class="relative bg-[#ececec] text-gray-500 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 lg:py-24">
+  <div class="flex flex-col md:flex-row">
+    <div class="w-full lg:w-auto lg:mx-4 lg:pr-8">
+      <img src="../../assets/logo.svg" alt="Jiagen Biotechnologies" class="h-40 mb-2">
+
+      <p class="text-gray-400">Empowering Discovery with Trusted Quality Materials.</p>
+
+    </div>
+
+    <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
+      <h5 class="uppercase tracking-wider font-semibold text-gray-500">Products</h5>
+      <ul class="mt-4">
+        <li class="mt-2"><a href="../proteins/proteins.html" title="" class="opacity-75 hover:opacity-100">Peptides/Proteins</a></li>
+        <li class="mt-2"><a href="../enzymes/enzymes.html" title="" class="opacity-75 hover:opacity-100">Enzymes</a></li>
+        <li class="mt-2"><a href="../coenzymes/coenzymes.html" title="" class="opacity-75 hover:opacity-100">Coenzymes</a></li>
+        <li class="mt-2"><a href="../carbohydrates/carbohydrates.html" title="" class="opacity-75 hover:opacity-100">Carbohydrates</a></li>
+        <li class="mt-2"><a href="../antibodies/antibodies.html" title="" class="opacity-75 hover:opacity-100">Antibodies</a></li>
+      </ul>
+    </div>
+
+    <div class="w-full lg:w-2/6 mt-8 lg:mt-0 lg:mx-4 lg:pr-8">
+      <h5 class="uppercase tracking-wider font-semibold text-gray-500">Contact Details</h5>
+      <ul class="mt-4">
+        <li>
+          <a href="#" title="" class="block flex items-center opacity-75 hover:opacity-100">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M12,2C7.589,2,4,5.589,4,9.995C3.971,16.44,11.696,21.784,12,22c0,0,8.029-5.56,8-12C20,5.589,16.411,2,12,2z M12,14 c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4S14.21,14,12,14z" />
+              </svg>
+            </span>
+            <span class="ml-3">
+              958 Montée de Liesse, Saint-Laurent, QC, CAN
+            </span>
+          </a>
+        </li>
+
+        <li class="mt-4">
+          <a href="#" title="" class="block flex items-center opacity-75 hover:opacity-100">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M14.594,13.994l-1.66,1.66c-0.577-0.109-1.734-0.471-2.926-1.66c-1.193-1.193-1.553-2.354-1.661-2.926l1.661-1.66 l0.701-0.701L5.295,3.293L4.594,3.994l-1,1C3.42,5.168,3.316,5.398,3.303,5.643c-0.015,0.25-0.302,6.172,4.291,10.766 C11.6,20.414,16.618,20.707,18,20.707c0.202,0,0.326-0.006,0.358-0.008c0.245-0.014,0.476-0.117,0.649-0.291l1-1l0.697-0.697 l-5.414-5.414L14.594,13.994z" />
+              </svg>
+            </span>
+            <span class="ml-3">
+              +1 514-779-9623
+            </span>
+          </a>
+        </li>
+        <li class="mt-4">
+          <a href="#" title="" class="block flex items-center opacity-75 hover:opacity-100">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M20,4H4C2.896,4,2,4.896,2,6v12c0,1.104,0.896,2,2,2h16c1.104,0,2-0.896,2-2V6C22,4.896,21.104,4,20,4z M20,8.7l-8,5.334 L4,8.7V6.297l8,5.333l8-5.333V8.7z" />
+              </svg>
+            </span>
+            <span class="ml-3">
+              info@jiagen.com
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
+      
+
+      <p class="text-sm text-gray-400 mt-12">© 2025 Jiagen Biotechnologies. <br class="hidden lg:block">All Rights Reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->
+
+</body>
+</html>

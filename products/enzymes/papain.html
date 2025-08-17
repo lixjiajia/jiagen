@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jiagen Biotechnologies</title>
+  <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <link href="../../dist/output.css" rel="stylesheet" />
+
+  
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Announcement Bar -->
+  <div class="bg-[#1058b2] text-white text-sm py-1 px-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <span>Empowering Life Science Research</span>
+      <div class="flex space-x-6">
+        <span>Phone: <span class="font-semibold">514-779-9623</span></span>
+        <span>Contact: <span class="font-semibold">info@jiagen.com</span></span>
+      </div>
+    </div>
+  </div>
+ <!-- Header -->
+<header class="sticky top-0 z-50 bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-1 flex justify-between items-center relative">
+      <a href="../../index.html">
+        <img src="../../assets/logo.svg" alt="Logo" class="h-20 w-auto" />
+      </a>
+      <!-- Mobile Menu Toggle Button -->
+    <div class="md:hidden" x-data="{ open: false }">
+        <button @click="open = !open" class="text-slate-800 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        </button>
+    
+        <!-- Mobile Dropdown Menu -->
+        <div x-show="open" @click.away="open = false" class="absolute left-0 top-full w-full bg-white shadow-md z-50 border-t mt-2">
+        <ul class="p-4 space-y-2 font-medium text-sm">
+            
+            <!-- PRODUCTS dropdown -->
+            <li x-data="{ openSub: false }">
+            <button @click="openSub = !openSub" class="w-full text-left flex justify-between items-center py-2 text-slate-800 hover:text-slate-900">
+                PRODUCTS
+                <svg class="w-4 h-4 transform transition-transform" :class="{ 'rotate-180': openSub }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+                </svg>
+            </button>
+            <ul x-show="openSub" class="pl-4 mt-2 space-y-1 text-sm" x-cloak>
+              <li><a href="../proteins/proteins.html" class="block py-1 hover:text-blue-700">Peptides / Proteins</a></li>
+              <li><a href="../enzymes/enzymes.html" class="block py-1 hover:text-blue-700">Enzymes</a></li>
+              <li><a href="../coenzymes/coenzymes.html" class="block py-1 hover:text-blue-700">Coenzymes</a></li>
+              <li><a href="../carbohydrates/carbohydrates.html" class="block py-1 hover:text-blue-700">Carbohydrates</a></li>
+              <li><a href="../antibodies/antibodies.html" class="block py-1 hover:text-blue-700">Antibodies</a></li>
+            </ul>
+            </li>
+    
+            <!-- Other links -->
+            <li><a href="../../technology.html" class="block py-2 text-slate-800 hover:text-slate-900">TECHNOLOGY SERVICES</a></li>
+            <li><a href="../../order.html" class="block py-2 text-slate-800 hover:text-slate-900">ORDER</a></li>
+            <li><a href="../../aboutus.html" class="block py-2 text-slate-800 hover:text-slate-900">ABOUT US</a></li>
+        </ul>
+        </div>
+    </div>
+    
+  
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-6 items-center w-full">
+        <ul class="flex flex-nowrap items-center font-medium text-sm">
+          <li class="p-4 lg:px-8 relative flex items-center space-x-1"
+              x-data="{ open: false }"
+              @mouseenter="open = true"
+              @mouseleave="open = false">
+            <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">PRODUCTS</a>
+            <button class="shrink-0 p-1" :aria-expanded="open">
+              <span class="sr-only">Show submenu for "products"</span>
+              <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                <path d="M10 2.586 11.414 4 6 9.414.586 4 2 2.586l4 4z" />
+              </svg>
+            </button>
+            <ul class="origin-top-right absolute top-full left-1/2 -translate-x-1/2 min-w-[240px] 
+                       bg-white border border-slate-200 p-2 rounded-lg shadow-xl [&[x-cloak]]:hidden"
+                x-show="open"
+                x-transition:enter="transition ease-out duration-200 transform"
+                x-transition:enter-start="opacity-0 -translate-y-2"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-out duration-200"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                x-cloak>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../proteins/proteins.html"><span>Peptides / Proteins</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../enzymes/enzymes.html"><span>Enzymes</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../coenzymes/coenzymes.html"><span>Coenzymes</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../carbohydrates/carbohydrates.html"><span>Carbohydrates</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../antibodies/antibodies.html"><span>Antibodies</span></a></li>
+            </ul>
+          </li>
+  
+          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../technology.html">TECHNOLOGY SERVICES</a></li>
+          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../order.html">ORDER</a></li>
+          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../aboutus.html">ABOUT US</a></li>
+        </ul>
+        <div class="flex items-center space-x-1">
+          <!-- Search -->
+          <div class="w-full max-w-xs min-w-[200px]">
+              <div class="relative flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="absolute w-5 h-5 top-2.5 left-2.5 text-slate-600">
+                  <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
+              </svg>
+          
+              <input
+              class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+              placeholder="Search Product" 
+              />
+      
+              </div>
+          </div>
+          <ul class="flex flex-nowrap items-center font-medium text-sm">
+              <li class="p-4 lg:px-8 relative flex items-center space-x-1"
+                  x-data="{ open: false }"
+                  @mouseenter="open = true"
+                  @mouseleave="open = false">
+                <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">EN</a>
+                <button class="shrink-0 p-1" :aria-expanded="open">
+                  <span class="sr-only">Show submenu for languages</span>
+                  <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                    <path d="M10 2.586 11.414 4 6 9.414.586 4 2 2.586l4 4z" />
+                  </svg>
+                </button>
+                <ul class="origin-top-right absolute top-full left-1/2 -translate-x-1/2 min-w-[120px] 
+                           bg-white border border-slate-200 p-2 rounded-lg shadow-xl [&[x-cloak]]:hidden"
+                    x-show="open"
+                    x-transition:enter="transition ease-out duration-200 transform"
+                    x-transition:enter-start="opacity-0 -translate-y-2"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-out duration-200"
+                    x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0"
+                    x-cloak>
+                    <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="enzymes.html"><span>English</span></a></li>
+                    <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="./french/order_fr.html"><span>Français</span></a></li>
+                </ul>
+              </li>
+            </ul>
+        </div>
+      </nav>
+
+    
+  </header>
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-6 py-12 text-slate-800 font-sans leading-relaxed">
+    <div class="mb-8">
+        <a href="enzymes.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+          </svg>
+          Enzymes
+        </a>
+      </div>
+      <section>
+        <h2 class="text-3xl font-bold text-brandblue border-b border-gray-300 pb-2 mb-4">Papain</h2>
+        <p class="text-base text-gray-600 mb-2">
+          <strong>CAS No.:</strong> 9001-73-4 &nbsp;|&nbsp;
+          <strong>EC No.:</strong> 3.4.22.2 &nbsp;|&nbsp;
+          <strong>EINECS No.:</strong> 232-627-2
+        </p>
+        <p class="mb-4">
+          <strong>Synonyms:</strong> Papaya Proteinase I, Papainase, Papaya Peptidase I, Papayotin, Papainum, Vegetable Pepsin
+        </p>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Product Summary</h3>
+        <p>
+          Papain is a broad-spectrum cysteine protease derived from the latex of the <em>Carica papaya</em> (papaya) fruit. It consists of a single peptide chain with three disulfide bridges. It exhibits strong proteolytic activity across a wide pH range and is highly stable in various biochemical and industrial conditions. Due to its specificity (preference towards arginine, lysine, and phenylalanine), effectiveness, safety profile, and natural origin, papain is widely used in both research and commercial applications.
+        </p>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Biochemical Function</h3>
+        <p class="mb-2">
+          Papain catalyzes the hydrolysis of peptide bonds, with a preference for cleaving at sites containing large hydrophobic amino acids such as phenylalanine, tryptophan, and tyrosine. It acts via a catalytic triad mechanism involving a cysteine thiol (Cys-25) and a histidine residue (His-159), enabling nucleophilic attack on peptide bonds.
+        </p>
+        <ul class="list-disc list-inside space-y-1 text-base text-slate-700">
+          <li>Optimal pH: 6.0–7.0 (active in pH 3–10 range)</li>
+          <li>Temperature Stability: Active up to ~65°C</li>
+          <li>Inhibitors: E-64, iodoacetamide (typical for cysteine proteases)</li>
+        </ul>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Mechanism of Action</h3>
+        <p>
+          Papain's enzymatic activity proceeds through:
+        </p>
+        <ol class="list-decimal list-inside space-y-1 text-base text-slate-700">
+          <li>Nucleophilic attack by its catalytic cysteine on the carbonyl carbon of a peptide bond.</li>
+          <li>Formation of a covalent acyl-enzyme intermediate.</li>
+          <li>Hydrolysis of the intermediate to release cleaved peptide fragments.</li>
+        </ol>
+        <p class="mt-2">
+          This thiol-based catalysis is comparable to that of other cysteine proteases like cathepsins.
+        </p>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Applications</h3>
+        <ul class="list-disc list-inside space-y-1 text-base text-slate-700">
+          <li>Protein digestion and analysis in proteomics and enzymology</li>
+          <li>Tissue dissociation for cell culture and primary cell isolation (e.g., neural tissue)</li>
+          <li>Morphological isolation of intact cortical neurons from postnatal rats</li>
+          <li>Enzyme kinetics and inhibitor studies in drug discovery</li>
+          <li>Production of Fab fragments of antibodies</li>
+          <li>Model protease for studying structure-function relationships in cysteine proteases</li>
+          <li>Enzymatic synthesis of amino acids, peptides, and other molecules</li>
+        </ul>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Packaging & Storage</h3>
+        <ul class="list-disc list-inside space-y-1 text-base text-slate-700">
+          <li>Available as white to slightly yellow lyophilized powder</li>
+          <li>Store at 2–8°C (dry form); keep frozen at –20°C for long-term enzyme stability</li>
+        </ul>
+      </section>
+      
+      <section class="mt-10">
+        <h3 class="text-2xl font-semibold text-brandblue mb-4">References</h3>
+        <ol class="list-decimal list-inside space-y-2 text-sm text-slate-700">
+          <li>Barrett AJ, Dingle J. 1965: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2137281/pdf/719.pdf" class="text-blue-600 underline hover:text-blue-800" target="_blank">The Mechanism of action of papain.</a> Biochem J, 96: 705-14</li>
+          <li>Drenth J, et al. 1968: <a href="https://www.nature.com/articles/218929a0" class="text-blue-600 underline hover:text-blue-800" target="_blank">Structure of papain.</a> Nature, 218:929-32</li>
+          <li>de Jersey J, Callahan PX. 1970: <a href="https://pubs.acs.org/doi/10.1021/bi00810a015" class="text-blue-600 underline hover:text-blue-800" target="_blank">Specificity of papain.</a> Biochem, 9(8):1761</li>
+          <li>Mole J.E, Horton HR. 1973: <a href="https://pubmed.ncbi.nlm.nih.gov/4760493/" class="text-blue-600 underline hover:text-blue-800" target="_blank">Kinetic analysis of enhanced catalytic efficiency of papain.</a> Biochem, 12(26):5285-9</li>
+          <li>LaLonde JM, et al. 1998: <a href="https://pubmed.ncbi.nlm.nih.gov/9804696/" class="text-blue-600 underline hover:text-blue-800" target="_blank">Use of papain as a model for cathepsin K inhibitor design.</a> J Med Chem, 41(23):4567-76</li>
+          <li>Harrison MJ, et al. 1997: <a href="https://pubs.acs.org/doi/10.1021/ja9711472" class="text-blue-600 underline hover:text-blue-800" target="_blank">Catalytic mechanism of papain via hybrid QM/MM.</a> J Amer Chem Soci, 119(50):12285-91</li>
+          <li>Amri E, Mamboya F. 2012: <a href="http://www.thescipub.com/ajbb.toc" class="text-blue-600 underline hover:text-blue-800" target="_blank">Papain, a plant enzyme of biological importance.</a> Ameri JBiochem Biote, 8(2):99-104</li>
+          <li>Zucker S, et al. 1985: <a href="https://www.sciencedirect.com/science/article/abs/pii/0167483885900573" class="text-blue-600 underline hover:text-blue-800" target="_blank">Proteolytic activities of chymopapain and papain.</a> Archives Biochem Biophy, 828(2):196-204</li>
+          <li>Tacias-Pascacio VG et al. 2021: <a href="https://pubmed.ncbi.nlm.nih.gov/34375660/" class="text-blue-600 underline hover:text-blue-800" target="_blank">Immobilization of papain: A review.</a> Int J Biol Macromol. 188:94-113</li>
+          <li>Shokhen M, et al. 2009: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2767454" class="text-blue-600 underline hover:text-blue-800" target="_blank">Protonation state of the catalytic dyad in papain.</a> Proteins. 77(4):916–26</li>
+          <li> Burrows DL, et al. 2005: <a href="https://academic.oup.com/jat/article-abstract/29/5/275/730609?redirectedFrom=fulltext" class="text-blue-600 underline hover:text-blue-800" target="_blank">Papain: a novel urine adulterant.</a> J Analy Toxicology.</li>
+        </ol>
+      </section>
+      
+  
+  </main>
+  
+  
+
+  <!-- start cta -->
+  <section
+  class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 text-center md:text-left">
+  <div class="md:flex md:items-center md:justify-center">
+    <h2 class="text-xl font-bold text-white">Contact us to place an order. <br class="block md:hidden">Call us on: +1
+      514-779-9623</h2>
+    <a href="../../order.html"
+      class="px-8 py-4 bg-white text-blue-600 rounded inline-block font-semibold md:ml-8 mt-4 md:mt-0 
+      hover:bg-teal-500 hover:text-white transition-colors duration-300">Order</a>
+  </div>
+</section>
+<!-- end cta -->
+
+<!-- start footer -->
+<footer class="relative bg-[#ececec] text-gray-500 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 lg:py-24">
+  <div class="flex flex-col md:flex-row">
+    <div class="w-full lg:w-auto lg:mx-4 lg:pr-8">
+      <img src="../../assets/logo.svg" alt="Jiagen Biotechnologies" class="h-40 mb-2">
+
+      <p class="text-gray-400">Empowering Discovery with Trusted Quality Materials.</p>
+
+    </div>
+
+    <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
+      <h5 class="uppercase tracking-wider font-semibold text-gray-500">Products</h5>
+      <ul class="mt-4">
+        <li class="mt-2"><a href="../proteins/proteins.html" title="" class="opacity-75 hover:opacity-100">Peptides/Proteins</a></li>
+        <li class="mt-2"><a href="../enzymes/enzymes.html" title="" class="opacity-75 hover:opacity-100">Enzymes</a></li>
+        <li class="mt-2"><a href="../coenzymes/coenzymes.html" title="" class="opacity-75 hover:opacity-100">Coenzymes</a></li>
+        <li class="mt-2"><a href="../carbohydrates/carbohydrates.html" title="" class="opacity-75 hover:opacity-100">Carbohydrates</a></li>
+        <li class="mt-2"><a href="../antibodies/antibodies.html" title="" class="opacity-75 hover:opacity-100">Antibodies</a></li>
+      </ul>
+    </div>
+
+    <div class="w-full lg:w-2/6 mt-8 lg:mt-0 lg:mx-4 lg:pr-8">
+      <h5 class="uppercase tracking-wider font-semibold text-gray-500">Contact Details</h5>
+      <ul class="mt-4">
+        <li>
+          <a href="#" title="" class="block flex items-center opacity-75 hover:opacity-100">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M12,2C7.589,2,4,5.589,4,9.995C3.971,16.44,11.696,21.784,12,22c0,0,8.029-5.56,8-12C20,5.589,16.411,2,12,2z M12,14 c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4S14.21,14,12,14z" />
+              </svg>
+            </span>
+            <span class="ml-3">
+              958 Montée de Liesse, Saint-Laurent, QC, CAN
+            </span>
+          </a>
+        </li>
+
+        <li class="mt-4">
+          <a href="#" title="" class="block flex items-center opacity-75 hover:opacity-100">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M14.594,13.994l-1.66,1.66c-0.577-0.109-1.734-0.471-2.926-1.66c-1.193-1.193-1.553-2.354-1.661-2.926l1.661-1.66 l0.701-0.701L5.295,3.293L4.594,3.994l-1,1C3.42,5.168,3.316,5.398,3.303,5.643c-0.015,0.25-0.302,6.172,4.291,10.766 C11.6,20.414,16.618,20.707,18,20.707c0.202,0,0.326-0.006,0.358-0.008c0.245-0.014,0.476-0.117,0.649-0.291l1-1l0.697-0.697 l-5.414-5.414L14.594,13.994z" />
+              </svg>
+            </span>
+            <span class="ml-3">
+              +1 514-779-9623
+            </span>
+          </a>
+        </li>
+        <li class="mt-4">
+          <a href="#" title="" class="block flex items-center opacity-75 hover:opacity-100">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M20,4H4C2.896,4,2,4.896,2,6v12c0,1.104,0.896,2,2,2h16c1.104,0,2-0.896,2-2V6C22,4.896,21.104,4,20,4z M20,8.7l-8,5.334 L4,8.7V6.297l8,5.333l8-5.333V8.7z" />
+              </svg>
+            </span>
+            <span class="ml-3">
+              info@jiagen.com
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
+      
+
+      <p class="text-sm text-gray-400 mt-12">© 2025 Jiagen Biotechnologies. <br class="hidden lg:block">All Rights Reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->
+
+</body>
+</html>
