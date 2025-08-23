@@ -18,6 +18,7 @@
         <div class="flex space-x-6">
           <span>Phone: <span class="font-semibold">514-779-9623</span></span>
           <span>Contact: <span class="font-semibold">info@jiagen.com</span></span>
+          <span>Orders: <span class="font-semibold">sales@jiagen.com</span></span>
         </div>
       </div>
     </div>
@@ -69,12 +70,12 @@
   <!-- Desktop Nav -->
   <nav class="hidden md:flex space-x-6 items-center w-full">
             
-    <ul class="flex flex-nowrap items-center font-medium text-sm">
+    <ul class="flex flex-nowrap items-center font-medium text-base">
       <li class="p-4 lg:px-8 relative flex items-center space-x-1"
           x-data="{ open: false }"
           @mouseenter="open = true"
           @mouseleave="open = false">
-        <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">PRODUCTS</a>
+        <a class="text-slate-700 hover:text-slate-900" href="#0" :aria-expanded="open">Products</a>
         <button class="shrink-0 p-1" :aria-expanded="open">
           <span class="sr-only">Show submenu for "products"</span>
           <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
@@ -99,8 +100,8 @@
         </ul>
       </li>
 
-      <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="technology.html">TECHNOLOGY SERVICES</a></li>
-      <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="order.html">ORDER</a></li>
+      <li class="p-4 lg:px-8"><a class="text-slate-700 hover:text-slate-900" href="technology.html">Technology Services</a></li>
+      <li class="p-4 lg:px-8"><a class="text-slate-700 hover:text-slate-900" href="order.html">Order</a></li>
       
     </ul>
     
@@ -165,9 +166,9 @@
   
           <div class="lg:w-3/4 xl:w-2/4 relative z-10 h-100 lg:mt-16">
             <div class="animate-fade-in-up">
-              <h1 class="text-white text-4xl md:text-5xl xl:text-6xl font-bold leading-tight">Empowering Discovery with Trusted Quality Materials.
+              <h1 class="text-white text-4xl md:text-5xl xl:text-6xl font-bold leading-tight">Your Trusted Partner in<br>Life Science Research
               </h1>
-              <p class="text-blue-100 text-xl md:text-2xl leading-snug mt-4">Welcome to Jiagen Biotechnologies, your partner in life science research. We provide high-quality proteins, peptides, enzymes, coenzymes, carbohydrates, lipids, antigens and antibodies for life science research, and biotechnological and pharmaceutical industries.
+              <p class="text-blue-100 text-xl md:text-2xl leading-snug mt-4">At Jiagen Biotechnologies, we understand that precision and quality matter. That’s why we provide high-purity proteins, enzymes, coenzymes, carbohydrates, lipids, antigens, and antibodies—trusted by researchers in life sciences, biotechnology, and the pharmaceutical industry.
 
               </p>
               
@@ -224,64 +225,100 @@
 
           <!-- Row 1 -->
           <div class="w-full md:w-1/5 p-2">
-            <div class="bg-white rounded-lg border border-gray-300 p-6 text-center">
-              
-              <h4 class="text-lg font-bold mt-4">Peptides & Proteins</h4>
-              <a href="products/proteins/proteins.html" class="block mt-3 text-blue-600 hover:underline">View Products</a>
+            <div class="bg-white rounded-lg border border-gray-300 p-6 text-center h-full flex flex-col">
+              <h4 class="text-2xl font-bold mt-4">Proteins and Peptides</h4>
+              <p class="mt-2 text-base text-gray-700">
+                High-quality proteins and peptides for research, diagnostics, and therapeutic development, supporting structural biology, molecular studies, and drug discovery.
+              </p>
+              <div class="mt-auto">
+              <a href="products/enzymes/enzymes.html" class="inline-flex items-center mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition">
+                View Products
+                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+              </a>
+            </div>
             </div>
           </div>
         
           <div class="w-full md:w-1/5 p-2">
-            <div class="bg-white rounded-lg border border-gray-300 p-6 text-center">
-              
-              <h4 class="text-lg font-bold mt-4">Enzymes</h4>
-              <a href="products/enzymes/enzymes.html" class="block mt-3 text-blue-600 hover:underline">View Products</a>
+            <div class="bg-white rounded-lg border border-gray-300 p-6 text-center h-full flex flex-col">
+              <h4 class="text-2xl font-bold mt-4">Enzymes</h4>
+              <p class="mt-2 text-base text-gray-700">
+                Reliable, pure enzymes designed for biochemical assays, diagnostic manufacturing, and industrial research applications.
+              </p>
+              <div class="mt-auto">
+                <a href="products/enzymes/enzymes.html" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition">
+                  View Products
+                  <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+        
+          <div class="w-full md:w-1/5 p-2">
+            <div class="bg-white rounded-lg border border-gray-300 p-6 text-center h-full flex flex-col">
+              <h4 class="text-2xl font-bold mt-4">Coenzymes</h4>
+              <p class="mt-2 text-base text-gray-700">
+                Essential cofactors with high stability and purity, enabling key enzymatic reactions in metabolism studies and drug development.
+              </p>
+              <div class="mt-auto">
+              <a href="products/enzymes/enzymes.html" class="inline-flex items-center mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition">
+                View Products
+                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+              </a>
+              </div>
             </div>
           </div>
         
           <div class="w-full md:w-1/5 p-2">
-            <div class="bg-white rounded-lg border border-gray-300 p-6 text-center">
-             
-              <h4 class="text-lg font-bold mt-4">Coenzymes</h4>
-              <a href="products/coenzymes/coenzymes.html" class="block mt-3 text-blue-600 hover:underline">View Products</a>
+            <div class="bg-white rounded-lg border border-gray-300 p-6 text-center h-full flex flex-col">
+              <h4 class="text-2xl font-bold mt-4">Carbohydrates</h4>
+              <p class="mt-2 text-base text-gray-700">
+                Precision-produced carbohydrates for glycobiology, diagnostics, and pharmaceutical research, supporting pathway studies and biomarker development.
+              </p>
+              <div class="mt-auto">
+              <a href="products/enzymes/enzymes.html" class="inline-flex items-center mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition">
+                View Products
+                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+              </a>
+            </div>
             </div>
           </div>
         
           <div class="w-full md:w-1/5 p-2">
-            <div class="bg-white rounded-lg border border-gray-300 p-6 text-center">
-             
-              <h4 class="text-lg font-bold mt-4">Carbohydrates</h4>
-              <a href="products/carbohydrates/carbohydrates.html" class="block mt-3 text-blue-600 hover:underline">View Products</a>
+            <div class="bg-white rounded-lg border border-gray-300 p-6 text-center h-full flex flex-col">
+              <h4 class="text-2xl font-bold mt-4">Antibodies</h4>
+              <p class="mt-2 text-base text-gray-700">
+                Specific and reproducible antibodies for immunoassays, Western blotting, immunohistochemistry, and analytical applications.
+              </p>
+              <div class="mt-auto">
+              <a href="products/enzymes/enzymes.html" class="inline-flex items-center mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition">
+                View Products
+                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+              </a>
+            </div>
             </div>
           </div>
-        
-          <div class="w-full md:w-1/5 p-2">
-            <div class="bg-white rounded-lg border border-gray-300 p-6 text-center">
-             
-              <h4 class="text-lg font-bold mt-4">Antibodies</h4>
-              <a href="products/antibodies/antibodies.html" class="block mt-3 text-blue-600 hover:underline">View Products</a>
-            </div>
-          </div>
-        
+          
         </div>
+        
       </section>
       <!-- end about -->
   
       
   
   
-      <!-- start cta -->
-      <section
-        class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 text-center md:text-left">
-        <div class="md:flex md:items-center md:justify-center">
-          <h2 class="text-xl font-bold text-white">Contact us to place an order. <br class="block md:hidden">Call us on: +1
-            514-779-9623</h2>
-          <a href="order.html"
-            class="px-8 py-4 bg-white text-blue-600 rounded inline-block font-semibold md:ml-8 mt-4 md:mt-0 
-            hover:bg-teal-500 hover:text-white transition-colors duration-300">Order</a>
-        </div>
-      </section>
-      <!-- end cta -->
+   
   
       <!-- start footer -->
       <footer class="relative bg-[#ececec] text-gray-500 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 lg:py-24">
