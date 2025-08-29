@@ -8,10 +8,11 @@
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <link href="../../dist/output.css" rel="stylesheet" />
 
+  
 </head>
-<body class="flex flex-col min-h-screen bg-gray-100 text-gray-800">
+<body class="bg-gray-100 text-gray-800">
   <!-- Announcement Bar -->
-  <div class="bg-brandblue text-white text-sm py-1 px-4">
+  <div class="bg-[#1058b2] text-white text-sm py-1 px-4">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       <span>Empowering Life Science Research</span>
       <div class="flex space-x-6">
@@ -136,7 +137,7 @@
                     x-transition:leave-start="opacity-100"
                     x-transition:leave-end="opacity-0"
                     x-cloak>
-                    <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="order.html"><span>English</span></a></li>
+                    <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="enzymes.html"><span>English</span></a></li>
                     <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="./french/order_fr.html"><span>Français</span></a></li>
                 </ul>
               </li>
@@ -147,113 +148,106 @@
     
   </header>
   <!-- Main Content -->
-  <main class="flex-grow max-w-7xl mx-auto">
-    <h2 class="text-2xl font-bold text-slate-800 mb-12 mt-4">Proteins</h2>
-    <!-- Pagination -->
-    <div x-data="pagination()" class="w-full overflow-x-auto">
-      <div class="min-w-[800px] w-full text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
-        <table class="w-full text-left table-auto text-slate-800">
-          <thead>
-            <tr class="text-white border-b border-slate-300" style="background-color: #145aac;">
-              <th class="p-4">Product Name</th>
-              <th class="p-4">CAS No.</th>
-              <th class="p-4">Synonyms</th>
-              <th class="p-4">Form</th>
-              <th class="p-4">Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            <template x-for="row in paginatedData" :key="row.name">
-              <tr class="hover:bg-slate-50">
-                <td class="p-4 font-bold text-sm" x-text="row.name"></td>
-                <td class="p-4 text-sm whitespace-nowrap" x-text="row.cas"></td>
-                <td class="p-4 text-sm" x-text="row.synonyms"></td>
-                <td class="p-4 text-sm" x-text="row.form"></td>
-                <td class="p-4 text-sm"><a :href="row.url" class="font-semibold hover:underline">View Details</a></td>
-              </tr>
-            </template>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Pagination Controls -->
-      <div class="mt-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div>
-            <p class="text-sm text-gray-700">
-              Showing
-              <span class="font-medium" x-text="start + 1"></span>
-              to
-              <span class="font-medium" x-text="Math.min(start + perPage, data.length)"></span>
-              of
-              <span class="font-medium" x-text="data.length"></span>
-              results
-            </p>
-          </div>
-        <div class="flex items-center space-x-2">
-        <button @click="prevPage" :disabled="page === 1"
-          class="px-3 py-1 bg-slate-200 text-sm rounded hover:bg-slate-300 disabled:opacity-50">
-          <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-            <path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
+  <main class="max-w-6xl mx-auto px-6 py-12 text-slate-800 font-sans leading-relaxed">
+    <div class="mb-8">
+        <a href="coenzymes.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
           </svg>
-        </button>
-        <template x-for="i in totalPages">
-          <button @click="goToPage(i)" x-text="i"
-            :class="{'bg-slate-500 text-white': i === page, 'bg-slate-100': i !== page}"
-            class="px-3 py-1 rounded text-sm hover:bg-slate-300"></button>
-        </template>
-        <button @click="nextPage" :disabled="page === totalPages"
-          class="px-3 py-1 bg-slate-200 text-sm rounded hover:bg-slate-300 disabled:opacity-50">
-          <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-            <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-          </svg>
-        </button>
-        </div>
+          Coenzymes
+        </a>
       </div>
-    </div>
+      <section>
+        <h2 class="text-3xl font-bold text-brandblue border-b border-gray-300 pb-2 mb-4">Coenzyme A (Free Acid)</h2>
+        <p class="text-base text-gray-600 mb-2">
+          <strong>CAS No.:</strong> 85-61-0 &nbsp;|&nbsp;
+          <strong>EINECS No.:</strong> 201-616-2
+        </p>
+        <p class="mb-4"><strong>Synonyms:</strong> CoA, Co-A, CoASH, Co-A-SH, SH-CoA, HS-CoA, Coenzyme A hydrate, Coenzymum A, Coenzyme A (free acid) from yeast, Acetyl CoA, Coenzyme for transacetylation</p>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Product Summary</h3>
+        <p>Coenzyme A (CoA) is a vital metabolic cofactor found in all living cells, functioning primarily as an acyl group carrier. It plays a central role in the metabolism of carbohydrates, fats, and proteins by facilitating the synthesis and oxidation of fatty acids and the oxidation of pyruvate in the citric acid cycle. Coenzyme A is often referred to as Acetyl CoA when it is transferring an acetyl group. CoA is typically produced through microbial fermentation (e.g., engineered <i>E. coli</i> or <i>Corynebacterium glutamicum</i>).</p>
+                                        
+        <ul class="list-disc list-inside text-slate-700 mt-2">
+          <li>Formula: C<sub>21</sub>H<sub>36</sub>N<sub>7</sub>O<sub>16</sub>P<sub>3</sub>S·xH<sub>2</sub>O</li>
+          <li>Formula Molecular Weight: 767.53 (as anhydrous free acid)</li>
+          <li>Water: Not more than 5%</li>
+          <li>Purity: Not less than 85%</li>
+          <li>Assay (anhydrous basis): Not less than 300 Units/mg</li>
+        </ul>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Biochemical Function</h3>
+        Coenzyme A acts as a carrier of acyl groups (R-CO–), forming thioester derivatives (e.g., acetyl-CoA, succinyl-CoA). These activated intermediates participate in enzymatic reactions across various metabolic pathways. 
+        The key enzymes using Coenzyme A are: acetyl-CoA synthetase, fatty acid synthase, pyruvate dehydrogenase complex, and acyl-CoA dehydrogenases.
+      </section>
 
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Mechanism of Action</h3>
+        The reactive thiol (-SH) group of Coenzyme A forms high-energy thioester bonds with carboxylic acids. This facilitates enzymatic group transfers in:
+        <ul class="list-disc list-inside space-y-1 text-base text-slate-700">
+            <li>The citric acid cycle</li>
+            <li>Fatty acid β-oxidation</li>
+            <li>Amino acid metabolism</li>
+            <li>Ketogenesis and cholesterol synthesis</li>
+        </ul>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Applications</h3>
+        <ul class="list-disc list-inside space-y-1 text-base text-slate-700">
+          <li>Used to study metabolic flux, enzyme kinetics, and acyl-group transfer reactions.</li>
+          <li>Applied in synthetic biology and metabolic reprogramming to drive energy production or biosynthesis of targeted compounds.</li>
+          <li>Radiolabeled or isotopically enriched Coenzyme A (e.g., [¹⁴C]Acetyl-CoA) helps trace biochemical pathways.</li>
+          <li>CoA-dependent enzymes are key to industrial biosynthesis of fine chemicals, pharmaceuticals, and biofuels.</li>
+          <li>CoA-binding pockets serve as targets in antibacterial and antiparasitic drug development (e.g., inhibitors of CoA biosynthesis in <i>Plasmodium falciparum</i> or <i>Mycobacterium tuberculosis</i>).</li>
+        </ul>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Packaging & Storage</h3>
+        <ul class="list-disc list-inside space-y-1 text-base text-slate-700">
+          <li>Coenzyme A is available as white or slightly yellow powder</li>
+          <li>Soluble in water and saline, insoluble in ethanol, ether and acetone. Appearance of solution should be clear and slightly opalescent. </li>
+          <li>Store at -20°C (lyophilized powder); –80°C in aliquots with antioxidants (e.g., DTT) to prevent oxidation (solution). </li>
+        </ul>
+      </section>
+      
+      <section class="mt-10">
+        <h3 class="text-2xl font-semibold text-brandblue mb-4">References</h3>
+        <ol class="list-decimal list-inside space-y-2 text-sm text-slate-700">
+          <li>Leonardi R, et al. 2005: <a href="https://pubmed.ncbi.nlm.nih.gov/15893380/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Coenzyme A: back in action</a>, <em>Prog Lipid Res</em> 44(2-3):125-53.</li>
+          <li>Gout I. 2018: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6008590/?utm_source=chatgpt.com" target="_blank" class="text-blue-600 underline hover:text-blue-800">Coenzyme A, protein CoAlation and redox regulation in mammalian cells</a>, <em>Biochem Soc Trans</em>. 46(3):721-8.</li>
+          <li>Theodoulou FL. 2014: <a href="https://pubmed.ncbi.nlm.nih.gov/25109997/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Coenzyme A and its derivatives: Renaissance of a textbook classic</a>, <em>Biochem Soc Trans</em>. 42(4):1025-32.</li>
+          <li>Barritt SA. 2024: <a href="https://pubmed.ncbi.nlm.nih.gov/38871981/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Coenzyme A biosynthesis: mechanisms of regulation, function and disease</a>, <em>Nat Metab</em> 6(6):1008-1023.</li>
+          <li>Mignani L, et al. 2021: <a href="https://pubmed.ncbi.nlm.nih.gov/34439650/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Coenzyme A biochemistry: from neurodevelopment to neurodegeneration</a>, <em>Brain Sci</em>. 11(8):1031.</li>
+          <li>Dobrzyn P. 2022: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9026968/" target="_blank" class="text-blue-600 underline hover:text-blue-800">CoA in Health and Disease</a>, <em>Int J Mol Sci</em>. 23(8):4371.</li>
+          <li>Mishra PK, Drueckhammer DG. 2000: <a href="https://pubmed.ncbi.nlm.nih.gov/11777425/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Coenzyme A analogues and derivatives: Synthesis and applications as mechanistic probes of Coenzyme A ester-utilizing enzymes</a>, <em>Chem Rev</em> 100(9):3283-3310.</li>
+          <li>Hegg EL, et al. 2004: <a href="https://pubmed.ncbi.nlm.nih.gov/15491124/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Unraveling the Structure and Mechanism of Acetyl-Coenzyme A Synthase</a>, <em>Acc Chem Res</em>. 37(10):775-83.</li>
+          <li>Sanichar R, Vederas JC. 2017: <a href="https://pubs.acs.org/doi/epdf/10.1021/acs.orglett.7b00291?ref=article_openPDF" target="_blank" class="text-blue-600 underline hover:text-blue-800">One step transformation of Coenzyme A into analogues by transamidation</a>, <em>Organ Lett</em> 19(8):1939-2198.</li>
+          <li>Hu Y, et al. 2017: <a href="https://www.sciencedirect.com/science/article/abs/pii/S1572665717305477" target="_blank" class="text-blue-600 underline hover:text-blue-800">CoA-dependent coordination polymer as a novel electrochemical sensing platform for sensitive detection of hydrogen peroxide in biological environments</a>, <em>J Electroanal Chem</em> 801(15):306-14.</li>
+          <li>Wang Q, et al. 2016: <a href="https://pubmed.ncbi.nlm.nih.gov/27769451/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Signal-on CoA-dependent electrochemical biosensor for highly sensitive and label-free detection of Citrate synthase activity</a>, <em>Talanta</em> 161:583-591.</li>
+          <li>van der Sluis R, Erasmus E. 2016: <a href="https://pubmed.ncbi.nlm.nih.gov/27351777/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Xenobiotic/medium chain fatty acid: CoA ligase – a critical review on its role in fatty acid metabolism and the detoxification of benzoic acid and aspirin</a>, <em>Expert Opin Drug Metab Toxicol</em>. 12(10):1169-79.</li>
+        </ol>
+      </section>
+      
+           
+      
+  
   </main>
-  <script>
-    function pagination() {
-      return {
-        page: 1,
-        perPage: 10,
-        data: [
-          { name: "Bilirubin (unconjugated)", cas: "635-65-4", synonyms: "Unconjugated Bilirubin, Indirect Bilirubin, Indirect Reacting Bilirubin, BU, UCB, UCBR, Hematoidin, Haematoidin, Bilirubina, Bilirubine, Cholerythrin, NSC26685", form: "Powder" },
-          { name: "FSH-Follicle Stimulating Hormone", cas: "9002-68-0", synonyms: "FSH, hFSH, huFSH, Urofollitropin", form: "Powder" },
-          { name: "Porcine Gastric Mucin", cas: "84082-64-4", synonyms: "Hog gastric mucin, mucin from porcine stomach, mucin from porcine gastric mucosa, PMG", form: "Powder" },
-          { name: "Human Chorionic Gonadotropin", cas: "9002-61-3", synonyms: "Human Chorionic Gonadotrophin, Gonadotropinum chorionicum, Choriogonin, HCG", form: "Powder" },
-          { name: "Collagen", cas: "9007-34-5", synonyms: " Hydrolyzed collagen, collagen peptides, gelatin, native collagen, Atelocollagen, type I/II/III collagen, bovine/porcine/fish collagen", form: "Powder", url:"collagen.html"},
-          
-          
-          
-        ],
-        get totalPages() {
-          return Math.ceil(this.data.length / this.perPage);
-        },
-        get start() {
-          return (this.page - 1) * this.perPage;
-        },
-        get paginatedData() {
-          const start = (this.page - 1) * this.perPage;
-          return this.data.slice(start, start + this.perPage);
-        },
-        goToPage(n) {
-          this.page = n;
-        },
-        prevPage() {
-          if (this.page > 1) this.page--;
-        },
-        nextPage() {
-          if (this.page < this.totalPages) this.page++;
-        }
-      }
-    }
-  </script>
+  
+  
+
   <!-- start cta -->
   <section
   class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 text-center md:text-left">
   <div class="md:flex md:items-center md:justify-center">
-    <h2 class="text-xl font-bold text-white">Contact us at <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> to place an order.</h2>
+    <h2 class="text-xl font-bold text-white">Jiagen Biotechnologies supplies quality Coenzyme A of various specifications. <br>Contact us at <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> to place an order.</h2>
+      
     <a href="../../order.html"
       class="px-8 py-4 bg-white text-blue-600 rounded inline-block font-semibold md:ml-8 mt-4 md:mt-0 
       hover:bg-teal-500 hover:text-white transition-colors duration-300">Order</a>
@@ -274,7 +268,7 @@
     <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
       <h5 class="uppercase tracking-wider font-semibold text-gray-500">Products</h5>
       <ul class="mt-4">
-        <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Peptides/Proteins</a></li>
+        <li class="mt-2"><a href="../proteins/proteins.html" title="" class="opacity-75 hover:opacity-100">Peptides/Proteins</a></li>
         <li class="mt-2"><a href="../enzymes/enzymes.html" title="" class="opacity-75 hover:opacity-100">Enzymes</a></li>
         <li class="mt-2"><a href="../coenzymes/coenzymes.html" title="" class="opacity-75 hover:opacity-100">Coenzymes</a></li>
         <li class="mt-2"><a href="../carbohydrates/carbohydrates.html" title="" class="opacity-75 hover:opacity-100">Carbohydrates</a></li>
@@ -339,6 +333,7 @@
     </div>
   </div>
 </footer>
-<!-- end footer --> 
+<!-- end footer -->
+
 </body>
 </html>

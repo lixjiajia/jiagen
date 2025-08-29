@@ -8,10 +8,11 @@
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <link href="../../dist/output.css" rel="stylesheet" />
 
+  
 </head>
-<body class="flex flex-col min-h-screen bg-gray-100 text-gray-800">
+<body class="bg-gray-100 text-gray-800">
   <!-- Announcement Bar -->
-  <div class="bg-brandblue text-white text-sm py-1 px-4">
+  <div class="bg-[#1058b2] text-white text-sm py-1 px-4">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       <span>Empowering Life Science Research</span>
       <div class="flex space-x-6">
@@ -136,7 +137,7 @@
                     x-transition:leave-start="opacity-100"
                     x-transition:leave-end="opacity-0"
                     x-cloak>
-                    <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="order.html"><span>English</span></a></li>
+                    <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="enzymes.html"><span>English</span></a></li>
                     <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="./french/order_fr.html"><span>Français</span></a></li>
                 </ul>
               </li>
@@ -147,113 +148,145 @@
     
   </header>
   <!-- Main Content -->
-  <main class="flex-grow max-w-7xl mx-auto">
-    <h2 class="text-2xl font-bold text-slate-800 mb-12 mt-4">Proteins</h2>
-    <!-- Pagination -->
-    <div x-data="pagination()" class="w-full overflow-x-auto">
-      <div class="min-w-[800px] w-full text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
-        <table class="w-full text-left table-auto text-slate-800">
-          <thead>
-            <tr class="text-white border-b border-slate-300" style="background-color: #145aac;">
-              <th class="p-4">Product Name</th>
-              <th class="p-4">CAS No.</th>
-              <th class="p-4">Synonyms</th>
-              <th class="p-4">Form</th>
-              <th class="p-4">Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            <template x-for="row in paginatedData" :key="row.name">
-              <tr class="hover:bg-slate-50">
-                <td class="p-4 font-bold text-sm" x-text="row.name"></td>
-                <td class="p-4 text-sm whitespace-nowrap" x-text="row.cas"></td>
-                <td class="p-4 text-sm" x-text="row.synonyms"></td>
-                <td class="p-4 text-sm" x-text="row.form"></td>
-                <td class="p-4 text-sm"><a :href="row.url" class="font-semibold hover:underline">View Details</a></td>
-              </tr>
-            </template>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Pagination Controls -->
-      <div class="mt-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div>
-            <p class="text-sm text-gray-700">
-              Showing
-              <span class="font-medium" x-text="start + 1"></span>
-              to
-              <span class="font-medium" x-text="Math.min(start + perPage, data.length)"></span>
-              of
-              <span class="font-medium" x-text="data.length"></span>
-              results
-            </p>
-          </div>
-        <div class="flex items-center space-x-2">
-        <button @click="prevPage" :disabled="page === 1"
-          class="px-3 py-1 bg-slate-200 text-sm rounded hover:bg-slate-300 disabled:opacity-50">
-          <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-            <path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
+  <main class="max-w-6xl mx-auto px-6 py-12 text-slate-800 font-sans leading-relaxed">
+    <div class="mb-8">
+        <a href="coenzymes.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
           </svg>
-        </button>
-        <template x-for="i in totalPages">
-          <button @click="goToPage(i)" x-text="i"
-            :class="{'bg-slate-500 text-white': i === page, 'bg-slate-100': i !== page}"
-            class="px-3 py-1 rounded text-sm hover:bg-slate-300"></button>
-        </template>
-        <button @click="nextPage" :disabled="page === totalPages"
-          class="px-3 py-1 bg-slate-200 text-sm rounded hover:bg-slate-300 disabled:opacity-50">
-          <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-            <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-          </svg>
-        </button>
-        </div>
+          Coenzymes
+        </a>
       </div>
-    </div>
-
+      <section>
+        <h2 class="text-3xl font-bold text-brandblue border-b border-gray-300 pb-2 mb-4">Coenzyme Q10</h2>
+        <p class="text-base text-gray-600 mb-2">
+          <strong>CAS No.:</strong> 303-98-0 &nbsp;|&nbsp;
+          <strong>EINECS No.:</strong> 206-147-9
+        </p>
+        <p class="mb-4"><strong>Synonyms:</strong> Ubiquinone-10, Ubiquinone-50, CoQ10, Ubidecarenone, Q10</p>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Product Summary</h3>
+        <p>Coenzyme Q10 is a fat-soluble, vitamin-like compound naturally present in the mitochondria of most eukaryotic cells. It plays a critical role in the production of ATP (adenosine triphosphate) via the electron transport chain, acting as an essential electron carrier in oxidative phosphorylation. Coenzyme Q10 also functions as a potent lipophilic antioxidant, protecting cellular membranes and lipoproteins from oxidative damage. CoQ10 is soluble in acetone, chloroform and ether, insoluble in water. </p>
+                                        
+        <ul class="list-disc list-inside text-slate-700 mt-2">
+          <li>Formula: C<sub>59</sub>H<sub>90</sub>O<sub>4</sub> </li>
+          <li>Formula Molecular Weight: 863.34</li>
+        </ul>
+      </section>
+ 
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Mechanism of Action</h3>
+        Coenzyme Q10 exists in both oxidized (ubiquinone) and reduced (ubiquinol) forms, allowing it to shuttle electrons between Complex I/II and Complex III in the mitochondrial inner membrane. Its redox cycling capability also enables it to neutralize reactive oxygen species (ROS) and regenerate other antioxidants, such as vitamin E. 
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Applications</h3>
+        <ul class="list-disc list-inside space-y-1 text-base text-slate-700">
+          <li>Coenzyme Q10 is widely used in the study of mitochondrial dysfunction, aging, and energy metabolism.</li>
+          <li>Due to its role in energy production, it is commonly studied in relation to heart failure, ischemia, and statin-induced myopathy.</li>
+          <li>Investigated for therapeutic effects in Parkinson’s, Alzheimer’s, and Huntington’s diseases.</li>
+          <li>Employed in in vitro and in vivo models to examine antioxidant defenses.</li>
+          <li>Utilized in assays investigating mitochondrial function, lipid peroxidation, and redox cycling.</li>
+        </ul>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Packaging & Storage</h3>
+        <ul class="list-disc list-inside space-y-1 text-base text-slate-700">
+          <li>Available as yellow or orange-yellow lyophilized powder</li>
+          <li>Store at 15°C to 25°C in tightly sealed containers, protected from moisture and light </li>
+        </ul>
+      </section>
+      
+      <section class="mt-10">
+        <h3 class="text-2xl font-semibold text-brandblue mb-4">References</h3>
+        <ol class="list-decimal list-inside space-y-2 text-sm text-slate-700">
+        <li>
+            Bentinger M. et al. 2010:
+            <a href="https://pubmed.ncbi.nlm.nih.gov/20494114/" target="_blank" class="text-blue-600 hover:underline"> Coenzyme Q--biosynthesis and functions</a>, 
+            Biochem Biophys Res Commun. 396(1):74-9.
+          </li>
+          <li>
+            Ernster L & Dallner G. 1995: <a href="https://pubmed.ncbi.nlm.nih.gov/7599208/" target="_blank" class="text-blue-600 hover:underline">Biochemical, physiological, and medical aspects of ubiquinone function</a>, Biochim Biophys Acta 1271(1):195-204.
+          </li>
+          <li>
+            Littarru GP, Tiano L. 2007: 
+            <a href="https://pubmed.ncbi.nlm.nih.gov/17914161/" target="_blank" class="text-blue-600 hover:underline">
+              Bioenergetic and antioxidant properties of coenzyme Q10: recent developments
+            </a>, Mol Biotechnol. 37(1):31-7.
+          </li>
+          <li>
+            Gout I. 2018:
+            <a href="https://pubmed.ncbi.nlm.nih.gov/29802218/" target="_blank" class="text-blue-600 hover:underline">
+              Coenzyme A, protein CoAlation and redox regulation in mammalian cells
+            </a>, Biochem Soc Trans. 46(3):721-728.
+          </li>
+          <li>
+            Pierrel F. et al. 2022: 
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8854274/?utm_source=chatgpt.com" target="_blank" class="text-blue-600 hover:underline">
+              Recent advances in the metabolic pathways and microbial production of coenzyme Q
+            </a>, World J Microbiol Biotechnol. 38(4):58.
+          </li>
+          <li>
+            Fan J. et al. 2022: 
+            <a href="https://pubmed.ncbi.nlm.nih.gov/35984526/" target="_blank" class="text-blue-600 hover:underline">
+             Production of Coenzyme Q10 by microbes: an update
+            </a>, World J Microbiol Biotechnol. 38(11):194.
+          </li>
+          <li>
+            Lu W. et al. 2014: 
+            <a href="https://pubmed.ncbi.nlm.nih.gov/24122603/" target="_blank" class="text-blue-600 hover:underline">
+              Enhanced production of coenzyme Q10 by self-regulating the engineered MEP pathway in Rhodobacter sphaeroides 
+            </a>, Biotechnol Bioeng. 111(4):761-9.
+          </li>
+          <li>
+            Burgardt A. et al. 2021: 
+            <a href="https://pubmed.ncbi.nlm.nih.gov/33859981/" target="_blank" class="text-blue-600 hover:underline">
+              Coenzyme Q10 biosynthesis established in the non-ubiquinone containing Corynebacterium glutamicum by metabolic engineering
+            </a>, Front Bioeng Biotechnol. 9:650961.
+          </li>
+          <li>
+            Cheng B. 2010: 
+            <a href="https://pubmed.ncbi.nlm.nih.gov/19034698/" target="_blank" class="text-blue-600 hover:underline">
+              Enhanced production of coenzyme Q10 by overexpressing HMG-CoA reductase and induction with arachidonic acid in Schizosaccharomyces pombe
+            </a>, Appl Biochem Biotechnol. 160(2):523-31.
+          </li>
+          <li>
+            Abby SS. et al. 2020: 
+            <a href="https://www.sciencedirect.com/science/article/pii/S0005272820301092" target="_blank" class="text-blue-600 hover:underline">
+             Advances in bacterial pathways for the biosynthesis of ubiquinone
+            </a>, Biochim Biophys Acta – Bioenergetics. 1861(11):148259.
+          </li>
+          <li>
+            Youself AO. et al. 2019: 
+            <a href="https://pubmed.ncbi.nlm.nih.gov/31412628/" target="_blank" class="text-blue-600 hover:underline">
+             The neuroprotective role of Coenzyme Q10 against lead acetate-induced neurotoxicity is mediated by antioxidant, anti-inflammatory and anti-apoptotic activities
+            </a>, Int J Environ Res Public Health. 16(16):2895.
+          </li>
+          <li>
+            Soja AM, Mortensen SA. 1997: 
+            <a href="https://pubmed.ncbi.nlm.nih.gov/9266518/" target="_blank" class="text-blue-600 hover:underline">
+              Treatment of congestive heart failure with coenzyme Q10 illuminated by meta-analyses of clinical trials
+            </a>, Mol Aspects Med. 18 Suppl: S159-68.
+          </li>
+        </ol>
+      </section>
+           
+      
+  
   </main>
-  <script>
-    function pagination() {
-      return {
-        page: 1,
-        perPage: 10,
-        data: [
-          { name: "Bilirubin (unconjugated)", cas: "635-65-4", synonyms: "Unconjugated Bilirubin, Indirect Bilirubin, Indirect Reacting Bilirubin, BU, UCB, UCBR, Hematoidin, Haematoidin, Bilirubina, Bilirubine, Cholerythrin, NSC26685", form: "Powder" },
-          { name: "FSH-Follicle Stimulating Hormone", cas: "9002-68-0", synonyms: "FSH, hFSH, huFSH, Urofollitropin", form: "Powder" },
-          { name: "Porcine Gastric Mucin", cas: "84082-64-4", synonyms: "Hog gastric mucin, mucin from porcine stomach, mucin from porcine gastric mucosa, PMG", form: "Powder" },
-          { name: "Human Chorionic Gonadotropin", cas: "9002-61-3", synonyms: "Human Chorionic Gonadotrophin, Gonadotropinum chorionicum, Choriogonin, HCG", form: "Powder" },
-          { name: "Collagen", cas: "9007-34-5", synonyms: " Hydrolyzed collagen, collagen peptides, gelatin, native collagen, Atelocollagen, type I/II/III collagen, bovine/porcine/fish collagen", form: "Powder", url:"collagen.html"},
-          
-          
-          
-        ],
-        get totalPages() {
-          return Math.ceil(this.data.length / this.perPage);
-        },
-        get start() {
-          return (this.page - 1) * this.perPage;
-        },
-        get paginatedData() {
-          const start = (this.page - 1) * this.perPage;
-          return this.data.slice(start, start + this.perPage);
-        },
-        goToPage(n) {
-          this.page = n;
-        },
-        prevPage() {
-          if (this.page > 1) this.page--;
-        },
-        nextPage() {
-          if (this.page < this.totalPages) this.page++;
-        }
-      }
-    }
-  </script>
+  
+  
+
   <!-- start cta -->
   <section
   class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 text-center md:text-left">
   <div class="md:flex md:items-center md:justify-center">
-    <h2 class="text-xl font-bold text-white">Contact us at <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> to place an order.</h2>
+    <h2 class="text-xl font-bold text-white">Jiagen Biotechnologies supplies quality Coenzyme Q10 of various specifications. <br>Contact us at <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> to place an order.</h2>
+      
     <a href="../../order.html"
       class="px-8 py-4 bg-white text-blue-600 rounded inline-block font-semibold md:ml-8 mt-4 md:mt-0 
       hover:bg-teal-500 hover:text-white transition-colors duration-300">Order</a>
@@ -274,7 +307,7 @@
     <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
       <h5 class="uppercase tracking-wider font-semibold text-gray-500">Products</h5>
       <ul class="mt-4">
-        <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Peptides/Proteins</a></li>
+        <li class="mt-2"><a href="../proteins/proteins.html" title="" class="opacity-75 hover:opacity-100">Peptides/Proteins</a></li>
         <li class="mt-2"><a href="../enzymes/enzymes.html" title="" class="opacity-75 hover:opacity-100">Enzymes</a></li>
         <li class="mt-2"><a href="../coenzymes/coenzymes.html" title="" class="opacity-75 hover:opacity-100">Coenzymes</a></li>
         <li class="mt-2"><a href="../carbohydrates/carbohydrates.html" title="" class="opacity-75 hover:opacity-100">Carbohydrates</a></li>
@@ -339,6 +372,7 @@
     </div>
   </div>
 </footer>
-<!-- end footer --> 
+<!-- end footer -->
+
 </body>
 </html>
