@@ -73,7 +73,7 @@
               x-data="{ open: false }"
               @mouseenter="open = true"
               @mouseleave="open = false">
-            <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">Products</a>
+            <a class="text-slate-700 hover:text-slate-900" href="#0" :aria-expanded="open">Products</a>
             <button class="shrink-0 p-1" :aria-expanded="open">
               <span class="sr-only">Show submenu for "products"</span>
               <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
@@ -98,8 +98,8 @@
             </ul>
           </li>
   
-          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../technology.html">Technology Services</a></li>
-          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../order.html">Order</a></li>
+          <li class="p-4 lg:px-8"><a class="text-slate-700 hover:text-slate-900" href="../../technology.html">Technology Services</a></li>
+          <li class="p-4 lg:px-8"><a class="text-slate-700 hover:text-slate-900" href="../../order.html">Order</a></li>
         </ul>
         <div class="flex items-center space-x-1">
           <!-- Search -->
@@ -151,87 +151,70 @@
   <!-- Main Content -->
   <main class="max-w-6xl mx-auto px-6 py-12 text-slate-800 font-sans leading-relaxed">
     <div class="mb-8">
-        <a href="proteins.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium">
+        <a href="carbohydrates.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium">
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
           </svg>
-          Proteins
+          Carbohydrates
         </a>
       </div>
       <section>
-        <h2 class="text-3xl font-bold text-brandblue border-b border-gray-300 pb-2 mb-4">Collagen</h2>
+        <h2 class="text-3xl font-bold text-brandblue border-b border-gray-300 pb-2 mb-4">Hyaluronic Acid Sodium Salt</h2>
         <p class="text-base text-gray-600 mb-2">
-          <strong>CAS No.:</strong> 9007-34-5 &nbsp;|&nbsp;
-          <strong>EINECS No.:</strong> 232-697-4
+          <strong>CAS No.:</strong> 9067-32-7 &nbsp;|&nbsp;
+          <strong>EINECS No.:</strong> 232-678-0
         </p>
-        <p class="mb-4"><strong>Synonyms:</strong> Hydrolyzed collagen, Collagen peptides, Gelatin, Native collagen, Atelocollagen, Type I/II/III collagen, Bovine/Porcine/Fish collagen</p>
+        <p class="mb-4"><strong>Synonyms:</strong> hyaluronic acid, HA, hyaluronan, sodium hyaluronate</p>
       </section>
       
       <section class="mt-8">
         <h3 class="text-2xl font-semibold text-brandblue mb-2">Product Summary</h3>
+        <p>Hyaluronic acid is a naturally occurring, high-molecular-weight glycosaminoglycan composed of repeating disaccharide units of D-glucuronic acid and N-acetyl-D-glucosamine. It plays a critical role in maintaining extracellular matrix integrity, hydration, and tissue repair. It can be hydrolyzed by hyaluronidase. Purified hyaluronic acid is neutralized with sodium hydroxide (NaOH) to form sodium hyaluronate.</p>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Function and Mechanism of Action</h3>
         <p>
-          Collagen is the most abundant structural protein in animals, accounting for approximately 30% of total body protein. 
-          It plays a fundamental role in maintaining the integrity, strength, and elasticity of tissues.
+        Hyaluronic acid is highly hydrophilic, capable of retaining up to 1000 times its weight in water, contributing to skin elasticity, joint lubrication, and wound healing. It interacts with cell surface receptors like CD44 and RHAMM, triggering anti-inflammatory, anti-apoptotic, and angiogenic cellular responses. 
         </p>
-      </section>
-      
-      <section class="mt-8">
-        <h3 class="text-2xl font-semibold text-brandblue mb-2">Biochemical Function</h3>
-        <ul class="list-disc list-inside space-y-1 text-base text-slate-700">
-          <li>Provides mechanical strength to skin, bone, cartilage, tendons, and ligaments</li>
-          <li>Promotes tissue regeneration and wound healing</li>
-          <li>Stimulates extracellular matrix (ECM) production in cells</li>
-          <li>Modulates cell adhesion, migration, and differentiation</li>
-        </ul>
-      </section>
-      
-      <section class="mt-8">
-        <h3 class="text-2xl font-semibold text-brandblue mb-2">Mechanism of Action</h3>
-        <ul class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700">
-          <li>Collagen interacts with cell surface integrins (e.g., α1β1, α2β1), initiating signal transduction pathways (e.g., FAK, MAPK) that influence cell behavior</li>
-          <li>Upon enzymatic or heat hydrolysis, collagen peptides can be absorbed in the gastrointestinal tract and stimulate fibroblast proliferation and hyaluronic acid synthesis</li>
-          <li>Type-specific effects:
-            <ul class="list-disc list-inside ml-6">
-              <li>Type I: Bone, skin, tendon</li>
-              <li>Type II: Cartilage</li>
-              <li>Type III: Skin, blood vessels</li>
-            </ul>
-          </li>
-        </ul>
+         
       </section>
       
       <section class="mt-8">
         <h3 class="text-2xl font-semibold text-brandblue mb-2">Applications</h3>
-        <ul class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700">
-          <li>Used as a scaffold in tissue engineering and regenerative medicine</li>
-          <li>Common substrate for cell culture (e.g., fibroblasts, chondrocytes, keratinocytes)</li>
-          <li>Evaluates cell–ECM interactions, wound healing, and biomaterial integration</li>
+        <ul class="list-disc list-inside space-y-1 text-base text-slate-700">
+          <li>Supports 3D scaffolds, promotes cell proliferation and migration.</li>
+          <li>As a biocompatible, biodegradable carrier for targeted or sustained drug release.</li>
+          <li>Used in hydrogel or film form for studying tissue regeneration.</li>
+          <li>Interacts with cytokines, chemokines, and adhesion molecules.</li>
+          <li>Used to study its role in oxidative stress and tumor progression. </li>
         </ul>
       </section>
       
       <section class="mt-8">
         <h3 class="text-2xl font-semibold text-brandblue mb-2">Packaging & Storage</h3>
-        <ul class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700">
-          <li>Store in a cool and dry place, protected from light</li>
+        <ul class="list-disc list-inside text-base text-slate-700">
+          <li>White or almost white lyophilized powder</li>
+          <li>Store at room temperature</li>
         </ul>
       </section>
       
       <section class="mt-10">
         <h3 class="text-2xl font-semibold text-brandblue mb-4">References</h3>
         <ol class="list-decimal list-inside space-y-2 text-sm text-slate-700">
-          <li>Fertala A. 2020: <a href="https://pubmed.ncbi.nlm.nih.gov/33276472/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Three decades of research on recombinant collagens: reinventing the wheel or developing new biomedical products</a>, Bioengineering (Basel) 7(4):155.</li>
-          <li>Olsen DR, et al. 2001: <a href="https://pubmed.ncbi.nlm.nih.gov/11279215/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Production of human type I collagen in yeast reveals unexpected new insights into the molecular assembly of collagen trimers</a>, J Biol Chem. 276(26):24038-43.</li>
-          <li>Kadler K, et al. 2007: <a href="https://pubmed.ncbi.nlm.nih.gov/17550969/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Chitosan: an update on potential biomedical and pharmaceutical applications</a>, J Cell Sci. 120(Pt 12):1955-8.</li>
-          <li>Andriotis OG, et al. 2018: <a href="https://pubs.acs.org/doi/10.1021/acsnano.8b00837?utm_source=chatgpt.com" target="_blank" class="text-blue-600 underline hover:text-blue-800">Collagen fibrils: nature’s highly tunable nonlinear springs</a>, ACS Nano 12(4):3671–3680.</li>
-          <li>Wang H. 2021: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8620403/" target="_blank" class="text-blue-600 underline hover:text-blue-800">A Review of the Effects of Collagen Treatment in Clinical Studies</a>, Polymers (Basel) 13(22):3868.</li>
-          <li>Dong C, Lv Y. 2016: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6432532/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Application of collagen scaffold in tissue engineering: recent advances and new perspectives</a>, Polymers (Basel) 8(2):42.</li>
-          <li>Goldberga I, et al. 2018: <a href="https://pubs.acs.org/doi/10.1021/acs.accounts.8b00092?utm_source=chatgpt.com" target="_blank" class="text-blue-600 underline hover:text-blue-800">Collagen Structure–Function Relationships from Solid-State NMR Spectroscopy</a>, Acc. Chem. Res. 51(7):1621–29.</li>
-          <li>Tang C, et al. 2022: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0268005X22002685" target="_blank" class="text-blue-600 underline hover:text-blue-800">Collagen and its derivatives: From structure and properties to their applications in food industry</a>, Food Hydrocolloids 131:107748.</li>
-          <li>Ashokkumar M, Ajayan PM. 2021: <a href="https://journals.sagepub.com/doi/abs/10.1080/09506608.2020.1750807" target="_blank" class="text-blue-600 underline hover:text-blue-800">Materials science perspective of multifunctional materials derived from collagen</a>, Int. Mater. Rev. 66(3).</li>
-          <li>Tronci G, et al. 2015: <a href="https://pubmed.ncbi.nlm.nih.gov/25411409/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Multi-scale mechanical characterization of highly swollen photo-activated collagen hydrogels</a>, J R Soc Interface 12(102):20141079.</li>
-          <li>Wang H, et al. 2014: <a href="https://pubmed.ncbi.nlm.nih.gov/25468338/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Long range force transmission in fibrous matrices enabled by tension-driven alignment of fibers</a>, Biophys J. 107(11):2592-603.</li>
-          <li>Kamml J, et al. 2023: <a href="https://www.sciencedirect.com/science/article/pii/S1751616123002230" target="_blank" class="text-blue-600 underline hover:text-blue-800">The influence of AGEs and enzymatic cross-links on the mechanical properties of collagen fibrils</a>, Mat Sci & Engin C 106:110105.</li>
+          <li>Weigel PH, et al. 1986: <a href="https://pubmed.ncbi.nlm.nih.gov/3736072/" target="_blank" class="text-blue-600 underline hover:text-blue-800">A model for the role of hyaluronic acid and fibrin in the early events during the inflammatory response and wound healing</a>, J Theor Biol. 119(2):219–34.</li>
+          <li>Rilla R. 2023: <a href="https://link.springer.com/chapter/10.1007/978-3-031-30300-5_4" target="_blank" class="text-blue-600 underline hover:text-blue-800">The hyaluronan-rich zones of plasma membrane protrusions and extracellular vesicles</a>, Hyaluronan, pp 55–75.</li>
+          <li>Brown MB, Jones SA. 2005: <a href="https://pubmed.ncbi.nlm.nih.gov/15857456/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Hyaluronic acid: a unique topical vehicle for the localized delivery of drugs to the skin</a>, J Eur Acad Dermatol Venereol. 19(3):308–18.</li>
+          <li>Altman RD, et al. 2015: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4621876/" target="_blank" class="text-blue-600 underline hover:text-blue-800">The mechanism of action for hyaluronic acid treatment in the osteoarthritic knee: a systematic review</a>, BMC Musculoskelet Disord. 16:321.</li>
+          <li>Bohaumilitzky L, et al. 2017: <a href="https://pubmed.ncbi.nlm.nih.gov/29062810/" target="_blank" class="text-blue-600 underline hover:text-blue-800">A trickster in disguise: hyaluronan's ambivalent roles in the matrix</a>, Front Oncol. 7:242.</li>
+          <li>Petrey AC, de la Motte CA. 2014: <a href="https://pubmed.ncbi.nlm.nih.gov/24653726/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Hyaluronan, a crucial regulator of inflammation</a>, Front Immunol. 5:101.</li>
+          <li>Matou-Nasri S, et al. 2009: <a href="https://pubmed.ncbi.nlm.nih.gov/19724912/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Oligosaccharides of hyaluronan induce angiogenesis through distinct CD44 and RHAMM-mediated signalling pathways involving Cdc2 and gamma-adducin</a>, Int J Oncol. 35(4):761–73.</li>
+          <li>Rahim A, et al. 2024: <a href="https://fjps.springeropen.com/articles/10.1186/s43094-024-00636-y" target="_blank" class="text-blue-600 underline hover:text-blue-800">Hyaluronic acid: comprehensive review of a multifunctional biopolymer</a>, Future J Pharm Sci. 10(63).</li>
+          <li>Zhou L, et al. 2021: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8136222/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Role of CD44 in increasing the potency of mesenchymal stem cell extracellular vesicles by hyaluronic acid in severe pneumonia</a>, Stem Cell Res Ther. 12:293.</li>
+          <li>Beldman TJ, et al. 2017: <a href="https://pubs.acs.org/doi/10.1021/acsnano.7b01385" target="_blank" class="text-blue-600 underline hover:text-blue-800">Hyaluronan nanoparticles selectively target plaque-associated macrophages and improve plaque stability in atherosclerosis</a>, ACS Nano. 11(6):5785–99.</li>
+          <li>Cirillo N. 2023: <a href="https://pubmed.ncbi.nlm.nih.gov/37958796/" target="_blank" class="text-blue-600 underline hover:text-blue-800">The hyaluronan/CD44 axis: A double-edged sword in cancer</a>, Int J Mol Sci. 24(21):15812.</li>
+          <li>Gao Z. 2019: <a href="https://pubs.rsc.org/en/content/articlelanding/2019/tb/c9tb01683j" target="_blank" class="text-blue-600 underline hover:text-blue-800">A redox-responsive hyaluronic acid-based hydrogel for chronic wound management</a>, J Mater Chem B. 7:7494–7501.</li>
         </ol>
       </section>
       
@@ -244,7 +227,8 @@
   <section
   class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 text-center md:text-left">
   <div class="md:flex md:items-center md:justify-center">
-    <h2 class="text-xl font-bold text-white">Jiagen Biotechnologies supplies quality collagen of various specifications. <br>Contact us at <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> to place an order.</h2>
+    <h2 class="text-xl font-bold text-white">Jiagen Biotechnologies supplies quality hyaluronic acid of various specifications. <br>Contact us at <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> to place an order.</h2>
+     
     <a href="../../order.html"
       class="px-8 py-4 bg-white text-blue-600 rounded inline-block font-semibold md:ml-8 mt-4 md:mt-0 
       hover:bg-teal-500 hover:text-white transition-colors duration-300">Order</a>

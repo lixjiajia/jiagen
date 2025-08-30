@@ -8,15 +8,17 @@
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <link href="../../dist/output.css" rel="stylesheet" />
 
+  
 </head>
 <body class="flex flex-col min-h-screen bg-gray-100 text-gray-800">
   <!-- Announcement Bar -->
-  <div class="bg-brandblue text-white text-sm py-1 px-4">
+  <div class="bg-[#1058b2] text-white text-sm py-1 px-4">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       <span>Empowering Life Science Research</span>
       <div class="flex space-x-6">
         <span>Phone: <span class="font-semibold">514-779-9623</span></span>
         <span>Contact: <span class="font-semibold">info@jiagen.com</span></span>
+        <span>Orders: <span class="font-semibold">sales@jiagen.com</span></span>
       </div>
     </div>
   </div>
@@ -66,12 +68,12 @@
   
       <!-- Desktop Nav -->
       <nav class="hidden md:flex space-x-6 items-center w-full">
-        <ul class="flex flex-nowrap items-center font-medium text-sm">
+        <ul class="flex flex-nowrap items-center font-medium text-base">
           <li class="p-4 lg:px-8 relative flex items-center space-x-1"
               x-data="{ open: false }"
               @mouseenter="open = true"
               @mouseleave="open = false">
-            <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">PRODUCTS</a>
+            <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">Products</a>
             <button class="shrink-0 p-1" :aria-expanded="open">
               <span class="sr-only">Show submenu for "products"</span>
               <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
@@ -96,8 +98,8 @@
             </ul>
           </li>
   
-          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../technology.html">TECHNOLOGY SERVICES</a></li>
-          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../order.html">ORDER</a></li>
+          <li class="p-4 lg:px-8"><a class="text-slate-700 hover:text-slate-900" href="../../technology.html">Technology Services</a></li>
+          <li class="p-4 lg:px-8"><a class="text-slate-700 hover:text-slate-900" href="../../order.html">Order</a></li>
         </ul>
         <div class="flex items-center space-x-1">
           <!-- Search -->
@@ -147,7 +149,7 @@
     
   </header>
   <!-- Main Content -->
-  <main class="flex-grow max-w-7xl mx-auto">
+  <main class="p-8 flex-grow max-w-7xl mx-auto">
     <h2 class="text-2xl font-bold text-slate-800 mb-12 mt-4">Proteins</h2>
     <!-- Pagination -->
     <div x-data="pagination()" class="w-full overflow-x-auto">
@@ -221,6 +223,7 @@
           { name: "Bilirubin (unconjugated)", cas: "635-65-4", synonyms: "Unconjugated Bilirubin, Indirect Bilirubin, Indirect Reacting Bilirubin, BU, UCB, UCBR, Hematoidin, Haematoidin, Bilirubina, Bilirubine, Cholerythrin, NSC26685", form: "Powder" },
           { name: "FSH-Follicle Stimulating Hormone", cas: "9002-68-0", synonyms: "FSH, hFSH, huFSH, Urofollitropin", form: "Powder" },
           { name: "Porcine Gastric Mucin", cas: "84082-64-4", synonyms: "Hog gastric mucin, mucin from porcine stomach, mucin from porcine gastric mucosa, PMG", form: "Powder" },
+          { name: "Protamine Sulfate", cas: "53597-25-4 / 9009-65-8", synonyms: "Protamine sulfate salt, heparin antagonist, arginine-rich basic protein, salmine sulfate", form: "Powder", url: "protamine-sulfate.html"},
           { name: "Human Chorionic Gonadotropin", cas: "9002-61-3", synonyms: "Human Chorionic Gonadotrophin, Gonadotropinum chorionicum, Choriogonin, HCG", form: "Powder" },
           { name: "Collagen", cas: "9007-34-5", synonyms: " Hydrolyzed collagen, collagen peptides, gelatin, native collagen, Atelocollagen, type I/II/III collagen, bovine/porcine/fish collagen", form: "Powder", url:"collagen.html"},
           
