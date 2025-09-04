@@ -12,14 +12,20 @@
 </head>
 <body class="flex flex-col min-h-screen bg-gray-100 text-gray-800">
   <!-- Announcement Bar -->
-  <div class="bg-[#1058b2] text-white text-sm py-1 px-4">
+  <div class="bg-brandblue text-white text-sm py-1 px-4">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <span>Empowering Life Science Research</span>
-      <div class="flex space-x-6">
+      <div class="hidden md:flex"><span>Empowering Life Science Research</span></div>
+      <div class="flex space-x-6 md:hidden">
+        <!-- Mobile -->
         <span>Phone: <span class="font-semibold">514-779-9623</span></span>
-        <span>Contact: <span class="font-semibold">info@jiagen.com</span></span>
         <span>Orders: <span class="font-semibold">sales@jiagen.com</span></span>
       </div>
+        <!-- Desktop -->
+        <div class="hidden md:flex space-x-6">
+          <span>Phone: <span class="font-semibold">514-779-9623</span></span>
+          <span>Contact: <span class="font-semibold">info@jiagen</span></span>
+          <span>Orders: <span class="font-semibold">sales@jiagen.com</span></span>
+        </div>
     </div>
   </div>
  <!-- Header -->
@@ -229,6 +235,7 @@
           { name: "Deoxyribonuclease (DNase I)", cas: "9003-98-9", synonyms: "Deoxyribonuclease I, Deoxyribonucleate 5'-oligonucleotido-hydrolase, Pancreatic deoxyribonuclease, Thymonuclease", form: "Powder" },
           { name: "Human Urokinase", cas: "9039-53-6", synonyms: "Urokinase, Urokinase type plasminogen activator, Urinary type plasminogen activitor, uPA, UK, hUK", form: "Powder"},
           { name: "Kallikrein", cas: "9001-01-8", synonyms: "Pancreatic kallikrein, Kallikrein, Kininogenin, Kininogenase, Kallidinogenase, Kallikrein from porcine pancreas, Kallikrein from hog pancreas", form: "Powder"},
+          { name: "Lysozyme", cas: "9001-63-2", synonyms: "Muramidase,  N-acetylmuramide glycanhydrolase, egg-white lysozyme, peptidoglycan N-acetylmuramoylhydrolase", form: "Powder"},
           { name: "Pancreatic Elastase", cas: "9004-06-2", synonyms: "Pancreatic elastase, Elastase, PPE, Elastase from porcine pancreas, Elastase from hog pancreas, Pancreatopeptidase E", form: "Powder"},
           { name: "Pancreatin", cas: "8049-47-6", synonyms: "Pancreatin from porcine pancreas, Pancreatin from hog pancreas", form: "Powder"},
           { name: "Papain", cas: "9001-73-4", synonyms: "Papaya Proteinase I, Papainase, Papaya Peptidase I, Papayotin, Papainum, Vegetable Pepsin", form: "Powder", url: "papain.html"},
