@@ -12,20 +12,14 @@
 </head>
 <body class="bg-gray-100 text-gray-800">
   <!-- Announcement Bar -->
-  <div class="bg-brandblue text-white text-sm py-1 px-4">
+  <div class="bg-[#1058b2] text-white text-sm py-1 px-4">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <div class="hidden md:flex"><span>Empowering Life Science Research</span></div>
-      <div class="flex space-x-6 md:hidden">
-        <!-- Mobile -->
+      <span>Empowering Life Science Research</span>
+      <div class="flex space-x-6">
         <span>Phone: <span class="font-semibold">514-779-9623</span></span>
+        <span>Contact: <span class="font-semibold">info@jiagen.com</span></span>
         <span>Orders: <span class="font-semibold">sales@jiagen.com</span></span>
       </div>
-        <!-- Desktop -->
-        <div class="hidden md:flex space-x-6">
-          <span>Phone: <span class="font-semibold">514-779-9623</span></span>
-          <span>Contact: <span class="font-semibold">info@jiagen</span></span>
-          <span>Orders: <span class="font-semibold">sales@jiagen.com</span></span>
-        </div>
     </div>
   </div>
  <!-- Header -->
@@ -74,12 +68,12 @@
   
       <!-- Desktop Nav -->
       <nav class="hidden md:flex space-x-6 items-center w-full">
-        <ul class="flex flex-nowrap items-center font-medium text-sm">
+        <ul class="flex flex-nowrap items-center font-medium text-base">
           <li class="p-4 lg:px-8 relative flex items-center space-x-1"
               x-data="{ open: false }"
               @mouseenter="open = true"
               @mouseleave="open = false">
-            <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">PRODUCTS</a>
+            <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">Products</a>
             <button class="shrink-0 p-1" :aria-expanded="open">
               <span class="sr-only">Show submenu for "products"</span>
               <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
@@ -104,8 +98,8 @@
             </ul>
           </li>
   
-          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../technology.html">TECHNOLOGY SERVICES</a></li>
-          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../order.html">ORDER</a></li>
+          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../technology.html">Technology Services</a></li>
+          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../order.html">Order</a></li>
         </ul>
         <div class="flex items-center space-x-1">
           <!-- Search -->
@@ -157,147 +151,98 @@
   <!-- Main Content -->
   <main class="max-w-6xl mx-auto px-6 py-12 text-slate-800 font-sans leading-relaxed">
     <div class="mb-8">
-        <a href="enzymes.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium">
+        <a href="proteins.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium">
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
           </svg>
-          Enzymes
+          Proteins
         </a>
       </div>
       <section>
-        <h2 class="text-3xl font-bold text-brandblue border-b border-gray-300 pb-2 mb-4">
-          Streptokinase
-        </h2>
-      
-        <p class="text-base text-slate-700 mb-2">
-            <strong>CAS No.:</strong> 9002-01-1 &nbsp;|&nbsp; 
-            <strong>EC No.:</strong> 3.4.99.22 &nbsp;|&nbsp; 
-            <strong>EINECS No.:</strong> 232-647-6
-          </p>
-          
+        <h2 class="text-3xl font-bold text-brandblue border-b border-gray-300 pb-2 mb-4">Nisin</h2>
         <p class="text-base text-gray-600 mb-2">
-          <strong>Synonyms:</strong> SK, Streptase®, Varidase®, Streptase-Akzonobel 
+          <strong>CAS No.:</strong> 1414-45-5  &nbsp;|&nbsp; 
+          <strong>EINECS No.:</strong> 215-807-5
         </p>
-        <section class="mt-8">
-        <h3 class="text-2xl font-semibold text-brandblue mt-4 mb-2">Product Summary:</h3>
-        <p class="text-base text-gray-600 mb-2">
-            Streptokinase is a plasminogen activator enzyme produced by <i>Streptococcus</i> species. It plays a central role in fibrinolysis by converting plasminogen to plasmin, a serine protease that degrades fibrin clots. Unlike tissue plasminogen activator (tPA), streptokinase acts indirectly, forming a 1:1 complex with plasminogen, which then becomes enzymatically active and initiates a proteolytic cascade resulting in clot breakdown. 
-        </p>
-        </section>
-
-        <section class="mt-8">
-        <h3 class="text-2xl font-semibold text-brandblue mt-4 mb-2">Biochemical Function and Mechanism of Action:</h3>
-        <p class="text-base text-gray-600 mb-2">Studies show that Lys698 of streptokinase is involved in the plasminogen complex formation. Ile1 of streptokinase and Asp740 of plasminogen establish a salt bridge that induces an active site in plasminogen.</p>
-        <ul class="list-disc list-inside pl-5 space-y-2 text-base text-gray-600 mb-2">
-          <li>Optimal pH: 7.0 - 8.0 </li>
-          <li>Optimal temperature: 37°C (denaturation above 50°C) </li>
-            
-        </ul>  
-        </section>
-
-        <section class="mt-8">
-        <h3 class="text-2xl font-semibold text-brandblue mt-4 mb-2">Applications:</h3>
-        <ul class="list-disc list-inside pl-5 space-y-2 text-base text-slate-700">
-          <li>Used to study fibrinolysis mechanisms, thrombus formation and dissolution.</li>
-          <li>Employed in in vitro clot lysis assays and plasma clotting tests.</li>
-          <li>Important for developing antibody-based detection kits for fibrinolytic activity.</li>
-          <li>Applied in veterinary thrombolytic studies.</li>
-          <li>Utilized in biosensor development related to clot diagnostics.</li>
-          <li>Incorporated in enzyme-based cleaning formulations for biomedical instruments where fibrin residue may be present.</li>
-        </ul>
-        </section>
-
-        <section class="mt-8">
-        <h3 class="text-2xl font-semibold text-brandblue mt-4 mb-2">Packaging & Storage:</h3>
-        <ul class="list-disc list-inside pl-5 text-base text-gray-600 mb-2">
-          <li>Available as almost white lyophilized powder.</li>
-          <li>Store at 2-8°C (dry form); keep frozen at –20°C for long-term enzyme stability.</li>
-        </ul>
-        </section>
-
-        <section class="mt-10">
-            <h3 class="text-2xl font-semibold text-brandblue mb-4">References</h3>
-            <ol class="list-decimal list-outside pl-5 space-y-2 text-sm text-slate-700">
-              <li>
-                Banerjee A, et al. 2004: 
-                <a href="https://pubmed.ncbi.nlm.nih.gov/14697452/" target="_blank" class="text-blue-600 underline hover:text-blue-800">
-                  Streptokinase--a clinically useful thrombolytic agent
-                </a>, <em>Biotechnol Adv.</em> 22(4):287-307.
-              </li>
-              <li>
-                Reed GL. 1999: 
-                <a href="https://www.pnas.org/doi/10.1073/pnas.96.16.8879" target="_blank" class="text-blue-600 underline hover:text-blue-800">
-                  A catalytic switch converts streptokinase into fibrin targeted plasminogen activator
-                </a>, <em>Proc. Natl. Acad. Sci. USA</em> 96:8879–8883.
-              </li>
-              <li>
-                Kunamneni A & Durvasula R. 2014: 
-                <a href="https://www.benthamscience.com/article/64939?utm_source=chatgpt.com" target="_blank" class="text-blue-600 underline hover:text-blue-800">
-                  Streptokinase: a drug for thrombolytic therapy – patent review
-                </a>, <em>Recent Adv Cardiovascular Drug Discovery</em> 9(2):106-21.
-              </li>
-              <li>
-                Sazonova IY, et al. 2009: 
-                <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3911889/" target="_blank" class="text-blue-600 underline hover:text-blue-800">
-                  Reprogrammed streptokinases develop fibrin-targeting and dissolve blood clots with more potency than tissue plasminogen activator
-                </a>, <em>J Thromb Haemost.</em> 7(8):1321-28.
-              </li>
-              <li>
-                Mundada L, et al. 2003: 
-                <a href="https://pubmed.ncbi.nlm.nih.gov/12704199/" target="_blank" class="text-blue-600 underline hover:text-blue-800">
-                  Structure-function analysis of the streptokinase amino terminus (residues 1-59)
-                </a>, <em>J Biol Chem.</em> 278(27):24421-7.
-              </li>
-              <li>
-                Nolan M, et al. 2013: 
-                <a href="https://pubmed.ncbi.nlm.nih.gov/23970549/" target="_blank" class="text-blue-600 underline hover:text-blue-800">
-                  Full time course kinetics of the streptokinase-plasminogen activation pathway
-                </a>, <em>J Biol Chem.</em> 288(41):29482-93.
-              </li>
-              <li>
-                Collen D, et al. 1992: 
-                <a href="https://www.sciencedirect.com/science/article/abs/pii/026894999290076T" target="_blank" class="text-blue-600 underline hover:text-blue-800">
-                  Comparative thrombolytic and immunogenic properties of staphylokinase and streptokinase
-                </a>, <em>Fibrinolysis</em> 6(4):232-242.
-              </li>
-              <li>
-                Monk JC, Heel RC. 1987: 
-                <a href="https://europepmc.org/article/med/3308411" target="_blank" class="text-blue-600 underline hover:text-blue-800">
-                  Anisoylated plasminogen streptokinase activator complex (APSAC). A review of its mechanism of action, clinical pharmacology and therapeutic use in acute myocardial infarction
-                </a>, <em>Drugs</em> 34(1):25-49.
-              </li>
-              <li>
-                Mican J, et al. 2019: 
-                <a href="https://pubmed.ncbi.nlm.nih.gov/31360331/" target="_blank" class="text-blue-600 underline hover:text-blue-800">
-                  Structural Biology and Protein Engineering of Thrombolytics
-                </a>, <em>Comput Struct Biotechnol J.</em> 17:917-38.
-              </li>
-              <li>
-                Siefring Jr GE, Castellino FJ. 1976: 
-                <a href="https://pubmed.ncbi.nlm.nih.gov/932013/" target="_blank" class="text-blue-600 underline hover:text-blue-800">
-                  Interaction of streptokinase with plasminogen. Isolation and characterization of a streptokinase degradation product
-                </a>, <em>J Biol Chem.</em> 251(13):3913-20.
-              </li>
-              <li>
-                Wang S, et al. 1999: 
-                <a href="https://pubs.acs.org/doi/10.1021/bi981915h" target="_blank" class="text-blue-600 underline hover:text-blue-800">
-                  Deletion of Ile1 changes the mechanism of streptokinase: evidence for the molecular sexuality hypothesis
-                </a>, <em>Biochemistry</em> 38(16):5232-40. PMID: 10213631.
-              </li>
-              <li>
-                Wang X, et al. 1998: 
-                <a href="https://www.science.org/doi/10.1126/science.281.5383.1662" target="_blank" class="text-blue-600 underline hover:text-blue-800">
-                  Crystal structure of the catalytic domain of human plasmin complexed with streptokinase
-                </a>, <em>Science</em> 281(5383):1662–65.
-              </li>
-            </ol>
-          </section>
-          
-           
-           
+        <p class="mb-4"><strong>Synonyms:</strong> Lacticin 481, lantibiotic nisin, nisin A, nisin peptide, nisin Z </p>
+      </section>
       
-  
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Product Summary</h3>
+        <p>
+            Nisin is a polycyclic antibacterial lantibiotic peptide derived from <i>Lactococcus lactis</i>. It functions by binding to lipid II and disrupting bacterial membranes, making it a powerful natural preservative in the food industry and a valuable tool in microbiological and pharmaceutical research. Nisin has a strong safety profile, broad activity against Gram-positive bacteria, and is increasingly applied in areas such as drug delivery, wound healing, and anti-biofilm strategies. It is a cornerstone in the study of antimicrobial peptides and biotechnology applications. 
+        </p> 
+        <ul class="list-disc list-inside text-slate-700 mt-2">
+            <li><strong>Formula</strong>: C<sub>143</sub>H<sub>230</sub>N<sub>42</sub>O<sub>37</sub>S<sub>7</sub> </li>
+            <li><strong>Formula Molecular Weight</strong>: 3354.09</li>
+        </ul>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Function</h3>
+        <p>
+            Nisin inhibits growth of Gram-positive bacteria, particularly <i>Listeria monocytogenes</i>, <i>Clostridium botulinum</i>, and <i>Bacillus spp</i>. It is actively against a broad range of spoilage and pathogenic bacteria. Nisin is extensively used as food-grade biopreservative in meat, dairy, beverages, and canned foods. It is also used as an antimicrobial coating to prevents formation of bacterial biofilms in both clinical and food environments.
+        </p>
+       
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Mechanism of Action</h3>
+        <ol class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700">
+          <li><strong>Pore Formation</strong>: Nisin binds to lipid II, a cell wall precursor, and inserts into bacterial membranes forming pores, causing ion leakage and cell death.
+          </li>
+          <li><strong>Cell Wall Inhibition</strong>: Prevents synthesis of peptidoglycan by sequestering lipid II, thereby inhibiting bacterial growth.</li>
+          <li><strong>Synergistic Action</strong>: Often enhances effects of other preservatives or antibiotics.</li>
+
+        </ol>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Applications in Scientific Research</h3>
+        <ul class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700">
+          <li><strong>Food microbiology</strong>: Model compound for studying bacteriocin mechanisms and resistance.</li>
+          <li><strong>Pharmaceutical research</strong>: Explored for topical and oral applications, especially for biofilm-associated infections.</li>
+          <li><strong>Genetic engineering</strong>: The nisin-controlled expression (NICE) system is widely used for regulated protein expression in <i>Lactococcus lactis</i>.</li>
+          <li><strong>Gut microbiome studies</strong>: Investigated for effects on intestinal flora and as an alternative to conventional antibiotics.</li>
+          <li><strong>Emerging research frontiers: </strong>
+            <ul class="list-disc list-inside pl-5 space-y-2 text-base text-slate-700 mt-2">
+                <li>Cancer therapy: Nisin’s mebrance-disrupting properties are explored for tumor-targeted drug delivery.</li>
+                <li>CRISPR-Cas integration: Nisin-induced promoters enable precise control of gene editing in synthetic biology circuits.</li>
+            </ul>
+        </li>
+        </ul>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Packaging & Storage</h3>
+        <ul class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700">
+          <li>Available as lyophilized powder.</li>
+          <li>Store at 2 to 8&deg;C.</li>
+        </ul>
+      </section>
+      
+      <section class="mt-10">
+        <h3 class="text-2xl font-semibold text-brandblue mb-4">References</h3>
+        <ol class="list-decimal list-inside space-y-2 text-sm text-slate-700">
+          <li>Wiedemann I, et al. 2004: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC400633/?utm_source=chatgpt.com" target="_blank" class="text-blue-600 underline hover:text-blue-800">Lipid II-mediated pore formation by the peptide antibiotic nisin: a black lipid membrane study</a>, J Bacteriol. 186(10):3259–61.</li>
+          <li>Wiedemann I, et al. 2001: <a href="https://pubmed.ncbi.nlm.nih.gov/11038353/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Specific binding of nisin to the peptidoglycan precursor lipid II combines pore formation and inhibition of cell wall biosynthesis for potent antibiotic activity</a>, J Biol Chem. 276(3):1772-9.</li>
+          <li>Scherer KM, et al. 2015: <a href="https://pubmed.ncbi.nlm.nih.gov/25762323/" target="_blank" class="text-blue-600 underline hover:text-blue-800">The lantibiotic nisin induces lipid II aggregation, causing membrane instability and vesicle budding</a>, Biophys J. 108(5):1114-24.</li>
+          <li>Moll GN, et al. 1996: <a href="https://pubmed.ncbi.nlm.nih.gov/8775978/#:~:text=In%20the%20absence%20of%20anionic,liposomes%20and%20black%20lipid%20membranes." target="_blank" class="text-blue-600 underline hover:text-blue-800">Mechanism of lantibiotic-induced pore-formation</a>, Antonie Van Leeuwenhoek. 69(2):185-91.</li>
+          <li>van Heusden HE, et al. 2002: <a href="https://pubmed.ncbi.nlm.nih.gov/12356318/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Lipid II induces a transmembrane orientation of the pore-forming peptide lantibiotic nisin</a>, Biochemistry. 41(40):12171-8.</li>
+          <li>Field D, et al. 2023: <a href="https://pubmed.ncbi.nlm.nih.gov/37300874/" target="_blank" class="text-blue-600 underline hover:text-blue-800">After a century of nisin research - where are we now?</a>, FEMS Microbiol Rev. 47(3):fuad023.</li>
+          <li>Ross AC, Vederas JC. 2011: <a href="https://pubmed.ncbi.nlm.nih.gov/21081951/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Fundamental functionality: recent developments in understanding the structure-activity relationships of lantibiotic peptides</a>, J Antibiot (Tokyo). 64(1):27-34.</li>
+          <li>AlKhatib Z, et al. 2014: <a href="https://pubmed.ncbi.nlm.nih.gov/25014359/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Lantibiotic immunity: inhibition of nisin mediated pore formation by NisI</a>, PLoS One. 9(7):e102246.</li>
+          <li>Breukink E, de Kruijff B. 1999: <a href="https://pubmed.ncbi.nlm.nih.gov/10590310/" target="_blank" class="text-blue-600 underline hover:text-blue-800">The lantibiotic nisin, a special case or not?</a>, Biochim Biophys Acta. 1462(1-2):223-34.</li>
+          <li>Dufour A, et al. 2006: <a href="https://pubmed.ncbi.nlm.nih.gov/17096664/" target="_blank" class="text-blue-600 underline hover:text-blue-800">The biology of lantibiotics from the lacticin 481 group is coming of age</a>, FEMS Microbiol Rev. 31(2):134-67.</li>
+          <li>Knerr PJ, et al. 2012: <a href="https://pubmed.ncbi.nlm.nih.gov/22920239/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Non-proteinogenic amino acids in lacticin 481 analogues result in more potent inhibition of peptidoglycan transglycosylation</a>, ACS Chem Biol. 7(11):1791-5.</li>
+          <li>de Arauz LJ, et al. 2017: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0924224409000594" target="_blank" class="text-blue-600 underline hover:text-blue-800">Nisin biotechnological production and application: a review</a>, Trends Food Sci Technol. 20(3-4):146-54.</li>
+        </ol>
+      </section>
+      
+      
+      
+      
   </main>
   
   
@@ -306,8 +251,7 @@
   <section
   class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 text-center md:text-left">
   <div class="md:flex md:items-center md:justify-center">
-    <h2 class="text-xl font-bold text-white">Jiagen Biotechnologies supplies quality Streptokinase of various specifications. <br>Contact us at <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> to place an order.</h2>
-      
+    <h2 class="text-xl font-bold text-white">Jiagen Biotechnologies supplies quality nisin of various specifications. <br>Contact us at <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> to place an order.</h2>
     <a href="../../order.html"
       class="px-8 py-4 bg-white text-blue-600 rounded inline-block font-semibold md:ml-8 mt-4 md:mt-0 
       hover:bg-teal-500 hover:text-white transition-colors duration-300">Order</a>

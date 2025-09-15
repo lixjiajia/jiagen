@@ -12,20 +12,14 @@
 </head>
 <body class="bg-gray-100 text-gray-800">
   <!-- Announcement Bar -->
-  <div class="bg-brandblue text-white text-sm py-1 px-4">
+  <div class="bg-[#1058b2] text-white text-sm py-1 px-4">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <div class="hidden md:flex"><span>Empowering Life Science Research</span></div>
-      <div class="flex space-x-6 md:hidden">
-        <!-- Mobile -->
+      <span>Empowering Life Science Research</span>
+      <div class="flex space-x-6">
         <span>Phone: <span class="font-semibold">514-779-9623</span></span>
+        <span>Contact: <span class="font-semibold">info@jiagen.com</span></span>
         <span>Orders: <span class="font-semibold">sales@jiagen.com</span></span>
       </div>
-        <!-- Desktop -->
-        <div class="hidden md:flex space-x-6">
-          <span>Phone: <span class="font-semibold">514-779-9623</span></span>
-          <span>Contact: <span class="font-semibold">info@jiagen</span></span>
-          <span>Orders: <span class="font-semibold">sales@jiagen.com</span></span>
-        </div>
     </div>
   </div>
  <!-- Header -->
@@ -74,12 +68,12 @@
   
       <!-- Desktop Nav -->
       <nav class="hidden md:flex space-x-6 items-center w-full">
-        <ul class="flex flex-nowrap items-center font-medium text-sm">
+        <ul class="flex flex-nowrap items-center font-medium text-base">
           <li class="p-4 lg:px-8 relative flex items-center space-x-1"
               x-data="{ open: false }"
               @mouseenter="open = true"
               @mouseleave="open = false">
-            <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">PRODUCTS</a>
+            <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">Products</a>
             <button class="shrink-0 p-1" :aria-expanded="open">
               <span class="sr-only">Show submenu for "products"</span>
               <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
@@ -104,8 +98,8 @@
             </ul>
           </li>
   
-          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../technology.html">TECHNOLOGY SERVICES</a></li>
-          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../order.html">ORDER</a></li>
+          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../technology.html">Technology Services</a></li>
+          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../order.html">Order</a></li>
         </ul>
         <div class="flex items-center space-x-1">
           <!-- Search -->
@@ -157,147 +151,89 @@
   <!-- Main Content -->
   <main class="max-w-6xl mx-auto px-6 py-12 text-slate-800 font-sans leading-relaxed">
     <div class="mb-8">
-        <a href="enzymes.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium">
+        <a href="proteins.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium">
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
           </svg>
-          Enzymes
+          Proteins
         </a>
       </div>
       <section>
-        <h2 class="text-3xl font-bold text-brandblue border-b border-gray-300 pb-2 mb-4">
-          Streptokinase
-        </h2>
-      
-        <p class="text-base text-slate-700 mb-2">
-            <strong>CAS No.:</strong> 9002-01-1 &nbsp;|&nbsp; 
-            <strong>EC No.:</strong> 3.4.99.22 &nbsp;|&nbsp; 
-            <strong>EINECS No.:</strong> 232-647-6
-          </p>
-          
+        <h2 class="text-3xl font-bold text-brandblue border-b border-gray-300 pb-2 mb-4">Glucagon</h2>
         <p class="text-base text-gray-600 mb-2">
-          <strong>Synonyms:</strong> SK, Streptase®, Varidase®, Streptase-Akzonobel 
+          <strong>CAS No.:</strong> 16941-32-5   &nbsp;|&nbsp; 
+          <strong>EINECS No.:</strong> 240-740-5 
         </p>
-        <section class="mt-8">
-        <h3 class="text-2xl font-semibold text-brandblue mt-4 mb-2">Product Summary:</h3>
-        <p class="text-base text-gray-600 mb-2">
-            Streptokinase is a plasminogen activator enzyme produced by <i>Streptococcus</i> species. It plays a central role in fibrinolysis by converting plasminogen to plasmin, a serine protease that degrades fibrin clots. Unlike tissue plasminogen activator (tPA), streptokinase acts indirectly, forming a 1:1 complex with plasminogen, which then becomes enzymatically active and initiates a proteolytic cascade resulting in clot breakdown. 
-        </p>
-        </section>
-
-        <section class="mt-8">
-        <h3 class="text-2xl font-semibold text-brandblue mt-4 mb-2">Biochemical Function and Mechanism of Action:</h3>
-        <p class="text-base text-gray-600 mb-2">Studies show that Lys698 of streptokinase is involved in the plasminogen complex formation. Ile1 of streptokinase and Asp740 of plasminogen establish a salt bridge that induces an active site in plasminogen.</p>
-        <ul class="list-disc list-inside pl-5 space-y-2 text-base text-gray-600 mb-2">
-          <li>Optimal pH: 7.0 - 8.0 </li>
-          <li>Optimal temperature: 37°C (denaturation above 50°C) </li>
-            
-        </ul>  
-        </section>
-
-        <section class="mt-8">
-        <h3 class="text-2xl font-semibold text-brandblue mt-4 mb-2">Applications:</h3>
-        <ul class="list-disc list-inside pl-5 space-y-2 text-base text-slate-700">
-          <li>Used to study fibrinolysis mechanisms, thrombus formation and dissolution.</li>
-          <li>Employed in in vitro clot lysis assays and plasma clotting tests.</li>
-          <li>Important for developing antibody-based detection kits for fibrinolytic activity.</li>
-          <li>Applied in veterinary thrombolytic studies.</li>
-          <li>Utilized in biosensor development related to clot diagnostics.</li>
-          <li>Incorporated in enzyme-based cleaning formulations for biomedical instruments where fibrin residue may be present.</li>
-        </ul>
-        </section>
-
-        <section class="mt-8">
-        <h3 class="text-2xl font-semibold text-brandblue mt-4 mb-2">Packaging & Storage:</h3>
-        <ul class="list-disc list-inside pl-5 text-base text-gray-600 mb-2">
-          <li>Available as almost white lyophilized powder.</li>
-          <li>Store at 2-8°C (dry form); keep frozen at –20°C for long-term enzyme stability.</li>
-        </ul>
-        </section>
-
-        <section class="mt-10">
-            <h3 class="text-2xl font-semibold text-brandblue mb-4">References</h3>
-            <ol class="list-decimal list-outside pl-5 space-y-2 text-sm text-slate-700">
-              <li>
-                Banerjee A, et al. 2004: 
-                <a href="https://pubmed.ncbi.nlm.nih.gov/14697452/" target="_blank" class="text-blue-600 underline hover:text-blue-800">
-                  Streptokinase--a clinically useful thrombolytic agent
-                </a>, <em>Biotechnol Adv.</em> 22(4):287-307.
-              </li>
-              <li>
-                Reed GL. 1999: 
-                <a href="https://www.pnas.org/doi/10.1073/pnas.96.16.8879" target="_blank" class="text-blue-600 underline hover:text-blue-800">
-                  A catalytic switch converts streptokinase into fibrin targeted plasminogen activator
-                </a>, <em>Proc. Natl. Acad. Sci. USA</em> 96:8879–8883.
-              </li>
-              <li>
-                Kunamneni A & Durvasula R. 2014: 
-                <a href="https://www.benthamscience.com/article/64939?utm_source=chatgpt.com" target="_blank" class="text-blue-600 underline hover:text-blue-800">
-                  Streptokinase: a drug for thrombolytic therapy – patent review
-                </a>, <em>Recent Adv Cardiovascular Drug Discovery</em> 9(2):106-21.
-              </li>
-              <li>
-                Sazonova IY, et al. 2009: 
-                <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3911889/" target="_blank" class="text-blue-600 underline hover:text-blue-800">
-                  Reprogrammed streptokinases develop fibrin-targeting and dissolve blood clots with more potency than tissue plasminogen activator
-                </a>, <em>J Thromb Haemost.</em> 7(8):1321-28.
-              </li>
-              <li>
-                Mundada L, et al. 2003: 
-                <a href="https://pubmed.ncbi.nlm.nih.gov/12704199/" target="_blank" class="text-blue-600 underline hover:text-blue-800">
-                  Structure-function analysis of the streptokinase amino terminus (residues 1-59)
-                </a>, <em>J Biol Chem.</em> 278(27):24421-7.
-              </li>
-              <li>
-                Nolan M, et al. 2013: 
-                <a href="https://pubmed.ncbi.nlm.nih.gov/23970549/" target="_blank" class="text-blue-600 underline hover:text-blue-800">
-                  Full time course kinetics of the streptokinase-plasminogen activation pathway
-                </a>, <em>J Biol Chem.</em> 288(41):29482-93.
-              </li>
-              <li>
-                Collen D, et al. 1992: 
-                <a href="https://www.sciencedirect.com/science/article/abs/pii/026894999290076T" target="_blank" class="text-blue-600 underline hover:text-blue-800">
-                  Comparative thrombolytic and immunogenic properties of staphylokinase and streptokinase
-                </a>, <em>Fibrinolysis</em> 6(4):232-242.
-              </li>
-              <li>
-                Monk JC, Heel RC. 1987: 
-                <a href="https://europepmc.org/article/med/3308411" target="_blank" class="text-blue-600 underline hover:text-blue-800">
-                  Anisoylated plasminogen streptokinase activator complex (APSAC). A review of its mechanism of action, clinical pharmacology and therapeutic use in acute myocardial infarction
-                </a>, <em>Drugs</em> 34(1):25-49.
-              </li>
-              <li>
-                Mican J, et al. 2019: 
-                <a href="https://pubmed.ncbi.nlm.nih.gov/31360331/" target="_blank" class="text-blue-600 underline hover:text-blue-800">
-                  Structural Biology and Protein Engineering of Thrombolytics
-                </a>, <em>Comput Struct Biotechnol J.</em> 17:917-38.
-              </li>
-              <li>
-                Siefring Jr GE, Castellino FJ. 1976: 
-                <a href="https://pubmed.ncbi.nlm.nih.gov/932013/" target="_blank" class="text-blue-600 underline hover:text-blue-800">
-                  Interaction of streptokinase with plasminogen. Isolation and characterization of a streptokinase degradation product
-                </a>, <em>J Biol Chem.</em> 251(13):3913-20.
-              </li>
-              <li>
-                Wang S, et al. 1999: 
-                <a href="https://pubs.acs.org/doi/10.1021/bi981915h" target="_blank" class="text-blue-600 underline hover:text-blue-800">
-                  Deletion of Ile1 changes the mechanism of streptokinase: evidence for the molecular sexuality hypothesis
-                </a>, <em>Biochemistry</em> 38(16):5232-40. PMID: 10213631.
-              </li>
-              <li>
-                Wang X, et al. 1998: 
-                <a href="https://www.science.org/doi/10.1126/science.281.5383.1662" target="_blank" class="text-blue-600 underline hover:text-blue-800">
-                  Crystal structure of the catalytic domain of human plasmin complexed with streptokinase
-                </a>, <em>Science</em> 281(5383):1662–65.
-              </li>
-            </ol>
-          </section>
-          
-           
-           
+        <p class="mb-4"><strong>Synonyms:</strong> GCG, glucagon hydrochloride, recombinant human glucagon</p>
+      </section>
       
-  
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Product Summary</h3>
+        <p>
+            Glucagon is a 29-amino acid peptide hormone with a central role in blood glucose regulation. Acting as a counter-regulatory hormone to insulin, it triggers glycogen breakdown and glucose production in the liver via cAMP-mediated pathways. Widely used in clinical practice to reverse hypoglycemia and in research for studying metabolic pathways, glucagon remains a vital tool in diabetes management, hepatic function studies, and pharmacological development. It is temperature-sensitive, requiring cold storage and careful handling to maintain bioactivity.
+        </p> 
+        <ul class="list-disc list-inside text-slate-700 mt-2">
+            <li><strong>Formula</strong>: C<sub>153</sub>H<sub>225</sub>N<sub>43</sub>O<sub>49</sub>S </li>
+            <li><strong>Formula Molecular Weight</strong>: 3485.0</li>
+        </ul>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Function</h3>
+        <p>
+            Glucagon is produced by the alpha cells of the pancreas. It increases blood glucose levels, mainly by stimulating the breakdown of glycogen to glucose (glycogenolysis) and the production of glucose from non-carbohydrate sources (gluconeogenesis). It acts antagonistically to insulin.
+        </p>
+       
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Mechanism of Action</h3>
+        <p>Glucagon binds to the glucagon receptor (a G-protein-coupled receptor) primarily on liver cells. Upon binding, it activates adenylate cyclase, which increases intracellular cAMP. cAMP activates protein kinase A (PKA) that stimulates glycogen phosphorylase and promotes glycogen breakdown. Glucagon simultaneously inhibits glycogen synthase and promotes gluconeogenic enzymes. All these result in elevated blood glucose levels.</p>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Applications in Scientific Research</h3>
+        <ul class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700">
+          <li><strong>Endocrinology</strong>: Glucose metabolism, diabetes, insulin-glucagon dynamics.</li>
+          <li><strong>Metabolic disease models</strong>: Hypoglycemia studies, glycogen storage diseases.</li>
+          <li><strong>Receptor studies</strong>: GPCR signal transduction pathways.</li>
+          <li><strong>Pharmacology</strong>: Development of glucagon analogs and antagonists.</li>
+          <li><strong>Liver metabolism</strong>: Role in hepatic glucose output, lipid metabolism.</li>
+         
+        </ul>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Packaging & Storage</h3>
+        <ul class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700">
+            <li>Lyophilized powder: Store at –20°C </li>
+        
+        </ul>
+      </section>
+      
+      <section class="mt-10">
+        <h3 class="text-2xl font-semibold text-brandblue mb-4">References</h3>
+        <ol class="list-decimal list-inside space-y-2 text-sm text-slate-700">
+          <li>Senthil K, et al. 2023: <a href="https://www.ncbi.nlm.nih.gov/books/NBK537082/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Physiology, Glucagon</a>, In: StatPearls. Treasure Island (FL): StatPearls Publishing.</li>
+          <li>Chabenne J, et al. 2014: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3986664/" target="_blank" class="text-blue-600 underline hover:text-blue-800">A glucagon analog chemically stabilized for immediate treatment of life-threatening hypoglycemia</a>, Mol Metab. 3(3):293–300.</li>
+          <li>Roell W, et al. 2024: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11696851/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Characterization of LY3324954 a long-acting glucagon-receptor agonist</a>, Mol Metab. 91:102073.</li>
+          <li>Gao J, et al. 2023: <a href="https://pubmed.ncbi.nlm.nih.gov/36824278/" target="_blank" class="text-blue-600 underline hover:text-blue-800">High glucose-induced glucagon resistance and membrane distribution of GCGR revealed by super-resolution imaging</a>, iScience. 26(2):105967.</li>
+          <li>Jia Y, et al. 2022: <a href="https://pubmed.ncbi.nlm.nih.gov/35784565/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Role of glucagon and its receptor in the pathogenesis of diabetes</a>, Front Endocrinol (Lausanne). 13:928016.</li>
+          <li>Janah L, et al. 2019: <a href="https://pubmed.ncbi.nlm.nih.gov/31284506/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Glucagon receptor signaling and glucagon resistance</a>, Int J Mol Sci. 20(13):3314.</li>
+          <li>Vinciguerra D, et al. 2024: <a href="https://pubs.acs.org/doi/10.1021/acscentsci.4c00937" target="_blank" class="text-blue-600 underline hover:text-blue-800">A glucose-responsive glucagon-micelle for the prevention of hypoglycemia</a>, ACS Cent Sci. 11:2036–47.</li>
+          <li>Gray SM, et al. 2024: <a href="https://pubmed.ncbi.nlm.nih.gov/38015721/" target="_blank" class="text-blue-600 underline hover:text-blue-800">High doses of exogenous glucagon stimulate insulin secretion and reduce insulin clearance in healthy humans</a>, Diabetes. 73(3):412-25.</li>
+          <li>Weigle DS, et al. 1984: <a href="https://pubmed.ncbi.nlm.nih.gov/6496673/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Pulsatile glucagon delivery enhances glucose production by perifused rat hepatocytes</a>, Am J Physiol. 247(4 Pt 1):E564-8.</li>
+          <li>Yee Y, et al. 1999: <a href="https://pubmed.ncbi.nlm.nih.gov/10397121/" target="_blank" class="text-blue-600 underline hover:text-blue-800">The usefulness of glucagon hydrochloride for colonic distention in CT colonography</a>, AJR Am J Roentgenol. 173(1):169-72.</li>
+          <li>Porcellati F, et al. 2021: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8464883/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Glucagon as a therapeutic approach to severe hypoglycemia: after 100 Years, is it still the antidote of insulin?</a>, Biomolecules. 11(9):1281.</li>
+          <li>Tinti D, Rabbone I. 2019: <a href="https://pubmed.ncbi.nlm.nih.gov/31673895/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Mini-doses of glucagon to prevent hypoglycemia in children with type 1 diabetes refusing food: a case series</a>, Acta Diabetol. 57(3):359-65.</li>
+        </ol>
+      </section>
+      
+      
+      
+      
+      
   </main>
   
   
@@ -306,8 +242,7 @@
   <section
   class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 text-center md:text-left">
   <div class="md:flex md:items-center md:justify-center">
-    <h2 class="text-xl font-bold text-white">Jiagen Biotechnologies supplies quality Streptokinase of various specifications. <br>Contact us at <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> to place an order.</h2>
-      
+    <h2 class="text-xl font-bold text-white">Jiagen Biotechnologies supplies quality glucagon of various specifications. <br>Contact us at <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> to place an order.</h2>
     <a href="../../order.html"
       class="px-8 py-4 bg-white text-blue-600 rounded inline-block font-semibold md:ml-8 mt-4 md:mt-0 
       hover:bg-teal-500 hover:text-white transition-colors duration-300">Order</a>
