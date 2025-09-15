@@ -12,14 +12,20 @@
 </head>
 <body class="bg-gray-100 text-gray-800">
   <!-- Announcement Bar -->
-  <div class="bg-[#1058b2] text-white text-sm py-1 px-4">
+  <div class="bg-brandblue text-white text-sm py-1 px-4">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <span>Empowering Life Science Research</span>
-      <div class="flex space-x-6">
+      <div class="hidden md:flex"><span>Empowering Life Science Research</span></div>
+      <div class="flex space-x-6 md:hidden">
+        <!-- Mobile -->
         <span>Phone: <span class="font-semibold">514-779-9623</span></span>
-        <span>Contact: <span class="font-semibold">info@jiagen.com</span></span>
         <span>Orders: <span class="font-semibold">sales@jiagen.com</span></span>
       </div>
+        <!-- Desktop -->
+        <div class="hidden md:flex space-x-6">
+          <span>Phone: <span class="font-semibold">514-779-9623</span></span>
+          <span>Contact: <span class="font-semibold">info@jiagen</span></span>
+          <span>Orders: <span class="font-semibold">sales@jiagen.com</span></span>
+        </div>
     </div>
   </div>
  <!-- Header -->
@@ -68,12 +74,12 @@
   
       <!-- Desktop Nav -->
       <nav class="hidden md:flex space-x-6 items-center w-full">
-        <ul class="flex flex-nowrap items-center font-medium text-base">
+        <ul class="flex flex-nowrap items-center font-medium text-sm">
           <li class="p-4 lg:px-8 relative flex items-center space-x-1"
               x-data="{ open: false }"
               @mouseenter="open = true"
               @mouseleave="open = false">
-            <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">Products</a>
+            <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">PRODUCTS</a>
             <button class="shrink-0 p-1" :aria-expanded="open">
               <span class="sr-only">Show submenu for "products"</span>
               <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
@@ -98,8 +104,8 @@
             </ul>
           </li>
   
-          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../technology.html">Technology Services</a></li>
-          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../order.html">Order</a></li>
+          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../technology.html">TECHNOLOGY SERVICES</a></li>
+          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../order.html">ORDER</a></li>
         </ul>
         <div class="flex items-center space-x-1">
           <!-- Search -->
@@ -151,88 +157,153 @@
   <!-- Main Content -->
   <main class="max-w-6xl mx-auto px-6 py-12 text-slate-800 font-sans leading-relaxed">
     <div class="mb-8">
-        <a href="proteins.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium">
+        <a href="carbohydrates.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium">
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
           </svg>
-          Proteins
+          Carbohydrates
         </a>
       </div>
       <section>
-        <h2 class="text-3xl font-bold text-brandblue border-b border-gray-300 pb-2 mb-4">Calcitonin Salmon</h2>
+        <h2 class="text-3xl font-bold text-brandblue border-b border-gray-300 pb-2 mb-4">Heparan Sulfate </h2>
         <p class="text-base text-gray-600 mb-2">
-          <strong>CAS No.:</strong> 47931-85-1  &nbsp;|&nbsp;
-          <strong>EINECS No.:</strong> 256-342-8 
+          <strong>CAS No.:</strong> 9050-30-0 &nbsp;|&nbsp;
+          <strong>EINECS No.:</strong> 232-939-9 
         </p>
-        <p class="mb-4"><strong>Synonyms:</strong> Salcatonin, salmon calcitonin, sCT </p>
+        <p class="mb-4"><strong>Synonyms:</strong> N-Acetylheparan sulfate, glycosaminoglycan heparan sulfate, heparan polysulfate, heparan sulphate, heparin sulfate, heparitin sulfate, HS </p>
       </section>
       
       <section class="mt-8">
         <h3 class="text-2xl font-semibold text-brandblue mb-2">Product Summary</h3>
-        <p>
-            Calcitonin Salmon is a potent, bioactive peptide that regulates bone and calcium metabolism by directly inhibiting osteoclastic bone resorption and promoting renal calcium excretion. Its enhanced potency compared to human calcitonin makes it especially valuable in scientific research on bone diseases, calcium homeostasis, and endocrine disorders. 
-        </p>
+        <p>Heparan sulfate is a biologically active glycosaminoglycan present in all animal tissues, typically found on cell surfaces and within the extracellular matrix. With diverse and intricate sulfation patterns, HS plays essential roles in cell signaling, development, tissue regeneration, and host–pathogen interactions. Its versatility makes it a crucial molecule in both basic and applied biomedical research, especially in oncology, regenerative medicine, and antiviral drug development. </p>
         <ul class="list-disc list-inside text-slate-700 mt-2">
-            <li><strong>Formula</strong>: C<sub>145</sub>H<sub>240</sub>N<sub>44</sub>O<sub>48</sub>S<sub>2</sub></li> 
-            <li><strong>Molecular Weight</strong>: 3431.85</li>
+          <li><strong>Formula:</strong> C<sub>12</sub>H<sub>19</sub>NO<sub>20</sub>S<sub>3</sub></li>
+          <li><strong>Molecular Weight:</strong> 593.47</li>
         </ul>
       </section>
       
       <section class="mt-8">
-        <h3 class="text-2xl font-semibold text-brandblue mb-2">Function and Mechanism of Action</h3>
-        <p>
-            Calcitonin Salmon is a synthetic peptide hormone composed of 32 amino acids that mimics the function of endogenous human calcitonin, but is significantly more potent due to species-specific receptor affinity. Calcitonin Salmon acts primarily through calcitonin receptors on osteoclasts (bone-resorbing cells), exerting the following effects:
-        </p>
-
-        <ul class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700 mt-2">
-          <li><strong>Inhibits osteoclast activity</strong>: Reduces bone resorption and calcium release from bones. </li>
-          <li><strong>Promotes renal excretion</strong>: Enhances excretion of calcium, phosphate, and sodium in the kidneys.</li>
-          <li><strong>Reduces serum calcium</strong>: Through both direct bone and renal effects, thereby lowering elevated blood calcium levels.</li>
-
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Function</h3>
+        <p>Heparan sulfate is a linear sulfated polysaccharide involved in:</p>
+        <ul class="list-disc list-inside pl-5 space-y-1 text-base text-slate-700 mt-2">
+          <li>Cell signaling modulation (e.g., FGF, VEGF, Wnt, BMP)</li>
+          <li>Growth factor storage and release</li>
+          <li>Regulation of angiogenesis</li>
+          <li>Tissue morphogenesis</li>
+          <li>Cell adhesion and migration</li>
+          <li>Viral entry and pathogen interactions (e.g., HSV, HIV, SARS-CoV-2)</li>
+          <li>Anticoagulant-like effects (weaker than heparin)</li>
         </ul>
-        <p class="text-base text-gray-600 mt-3">It does not require enzymatic activation, and it functions directly by binding G-protein-coupled receptors on target cells.</p>
+
       </section>
-      
+
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Mechanism of Action</h3>
+    
+        <ul class="list-disc list-inside pl-5 space-y-1 text-base text-slate-700">
+          <li>Electrostatic interactions with positively charged domains of proteins</li>
+          <li>Binding specificity conferred by sulfation patterns (e.g., N-sulfation, 2-O-, 3-O-, and 6-O-sulfation)</li>
+          <li>Modulation of protein–protein interactions:
+            <ul class="list-disc list-inside space-y-1 text-base text-slate-700 mt-2">
+                <li>Acts as a co-receptor for growth factors (e.g., FGFs via FGFR-HS ternary complex)</li>
+                <li>Regulates morphogen gradients during development</li>
+                <li>Binds pathogens and toxins, aiding in cellular uptake or blocking interactions</li>
+            </ul>
+
+          </li>
+          
+        </ul>
+
+      </section>
       <section class="mt-8">
         <h3 class="text-2xl font-semibold text-brandblue mb-2">Applications in Scientific Research</h3>
-        <ul class="list-disc list-inside pl-5 space-y-2 text-base text-slate-700">
-          <li><strong>Osteoporosis research</strong>: Understanding antiresorptive therapies and bone turnover.</li>
-          <li><strong>Paget’s disease models</strong>: Study of abnormal bone remodeling.</li>
-          <li><strong>Hypercalcemia studies</strong>: Models of hormone therapy for calcium control.</li>
-          <li><strong>Bone metastasis and cancer research</strong>: Exploring bone-protective agents.</li>
-          <li><strong>Neuroprotection studies</strong>: Investigating roles in CNS beyond bone metabolism.</li>
+        <ul class="list-disc list-inside pl-5 space-y-1 text-base text-slate-700">
+          <li><strong>Proteoglycan biochemistry</strong>: Study of HS–protein interactions and Analysis of heparanase activity and ECM remodeling.</li>
+          <li><strong>Cellular & molecular biology</strong>: Studying cell signaling pathways (e.g., FGF, VEGF, Wnt); Understanding stem cell niches and differentiation; Research on tumor microenvironment and metastasis.</li>
+          <li><strong>Infectious diseases</strong>: Investigating viral attachment mechanisms (e.g., HSV, Dengue, SARS-CoV-2); Screening of HS mimetics as antiviral agents.</li>
+          <li><strong>Tissue engineering & regenerative medicine</strong>: Hydrogel and scaffold design incorporating HS to modulate growth factor release; Wound healing models using HS for re-epithelialization.</li>
+          <li><strong>Drug delivery & therapeutics</strong>: Targeting HS-mediated uptake pathways; Designing HS-based inhibitors or mimetics for cancer, inflammation, and fibrosis.</li>
         </ul>
       </section>
       
       <section class="mt-8">
         <h3 class="text-2xl font-semibold text-brandblue mb-2">Packaging & Storage</h3>
-        <ul class="list-disc list-inside pl-5 space-y-2 text-base text-slate-700">
-          <li>Store at 2 to 8&deg;C.</li>
+        <ul class="list-disc list-inside pl-5 text-base text-slate-700">
+            <li>Sources: porcine intestinal mucosa </li>
+            <li>White to off-white lyophilized powder</li>
+            <li>Store at 2 – 8°C</li>
         </ul>
       </section>
       
       <section class="mt-10">
         <h3 class="text-2xl font-semibold text-brandblue mb-4">References</h3>
         <ol class="list-decimal list-inside space-y-2 text-sm text-slate-700">
-          <li>Overgaard K. 1994: <a href="https://pubmed.ncbi.nlm.nih.gov/7953984/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Effect of intranasal salmon calcitonin therapy on bone mass and bone turnover in early postmenopausal women: a dose-response study</a>, Calcif Tissue Int. 55(2): 82-6.</li>
-          <li>Thamsborg G, et al. 1996: <a href="https://pubmed.ncbi.nlm.nih.gov/8833216/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Effect of nasal salmon calcitonin on bone remodeling and bone mass in postmenopausal osteoporosis</a>, Bone. 18(2): 207-12.</li>
-          <li>Karsdal MA, et al. 2015: <a href="https://pubmed.ncbi.nlm.nih.gov/25582279/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Treatment of symptomatic knee osteoarthritis with oral salmon calcitonin: results from two phase 3 trials</a>, Osteoarthritis Cartilage. 23(4): 532-43.</li>
-          <li>Bagger YZ, et al. 2018: <a href="https://pubmed.ncbi.nlm.nih.gov/16005273/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Oral salmon calcitonin induced suppression of urinary collagen type II degradation in postmenopausal women: a new potential treatment of osteoarthritis</a>, Bone. 37(3): 425-30.</li>
-          <li>Lipp L, et al. 2019: <a href="https://pubmed.ncbi.nlm.nih.gov/30729223/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Controlled delivery of salmon calcitonin using thermosensitive triblock copolymer depot for treatment of osteoporosis</a>, ACS Omega. 4(1): 1157-66.</li>
-          <li>Chen J, et al. 2025: <a href="https://eurjmedres.biomedcentral.com/articles/10.1186/s40001-025-02384-y?utm_source=chatgpt.com" target="_blank" class="text-blue-600 underline hover:text-blue-800">Effect of salmon calcitonin combined with calcium antagonist on blood calcium and phosphorus ion concentration in osteoporosis rats</a>, Eur J Med Res. 30(115).</li>
-          <li>Mystakidou K, et al. 1999: <a href="https://pubmed.ncbi.nlm.nih.gov/10584455/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Collagen structure–function relationships from solid-state NMR spectroscopy</a>, J Pain Symptom Manage. 18(5): 323-30.</li>
-          <li>Feigh M, et al. 2014: <a href="https://pubmed.ncbi.nlm.nih.gov/24858364/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Oral salmon calcitonin enhances insulin action and glucose metabolism in diet-induced obese streptozotocin-diabetic rats</a>, Eur J Pharmacol. 737: 91-6.</li>
-          <li>Wells G, et al. 2015: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4715844/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Does salmon calcitonin cause cancer? A review and meta-analysis</a>, Osteoporos Int. 27: 13–9.</li>
-          <li>Jiang J, et al. 2022: <a href="https://pubmed.ncbi.nlm.nih.gov/35237169/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Salmon calcitonin exerts an antidepressant effect by activating amylin receptors</a>, Front Pharmacol. 3: 826055.</li>
-          <li>Plosker GL, McTavish D. 1996: <a href="https://pubmed.ncbi.nlm.nih.gov/8935399/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Intranasal salcatonin (salmon calcitonin). A review of its pharmacological properties and role in the management of postmenopausal osteoporosis</a>, Drugs Aging. 8(5): 378-400.</li>
-          <li>Chesnut CH 3rd, et al. 2023: <a href="https://pubmed.ncbi.nlm.nih.gov/18071651/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Salmon calcitonin: a review of current and future therapeutic indications</a>, Osteoporos Int. 19(4): 479-91.</li>
+          <li>Li P-J, Kusche-Gullberg M. 2016: 
+            <a href="https://pubmed.ncbi.nlm.nih.gov/27241222/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Heparan sulfate: Biosynthesis, structure, and function</a>, 
+            Int Rev Cell Mol Biol. 25:215-73.
+          </li>
+      
+          <li>Esko JD, Lindahl U. 2001: 
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC203033/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Molecular diversity of heparan sulfate</a>, 
+            J Clin Invest. 108(2):169–73.
+          </li>
+      
+          <li>Simon Davis DA, Parish CR. 2013: 
+            <a href="https://pubmed.ncbi.nlm.nih.gov/24391644/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Heparan sulfate: a ubiquitous glycosaminoglycan with multiple roles in immunity</a>, 
+            Front Immunol. 4:470.
+          </li>
+      
+          <li>Ricard-Blum S, et al. 2024: 
+            <a href="https://pubmed.ncbi.nlm.nih.gov/38500384/" target="_blank" class="text-blue-600 underline hover:text-blue-800">A biological guide to glycosaminoglycans: current perspectives and pending questions</a>, 
+            FEBS J. 291(15):3331-66.
+          </li>
+      
+          <li>Bishop JR, et al. 2007: 
+            <a href="https://pubmed.ncbi.nlm.nih.gov/21056957/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Heparan sulphate proteoglycans fine-tune mammalian physiology</a>, 
+            Nature. 446:1030–7.
+          </li>
+      
+          <li>Wang L, et al. 2023: 
+            <a href="https://www.nature.com/articles/s41557-023-01248-4" target="_blank" class="text-blue-600 underline hover:text-blue-800">Efficient platform for synthesizing comprehensive heparan sulfate oligosaccharide libraries for decoding glycosaminoglycan–protein interactions</a>, 
+            Nature Chem. 15:1108–17.
+          </li>
+      
+          <li>Faria-Ramos I, et al. 2021: 
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7911160/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Heparan Sulfate Glycosaminoglycans: (Un)Expected Allies in Cancer Clinical Management</a>, 
+            Biomolecules. 11(2):136.
+          </li>
+      
+          <li>Dreyfuss JL. 2009: 
+            <a href="https://pubmed.ncbi.nlm.nih.gov/19722012/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Heparan sulfate proteoglycans: structure, protein interactions and cell signaling</a>, 
+            An Acad Bras Cienc. 81(3):409-29.
+          </li>
+      
+          <li>Laremore TN, et al. 2009: 
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2787697/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Recent progress and applications in glycosaminoglycan and heparin research</a>, 
+            Curr Opin Chem Biol. 13(5-6):633–40.
+          </li>
+      
+          <li>Ravikumar M, et al. 2020: 
+            <a href="https://pubmed.ncbi.nlm.nih.gov/33330458/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Heparan sulfate proteoglycans: Key mediators of stem cell function</a>, 
+            Front Cell Dev Biol. 8:581213.
+          </li>
+      
+          <li>Tumova S, et al. 2000: 
+            <a href="https://pubmed.ncbi.nlm.nih.gov/10716625/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Heparan sulfate proteoglycans on the cell surface: versatile coordinators of cellular functions</a>, 
+            Int J Biochem Cell Biol. 32(3):269-88.
+          </li>
+      
+          <li>Parish CR. 2006: 
+            <a href="https://www.nature.com/articles/nri1918" target="_blank" class="text-blue-600 underline hover:text-blue-800">The role of heparan sulphate in inflammation</a>, 
+            Nature Rev Immunol. 6:633–43.
+          </li>
         </ol>
       </section>
       
+       
       
-      
-      
+  
   </main>
   
   
@@ -241,7 +312,8 @@
   <section
   class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 text-center md:text-left">
   <div class="md:flex md:items-center md:justify-center">
-    <h2 class="text-xl font-bold text-white">Jiagen Biotechnologies supplies quality calcitonin salmon of various specifications. <br>Contact us at <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> to place an order.</h2>
+    <h2 class="text-xl font-bold text-white">Jiagen Biotechnologies supplies quality heparan sulfate of various specifications. <br>Contact us at <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> to place an order.</h2>
+
     <a href="../../order.html"
       class="px-8 py-4 bg-white text-blue-600 rounded inline-block font-semibold md:ml-8 mt-4 md:mt-0 
       hover:bg-teal-500 hover:text-white transition-colors duration-300">Order</a>
