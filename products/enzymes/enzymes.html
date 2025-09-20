@@ -10,17 +10,17 @@
 
   
 </head>
-<body class="flex flex-col min-h-screen bg-gray-100 text-gray-800">
+<body class="bg-gray-100 text-gray-800">
   <!-- Announcement Bar -->
   <div class="bg-brandblue text-white text-sm py-1 px-4">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       <div class="hidden md:flex"><span>Empowering Life Science Research</span></div>
       <div class="flex space-x-6 md:hidden">
-        <!-- Mobile -->
+        <!-- Mobile: show just one link -->
         <span>Phone: <span class="font-semibold">514-779-9623</span></span>
         <span>Orders: <span class="font-semibold">sales@jiagen.com</span></span>
       </div>
-        <!-- Desktop -->
+        <!-- Desktop: show full info -->
         <div class="hidden md:flex space-x-6">
           <span>Phone: <span class="font-semibold">514-779-9623</span></span>
           <span>Contact: <span class="font-semibold">info@jiagen</span></span>
@@ -50,7 +50,7 @@
             <!-- PRODUCTS dropdown -->
             <li x-data="{ openSub: false }">
             <button @click="openSub = !openSub" class="w-full text-left flex justify-between items-center py-2 text-slate-800 hover:text-slate-900">
-                PRODUCTS
+                Products
                 <svg class="w-4 h-4 transform transition-transform" :class="{ 'rotate-180': openSub }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
                 </svg>
@@ -60,13 +60,11 @@
               <li><a href="../enzymes/enzymes.html" class="block py-1 hover:text-blue-700">Enzymes</a></li>
               <li><a href="../coenzymes/coenzymes.html" class="block py-1 hover:text-blue-700">Coenzymes</a></li>
               <li><a href="../carbohydrates/carbohydrates.html" class="block py-1 hover:text-blue-700">Carbohydrates</a></li>
-              <li><a href="../antibodies/antibodies.html" class="block py-1 hover:text-blue-700">Antibodies</a></li>
             </ul>
             </li>
     
             <!-- Other links -->
-            <li><a href="../../technology.html" class="block py-2 text-slate-800 hover:text-slate-900">TECHNOLOGY SERVICES</a></li>
-            <li><a href="../../order.html" class="block py-2 text-slate-800 hover:text-slate-900">ORDER</a></li>
+            <li><a href="../../order.html" class="block py-2 text-slate-800 hover:text-slate-900">Order</a></li>
         </ul>
         </div>
     </div>
@@ -100,12 +98,10 @@
                 <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../enzymes/enzymes.html"><span>Enzymes</span></a></li>
                 <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../coenzymes/coenzymes.html"><span>Coenzymes</span></a></li>
                 <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../carbohydrates/carbohydrates.html"><span>Carbohydrates</span></a></li>
-                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../antibodies/antibodies.html"><span>Antibodies</span></a></li>
             </ul>
           </li>
   
-          <li class="p-4 lg:px-8"><a class="text-slate-700 hover:text-slate-900" href="../../technology.html">Technology Services</a></li>
-          <li class="p-4 lg:px-8"><a class="text-slate-700 hover:text-slate-900" href="../../order.html">Order</a></li>
+          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../order.html">Order</a></li>
         </ul>
         <div class="flex items-center space-x-1">
           <!-- Search -->
@@ -300,7 +296,7 @@
         <li class="mt-2"><a href="../enzymes/enzymes.html" title="" class="opacity-75 hover:opacity-100">Enzymes</a></li>
         <li class="mt-2"><a href="../coenzymes/coenzymes.html" title="" class="opacity-75 hover:opacity-100">Coenzymes</a></li>
         <li class="mt-2"><a href="../carbohydrates/carbohydrates.html" title="" class="opacity-75 hover:opacity-100">Carbohydrates</a></li>
-        <li class="mt-2"><a href="../antibodies/antibodies.html" title="" class="opacity-75 hover:opacity-100">Antibodies</a></li>
+
       </ul>
     </div>
 
