@@ -155,7 +155,8 @@
     <h2 class="text-2xl font-bold text-slate-800 mb-12 mt-4">Enzymes</h2>
     <!-- Alpine.js Pagination -->
     <div x-data="pagination()" class="w-full overflow-x-auto">
-      <div class="min-w-[800px] w-full text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
+      <!-- Desktop table -->
+      <div class="hidden lg:block w-full text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
         <table class="w-full text-left table-auto text-slate-800">
           <thead>
             <tr class="text-white border-b border-slate-300" style="background-color: #145aac;">
@@ -173,7 +174,38 @@
                 <td class="p-4 text-sm whitespace-nowrap" x-text="row.cas"></td>
                 <td class="p-4 text-sm" x-text="row.synonyms"></td>
                 <td class="p-4 text-sm" x-text="row.form"></td>
-                <td class="p-4 text-sm"><a :href="row.url" class="font-semibold hover:underline">View Details</a></td>
+                <td class="p-4 text-sm"><a :href="row.url" class="text-blue-600 font-semibold hover:underline">View Details</a></td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Mobile table -->
+      <div class="lg:hidden md:hidden w-full text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
+        <table class="w-full text-left table-auto text-slate-800">
+          <thead>
+            <tr class="text-white border-b border-slate-300" style="background-color: #145aac;">
+              <th class="p-3">Product</th>
+              <th class="p-3">Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <template x-for="row in paginatedData" :key="row.name">
+              <tr class="hover:bg-slate-50">
+                <!-- Product column -->
+                <td class="p-3 text-sm">
+                  <p class="font-bold" x-text="row.name"></p>
+                  <!-- Only visible on mobile: stack CAS/Form under name -->
+                  <div class="mt-1 space-y-1 text-xs text-gray-600">
+                    <p><span class="font-semibold">CAS:</span> <span x-text="row.cas"></span></p>
+                    <p><span class="font-semibold">Form:</span> <span x-text="row.form"></span></p>
+                  </div>
+                </td>
+                <!-- Details column -->
+                <td class="p-3 text-sm text-blue-600 font-semibold hover:underline">
+                  <a :href="row.url">View Details</a>
+                </td>
               </tr>
             </template>
           </tbody>
