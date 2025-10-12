@@ -154,156 +154,137 @@
     
   </header>
   <!-- Main Content -->
-  <main class="p-8 flex-grow max-w-7xl mx-auto">
-    <h2 class="text-2xl font-bold text-slate-800 mb-12 mt-4">Proteins</h2>
-    <!-- Pagination -->
-    <div x-data="pagination()" class="w-full overflow-x-auto">
-      <!-- Desktop table -->
-      <div class="hidden lg:block w-full text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
-        <table class="w-full text-left table-auto text-slate-800">
-          <thead>
-            <tr class="text-white border-b border-slate-300" style="background-color: #145aac;">
-              <th class="p-4">Product Name</th>
-              <th class="p-4">CAS No.</th>
-              <th class="p-4">Synonyms</th>
-              <th class="p-4">Form</th>
-              <th class="p-4">Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            <template x-for="row in paginatedData" :key="row.name">
-              <tr class="hover:bg-slate-50">
-                <td class="p-4 font-bold text-sm" x-text="row.name"></td>
-                <td class="p-4 text-sm whitespace-nowrap" x-text="row.cas"></td>
-                <td class="p-4 text-sm" x-text="row.synonyms"></td>
-                <td class="p-4 text-sm" x-text="row.form"></td>
-                <td class="p-4 text-sm"><a :href="row.url" class="text-blue-600 font-semibold hover:underline">View Details</a></td>
-              </tr>
-            </template>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Mobile table -->
-      <div class="lg:hidden md:hidden w-full text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
-        <table class="w-full text-left table-auto text-slate-800">
-          <thead>
-            <tr class="text-white border-b border-slate-300" style="background-color: #145aac;">
-              <th class="p-3">Product</th>
-              <th class="p-3">Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            <template x-for="row in paginatedData" :key="row.name">
-              <tr class="hover:bg-slate-50">
-                <!-- Product column -->
-                <td class="p-3 text-sm">
-                  <p class="font-bold" x-text="row.name"></p>
-                  <!-- Only visible on mobile: stack CAS/Form under name -->
-                  <div class="mt-1 space-y-1 text-xs text-gray-600">
-                    <p><span class="font-semibold">CAS:</span> <span x-text="row.cas"></span></p>
-                    <p><span class="font-semibold">Form:</span> <span x-text="row.form"></span></p>
-                  </div>
-                </td>
-                <!-- Details column -->
-                <td class="p-3 text-sm text-blue-600 font-semibold hover:underline">
-                  <a :href="row.url">View Details</a>
-                </td>
-              </tr>
-            </template>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Pagination Controls -->
-      <div class="mt-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div>
-            <p class="text-sm text-gray-700">
-              Showing
-              <span class="font-medium" x-text="start + 1"></span>
-              to
-              <span class="font-medium" x-text="Math.min(start + perPage, data.length)"></span>
-              of
-              <span class="font-medium" x-text="data.length"></span>
-              results
-            </p>
-          </div>
-        <div class="flex items-center space-x-2">
-        <button @click="prevPage" :disabled="page === 1"
-          class="px-3 py-1 bg-slate-200 text-sm rounded hover:bg-slate-300 disabled:opacity-50">
-          <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-            <path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
+  <main class="max-w-6xl mx-auto px-6 py-12 text-slate-800 font-sans leading-relaxed">
+    <div class="mb-8">
+        <a href="proteins.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
           </svg>
-        </button>
-        <template x-for="i in totalPages">
-          <button @click="goToPage(i)" x-text="i"
-            :class="{'bg-slate-500 text-white': i === page, 'bg-slate-100': i !== page}"
-            class="px-3 py-1 rounded text-sm hover:bg-slate-300"></button>
-        </template>
-        <button @click="nextPage" :disabled="page === totalPages"
-          class="px-3 py-1 bg-slate-200 text-sm rounded hover:bg-slate-300 disabled:opacity-50">
-          <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-            <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-          </svg>
-        </button>
+          Proteins
+        </a>
+      </div>
+      <section>
+        <h2 class="text-3xl font-bold text-brandblue border-b border-gray-300 pb-2 mb-4">Follicle Stimulating Hormone (FSH)</h2>
+        <p class="text-base text-gray-600 mb-2">
+          <strong>CAS No.:</strong> 9002-68-0  &nbsp;|&nbsp;
+          <strong>EINECS No.:</strong> 232-706-8
+        </p>
+        <p class="mb-4"><strong>Synonyms:</strong> Follicle-stimulating gonadotropin, follitropin, FSH, hFSH, huFSH, human FSH, recombinant FSH (rFSH, follitropin alpha or beta), urofollitropin (urinary FSH)  </p>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Product Summary</h3>
+        <p>
+            Follicle Stimulating Hormone (FSH) is a heterodimeric glycoprotein hormone composed of two subunits and vital for reproductive processes. It plays essential roles in ovarian follicular maturation and testicular spermatogenesis. FSH, whether purified from human urine (urofollitropin) or produced recombinantly (follitropin alpha/beta), is used widely in both clinical treatments such as fertility therapy and in basic research. It functions through G-protein coupled receptor pathways and is central to studying reproductive physiology, endocrine disorders, and hormone-responsive cancers. 
+        </p>
+        <div class="text-slate-700 text-base pl-5 mt-2">
+            <p><span class="font-semibold">Formula (approximate):</span> α-subunit, C<sub>960</sub>H<sub>1499</sub>N<sub>263</sub>O<sub>285</sub>S<sub>7</sub>; β-subunit, C<sub>907</sub>H<sub>1408</sub>N<sub>248</sub>O<sub>270</sub>S<sub>6</sub></p>
+            <p class="mt-1"><span class="font-semibold">Molecular weight:</span> ~30–35 kDa (heavily glycosylated heterodimeric protein)</p>
         </div>
-      </div>
-    </div>
-
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Biochemical Function</h3>
+        <ul class="list-disc list-outside space-y-1 text-base text-slate-700 pl-5 mb-2">
+          <li>Promotes the growth and maturation of ovarian follicles (primordial -> primary -> secondary -> antral follicles), and stimulates granulosa cell proliferation, increasing follicle size.</li>
+          <li>Induces aromatase enzyme in granulosa cells, converting androgens (from theca cells) into estradiol (E<sub>2</sub>).</li>
+          <li>Involves in the regulation of menstrual cycle.</li>
+          <li>Stimulates Sertoli cells to produce androgen-binding protein (ABP), which maintains high testosterone levels in the testes, and then activates spermatogenesis in males via </li>
+          <li>Supports nourishment and development of sperm cells (spermatogonia -> spermatocytes -> spermatids).</li>
+        </ul>
+        <p>FSH is also a critical regulator of the hypothalamic-pituitary-gonadal axis.</p>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Mechanism of Action</h3>
+        <p>FSH binds to FSH receptors (FSHR) located on granulosa cells (ovary) or Sertoli cells (testes). FSH-FSHR interaction activates G-protein-coupled receptor signaling, leading to:</p>
+        <ul class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700 mt-2">
+          <li>Increasing in cAMP production -> activates protein kinase A (PKA) -> phosphorylation of transcription factors (e. g. CREB) and then</li>
+          <li>Increased production of steroidogenic enzymes (aromatase, CYP19A1), grow factors (IGF-1, activin), estrogen, and inhibin, which</li>
+          <li>Promotes follicular development and gametogenesis
+          </li>
+        </ul>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Applications in Scientific Research</h3>
+        <ul class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700">
+          <li>Reproductive endocrinology studies (e.g. follicular development, ovulation mechanisms).</li>
+          <li>Used in studies aiming at developing variants of assisted reproductive technology (ART) protocols.</li>
+          <li>Studies on FSH receptor signaling and mutations, aiding in designing selective agonists/antogonists.</li>
+          <li>Research in infertility treatment and hormone replacement therapy.</li>
+          <li>Investigations of gonadotropin regulation and feedback mechanisms in the HPG axis.</li>
+          <li>Comparative endocrinology in mammals and vertebrates.</li>
+          <li>Evaluating the role of FSH in aging, bone metabolism, and certain cancers.</li>
+        </ul>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Packaging & Storage</h3>
+        <ul class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700">
+          <li>Sources: purified from human urine (postmenopausal women – urofollitropin)  </li>
+          <li>Available as almost white to slightly yellowish lyophilized powder</li>
+          <li>Store in a sterile, airtight, tamper-proof container, protected from light, at a temperature of 2°C to 8°C </li>
+        </ul>
+      </section>
+      
+      <section class="mt-10">
+        <h3 class="text-2xl font-semibold text-brandblue mb-4">References</h3>
+        <ol class="list-decimal list-inside space-y-2 text-sm text-slate-700">
+          <li>Mahony MC, et al. 2021: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8696034/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Recombinant human follicle-stimulating hormone alfa dose adjustment in US clinical practice: An observational, retrospective analysis of a real-world electronic medical records database</a>, Front Endocrinol (Lausanne) 12: 742089.</li>
+      
+          <li>Gibreel A, Bhattacharya S. 2010: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2819896/#:~:text=Follitropin%20alpha%20can%20be%20used,)%20or%20idiopathic%20oligo%2Dasthenospermia." target="_blank" class="text-blue-600 underline hover:text-blue-800">Recombinant follitropin alfa/lutropin alfa in fertility treatment</a>, Biologics 4: 5–17.</li>
+      
+          <li>Bouloux P, et al. 2002: <a href="https://pubmed.ncbi.nlm.nih.gov/11821082/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Efficacy and safety of recombinant human follicle-stimulating hormone in men with isolated hypogonadotropic hypogonadism</a>, Fertil Steril. 77(2): 270–3.</li>
+      
+          <li>Liu X. 2015: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4355925/?utm_source=chatgpt.com" target="_blank" class="text-blue-600 underline hover:text-blue-800">Efficacy of highly purified urinary FSH versus recombinant FSH in Chinese women over 37 years undergoing assisted reproductive techniques</a>, Int J Fertil Steril. 8(4): 385–92.</li>
+      
+          <li>Bordewijk EM, et al. 2019: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6561325/?utm_source=chatgpt.com" target="_blank" class="text-blue-600 underline hover:text-blue-800">Required amount of rFSH, HP-hMG and HP-FSH to reach a live birth: a systematic review and meta-analysis</a>, Hum Reprod Open. 2019(3): hoz008.</li>
+      
+          <li>Lispi M, et al. 2006: <a href="https://pubmed.ncbi.nlm.nih.gov/16895630/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Comparative assessment of the consistency and quality of a highly purified FSH extracted from human urine (urofollitropin) and a recombinant human FSH (follitropin alpha)</a>, Reprod Biomed Online. 13(2): 179–93.</li>
+      
+          <li>Vitt VA, et al. 1998: <a href="https://pubmed.ncbi.nlm.nih.gov/9746735/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Isoforms of human recombinant follicle-stimulating hormone: comparison of effects on murine follicle development in vitro</a>, Biol Reprod. 59(4): 854–61.</li>
+      
+          <li>Dias JA, van Roey P. 2001: <a href="https://pubmed.ncbi.nlm.nih.gov/11750726/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Structural biology of human follitropin and its receptor</a>, Arch Med Res. 32(6): 510–9.</li>
+      
+          <li>De Pascali F, et al. 2018: <a href="https://pubmed.ncbi.nlm.nih.gov/29699689/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Follicle-stimulating hormone receptor: Advances and remaining challenges</a>, Int Rev Cell Mol Biol. 338: 1–58.</li>
+      
+          <li>Ayoub MA, et al. 2016: <a href="https://pubmed.ncbi.nlm.nih.gov/27165991/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Computational modeling approaches in gonadotropin signaling</a>, Theriogenology 86(1): 22–31.</li>
+      
+          <li>Hungues N-J. 2001: <a href="https://www.sciencedirect.com/science/article/abs/pii/S1472648310621888#:~:text=The%20use%20of%20r%2DhFSH%20has%20been%20shown%20to%20lead,rates%20with%20the%20recombinant%20product." target="_blank" class="text-blue-600 underline hover:text-blue-800">Recombinant human follicle-stimulating hormone: a scientific step to clinical improvement</a>, Reprod BioMed Online. 2(1): 54–64.</li>
+      
+          <li>Smitz J, et al. 2016: <a href="https://pubmed.ncbi.nlm.nih.gov/26446000/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Follicle-stimulating hormone: A review of form and function in the treatment of infertility</a>, Reprod Sci. 23(6): 706–16.</li>
+      
+          <li>Pang SC. 2005: <a href="https://pubmed.ncbi.nlm.nih.gov/19803949/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Use of follicle-stimulating hormone for the treatment of female infertility - current concepts</a>, Womens Health (Lond) 1(1): 87–95.</li>
+      
+          <li>Casarini L, et al. 2020: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7177393/" target="_blank" class="text-blue-600 underline hover:text-blue-800">FSH for the treatment of male infertility</a>, Int J Mol Sci. 21(7): 2270.</li>
+      
+          <li>Hascalik S, et al. 2010: <a href="https://pubmed.ncbi.nlm.nih.gov/19720661/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Effects of highly purified urinary FSH and human menopausal FSH on uterine myoelectrical dynamics</a>, Mol Hum Reprod. 16(3): 200–6.</li>
+      
+          <li>Phipps WR, et al. 1996: <a href="https://pubmed.ncbi.nlm.nih.gov/8752627/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Use of recombinant human follicle-stimulating hormone for in vitro fertilization-embryo transfer after severe systemic immunoglobulin E-mediated reaction to urofollitropin</a>, Fertil Steril. 66(1): 148–50.</li>
+      
+          <li>Riccetti L, et al. 2019: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6667556/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Glycosylation pattern and in vitro bioactivity of reference follitropin alfa and biosimilars</a>, Front Endocrinol (Lausanne) 10: 503.</li>
+      
+          <li>Casarini L, Simoni M. 2021: <a href="https://pubmed.ncbi.nlm.nih.gov/34046645/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Recent advances in understanding gonadotropin signaling</a>, Fac Rev. 10: 41.</li>
+      
+          <li>Rose TH, et al. 2016: <a href="https://pubmed.ncbi.nlm.nih.gov/27139012/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Characterisation of population pharmacokinetics and endogenous follicle-stimulating hormone (FSH) levels after multiple dosing of a recombinant human FSH (FE 999049) in healthy women</a>, Drugs R D. 16(2): 165–72.</li>
+      
+          <li>Das N, et al. 2018: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5851872/#:~:text=More%20acidic%20mixtures%20of%20FSH,2002" target="_blank" class="text-blue-600 underline hover:text-blue-800">Molecular regulation of follicle-stimulating hormone synthesis, secretion and action</a>, J Mol Endocrinol. 60(3): R131–55.</li>
+        </ol>
+      </section>
+      
+      
+      
   </main>
-  <script>
-    function pagination() {
-      return {
-        page: 1,
-        perPage: 10,
-        data: [
-          { name: "Bilirubin (unconjugated)", cas: "635-65-4", synonyms: "Bilirubin Ixα, bilirubin free, bilirubina, bilirubine, Unconjugated Bilirubin, BU, cholerythrin, haematoidin, hematoidin, indirect bilirubin, indirect reacting bilirubin, Ixα-bilirubin, NSC26685, UCB, UCBR", form: "Powder", url:"bilirubin.html"}, 
-          { name: "Calcitonin Salmon", cas: "47931-85-1", synonyms: "Salcatonin, salmon calcitonin, sCT", form: "Powder", url: "calcitonin.html" },
-          { name: "Chymotrypsinogen", cas: "9035-75-0", synonyms: "Zymogen of chymotrypsin, pancreatic chymotrypsinogen A", form: "Powder", url: "chymotrypsinogen.html"},
-          { name: "Collagen", cas: "9007-34-5", synonyms: " Hydrolyzed collagen, collagen peptides, gelatin, native collagen, Atelocollagen, type I/II/III collagen, bovine/porcine/fish collagen", form: "Powder", url:"collagen.html"},
-          { name: "FSH-Follicle Stimulating Hormone", cas: "9002-68-0", synonyms: "Follicle-stimulating gonadotropin, follitropin, FSH, hFSH, huFSH, human FSH, recombinant FSH (rFSH, follitropin alpha or beta), urofollitropin (urinary FSH)", form: "Powder", url:"fsh.html"},     
-          { name: "Human Chorionic Gonadotropin", cas: "9002-61-3", synonyms: "Human Chorionic Gonadotrophin, Gonadotropinum chorionicum, Choriogonin, HCG", form: "Powder" },
-          { name: "Hemin", cas:"16009-13-5", synonyms: "Chlorohemin, ferriheme, ferriprotoporphyrin IX chloride, hematin chloride, hemin B, heme chloride, panhematin, protoferriheme, protohemin, iron (III)-protoporphyrin IX chloride", form: "Powder", url:"hemin.html"},
-          { name: "Gastric Mucin", cas:"84082-64-4 9016-61-3", synonyms: "Gastric mucus, gastric mucus glycoprotein, gastric surface mucin, glycoprotein mucin, hog gastric mucin, MUC5AC (predominant mucin subtype in gastric mucus), mucin from porcine gastric mucosa, mucin from porcine stomach, PGM, stomach mucin", form: "Powder", url:"gastric-mucin.html"},
-          { name: "Glucagon", cas: "16941-32-5", synonyms: "GCG, glucagon hydrochloride, recombinant human glucagon", form:"Powder", url: "glucagon.html"},
-          { name: "Lactoferrin", cas: "936541-36-5", synonyms: "Human lactoferrin (hLF) / bovine lactoferrin (bLF), lactoferrin B, lactoferrine, lactotransferrin (LTF), LF, milk transferrin, serotransferrin-like protein", form: "Powder", url:"lactoferrin.html"},
-          { name: "Nisin", cas: "1414-45-5", synonyms: "Lacticin 481, lantibiotic nisin, nisin A, nisin peptide, nisin Z", form: "Powder", url: "nisin.html"},
-          { name: "Porcine Gastric Mucin", cas: "84082-64-4", synonyms: "Hog gastric mucin, mucin from porcine stomach, mucin from porcine gastric mucosa, PMG", form: "Powder" },
-          { name: "Protamine Sulfate", cas: "53597-25-4 / 9009-65-8", synonyms: "Protamine sulfate salt, heparin antagonist, arginine-rich basic protein, salmine sulfate", form: "Powder", url: "protamine-sulfate.html"},
-          { name: "Somatostatin", cas: "38916-34-6", synonyms: "growth hormone–inhibiting hormone (GHIH), growth hormone release-inhibiting hormone (GHRIH), hypothalamic factor, somatostatin-14 , somatotropin release-inhibiting factor (SRIF), somatotropin release-inhibiting hormone (SRIH), SST, SRIF-14/SRIF-28", form: "Powder", url:"somatostatin.html"},
-     
-         
-          
-          
-          
-        ],
-        get totalPages() {
-          return Math.ceil(this.data.length / this.perPage);
-        },
-        get start() {
-          return (this.page - 1) * this.perPage;
-        },
-        get paginatedData() {
-          const start = (this.page - 1) * this.perPage;
-          return this.data.slice(start, start + this.perPage);
-        },
-        goToPage(n) {
-          this.page = n;
-        },
-        prevPage() {
-          if (this.page > 1) this.page--;
-        },
-        nextPage() {
-          if (this.page < this.totalPages) this.page++;
-        }
-      }
-    }
-  </script>
+  
+  
+
   <!-- start cta -->
   <section
   class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 text-center md:text-left">
   <div class="md:flex md:items-center md:justify-center">
-    <h2 class="text-xl font-bold text-white">Contact us at <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> to place an order.</h2>
+    <h2 class="text-xl font-bold text-white">Jiagen Biotechnologies supplies quality Follicle Stimulating Hormone (FSH) of various specifications. <br>Contact us at <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> to place an order.</h2>
     <a href="../../order.html"
       class="px-8 py-4 bg-white text-blue-600 rounded inline-block font-semibold md:ml-8 mt-4 md:mt-0 
       hover:bg-teal-500 hover:text-white transition-colors duration-300">Order</a>
@@ -324,7 +305,7 @@
     <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
       <h5 class="uppercase tracking-wider font-semibold text-gray-500">Products</h5>
       <ul class="mt-4">
-        <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Peptides/Proteins</a></li>
+        <li class="mt-2"><a href="../proteins/proteins.html" title="" class="opacity-75 hover:opacity-100">Peptides/Proteins</a></li>
         <li class="mt-2"><a href="../enzymes/enzymes.html" title="" class="opacity-75 hover:opacity-100">Enzymes</a></li>
         <li class="mt-2"><a href="../coenzymes/coenzymes.html" title="" class="opacity-75 hover:opacity-100">Coenzymes</a></li>
         <li class="mt-2"><a href="../carbohydrates/carbohydrates.html" title="" class="opacity-75 hover:opacity-100">Carbohydrates</a></li>
@@ -390,6 +371,7 @@
     </div>
   </div>
 </footer>
-<!-- end footer --> 
+<!-- end footer -->
+
 </body>
 </html>
