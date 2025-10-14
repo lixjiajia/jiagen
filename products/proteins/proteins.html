@@ -158,6 +158,39 @@
     <h2 class="text-2xl font-bold text-slate-800 mb-12 mt-4">Proteins</h2>
     <!-- Pagination -->
     <div x-data="pagination()" class="w-full overflow-x-auto">
+      <div class="mt-4 mb-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+            <p class="text-sm text-gray-700">
+              Showing
+              <span class="font-medium" x-text="start + 1"></span>
+              to
+              <span class="font-medium" x-text="Math.min(start + perPage, data.length)"></span>
+              of
+              <span class="font-medium" x-text="data.length"></span>
+              results
+            </p>
+          </div>
+        <div class="flex items-center space-x-2">
+        <button @click="prevPage" :disabled="page === 1"
+          class="px-3 py-1 bg-slate-200 text-sm rounded hover:bg-slate-300 disabled:opacity-50">
+          <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+            <path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
+          </svg>
+        </button>
+        <template x-for="i in totalPages">
+          <button @click="goToPage(i)" x-text="i"
+            :class="{'bg-slate-500 text-white': i === page, 'bg-slate-100': i !== page}"
+            class="px-3 py-1 rounded text-sm hover:bg-slate-300"></button>
+        </template>
+        <button @click="nextPage" :disabled="page === totalPages"
+          class="px-3 py-1 bg-slate-200 text-sm rounded hover:bg-slate-300 disabled:opacity-50">
+          <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+            <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+          </svg>
+        </button>
+        </div>
+      </div>
+
       <!-- Desktop table -->
       <div class="hidden lg:block w-full text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
         <table class="w-full text-left table-auto text-slate-800">
@@ -260,15 +293,19 @@
           { name: "Bilirubin (unconjugated)", cas: "635-65-4", synonyms: "Bilirubin Ixα, bilirubin free, bilirubina, bilirubine, Unconjugated Bilirubin, BU, cholerythrin, haematoidin, hematoidin, indirect bilirubin, indirect reacting bilirubin, Ixα-bilirubin, NSC26685, UCB, UCBR", form: "Powder", url:"bilirubin.html"}, 
           { name: "Calcitonin Salmon", cas: "47931-85-1", synonyms: "Salcatonin, salmon calcitonin, sCT", form: "Powder", url: "calcitonin.html" },
           { name: "Chymotrypsinogen", cas: "9035-75-0", synonyms: "Zymogen of chymotrypsin, pancreatic chymotrypsinogen A", form: "Powder", url: "chymotrypsinogen.html"},
-          { name: "Collagen", cas: "9007-34-5", synonyms: " Hydrolyzed collagen, collagen peptides, gelatin, native collagen, Atelocollagen, type I/II/III collagen, bovine/porcine/fish collagen", form: "Powder", url:"collagen.html"},
+          { name: "Collagen", cas: "9007-34-5", synonyms: "Hydrolyzed collagen, collagen peptides, gelatin, native collagen, Atelocollagen, type I/II/III collagen, bovine/porcine/fish collagen", form: "Powder", url:"collagen.html"},
+          { name: "Cytochrome C", cas:"9007-43-6", synonyms:"CYC, Cytochrome C oxidase substrate, Cyt C, ferrocytochrome C, ferricytochrome C", form:"Powder", url:"cytochromec.html"},
           { name: "FSH-Follicle Stimulating Hormone", cas: "9002-68-0", synonyms: "Follicle-stimulating gonadotropin, follitropin, FSH, hFSH, huFSH, human FSH, recombinant FSH (rFSH, follitropin alpha or beta), urofollitropin (urinary FSH)", form: "Powder", url:"fsh.html"},     
-          { name: "Human Chorionic Gonadotropin", cas: "9002-61-3", synonyms: "Human Chorionic Gonadotrophin, Gonadotropinum chorionicum, Choriogonin, HCG", form: "Powder" },
-          { name: "Hemin", cas:"16009-13-5", synonyms: "Chlorohemin, ferriheme, ferriprotoporphyrin IX chloride, hematin chloride, hemin B, heme chloride, panhematin, protoferriheme, protohemin, iron (III)-protoporphyrin IX chloride", form: "Powder", url:"hemin.html"},
           { name: "Gastric Mucin", cas:"84082-64-4 9016-61-3", synonyms: "Gastric mucus, gastric mucus glycoprotein, gastric surface mucin, glycoprotein mucin, hog gastric mucin, MUC5AC (predominant mucin subtype in gastric mucus), mucin from porcine gastric mucosa, mucin from porcine stomach, PGM, stomach mucin", form: "Powder", url:"gastric-mucin.html"},
           { name: "Glucagon", cas: "16941-32-5", synonyms: "GCG, glucagon hydrochloride, recombinant human glucagon", form:"Powder", url: "glucagon.html"},
+          { name: "Hemin", cas:"16009-13-5", synonyms: "Chlorohemin, ferriheme, ferriprotoporphyrin IX chloride, hematin chloride, hemin B, heme chloride, panhematin, protoferriheme, protohemin, iron (III)-protoporphyrin IX chloride", form: "Powder", url:"hemin.html"},
+          { name: "Human Chorionic Gonadotropin", cas: "9002-61-3", synonyms: "CGH, choriogonin, chorionic gonadotropin, hCG, human chorionic gonadotrophin, gonadotropinum chorionicum", form: "Powder", url:"hcg.html" },
+          { name: "Human Menopausal Gonadotropin", cas:"61489-71-2", synonyms: "hMG, menopausal gonadotrophin, menotrophin, menotropins, uHMG (urinary-derived HMG), urinary-derived gonadotrophins", form:"Powder", url:"hmg.html"},
+          { name: "Insulin (porcine)", cas:"12584-58-6", synonyms: "Insulin from porcine pancreas; insulin from hog pancreas; insulin (pork), insulin (swine)", form: "Powder", url:"insulin.html"},
           { name: "Lactoferrin", cas: "936541-36-5", synonyms: "Human lactoferrin (hLF) / bovine lactoferrin (bLF), lactoferrin B, lactoferrine, lactotransferrin (LTF), LF, milk transferrin, serotransferrin-like protein", form: "Powder", url:"lactoferrin.html"},
           { name: "Nisin", cas: "1414-45-5", synonyms: "Lacticin 481, lantibiotic nisin, nisin A, nisin peptide, nisin Z", form: "Powder", url: "nisin.html"},
           { name: "Porcine Gastric Mucin", cas: "84082-64-4", synonyms: "Hog gastric mucin, mucin from porcine stomach, mucin from porcine gastric mucosa, PMG", form: "Powder" },
+          { name: "Pregnant Mare Serum Gonadotropin", cas:"9002-70-4", synonyms:"Chorionic gonadotropin from pregnant mare serum, pregnant mare serum Gonadotrophin, eCG, equine chorionic gonadotropin, equine gonadotropin, PMSG, serum gonadotropin, Gonadotropinum sericum equinum", form:"Powder", url:"pmsg.html"},
           { name: "Protamine Sulfate", cas: "53597-25-4 / 9009-65-8", synonyms: "Protamine sulfate salt, heparin antagonist, arginine-rich basic protein, salmine sulfate", form: "Powder", url: "protamine-sulfate.html"},
           { name: "Somatostatin", cas: "38916-34-6", synonyms: "growth hormone–inhibiting hormone (GHIH), growth hormone release-inhibiting hormone (GHRIH), hypothalamic factor, somatostatin-14 , somatotropin release-inhibiting factor (SRIF), somatotropin release-inhibiting hormone (SRIH), SST, SRIF-14/SRIF-28", form: "Powder", url:"somatostatin.html"},
      

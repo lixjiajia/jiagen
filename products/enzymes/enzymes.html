@@ -158,6 +158,38 @@
     <h2 class="text-2xl font-bold text-slate-800 mb-12 mt-4">Enzymes</h2>
     <!-- Alpine.js Pagination -->
     <div x-data="pagination()" class="w-full overflow-x-auto">
+      <div class="mt-4 mb-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+            <p class="text-sm text-gray-700">
+              Showing
+              <span class="font-medium" x-text="start + 1"></span>
+              to
+              <span class="font-medium" x-text="Math.min(start + perPage, data.length)"></span>
+              of
+              <span class="font-medium" x-text="data.length"></span>
+              results
+            </p>
+          </div>
+        <div class="flex items-center space-x-2">
+        <button @click="prevPage" :disabled="page === 1"
+          class="px-3 py-1 bg-slate-200 text-sm rounded hover:bg-slate-300 disabled:opacity-50">
+          <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+            <path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
+          </svg>
+        </button>
+        <template x-for="i in totalPages">
+          <button @click="goToPage(i)" x-text="i"
+            :class="{'bg-slate-500 text-white': i === page, 'bg-slate-100': i !== page}"
+            class="px-3 py-1 rounded text-sm hover:bg-slate-300"></button>
+        </template>
+        <button @click="nextPage" :disabled="page === totalPages"
+          class="px-3 py-1 bg-slate-200 text-sm rounded hover:bg-slate-300 disabled:opacity-50">
+          <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+            <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+          </svg>
+        </button>
+        </div>
+      </div>
       <!-- Desktop table -->
       <div class="hidden lg:block w-full text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
         <table class="w-full text-left table-auto text-slate-800">
@@ -264,9 +296,8 @@
           { name: "Chymotrypsin", cas: "9004-07-3", synonyms: "α-chymotrypsin, chymotrypsin A, pancreatic chymotrypsin", form: "Powder", url:"chymotrypsin.html" },
           { name: "Cytochrome C", cas: "9007-43-6", synonyms: "Cyt C, Cytochrome C from porcine hearts, Cytochrome C from equine (horse) hearts, Cytochrome C from bovine hearts", form: "Powder" },
           { name: "Deoxyribonuclease (DNase I)", cas: "9003-98-9", synonyms: "Deoxyribonuclease I, Deoxyribonucleate 5'-oligonucleotido-hydrolase, Pancreatic deoxyribonuclease, Thymonuclease", form: "Powder", url:"dnase.html" },
-          { name: "Human Urokinase", cas: "9039-53-6", synonyms: "Urokinase, Urokinase type plasminogen activator, Urinary type plasminogen activitor, uPA, UK, hUK", form: "Powder"},
           { name: "Hyaluronidase", cas: "9001-54-1", synonyms: "hyaluronate lyase, hyase, hyase-1, hyalase, mucolase", form: "Powder", url: "hyaluronidase.html"},
-          { name: "Kallikrein", cas: "9001-01-8", synonyms: "Pancreatic kallikrein, Kallikrein, Kininogenin, Kininogenase, Kallidinogenase, Kallikrein from porcine pancreas, Kallikrein from hog pancreas", form: "Powder"},
+          { name: "Kallikrein", cas: "9001-01-8", synonyms: "Pancreatic kallikrein, Kallikrein, Kininogenin, Kininogenase, Kallidinogenase, Kallikrein from porcine pancreas, Kallikrein from hog pancreas", form: "Powder", url:"kallikrein.html"},
           { name: "Lysozyme", cas: "9001-63-2", synonyms: "Muramidase,  N-acetylmuramide glycanhydrolase, egg-white lysozyme, peptidoglycan N-acetylmuramoylhydrolase", form: "Powder", url:"lysozyme.html"},
           { name: "Pancreatic Elastase", cas: "9004-06-2", synonyms: "Pancreatic elastase, Elastase, PPE, Elastase from porcine pancreas, Elastase from hog pancreas, Pancreatopeptidase E", form: "Powder"},
           { name: "Pancreatin", cas: "8049-47-6", synonyms: "Pancreatic enzymes, pancreatic extract, pancreatin from porcine pancreas, pancreatin from hog pancreas", form: "Powder", url: "pancreatin.html"},
@@ -277,7 +308,7 @@
           { name: "Thrombin", cas: "9002-04-4", synonyms: "Activated Factor II, coagulation Factor IIa, Factor IIa, serine protease thrombin, thrombic enzyme    ", form: "Powder", url:"thrombin.html"},
           { name: "Trypsin", cas: "9002-07-7", synonyms: "Bovine pancreas trypsin, porcine pancreas trypsin, pancreatic protease, pancreatic trypsin, parenzyme, serine protease trypsin, trypsin 1, trypsin serine endopeptidase, trypsinase, trypsinum, trypase", form: "Powder", url:"trypsin.html" },
           { name: "Trypsin-Chymotrypsin", cas: "trypsin 9002-07-7 / chymotrypsin 9004-07-3", synonyms: "Mixed pancreatic enzymes, pancreatic protease blend, protease complex from pancreas, protease enzyme mix, proteolytic enzyme compound, trypsin-chymotrypsin complex/mixture", form: "Powder", url:"trypsin-chymotrypsin.html"},
-
+          { name: "Urokinase", cas:"9039-53-6", synonyms: "High molecular weight urokinase, plasminogen activator, tissue culture urokinase, U-PA, urochinasi (Italian-derived term), URK, urokinase-type plasminogen activator (uPA), urinary-type plasminogen activator, urokinase plasminogen activator, urokinase-type PA, uroquinase, hUK", form:"Powder", url:"urokinase.html"}
         ],
         get totalPages() {
           return Math.ceil(this.data.length / this.perPage);

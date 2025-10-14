@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jiagen Biotechnologies</title>
+  <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <link href="../../dist/output.css" rel="stylesheet" />
+
+  
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Announcement Bar -->
+  <div class="bg-brandblue text-white text-sm py-1 px-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="hidden md:flex"><span>Empowering Life Science Research</span></div>
+      <div class="flex space-x-6 md:hidden">
+        <!-- Mobile: show just one link -->
+        <span>Phone: <span class="font-semibold">514-779-9623</span></span>
+        <span>Orders: <span class="font-semibold">sales@jiagen.com</span></span>
+      </div>
+        <!-- Desktop: show full info -->
+        <div class="hidden md:flex space-x-6">
+          <span>Phone: <span class="font-semibold">514-779-9623</span></span>
+          <span>Contact: <span class="font-semibold">info@jiagen</span></span>
+          <span>Orders: <span class="font-semibold">sales@jiagen.com</span></span>
+        </div>
+    </div>
+  </div>
+ <!-- Header -->
+<header class="sticky top-0 z-50 bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-1 flex justify-between items-center relative">
+      <a href="../../index.html">
+        <img src="../../assets/logo.svg" alt="Logo" class="h-20 w-auto" />
+      </a>
+      <!-- Mobile Menu Toggle Button -->
+    <div class="md:hidden" x-data="{ open: false }">
+        <button @click="open = !open" class="text-slate-800 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        </button>
+    
+        <!-- Mobile Dropdown Menu -->
+        <div x-show="open" @click.away="open = false" class="absolute left-0 top-full w-full bg-white shadow-md z-50 border-t mt-2">
+        <ul class="p-4 space-y-2 font-medium text-sm">
+            
+            <!-- PRODUCTS dropdown -->
+            <li x-data="{ openSub: false }">
+            <button @click="openSub = !openSub" class="w-full text-left flex justify-between items-center py-2 text-slate-800 hover:text-slate-900">
+                Products
+                <svg class="w-4 h-4 transform transition-transform" :class="{ 'rotate-180': openSub }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+                </svg>
+            </button>
+            <ul x-show="openSub" class="pl-4 mt-2 space-y-1 text-sm" x-cloak>
+              <li><a href="../proteins/proteins.html" class="block py-1 hover:text-blue-700">Peptides / Proteins</a></li>
+              <li><a href="../enzymes/enzymes.html" class="block py-1 hover:text-blue-700">Enzymes</a></li>
+              <li><a href="../coenzymes/coenzymes.html" class="block py-1 hover:text-blue-700">Coenzymes</a></li>
+              <li><a href="../carbohydrates/carbohydrates.html" class="block py-1 hover:text-blue-700">Carbohydrates</a></li>
+              <li><a href="../chemicals/chemicals.html" class="block py-1 hover:text-blue-700">Chemicals</a></li>
+            </ul>
+            </li>
+    
+            <!-- Other links -->
+            <li><a href="../../order.html" class="block py-2 text-slate-800 hover:text-slate-900">Order</a></li>
+        </ul>
+        </div>
+    </div>
+    
+  
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-6 items-center w-full">
+        <ul class="flex flex-nowrap items-center font-medium text-base">
+          <li class="p-4 lg:px-8 relative flex items-center space-x-1"
+              x-data="{ open: false }"
+              @mouseenter="open = true"
+              @mouseleave="open = false">
+            <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">Products</a>
+            <button class="shrink-0 p-1" :aria-expanded="open">
+              <span class="sr-only">Show submenu for "products"</span>
+              <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                <path d="M10 2.586 11.414 4 6 9.414.586 4 2 2.586l4 4z" />
+              </svg>
+            </button>
+            <ul class="origin-top-right absolute top-full left-1/2 -translate-x-1/2 min-w-[240px] 
+                       bg-white border border-slate-200 p-2 rounded-lg shadow-xl [&[x-cloak]]:hidden"
+                x-show="open"
+                x-transition:enter="transition ease-out duration-200 transform"
+                x-transition:enter-start="opacity-0 -translate-y-2"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-out duration-200"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                x-cloak>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../proteins/proteins.html"><span>Peptides / Proteins</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../enzymes/enzymes.html"><span>Enzymes</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../coenzymes/coenzymes.html"><span>Coenzymes</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../carbohydrates/carbohydrates.html"><span>Carbohydrates</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../chemicals/chemicals.html"><span>Chemicals</span></a></li>
+
+              </ul>
+          </li>
+  
+          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../order.html">Order</a></li>
+        </ul>
+        <div class="flex items-center space-x-1">
+          <!-- Search -->
+          <div class="w-full max-w-xs min-w-[200px]">
+              <div class="relative flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="absolute w-5 h-5 top-2.5 left-2.5 text-slate-600">
+                  <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
+              </svg>
+          
+              <input
+              class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+              placeholder="Search Product" 
+              />
+      
+              </div>
+          </div>
+          <ul class="flex flex-nowrap items-center font-medium text-sm">
+              <li class="p-4 lg:px-8 relative flex items-center space-x-1"
+                  x-data="{ open: false }"
+                  @mouseenter="open = true"
+                  @mouseleave="open = false">
+                <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">EN</a>
+                <button class="shrink-0 p-1" :aria-expanded="open">
+                  <span class="sr-only">Show submenu for languages</span>
+                  <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                    <path d="M10 2.586 11.414 4 6 9.414.586 4 2 2.586l4 4z" />
+                  </svg>
+                </button>
+                <ul class="origin-top-right absolute top-full left-1/2 -translate-x-1/2 min-w-[120px] 
+                           bg-white border border-slate-200 p-2 rounded-lg shadow-xl [&[x-cloak]]:hidden"
+                    x-show="open"
+                    x-transition:enter="transition ease-out duration-200 transform"
+                    x-transition:enter-start="opacity-0 -translate-y-2"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-out duration-200"
+                    x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0"
+                    x-cloak>
+                    <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="#"><span>English</span></a></li>
+                    <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="./french/order_fr.html"><span>Français</span></a></li>
+                </ul>
+              </li>
+            </ul>
+        </div>
+      </nav>
+
+    
+  </header>
+  <!-- Main Content -->
+<main class="max-w-6xl mx-auto px-6 py-12 text-slate-800 font-sans leading-relaxed">
+    <div class="mb-8">
+      <a href="enzymes.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        Enzymes
+      </a>
+    </div>
+  
+    <!-- Header -->
+    <section>
+      <h2 class="text-3xl font-bold text-brandblue border-b border-gray-300 pb-2 mb-4">Kallikrein</h2>
+      <p class="text-base text-gray-600 mb-2">
+        <strong>CAS No.:</strong> 9001-01-8 &nbsp;|&nbsp;
+        <strong>EC No.:</strong> 3.4.21.35 &nbsp;|&nbsp;
+        <strong>EINECS No.:</strong> 232-574-5
+      </p>
+      <p class="mb-4"><strong>Synonyms:</strong> Bradykininogenase, callicrein, depot-padutin, glumorin, pancreatic kallikrein, kallikrein, kininogenin, kininogenase, kallidinogenase, porcine pancreatic kallikrein, kallikrein from porcine pancreas, kallikrein from hog pancreas, padreatin, padutin</p>
+    </section>
+  
+    <section class="mt-8">
+      <h3 class="text-2xl font-semibold text-brandblue mb-2">Product Summary</h3>
+      <p>
+        Porcine pancreatic kallikrein is a serine protease purified from porcine pancreas, known for its ability to generate bradykinin from kininogen. The enzyme acts optimally near pH 8.0–8.7, hydrolyzing Arg-X peptide bonds such as BAEE. It serves as a model protease for enzyme kinetics, activation studies, MMP-9 zymogen activation, and cell-based assays - especially those involving neural progenitor proliferation. It has recently been adopted in immobilized-enzyme microfluidic / LC-MS platforms.
+      </p>
+    </section>
+  
+    <section class="mt-8">
+      <h3 class="text-2xl font-semibold text-brandblue mb-2">Biochemical Function</h3>
+      <p>
+        Porcine pancreatic kallikrein functions by specifically cleaving low-molecular-weight or high-molecular-weight kininogen (LMWK or HMWK), which are circulating plasma precursors, to release bradykinin—a biologically active nonapeptide known for its potent vasoactive and pro-inflammatory properties. Once bradykinin is generated, it acts on bradykinin B2 receptors located on endothelial and smooth muscle cells, leading to a cascade of physiological effects, including vasodilation, blood pressure regulation, inflammation, and pain signaling.
+      </p>
+    </section>
+  
+    <section class="mt-8">
+      <h3 class="text-2xl font-semibold text-brandblue mb-2">Mechanism of Action</h3>
+      <p>
+        Porcine pancreatic kallikrein is a serine protease whose enzymatic activity centers on the selective cleavage of specific peptide bonds within kininogen, a glycoprotein precursor of bradykinin. The enzyme primarily hydrolyzes peptide bonds at the carboxyl side of arginine (Arg–X) residues, where "X" can be any amino acid, though certain neighboring residues influence substrate specificity.
+      </p>
+      <ol class="list-decimal list-inside space-y-2 text-base text-slate-700 pl-5 mt-2">
+        <li><strong>Catalytic process</strong><br>
+          <p class="mt-2">The catalytic mechanism of porcine pancreatic kallikrein involves a highly conserved catalytic triad—Histidine (His), Aspartate (Asp), and Serine (Ser)—which is characteristic of the trypsin-like subclass of serine proteases. These three amino acid residues work synergistically to cleave peptide bonds. His acts as a base to deprotonate the hydroxyl group of the serine residue. Ser, now nucleophilic, attacks the carbonyl carbon of the target peptide bond within kininogen. Asp stabilizes the positive charge developed on histidine during catalysis. This results in the formation of a tetrahedral intermediate, followed by bond cleavage and release of the bradykinin peptide, along with regeneration of the active site.</p>
+        </li>
+        <li><strong>Activation mechanism</strong><br>
+            <p class="mt-2">Kallikrein is synthesized as an inactive precursor (zymogen) called prokallikrein. It requires proteolytic activation to become enzymatically active:</p>
+          <ul class="list-disc list-inside pl-5 mt-1">
+            <li>Trypsin, a serine protease found in the pancreas, can cleave a specific activation peptide in prokallikrein to convert it into active kallikrein.</li>
+            <li>Alternatively, kallikrein may undergo autolytic cleavage, where an already active kallikrein molecule activates additional prokallikrein molecules—creating a positive feedback loop.</li>
+          </ul>
+          <p class="mt-2">This activation mechanism ensures that kallikrein remains dormant until needed, preventing unintended proteolytic activity in the pancreas or bloodstream.</p>
+        </li>
+        <li><strong>Substrate specificity and product formation</strong><br>
+            <p class="mt-2">Once activated, kallikrein targets low- and high-molecular-weight kininogens, cleaving specific Arg–Ser or Arg–Met bonds to release bradykinin (a 9-amino-acid peptide). This process is central to initiating the kinin cascade, leading to downstream effects such as increased vasodilation, stimulation of inflammatory pathways, activation of pain receptors, and facilitation of immune cell migration.</p>
+        </li>
+      </ol>
+    </section>
+  
+    <section class="mt-8">
+      <h3 class="text-2xl font-semibold text-brandblue mb-2">Applications in Scientific Research</h3>
+      <ol class="list-decimal list-inside space-y-2 text-base text-slate-700 pl-5">
+        <li><strong>Physiological studies</strong><br>
+            <p class="mt-2 mb-2">Porcine pancreatic kallikrein is extensively used as a biological tool in studies of the kallikrein–kinin system, a critical hormonal cascade regulating numerous physiological processes. By catalyzing the release of bradykinin, it enables researchers to:</p>
+          <ul class="list-disc list-outside pl-10 mt-1 space-y-1">
+            <li>Investigate vasodilation and vascular permeability mechanisms, especially in relation to blood pressure regulation.</li>
+            <li>Explore its role in inflammation, pain perception, and smooth muscle contraction.</li>
+            <li>Model systemic responses such as hypotension, shock, and allergic reactions, providing insight into inflammatory diseases, cardiovascular dysfunction, and asthma.</li>
+          </ul>
+          <p class="mt-2">This has been essential in understanding how kallikrein modulates vascular tone and inflammatory signaling in both normal and pathological states.</p>
+        </li>
+        <li><strong>Enzyme activation and kinetics studies</strong><br>
+            <p class="mt-2 mb-2">Due to its trypsin-like serine protease nature and clear activation mechanism, porcine kallikrein serves as a model enzyme for:</p>
+          <ul class="list-disc list-outside pl-10 mt-1 space-y-1">
+            <li>Studying zymogen activation, particularly prokallikrein-to-kallikrein conversion, revealing general principles of protease maturation.</li>
+            <li>Elucidating enzyme-substrate interaction dynamics and reaction kinetics of serine proteases, contributing to the understanding of proteolytic cascades.</li>
+            <li>Acting as an activator of matrix metalloproteinase-9 (MMP 9) zymogen, which is relevant in extracellular matrix degradation, wound healing, and cancer metastasis.</li>
+          </ul>
+        </li>
+        <li><strong>Cell culture and neuroscience applications</strong><br>
+        <p class="mt-2 mb-2">Recent research has demonstrated that porcine kallikrein influences neural cell behavior, especially in neuroscience and developmental biology:</p>
+          <ul class="list-disc list-outside pl-10 mt-1 space-y-1">
+            <li>In subventricular zone (SVZ) neural progenitor cells, kallikrein exposure can modulate cell proliferation and survival, possibly through its bradykinin-mediated signaling.</li>
+            <li>It has also been shown to affect the fate and growth of oligodendrocyte progenitor cells, which are vital for myelination in the central nervous system.</li>
+          </ul>
+          <p class="mt-2">These findings suggest its utility in neural regeneration, brain injury models, and developmental neurobiology.</p>
+        </li>
+        <li><strong>Structural and functional enzymology</strong><br>
+          Porcine pancreatic kallikrein has served as a model for high-resolution structural studies aimed at understanding serine protease mechanisms:
+          <ul class="list-disc list-outside pl-10 mt-2 space-y-1">
+            <li>X-ray crystallographic studies, including those at ~2.0 Å resolution, have resolved the 3D structure of kallikrein A, revealing:</li>
+            <ul class="list-disc list-inside">
+                <li>The detailed architecture of the active site.</li>
+                <li>The domain organization responsible for substrate recognition.</li> 
+                <li>The conformational changes associated with zymogen activation.</li>
+            </ul>
+      
+            <li>These insights have furthered our understanding of substrate specificity, enzyme stability, and allosteric regulation within the serine protease family.</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+  
+    <section class="mt-8">
+      <h3 class="text-2xl font-semibold text-brandblue mb-2">Packaging & Storage</h3>
+      <ul class="list-disc list-inside space-y-1 text-base text-slate-700">
+        <li>Available as white to almost white lyophilized powder</li>
+        <li>Store in an airtight tamper-proof container at 2-8 °C</li>
+      </ul>
+    </section>
+  
+  
+    <section class="mt-10">
+        <h3 class="text-2xl font-semibold text-brandblue mb-4">References</h3>
+        <ol class="list-decimal list-inside space-y-2 text-sm text-slate-700">
+          <li>Fiedler F, Leysath G. 1979: <a href="https://pubmed.ncbi.nlm.nih.gov/495315/#:~:text=The%20primary%20specificity%20of%20porcine,less%20so%20against%20lysyl%20bonds." target="_blank" class="text-blue-600 underline hover:text-blue-800">Substrate specificity of porcine pancreatic kallikrein</a>, Adv Exp Med Biol. 120A: 261-71.</li>
+          <li>Hojima Y, et al. 1977: <a href="https://www.jstage.jst.go.jp/article/biochemistry1922/81/3/81_3_599/_pdf" target="_blank" class="text-blue-600 underline hover:text-blue-800">Isolation and some properties of dog and rat pancreatic kallikreins</a>, J Biochem. 81: 599-610.</li>
+          <li>Jaffa AA, et al. 1986: <a href="https://pubmed.ncbi.nlm.nih.gov/3643715/" target="_blank" class="text-blue-600 underline hover:text-blue-800">A comparative study of prokallikreins and kallikreins from rat pancreatic tissue and juice</a>, Adv Exp Med Biol. 198 Pt A: 323-7.</li>
+          <li>Kizuki K, et al. 1982: <a href="https://pubmed.ncbi.nlm.nih.gov/6754112/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Porcine pancreatic prokallikrein. I. Its partial purification and effects of various proteases on its activation</a>, Chem Pharm Bull (Tokyo). 30(7): 2561-9.</li>
+          <li>Moreau ME, et al. 2005: <a href="https://pubmed.ncbi.nlm.nih.gov/16177542/" target="_blank" class="text-blue-600 underline hover:text-blue-800">The kallikrein-kinin system: current and future pharmacological targets</a>, J Pharmacol Sci. 99(1): 6-38.</li>
+          <li>Björkqvist J, et al. 2013: <a href="https://pubmed.ncbi.nlm.nih.gov/23846131/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Plasma kallikrein: the bradykinin-producing enzyme</a>, Thromb Haemost. 110(3): 399-407.</li>
+          <li>Motta G, Tersariol ILS. 2017: <a href="https://pubmed.ncbi.nlm.nih.gov/28744223/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Modulation of the Plasma Kallikrein-Kinin System Proteins Performed by Heparan Sulfate Proteoglycans</a>, Front Physiol. 11(8): 481.</li>
+          <li>Schmaier AH. 2018: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5788901/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Plasma prekallikrein: Its role in hereditary angioedema and health and disease</a>, Front Med (Lausanne). 25(5): 3.</li>
+          <li>Vonnahme KA, et al. 1999: <a href="https://pubmed.ncbi.nlm.nih.gov/10529269/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Detection of kallikrein gene expression and enzymatic activity in porcine endometrium during the estrous cycle and early pregnancy</a>, Biol Reprod. 61(5): 1235-41.</li>
+          <li>Valdés G, et al. 2001: <a href="https://pubmed.ncbi.nlm.nih.gov/11954665/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Tissue kallikrein and bradykinin B2 receptor in human uterus in luteal phase and in early and late gestation</a>, Endocrine 16(3): 207-15.</li>
+          <li>Clements J, et al. 1994: <a href="https://pubmed.ncbi.nlm.nih.gov/7749374/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Glandular kallikrein gene expression in the human uterus</a>, Braz J Med Biol Res. 27(8): 1855-63.</li>
+          <li>Devetzi M, et al. 2018: <a href="https://pubmed.ncbi.nlm.nih.gov/29328364/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Genetically-modified stem cells in treatment of human diseases: Tissue kallikrein (KLK1)-based targeted therapy (Review)</a>, Int J Mol Med. 41(3): 1177-86.</li>
+          <li>Goettig P, et al. 2010: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3014083/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Natural and synthetic inhibitors of kallikrein-related peptidases (KLKs)</a>, Biochimie 92(11): 1546-67.</li>
+          <li>Stefanini AC, et al. 2015: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4689925/#:~:text=KLKs%20are%20involved%20in%20several,%2C%20neurodegeneration%2C%20and%20autoimmune%20diseases." target="_blank" class="text-blue-600 underline hover:text-blue-800">Involvement of kallikrein-related peptidases in normal and pathologic processes</a>, Dis Markers. 2015: 946572.</li>
+          <li>Chao J. 2013: <a href="https://www.sciencedirect.com/science/article/abs/pii/B9780123822192006074" target="_blank" class="text-blue-600 underline hover:text-blue-800">Chapter 607-Human kallikrein 1, tissue kallikrein</a>, Handbook Proteolytic Enzymes 3: 2757-61.</li>
+          <li>Schmaier AH. 2016: <a href="https://pubmed.ncbi.nlm.nih.gov/26565070/" target="_blank" class="text-blue-600 underline hover:text-blue-800">The contact activation and kallikrein/kinin systems: pathophysiologic and physiologic activities</a>, J Thromb Haemost. 14(1): 28-39.</li>
+          <li>Nunes VA, et al. 2003: <a href="https://pubmed.ncbi.nlm.nih.gov/14703987/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Mapping of human plasma kallikrein active site by design of peptides based on modifications of a Kazal-type inhibitor reactive site</a>, J Protein Chem. 22(6): 533-41.</li>
+          <li>Hooley E, et al. 2007: <a href="https://pubmed.ncbi.nlm.nih.gov/17922805/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Molecular modeling of the prekallikrein structure provides insights into high-molecular-weight kininogen binding and zymogen activation</a>, J Thromb Haemost. 5(12): 2461-6.</li>
+          <li>Uehara S, et al. 1989: <a href="https://pubmed.ncbi.nlm.nih.gov/2481954/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Role of the kallikrein-kinin system in human pancreatitis</a>, Adv Exp Med Biol. 247B: 643-8.</li>
+          <li>Reddigari S, Kaplan AP. 1988: <a href="https://pubmed.ncbi.nlm.nih.gov/2451949/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Cleavage of human high-molecular weight kininogen by purified kallikreins and upon contact activation of plasma</a>, Blood. 71(5): 1334-40.</li>
+          <li>Vonnahme KA, et al. 2004: <a href="https://pubmed.ncbi.nlm.nih.gov/13679312/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Porcine endometrial expression of kininogen, factor XII, and plasma kallikrein in cyclic and pregnant gilts</a>, Biol Reprod. 70(1): 132-8.</li>
+          <li>Fernando SC, et al. 2006: <a href="https://pubmed.ncbi.nlm.nih.gov/17127754/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Porcine endometrial and conceptus tissue kallikrein 1, 4, 11, and 14 gene expression</a>, Reproduction 132(6): 939-47.</li>
+          <li>Wei Z, et al. 2018: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5996104/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Therapeutic values of human urinary kallidinogenase on cerebrovascular diseases</a>, Front Neurol. 5(9): 403.</li>
+        </ol>
+      </section>
+      
+      
+      
+  
+  </main>
+  
+  
+
+  <!-- start cta -->
+  <section
+  class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 text-center md:text-left">
+  <div class="md:flex md:items-center md:justify-center">
+    <h2 class="text-xl font-bold text-white">Jiagen Biotechnologies supplies quality kallikrein of various specifications. <br>Contact us at <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> to place an order.</h2>
+
+    <a href="../../order.html"
+      class="px-8 py-4 bg-white text-blue-600 rounded inline-block font-semibold md:ml-8 mt-4 md:mt-0 
+      hover:bg-teal-500 hover:text-white transition-colors duration-300">Order</a>
+  </div>
+</section>
+<!-- end cta -->
+
+<!-- start footer -->
+<footer class="relative bg-[#ececec] text-gray-500 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 lg:py-24">
+  <div class="flex flex-col md:flex-row">
+    <div class="w-full lg:w-auto lg:mx-4 lg:pr-8">
+      <img src="../../assets/logo.svg" alt="Jiagen Biotechnologies" class="h-40 mb-2">
+
+      <p class="text-gray-400">Empowering Discovery with Trusted Quality Materials.</p>
+
+    </div>
+
+    <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
+      <h5 class="uppercase tracking-wider font-semibold text-gray-500">Products</h5>
+      <ul class="mt-4">
+        <li class="mt-2"><a href="../proteins/proteins.html" title="" class="opacity-75 hover:opacity-100">Peptides/Proteins</a></li>
+        <li class="mt-2"><a href="../enzymes/enzymes.html" title="" class="opacity-75 hover:opacity-100">Enzymes</a></li>
+        <li class="mt-2"><a href="../coenzymes/coenzymes.html" title="" class="opacity-75 hover:opacity-100">Coenzymes</a></li>
+        <li class="mt-2"><a href="../carbohydrates/carbohydrates.html" title="" class="opacity-75 hover:opacity-100">Carbohydrates</a></li>
+        <li class="mt-2"><a href="../chemicals/chemicals.html" title="" class="opacity-75 hover:opacity-100">Chemicals</a></li>
+
+      </ul>
+    </div>
+
+    <div class="w-full lg:w-2/6 mt-8 lg:mt-0 lg:mx-4 lg:pr-8">
+      <h5 class="uppercase tracking-wider font-semibold text-gray-500">Contact Details</h5>
+      <ul class="mt-4">
+        <li>
+          <a href="#" title="" class="block flex items-center opacity-75 hover:opacity-100">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M12,2C7.589,2,4,5.589,4,9.995C3.971,16.44,11.696,21.784,12,22c0,0,8.029-5.56,8-12C20,5.589,16.411,2,12,2z M12,14 c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4S14.21,14,12,14z" />
+              </svg>
+            </span>
+            <span class="ml-3">
+              958 Montée de Liesse, Saint-Laurent, QC, CAN
+            </span>
+          </a>
+        </li>
+
+        <li class="mt-4">
+          <a href="#" title="" class="block flex items-center opacity-75 hover:opacity-100">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M14.594,13.994l-1.66,1.66c-0.577-0.109-1.734-0.471-2.926-1.66c-1.193-1.193-1.553-2.354-1.661-2.926l1.661-1.66 l0.701-0.701L5.295,3.293L4.594,3.994l-1,1C3.42,5.168,3.316,5.398,3.303,5.643c-0.015,0.25-0.302,6.172,4.291,10.766 C11.6,20.414,16.618,20.707,18,20.707c0.202,0,0.326-0.006,0.358-0.008c0.245-0.014,0.476-0.117,0.649-0.291l1-1l0.697-0.697 l-5.414-5.414L14.594,13.994z" />
+              </svg>
+            </span>
+            <span class="ml-3">
+              +1 514-779-9623
+            </span>
+          </a>
+        </li>
+        <li class="mt-4">
+          <a href="#" title="" class="block flex items-center opacity-75 hover:opacity-100">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M20,4H4C2.896,4,2,4.896,2,6v12c0,1.104,0.896,2,2,2h16c1.104,0,2-0.896,2-2V6C22,4.896,21.104,4,20,4z M20,8.7l-8,5.334 L4,8.7V6.297l8,5.333l8-5.333V8.7z" />
+              </svg>
+            </span>
+            <span class="ml-3">
+              info@jiagen.com
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
+      
+
+      <p class="text-sm text-gray-400 mt-12">© 2025 Jiagen Biotechnologies. <br class="hidden lg:block">All Rights Reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->
+
+</body>
+</html>
