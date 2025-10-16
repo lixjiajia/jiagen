@@ -143,7 +143,7 @@
                     x-transition:leave-start="opacity-100"
                     x-transition:leave-end="opacity-0"
                     x-cloak>
-                    <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="enzymes.html"><span>English</span></a></li>
+                    <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="#"><span>English</span></a></li>
                     <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="./french/order_fr.html"><span>Français</span></a></li>
                 </ul>
               </li>
@@ -154,188 +154,105 @@
     
   </header>
   <!-- Main Content -->
-  <main class="p-8 flex-grow max-w-7xl mx-auto">
-    <h2 class="text-2xl font-bold text-slate-800 mb-12 mt-4">Enzymes</h2>
-    <!-- Alpine.js Pagination -->
-    <div x-data="pagination()" class="w-full overflow-x-auto">
-      <div class="mt-4 mb-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div>
-            <p class="text-sm text-gray-700">
-              Showing
-              <span class="font-medium" x-text="start + 1"></span>
-              to
-              <span class="font-medium" x-text="Math.min(start + perPage, data.length)"></span>
-              of
-              <span class="font-medium" x-text="data.length"></span>
-              results
-            </p>
-          </div>
-        <div class="flex items-center space-x-2">
-        <button @click="prevPage" :disabled="page === 1"
-          class="px-3 py-1 bg-slate-200 text-sm rounded hover:bg-slate-300 disabled:opacity-50">
-          <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-            <path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
-          </svg>
-        </button>
-        <template x-for="i in totalPages">
-          <button @click="goToPage(i)" x-text="i"
-            :class="{'bg-slate-500 text-white': i === page, 'bg-slate-100': i !== page}"
-            class="px-3 py-1 rounded text-sm hover:bg-slate-300"></button>
-        </template>
-        <button @click="nextPage" :disabled="page === totalPages"
-          class="px-3 py-1 bg-slate-200 text-sm rounded hover:bg-slate-300 disabled:opacity-50">
-          <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-            <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-          </svg>
-        </button>
-        </div>
-      </div>
-      <!-- Desktop table -->
-      <div class="hidden lg:block w-full text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
-        <table class="w-full text-left table-auto text-slate-800">
-          <thead>
-            <tr class="text-white border-b border-slate-300" style="background-color: #145aac;">
-              <th class="p-4">Product Name</th>
-              <th class="p-4">CAS No.</th>
-              <th class="p-4">Synonyms</th>
-              <th class="p-4">Form</th>
-              <th class="p-4">Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            <template x-for="row in paginatedData" :key="row.name">
-              <tr class="hover:bg-slate-50">
-                <td class="p-4 font-bold text-sm" x-text="row.name"></td>
-                <td class="p-4 text-sm whitespace-nowrap" x-text="row.cas"></td>
-                <td class="p-4 text-sm" x-text="row.synonyms"></td>
-                <td class="p-4 text-sm" x-text="row.form"></td>
-                <td class="p-4 text-sm"><a :href="row.url" class="text-blue-600 font-semibold hover:underline">View Details</a></td>
-              </tr>
-            </template>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Mobile table -->
-      <div class="lg:hidden md:hidden w-full text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
-        <table class="w-full text-left table-auto text-slate-800">
-          <thead>
-            <tr class="text-white border-b border-slate-300" style="background-color: #145aac;">
-              <th class="p-3">Product</th>
-              <th class="p-3">Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            <template x-for="row in paginatedData" :key="row.name">
-              <tr class="hover:bg-slate-50">
-                <!-- Product column -->
-                <td class="p-3 text-sm">
-                  <p class="font-bold" x-text="row.name"></p>
-                  <!-- Only visible on mobile: stack CAS/Form under name -->
-                  <div class="mt-1 space-y-1 text-xs text-gray-600">
-                    <p><span class="font-semibold">CAS:</span> <span x-text="row.cas"></span></p>
-                    <p><span class="font-semibold">Form:</span> <span x-text="row.form"></span></p>
-                  </div>
-                </td>
-                <!-- Details column -->
-                <td class="p-3 text-sm text-blue-600 font-semibold hover:underline">
-                  <a :href="row.url">View Details</a>
-                </td>
-              </tr>
-            </template>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Pagination Controls -->
-      <div class="mt-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div>
-            <p class="text-sm text-gray-700">
-              Showing
-              <span class="font-medium" x-text="start + 1"></span>
-              to
-              <span class="font-medium" x-text="Math.min(start + perPage, data.length)"></span>
-              of
-              <span class="font-medium" x-text="data.length"></span>
-              results
-            </p>
-          </div>
-        <div class="flex items-center space-x-2">
-        <button @click="prevPage" :disabled="page === 1"
-          class="px-3 py-1 bg-slate-200 text-sm rounded hover:bg-slate-300 disabled:opacity-50">
-          <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-            <path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
-          </svg>
-        </button>
-        <template x-for="i in totalPages">
-          <button @click="goToPage(i)" x-text="i"
-            :class="{'bg-slate-500 text-white': i === page, 'bg-slate-100': i !== page}"
-            class="px-3 py-1 rounded text-sm hover:bg-slate-300"></button>
-        </template>
-        <button @click="nextPage" :disabled="page === totalPages"
-          class="px-3 py-1 bg-slate-200 text-sm rounded hover:bg-slate-300 disabled:opacity-50">
-          <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-            <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-          </svg>
-        </button>
-        </div>
-      </div>
+<main class="max-w-6xl mx-auto px-6 py-12 text-slate-800 font-sans leading-relaxed">
+    <div class="mb-8">
+      <a href="proteins.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        Proteins
+      </a>
     </div>
-
+  
+    <section>
+      <h2 class="text-3xl font-bold text-brandblue border-b border-gray-300 pb-2 mb-4">Cytochrome C</h2>
+      <p class="text-base text-gray-600 mb-2">
+        <strong>CAS No.:</strong> 9007-43-6 &nbsp;|&nbsp;
+        <strong>EC No.:</strong> 232-700-9 &nbsp;|&nbsp;
+        <strong>EINECS No.:</strong> 232-700-1
+      </p>
+      <p class="mb-4">
+        <strong>Synonyms:</strong> CYC, Cytochrome C oxidase substrate, Cyt C, ferrocytochrome C, ferricytochrome C
+      </p>
+    </section>
+  
+    <section class="mt-8">
+      <h3 class="text-2xl font-semibold text-brandblue mb-2">Product Summary</h3>
+      <p>
+        Cytochrome C is a highly conserved, heme-containing mitochondrial protein essential in both electron transport and apoptotic signaling. With a molecular weight around 12.4 kDa, it functions by transferring electrons between respiratory complexes III and IV as well as activates caspases upon release into the cytosol. It is widely used in biochemistry, cell biology, and molecular medicine research. Its versatility in oxidative and apoptotic pathways makes it a powerful tool in studies of cell death, mitochondrial disorders, drug screening, and ROS biology.
+      </p>
+    </section>
+  
+    <section class="mt-8">
+      <h3 class="text-2xl font-semibold text-brandblue mb-2">Biochemical Function</h3>
+      <p>
+        Cytochrome C contains a heme group covalently bound via thioether linkages to cysteine residues. The iron in heme cycles between Fe<sup>2+</sup> (reduced) and Fe<sup>3+</sup>(oxidized) states during electron transfer. It acts as a mobile electron shuttle in the mitochondrial electron transport chain. It acts as a pro-apoptotic signal when released from mitochondria.
+      </p>
+    </section>
+  
+    <section class="mt-8">
+      <h3 class="text-2xl font-semibold text-brandblue mb-2">Mechanism of Action</h3>
+      <ul class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700 mt-2">
+        <li><strong>Electron Carrier:</strong> In mitochondrial oxidative phosphorylation, Cytochrome C shuttles electrons from complex III (cytochrome bc₁ complex) to complex IV (Cytochrome C oxidase), generating a proton gradient across the inner mitochondrial membrane. This drives ATP production by enabling proton pumping.</li>
+        <li><strong>Pro-apoptotic Trigger:</strong> When mitochondrial outer membrane is permeabilized (e.g., by Bax/Bak), Cytochrome C leaks into the cytosol. It then binds to Apaf-1 and procaspase-9, forming the apoptosome → activation of downstream caspases → programmed cell death.</li>
+      </ul>
+      <p class="mt-2">Optimal conditions: pH 6.0–7.5, temperature 25–37 °C.</p>
+    </section>
+  
+    <section class="mt-8">
+      <h3 class="text-2xl font-semibold text-brandblue mb-2">Applications in Scientific Research</h3>
+      <ul class="list-disc list-inside pl-5 space-y-2 text-base text-slate-700">
+        <li>Apoptosis research: Cytochrome C release is a key marker of mitochondrial-mediated apoptosis.</li>
+        <li>Bioenergetics and electron transport chain (ETC) studies.</li>
+        <li>Mitochondrial dysfunction models (neurodegenerative diseases, cancer).</li>
+        <li>Protein–protein interaction assays (e.g., binding to Apaf-1).</li>
+        <li>Used as spectrophotometric standards: Due to distinct absorbance at 550 nm (reduced form).</li>
+        <li>Oxidoreductase enzyme assays: Often used as a substrate for Cytochrome C oxidase (complex IV) or superoxide dismutase tests.</li>
+        <li>Drug screening: Assessing effects of compounds on apoptosis or mitochondrial function.</li>
+        <li>ROS generation models: Cytochrome C can generate ROS under certain conditions.</li>
+        <li>Artificial electron transfer systems in bioelectronic and electrochemical studies.</li>
+      </ul>
+    </section>
+  
+    <section class="mt-8">
+      <h3 class="text-2xl font-semibold text-brandblue mb-2">Packaging & Storage</h3>
+      <ul class="list-disc list-inside pl-5 space-y-2 text-base text-slate-700">
+        <li>Sources: purified from heart tissue of horse (equine), bovine, or porcine</li>
+        <li>Available as reddish or red-brown crystalline powder</li>
+        <li>Store in an airtight container, protected from light, in a cool and dry place.</li>
+      </ul>
+    </section>
+  
+    <section class="mt-10">
+      <h3 class="text-2xl font-semibold text-brandblue mb-4">References</h3>
+      <ol class="list-decimal list-inside space-y-2 text-sm text-slate-700">
+        <li>Alvarez-Paggi D, et al. 2017: <a href="https://pubmed.ncbi.nlm.nih.gov/29027792/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Multifunctional cytochrome c: learning new tricks from an old dog</a>, Chem Rev. 17(21): 13382–460.</li>
+        <li>Hannibal L, et al. 2016: <a href="https://pubmed.ncbi.nlm.nih.gov/26720007/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Alternative conformations of cytochrome c: Structure, function, and detection</a>, Biochemistry 55(3): 407–28.</li>
+        <li>Bayir H, et al. 2006: <a href="https://pubmed.ncbi.nlm.nih.gov/16740248/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Apoptotic interactions of cytochrome c: redox flirting with anionic phospholipids within and outside of mitochondria</a>, Biochim Biophys Acta. 1757(5-6): 648–59.</li>
+        <li>Kruglik S G, et al. 2017: <a href="https://pubmed.ncbi.nlm.nih.gov/28759066/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Structural changes and picosecond to second dynamics of cytochrome c in interaction with nitric oxide in ferrous and ferric redox states</a>, Phys Chem Chem Phys. 19(32): 21317–34.</li>
+        <li>Scharlau M, et al. 2019: <a href="https://pubmed.ncbi.nlm.nih.gov/31532642/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Definition of the interaction domain and electron transfer route between cytochrome c and cytochrome oxidase</a>, Biochemistry 58(40): 4125–35.</li>
+        <li>Kalpage H A, et al. 2020: <a href="https://pubmed.ncbi.nlm.nih.gov/32023432/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Cytochrome c phosphorylation: Control of mitochondrial electron transport chain flux and apoptosis</a>, Int J Biochem Cell Biol. 121: 105704.</li>
+        <li>Kalpage H A, et al. 2020: <a href="https://pubmed.ncbi.nlm.nih.gov/32781572/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Brain-specific serine-47 modification of cytochrome c regulates cytochrome c oxidase activity attenuating ROS production and cell death: Implications for ischemia/reperfusion injury and Akt signaling</a>, Cells 9(8): 1843.</li>
+        <li>Hüttemann M, et al. 2012: <a href="https://pubmed.ncbi.nlm.nih.gov/21771582/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Regulation of mitochondrial respiration and apoptosis through cell signaling: cytochrome c oxidase and cytochrome c in ischemia/reperfusion injury and inflammation</a>, Biochim Biophys Acta. 1817(4): 598–609.</li>
+        <li>Kranz R G, et al. 2009: <a href="https://pubmed.ncbi.nlm.nih.gov/19721088/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Cytochrome c biogenesis: mechanisms for covalent modifications and trafficking of heme and for heme-iron redox control</a>, Microbiol Mol Biol Rev. 73(3): 510–28.</li>
+        <li>Santucci R, et al. 2019: <a href="https://pubmed.ncbi.nlm.nih.gov/31252007/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Cytochrome c: An extreme multifunctional protein with a key role in cell fate</a>, Int J Biol Macromol. 136: 1237–46.</li>
+        <li>Jiang X, Wang X. 2004: <a href="https://pubmed.ncbi.nlm.nih.gov/15189137/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Cytochrome C-mediated apoptosis</a>, Annu Rev Biochem. 73: 87–106.</li>
+        <li>Delinois L J, et al. 2021: <a href="https://pubmed.ncbi.nlm.nih.gov/35978717/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Cytochrome c: Using biological insight toward engineering an optimized anticancer biodrug</a>, Inorganics (Basel). 9(11): 83.</li>
+      </ol>
+    </section>
   </main>
-  <script>
-    function pagination() {
-      return {
-        page: 1,
-        perPage: 10,
-        data: [
-          { name: "Aprotinin", cas: "9087-70-1", synonyms: "Basic trypsin inhibitor, bovine pancreatic trypsin inhibitor (BPTI), kallikrein inactivator, kunitz-type trypsin inhibitor, MGC148815, pancreatic trypsin inhibitor, protease inhibitor from bovine lung, PTI, serine protease inhibitor aprotinin, TKI, Trasylol® (brand name), trypsin-kallikrein inhibitor", form: "Powder", url:"aprotinin.html"},
-          { name: "Asparaginase", cas: "9015-68-3", synonyms: "L-asparagine amidohydrolase, Colaspase, Elspar, Erwinase, Leunase, Kidrolase", form: "Powder", url:"asparaginase.html"},
-          { name: "Beta Glucanase", cas: "9074-98-0", synonyms: "Endo-1,3(4)-beta-glucanase, endoglucanase, 1,3-1,4-beta-glucanase, 1,3-beta-D-glucanase, beta 1,3-14-glucanase", form: "Powder", url:"beta-glucanase.html"},
-          { name: "Bromelain", cas: "9001-00-7", synonyms: "Ananase, Pineapple Protease, Bromelin", form: "Powder", url: "bromelain.html" },
-          { name: "Chymotrypsin", cas: "9004-07-3", synonyms: "α-chymotrypsin, chymotrypsin A, pancreatic chymotrypsin", form: "Powder", url:"chymotrypsin.html" },
-          { name: "Deoxyribonuclease (DNase I)", cas: "9003-98-9", synonyms: "Deoxyribonuclease I, Deoxyribonucleate 5'-oligonucleotido-hydrolase, Pancreatic deoxyribonuclease, Thymonuclease", form: "Powder", url:"dnase.html" },
-          { name: "Hyaluronidase", cas: "9001-54-1", synonyms: "hyaluronate lyase, hyase, hyase-1, hyalase, mucolase", form: "Powder", url: "hyaluronidase.html"},
-          { name: "Kallikrein", cas: "9001-01-8", synonyms: "Pancreatic kallikrein, Kallikrein, Kininogenin, Kininogenase, Kallidinogenase, Kallikrein from porcine pancreas, Kallikrein from hog pancreas", form: "Powder", url:"kallikrein.html"},
-          { name: "Lysozyme", cas: "9001-63-2", synonyms: "Muramidase,  N-acetylmuramide glycanhydrolase, egg-white lysozyme, peptidoglycan N-acetylmuramoylhydrolase", form: "Powder", url:"lysozyme.html"},
-          { name: "Pancreatin", cas: "8049-47-6", synonyms: "Pancreatic enzymes, pancreatic extract, pancreatin from porcine pancreas, pancreatin from hog pancreas", form: "Powder", url: "pancreatin.html"},
-          { name: "Papain", cas: "9001-73-4", synonyms: "Papaya Proteinase I, Papainase, Papaya Peptidase I, Papayotin, Papainum, Vegetable Pepsin", form: "Powder", url: "papain.html"},
-          { name: "Pepsin", cas: "9001-75-6", synonyms: "Gastrase, lactopepsin, pepsin A, pepsin from porcine gastric mucosa, pepsin from hog stomach mucosa, pepsini pulvis, pepsinum", form: "Powder", url: "pepsin.html" },
-          { name: "Ribonuclease A", cas: "9001-99-4", synonyms:"RNase A, ribonuclease A, bovine pancreatic ribonuclease, RNase A from bovine pancreas", form: "Powder", url:"rnase-a.html"},
-          { name: "Streptokinase", cas: "9002-01-1", synonyms: "SK, Streptase®, Varidase®, Streptase-Akzonobel ", form: "Powder", url:"streptokinase.html"},
-          { name: "Thrombin", cas: "9002-04-4", synonyms: "Activated Factor II, coagulation Factor IIa, Factor IIa, serine protease thrombin, thrombic enzyme    ", form: "Powder", url:"thrombin.html"},
-          { name: "Trypsin", cas: "9002-07-7", synonyms: "Bovine pancreas trypsin, porcine pancreas trypsin, pancreatic protease, pancreatic trypsin, parenzyme, serine protease trypsin, trypsin 1, trypsin serine endopeptidase, trypsinase, trypsinum, trypase", form: "Powder", url:"trypsin.html" },
-          { name: "Trypsin-Chymotrypsin", cas: "trypsin 9002-07-7 / chymotrypsin 9004-07-3", synonyms: "Mixed pancreatic enzymes, pancreatic protease blend, protease complex from pancreas, protease enzyme mix, proteolytic enzyme compound, trypsin-chymotrypsin complex/mixture", form: "Powder", url:"trypsin-chymotrypsin.html"},
-          { name: "Urokinase", cas:"9039-53-6", synonyms: "High molecular weight urokinase, plasminogen activator, tissue culture urokinase, U-PA, urochinasi (Italian-derived term), URK, urokinase-type plasminogen activator (uPA), urinary-type plasminogen activator, urokinase plasminogen activator, urokinase-type PA, uroquinase, hUK", form:"Powder", url:"urokinase.html"}
-        ],
-        get totalPages() {
-          return Math.ceil(this.data.length / this.perPage);
-        },
-        get start() {
-          return (this.page - 1) * this.perPage;
-        },
-        get paginatedData() {
-          const start = (this.page - 1) * this.perPage;
-          return this.data.slice(start, start + this.perPage);
-        },
-        goToPage(n) {
-          this.page = n;
-        },
-        prevPage() {
-          if (this.page > 1) this.page--;
-        },
-        nextPage() {
-          if (this.page < this.totalPages) this.page++;
-        }
-      }
-    }
-  </script>
+  
+ 
+  
+  
+  
 
   <!-- start cta -->
   <section
   class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 text-center md:text-left">
   <div class="md:flex md:items-center md:justify-center">
-    <h2 class="text-xl font-bold text-white">Contact us at <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> to place an order.</h2>
+    <h2 class="text-xl font-bold text-white">Jiagen Biotechnologies supplies quality Cytochrome C of various specifications. <br>Contact us at <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> to place an order.</h2>
     <a href="../../order.html"
       class="px-8 py-4 bg-white text-blue-600 rounded inline-block font-semibold md:ml-8 mt-4 md:mt-0 
       hover:bg-teal-500 hover:text-white transition-colors duration-300">Order</a>
@@ -407,8 +324,7 @@
               </svg>
             </span>
             <span class="ml-3">
-              info@jiagen.com<br>
-              sales@jiagen.com
+              info@jiagen.com
             </span>
           </a>
         </li>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jiagen Biotechnologies</title>
+  <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <link href="../../dist/output.css" rel="stylesheet" />
+
+  
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <!-- Announcement Bar -->
+    <div class="bg-brandblue text-white text-sm py-1 px-4">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="hidden md:flex"><span>Empowering Life Science Research</span></div>
+        <div class="flex space-x-6 md:hidden">
+          <!-- Mobile: show just one link -->
+          <span>Phone: <span class="font-semibold">514-779-9623</span></span>
+          <span>Orders: <span class="font-semibold">sales@jiagen.com</span></span>
+        </div>
+          <!-- Desktop: show full info -->
+          <div class="hidden md:flex space-x-6">
+            <span>Phone: <span class="font-semibold">514-779-9623</span></span>
+            <span>Contact: <span class="font-semibold">info@jiagen</span></span>
+            <span>Orders: <span class="font-semibold">sales@jiagen.com</span></span>
+          </div>
+      </div>
+    </div>
+   <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white shadow">
+      <div class="max-w-7xl mx-auto px-4 py-1 flex justify-between items-center relative">
+        <a href="../../index.html">
+          <img src="../../assets/logo.svg" alt="Logo" class="h-20 w-auto" />
+        </a>
+        <!-- Mobile Menu Toggle Button -->
+      <div class="md:hidden" x-data="{ open: false }">
+          <button @click="open = !open" class="text-slate-800 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          </button>
+      
+          <!-- Mobile Dropdown Menu -->
+          <div x-show="open" @click.away="open = false" class="absolute left-0 top-full w-full bg-white shadow-md z-50 border-t mt-2">
+          <ul class="p-4 space-y-2 font-medium text-sm">
+              
+              <!-- PRODUCTS dropdown -->
+              <li x-data="{ openSub: false }">
+              <button @click="openSub = !openSub" class="w-full text-left flex justify-between items-center py-2 text-slate-800 hover:text-slate-900">
+                  Products
+                  <svg class="w-4 h-4 transform transition-transform" :class="{ 'rotate-180': openSub }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+                  </svg>
+              </button>
+              <ul x-show="openSub" class="pl-4 mt-2 space-y-1 text-sm" x-cloak>
+                <li><a href="../proteins/proteins.html" class="block py-1 hover:text-blue-700">Peptides / Proteins</a></li>
+                <li><a href="../enzymes/enzymes.html" class="block py-1 hover:text-blue-700">Enzymes</a></li>
+                <li><a href="../coenzymes/coenzymes.html" class="block py-1 hover:text-blue-700">Coenzymes</a></li>
+                <li><a href="../carbohydrates/carbohydrates.html" class="block py-1 hover:text-blue-700">Carbohydrates</a></li>
+                <li><a href="../chemicals/chemicals.html" class="block py-1 hover:text-blue-700">Chemicals</a></li>
+              </ul>
+              </li>
+      
+              <!-- Other links -->
+              <li><a href="../../order.html" class="block py-2 text-slate-800 hover:text-slate-900">Order</a></li>
+          </ul>
+          </div>
+      </div>
+      
+    
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex space-x-6 items-center w-full">
+          <ul class="flex flex-nowrap items-center font-medium text-base">
+            <li class="p-4 lg:px-8 relative flex items-center space-x-1"
+                x-data="{ open: false }"
+                @mouseenter="open = true"
+                @mouseleave="open = false">
+              <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">Products</a>
+              <button class="shrink-0 p-1" :aria-expanded="open">
+                <span class="sr-only">Show submenu for "products"</span>
+                <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                  <path d="M10 2.586 11.414 4 6 9.414.586 4 2 2.586l4 4z" />
+                </svg>
+              </button>
+              <ul class="origin-top-right absolute top-full left-1/2 -translate-x-1/2 min-w-[240px] 
+                         bg-white border border-slate-200 p-2 rounded-lg shadow-xl [&[x-cloak]]:hidden"
+                  x-show="open"
+                  x-transition:enter="transition ease-out duration-200 transform"
+                  x-transition:enter-start="opacity-0 -translate-y-2"
+                  x-transition:enter-end="opacity-100 translate-y-0"
+                  x-transition:leave="transition ease-out duration-200"
+                  x-transition:leave-start="opacity-100"
+                  x-transition:leave-end="opacity-0"
+                  x-cloak>
+                  <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../proteins/proteins.html"><span>Peptides / Proteins</span></a></li>
+                  <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../enzymes/enzymes.html"><span>Enzymes</span></a></li>
+                  <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../coenzymes/coenzymes.html"><span>Coenzymes</span></a></li>
+                  <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../carbohydrates/carbohydrates.html"><span>Carbohydrates</span></a></li>
+                  <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../chemicals/chemicals.html"><span>Chemicals</span></a></li>
+
+              </ul>
+            </li>
+    
+            <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../order.html">Order</a></li>
+          </ul>
+          <div class="flex items-center space-x-1">
+            <!-- Search -->
+            <div class="w-full max-w-xs min-w-[200px]">
+                <div class="relative flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="absolute w-5 h-5 top-2.5 left-2.5 text-slate-600">
+                    <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
+                </svg>
+            
+                <input
+                class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+                placeholder="Search Product" 
+                />
+        
+                </div>
+            </div>
+            <ul class="flex flex-nowrap items-center font-medium text-sm">
+                <li class="p-4 lg:px-8 relative flex items-center space-x-1"
+                    x-data="{ open: false }"
+                    @mouseenter="open = true"
+                    @mouseleave="open = false">
+                  <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">EN</a>
+                  <button class="shrink-0 p-1" :aria-expanded="open">
+                    <span class="sr-only">Show submenu for languages</span>
+                    <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                      <path d="M10 2.586 11.414 4 6 9.414.586 4 2 2.586l4 4z" />
+                    </svg>
+                  </button>
+                  <ul class="origin-top-right absolute top-full left-1/2 -translate-x-1/2 min-w-[120px] 
+                             bg-white border border-slate-200 p-2 rounded-lg shadow-xl [&[x-cloak]]:hidden"
+                      x-show="open"
+                      x-transition:enter="transition ease-out duration-200 transform"
+                      x-transition:enter-start="opacity-0 -translate-y-2"
+                      x-transition:enter-end="opacity-100 translate-y-0"
+                      x-transition:leave="transition ease-out duration-200"
+                      x-transition:leave-start="opacity-100"
+                      x-transition:leave-end="opacity-0"
+                      x-cloak>
+                      <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="#"><span>English</span></a></li>
+                      <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="./french/order_fr.html"><span>Français</span></a></li>
+                  </ul>
+                </li>
+              </ul>
+          </div>
+        </nav>
+  
+      
+    </header>
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-6 py-12 text-slate-800 font-sans leading-relaxed">
+    <div class="mb-8">
+        <a href="chemicals.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+          </svg>
+          Chemicals
+        </a>
+      </div>
+      <section>
+        <h2 class="text-3xl font-bold text-brandblue border-b border-gray-300 pb-2 mb-4">
+            Estriol
+        </h2>
+      
+        <p class="text-base text-slate-700 mb-2">
+            <strong>CAS No.:</strong> 50-27-1 &nbsp;|&nbsp; 
+            <strong>EINECS No.:</strong> 200-014-8 
+          </p>
+          
+        <p class="text-base text-gray-600 mb-2">
+          <strong>Synonyms:</strong> oestriol, E3, estra-1,3,5(10)-triene-3,16α,17β-triol, (16α,17β)-estra-1,3,5(10)-triene-3,16,17-triol, 16α-hydroxyestradiol, oestriol, theelol, trihydroxyestrin; trihydroxyoestrin 
+        </p>
+        <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mt-4 mb-2">Product Summary:</h3>
+        <p class="text-base text-gray-600 mb-2">
+            Estriol is a naturally occurring estrogen with lower potency and a safer profile compared to estradiol. It plays a significant role during pregnancy,  Estriol is widely studied in the context of hormone therapy, menopause, autoimmune regulation, and urogenital health. Due to its unique receptor dynamics, it offers selective tissue effects, making it an attractive candidate for targeted estrogen therapy in both clinical and experimental settings. 
+        </p>
+        <p class="text-base text-gray-700 pl-5 mt-2"><strong>Formula:</strong> C<sub>18</sub>H<sub>24</sub>O<sub>3</sub></p>
+        <p class="text-base text-gray-700 pl-5"><strong>Molecular Weight:</strong> 288.39</p>
+        </section>
+
+        <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mt-4 mb-2">Function</h3>
+        <p class="mt-2 mb-2">The hormone estriol is primarily produced in significant quantities during pregnancy. It is the weakest of the three major endogenous estrogens (estradiol, estrone, estriol) and plays a role in:</p>
+        <ul class="list-disc list-outside pl-5 space-y-3 text-base text-slate-700">
+            <li>Maintaining pregnancy.</li>
+            <li>Modulating immune function during gestation.</li>
+            <li>Supporting urogenital and skin health in postmenopausal women.</li>        
+            <li>Providing estrogenic effects with reduced risk of breast or endometrial stimulation compared to stronger estrogens.</li>
+        </ul>
+        </section> 
+
+       <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mt-4 mb-2">Mechanism of Action</h3>
+        <p class="mt-2 mb-2">Estriol binds to estrogen receptors (ERα and ERβ) in target tissues. It:</p>
+        <ul class="list-disc list-outside pl-5 space-y-3 text-base text-slate-700">
+            <li>Has lower binding affinity than estradiol but selectively activates certain pathways.</li>
+            <li>Acts as a partial agonist or antagonist depending on tissue context.</li>
+            <li>Stimulates DNA transcription in estrogen-sensitive tissues (vaginal epithelium, bone, brain, etc.).</li>        
+            <li>Has anti-inflammatory and antioxidant effects in some models.</li>
+        </ul>
+        </section> 
+
+
+        <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mt-4 mb-2">Applications in Scientific Research:</h3>
+        <ul class="list-disc list-inside pl-5 space-y-2 text-base text-slate-700">
+          <li><strong>Hormone replacement therapy (HRT)</strong> models for menopause
+          </li>
+          <li><strong>Vaginal atrophy</strong> and urogenital aging research
+          </li>
+          <li><strong>Autoimmune disease modulation</strong>, especially <strong>multiple sclerosis</strong> (pregnancy protection studies)
+          </li>
+          <li><strong>Breast cancer biology </strong>(anti-proliferative vs. estradiol)
+          </li>
+          <li><strong>Endocrine studies</strong> (estrogen receptor activity, selective estrogen receptor modulators – SERMs)
+          </li>
+    
+        </ul>
+        </section>
+
+        <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mt-4 mb-2">Packaging & Storage:</h3>
+        <ul class="list-disc list-inside pl-5 space-y-2 text-base text-gray-600 mb-2">
+          <li>Store at 2–8 °C. </li>
+        </ul>
+        </section>
+
+        <section class="mt-10">
+            <h3 class="text-2xl font-semibold text-brandblue mb-4">References</h3>
+            <ol class="list-decimal list-inside space-y-2 text-sm text-slate-700">
+              <li>Raz R, Stamm WE. 1993: <a href="https://pubmed.ncbi.nlm.nih.gov/8350884/" target="_blank" class="text-blue-600 underline hover:text-blue-800">A controlled trial of intravaginal estriol in postmenopausal women with recurrent urinary tract infections</a>, N Engl J Med. 329(11): 753–6.</li>
+          
+              <li>Takahashi K, et al. 2000: <a href="https://pubmed.ncbi.nlm.nih.gov/10783346/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Safety and efficacy of oestriol for symptoms of natural or surgically induced menopause</a>, Hum Reprod. 15(5): 1028–36.</li>
+          
+              <li>Weber MA, et al. 2017: <a href="https://pubmed.ncbi.nlm.nih.gov/26990867/" target="_blank" class="text-blue-600 underline hover:text-blue-800">The effect of vaginal oestriol cream on subjective and objective symptoms of stress urinary incontinence and vaginal atrophy: An international multi-centre pilot study</a>, Gynecol Obstet Invest. 82(1): 15–21.</li>
+          
+              <li>Hirschberg AL, et al. 2020: <a href="https://pubmed.ncbi.nlm.nih.gov/32049923/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Efficacy and safety of ultra-low dose 0.005% estriol vaginal gel for the treatment of vulvovaginal atrophy in postmenopausal women with early breast cancer treated with nonsteroidal aromatase inhibitors: a phase II, randomized, double-blind, placebo-controlled trial</a>, Menopause. 27(5): 526–34.</li>
+          
+              <li>Vermillion MS, et al. 2018: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6109301/?utm_source=chatgpt.com" target="_blank" class="text-blue-600 underline hover:text-blue-800">Estriol reduces pulmonary immune cell recruitment and inflammation to protect female mice from severe influenza</a>, Endocrinol. 159(9): 3306–20.</li>
+          
+              <li>Katzenellenbogen BS. 1984: <a href="https://pubmed.ncbi.nlm.nih.gov/6727348/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Biology and receptor interactions of estriol and estriol derivatives in vitro and in vivo</a>, J Steroid Biochem. 20(4B): 1033–7.</li>
+          
+              <li>Girgert R, et al. 2014: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4364648/?utm_source=chatgpt.com" target="_blank" class="text-blue-600 underline hover:text-blue-800">Inhibition of GPR30 by estriol prevents growth stimulation of triple-negative breast cancer cells by 17β-estradiol</a>, BMC Cancer. 14:935.</li>
+          
+              <li>Hemer GM, Englund DE. 1992: <a href="https://pubmed.ncbi.nlm.nih.gov/1508058/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Effects of vaginally-administered oestriol on post-menopausal urogenital disorders: a cytohormonal study</a>, Maturitas. 14(3): 171–9.</li>
+          
+              <li>Clark JH, Markaverich BM. 2015: <a href="https://pubmed.ncbi.nlm.nih.gov/6202959/" target="_blank" class="text-blue-600 underline hover:text-blue-800">The agonistic and antagonistic actions of estriol</a>, J Steroid Biochem. 20(4B): 1005–13.</li>
+          
+              <li>Ugarte R. 2022: <a href="https://arxiv.org/abs/2212.05089?utm_source=chatgpt.com" target="_blank" class="text-blue-600 underline hover:text-blue-800">FMO study of the interaction energy between human estrogen receptor alpha and selected ligands</a>, arXiv:2212.05089.</li>
+          
+              <li>Baker ME. 2019: <a href="https://pubmed.ncbi.nlm.nih.gov/31376417/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Steroid receptors and vertebrate evolution</a>, Mol Cell Endocrinol. 496: 110526.</li>
+          
+              <li>Lappano R, et al. 2010: <a href="https://pubmed.ncbi.nlm.nih.gov/20138962/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Estriol acts as a GPR30 antagonist in estrogen receptor-negative breast cancer cells</a>, Mol Cell Endocrinol. 320(1–2): 162–70.</li>
+            </ol>
+          </section>
+          
+          
+          
+          
+         
+  </main>
+  
+  
+
+  <!-- start cta -->
+  <section
+  class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 text-center md:text-left">
+  <div class="md:flex md:items-center md:justify-center">
+    <h2 class="text-xl font-bold text-white">Jiagen Biotechnologies supplies quality estriol of various specifications. <br>Contact us at <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> to place an order.</h2>
+      
+    <a href="../../order.html"
+      class="px-8 py-4 bg-white text-blue-600 rounded inline-block font-semibold md:ml-8 mt-4 md:mt-0 
+      hover:bg-teal-500 hover:text-white transition-colors duration-300">Order</a>
+  </div>
+</section>
+<!-- end cta -->
+
+<!-- start footer -->
+<footer class="relative bg-[#ececec] text-gray-500 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 lg:py-24">
+  <div class="flex flex-col md:flex-row">
+    <div class="w-full lg:w-auto lg:mx-4 lg:pr-8">
+      <img src="../../assets/logo.svg" alt="Jiagen Biotechnologies" class="h-40 mb-2">
+
+      <p class="text-gray-400">Empowering Discovery with Trusted Quality Materials.</p>
+
+    </div>
+
+    <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
+      <h5 class="uppercase tracking-wider font-semibold text-gray-500">Products</h5>
+      <ul class="mt-4">
+        <li class="mt-2"><a href="../proteins/proteins.html" title="" class="opacity-75 hover:opacity-100">Peptides/Proteins</a></li>
+        <li class="mt-2"><a href="../enzymes/enzymes.html" title="" class="opacity-75 hover:opacity-100">Enzymes</a></li>
+        <li class="mt-2"><a href="../coenzymes/coenzymes.html" title="" class="opacity-75 hover:opacity-100">Coenzymes</a></li>
+        <li class="mt-2"><a href="../carbohydrates/carbohydrates.html" title="" class="opacity-75 hover:opacity-100">Carbohydrates</a></li>
+        <li class="mt-2"><a href="../chemicals/chemicals.html" title="" class="opacity-75 hover:opacity-100">Chemicals</a></li>
+
+      </ul>
+    </div>
+
+    <div class="w-full lg:w-2/6 mt-8 lg:mt-0 lg:mx-4 lg:pr-8">
+      <h5 class="uppercase tracking-wider font-semibold text-gray-500">Contact Details</h5>
+      <ul class="mt-4">
+        <li>
+          <a href="#" title="" class="block flex items-center opacity-75 hover:opacity-100">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M12,2C7.589,2,4,5.589,4,9.995C3.971,16.44,11.696,21.784,12,22c0,0,8.029-5.56,8-12C20,5.589,16.411,2,12,2z M12,14 c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4S14.21,14,12,14z" />
+              </svg>
+            </span>
+            <span class="ml-3">
+              958 Montée de Liesse, Saint-Laurent, QC, CAN
+            </span>
+          </a>
+        </li>
+
+        <li class="mt-4">
+          <a href="#" title="" class="block flex items-center opacity-75 hover:opacity-100">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M14.594,13.994l-1.66,1.66c-0.577-0.109-1.734-0.471-2.926-1.66c-1.193-1.193-1.553-2.354-1.661-2.926l1.661-1.66 l0.701-0.701L5.295,3.293L4.594,3.994l-1,1C3.42,5.168,3.316,5.398,3.303,5.643c-0.015,0.25-0.302,6.172,4.291,10.766 C11.6,20.414,16.618,20.707,18,20.707c0.202,0,0.326-0.006,0.358-0.008c0.245-0.014,0.476-0.117,0.649-0.291l1-1l0.697-0.697 l-5.414-5.414L14.594,13.994z" />
+              </svg>
+            </span>
+            <span class="ml-3">
+              +1 514-779-9623
+            </span>
+          </a>
+        </li>
+        <li class="mt-4">
+          <a href="#" title="" class="block flex items-center opacity-75 hover:opacity-100">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M20,4H4C2.896,4,2,4.896,2,6v12c0,1.104,0.896,2,2,2h16c1.104,0,2-0.896,2-2V6C22,4.896,21.104,4,20,4z M20,8.7l-8,5.334 L4,8.7V6.297l8,5.333l8-5.333V8.7z" />
+              </svg>
+            </span>
+            <span class="ml-3">
+              info@jiagen.com
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
+      
+
+      <p class="text-sm text-gray-400 mt-12">© 2025 Jiagen Biotechnologies. <br class="hidden lg:block">All Rights Reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->
+
+</body>
+</html>

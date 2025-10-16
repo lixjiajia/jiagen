@@ -143,7 +143,7 @@
                     x-transition:leave-start="opacity-100"
                     x-transition:leave-end="opacity-0"
                     x-cloak>
-                    <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="enzymes.html"><span>English</span></a></li>
+                    <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="#"><span>English</span></a></li>
                     <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="./french/order_fr.html"><span>Français</span></a></li>
                 </ul>
               </li>
@@ -154,188 +154,107 @@
     
   </header>
   <!-- Main Content -->
-  <main class="p-8 flex-grow max-w-7xl mx-auto">
-    <h2 class="text-2xl font-bold text-slate-800 mb-12 mt-4">Enzymes</h2>
-    <!-- Alpine.js Pagination -->
-    <div x-data="pagination()" class="w-full overflow-x-auto">
-      <div class="mt-4 mb-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div>
-            <p class="text-sm text-gray-700">
-              Showing
-              <span class="font-medium" x-text="start + 1"></span>
-              to
-              <span class="font-medium" x-text="Math.min(start + perPage, data.length)"></span>
-              of
-              <span class="font-medium" x-text="data.length"></span>
-              results
-            </p>
-          </div>
-        <div class="flex items-center space-x-2">
-        <button @click="prevPage" :disabled="page === 1"
-          class="px-3 py-1 bg-slate-200 text-sm rounded hover:bg-slate-300 disabled:opacity-50">
-          <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-            <path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
-          </svg>
-        </button>
-        <template x-for="i in totalPages">
-          <button @click="goToPage(i)" x-text="i"
-            :class="{'bg-slate-500 text-white': i === page, 'bg-slate-100': i !== page}"
-            class="px-3 py-1 rounded text-sm hover:bg-slate-300"></button>
-        </template>
-        <button @click="nextPage" :disabled="page === totalPages"
-          class="px-3 py-1 bg-slate-200 text-sm rounded hover:bg-slate-300 disabled:opacity-50">
-          <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-            <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-          </svg>
-        </button>
-        </div>
-      </div>
-      <!-- Desktop table -->
-      <div class="hidden lg:block w-full text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
-        <table class="w-full text-left table-auto text-slate-800">
-          <thead>
-            <tr class="text-white border-b border-slate-300" style="background-color: #145aac;">
-              <th class="p-4">Product Name</th>
-              <th class="p-4">CAS No.</th>
-              <th class="p-4">Synonyms</th>
-              <th class="p-4">Form</th>
-              <th class="p-4">Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            <template x-for="row in paginatedData" :key="row.name">
-              <tr class="hover:bg-slate-50">
-                <td class="p-4 font-bold text-sm" x-text="row.name"></td>
-                <td class="p-4 text-sm whitespace-nowrap" x-text="row.cas"></td>
-                <td class="p-4 text-sm" x-text="row.synonyms"></td>
-                <td class="p-4 text-sm" x-text="row.form"></td>
-                <td class="p-4 text-sm"><a :href="row.url" class="text-blue-600 font-semibold hover:underline">View Details</a></td>
-              </tr>
-            </template>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Mobile table -->
-      <div class="lg:hidden md:hidden w-full text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
-        <table class="w-full text-left table-auto text-slate-800">
-          <thead>
-            <tr class="text-white border-b border-slate-300" style="background-color: #145aac;">
-              <th class="p-3">Product</th>
-              <th class="p-3">Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            <template x-for="row in paginatedData" :key="row.name">
-              <tr class="hover:bg-slate-50">
-                <!-- Product column -->
-                <td class="p-3 text-sm">
-                  <p class="font-bold" x-text="row.name"></p>
-                  <!-- Only visible on mobile: stack CAS/Form under name -->
-                  <div class="mt-1 space-y-1 text-xs text-gray-600">
-                    <p><span class="font-semibold">CAS:</span> <span x-text="row.cas"></span></p>
-                    <p><span class="font-semibold">Form:</span> <span x-text="row.form"></span></p>
-                  </div>
-                </td>
-                <!-- Details column -->
-                <td class="p-3 text-sm text-blue-600 font-semibold hover:underline">
-                  <a :href="row.url">View Details</a>
-                </td>
-              </tr>
-            </template>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Pagination Controls -->
-      <div class="mt-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div>
-            <p class="text-sm text-gray-700">
-              Showing
-              <span class="font-medium" x-text="start + 1"></span>
-              to
-              <span class="font-medium" x-text="Math.min(start + perPage, data.length)"></span>
-              of
-              <span class="font-medium" x-text="data.length"></span>
-              results
-            </p>
-          </div>
-        <div class="flex items-center space-x-2">
-        <button @click="prevPage" :disabled="page === 1"
-          class="px-3 py-1 bg-slate-200 text-sm rounded hover:bg-slate-300 disabled:opacity-50">
-          <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-            <path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
-          </svg>
-        </button>
-        <template x-for="i in totalPages">
-          <button @click="goToPage(i)" x-text="i"
-            :class="{'bg-slate-500 text-white': i === page, 'bg-slate-100': i !== page}"
-            class="px-3 py-1 rounded text-sm hover:bg-slate-300"></button>
-        </template>
-        <button @click="nextPage" :disabled="page === totalPages"
-          class="px-3 py-1 bg-slate-200 text-sm rounded hover:bg-slate-300 disabled:opacity-50">
-          <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-            <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-          </svg>
-        </button>
-        </div>
-      </div>
+<main class="max-w-6xl mx-auto px-6 py-12 text-slate-800 font-sans leading-relaxed">
+    <div class="mb-8">
+      <a href="proteins.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        Proteins
+      </a>
     </div>
-
+  
+    <section>
+      <h2 class="text-3xl font-bold text-brandblue border-b border-gray-300 pb-2 mb-4">Oxytocin Acetate</h2>
+      <p class="text-base text-gray-600 mb-2">
+        <strong>CAS No.:</strong> 6233-83-6 &nbsp;|&nbsp;
+        <strong>EINECS No.:</strong> 200-048-4
+      </p>
+      <p class="mb-4"><strong>Synonyms:</strong> α-hypophamine acetate, oxytocin acetate salt, oxytocin acetate salt hydrate, oxytocin acetate syntocinon, oxytoxin acetate, oxytocic hormone acetate </p>
+    </section>
+  
+    <section class="mt-8">
+      <h3 class="text-2xl font-semibold text-brandblue mb-2">Product Summary</h3>
+      <p>
+        Oxytocin acetate is a synthetic, pharmaceutically active form of the natural peptide hormone oxytocin, essential for reproductive physiology and social behavior modulation. It functions by activating oxytocin receptors that mediate muscle contractions and emotional regulation. Its applications span clinical medicine, psychological research, and molecular pharmacology. Stored under low-temperature, dry conditions, oxytocin acetate remains stable and widely used across disciplines ranging from reproductive health to neuroscience.
+      </p>
+      <ul class="list-disc list-inside text-slate-700 mt-2">
+        <li><strong>Formula</strong>: C<sub>45</sub>H<sub>70</sub>N<sub>12</sub>O<sub>14</sub>S<sub>2</sub></li>
+        <li><strong>Molecular Weight</strong>: 1067.23</li>
+      </ul>
+    </section>
+  
+    <section class="mt-8">
+      <h3 class="text-2xl font-semibold text-brandblue mb-2">Function</h3>
+      <p>
+        Oxytocin acetate is a nonapeptide hormone (9 amino acids) primarily known for:
+      </p>
+      <ul class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700 mt-2">
+        <li><strong>Uterotonic effects</strong>: Stimulates uterine contractions during labor.</li>
+        <li><strong>Lactation induction</strong>: Facilitates milk ejection ("let-down" reflex) in lactating individuals.</li>
+        <li><strong>Social/behavioral modulation</strong>: Plays a role in social bonding, trust, sexual behavior, and maternal care.</li>
+        <li><strong>Stress-coping molecule</strong>: With anti-inflammatory, antioxidant, and protective effects.</li>
+      </ul>
+      
+    </section>
+    <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Mechanism of Action</h3>
+        <p class="mt-3">
+            Oxytocin acetate functions by binding to oxytocin receptors (OXTR) — G-protein coupled receptors (GPCRs) — located on the surface of uterine myocytes, mammary alveolar cells, and neuronal cells. Activation of these receptors initiates Gq protein-mediated signal transduction, leading to intracellular Ca²⁺ increase via IP₃ pathway, which results in:
+        </p>
+        <ul class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700 mt-2">
+            <li>Muscle contraction (in uterus and mammary glands).</li>
+            <li>Neural circuit modulation for behavior and emotion regulation.</li>
+        </ul>
+    </section>
+    <section class="mt-8">
+      <h3 class="text-2xl font-semibold text-brandblue mb-2">Applications in Scientific Research</h3>
+      <ul class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700">
+        <li><strong>Neuroscience and psychology</strong>: Studies on social cognition, trust, empathy, and bonding; Investigating disorders such as autism spectrum disorder (ASD) and schizophrenia.</li>
+        <li><strong>Obstetrics research</strong>: Investigating labor induction, postpartum hemorrhage prevention, and oxytocin receptor polymorphisms.</li>
+        <li><strong>Endocrinology</strong>: Understanding the hypothalamic-pituitary axis, stress response, and neuroendocrine regulation.</li>
+        <li><strong>Pharmacology and drug development</strong>: Used in developing oxytocin analogs, antagonists, or nasal spray formulations for psychiatric treatment.</li>
+        <li><strong>Molecular biology</strong>: Used as a standard in HPLC and RIA for quantifying oxytocin in tissues; Elucidating Gq-protein-coupled OXTR activation, PLC-IP3 cascades, and calcium flux in cellular models.</li>
+      </ul>
+    </section>
+  
+    <section class="mt-8">
+      <h3 class="text-2xl font-semibold text-brandblue mb-2">Packaging & Storage</h3>
+      <ul class="list-disc list-inside pl-5 space-y-2 text-base text-slate-700">
+        <li>Source: synthetic</li>
+        <li>Available as lyophilized powder</li>
+        <li>Store at -20&deg;C for long-term storage</li>
+      </ul>
+    </section>
+  
+    <section class="mt-10">
+      <h3 class="text-2xl font-semibold text-brandblue mb-4">References</h3>
+      <ol class="list-decimal list-inside space-y-2 text-sm text-slate-700">
+        <li>Anderson CM, et al. 2022: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9727702/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Oxytocin and hypotension during dilation and evacuation procedures at 18-24 weeks gestation</a>, Hawaii J Health Soc Welf. 81(12): 328–32.</li>
+        <li>Veening JG, et al. 2013: <a href="https://pubmed.ncbi.nlm.nih.gov/23648680/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Intranasal administration of oxytocin: behavioral and clinical effects, a review</a>, Neurosci Biobehav Rev. 37(8):1445-65.</li>
+        <li>Paloyelis Y, et al. 2016: <a href="https://pubmed.ncbi.nlm.nih.gov/26660859/" target="_blank" class="text-blue-600 underline hover:text-blue-800">The analgesic effect of oxytocin in humans: A double-blind, placebo-controlled cross-over study using laser-evoked potentials</a>, J Neuroendocrinol. 28(4): 10.</li>
+        <li>Martins D, et al. 2021: <a href="https://pubmed.ncbi.nlm.nih.gov/33452496/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Oxytocin modulates local topography of human functional connectome in healthy men at rest</a>, Commun Biol. 4(1): 68.</li>
+        <li>Sawares A, et al. 2025: <a href="https://pubmed.ncbi.nlm.nih.gov/39474844/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Oxytocin in old age psychiatry: A systematic review of the safety of using intranasal oxytocin in older adults</a>, Australas Psychiatry. 33(1): 33-44.</li>
+        <li>Meyerowitz JG, et al. 2022: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12101619/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Oxytocin signaling complex reveals a molecular switch for cation dependence</a>, Nat Struct Mol Biol. 29(3): 274–81.</li>
+        <li>Lin C-H, et al. 2011: <a href="https://www.nature.com/articles/s41598-019-54739-1" target="_blank" class="text-blue-600 underline hover:text-blue-800">Oxytocin maintains lung histological and functional integrity to confer protection in heat stroke</a>, Sci Rep. 9: 18390.</li>
+        <li>Kitchin AH, et al. 1959: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1481894/#:~:text=Valyl3%2Doxytocin%20was%201.5,than%20are%20those%20of%20Syntocinon." target="_blank" class="text-blue-600 underline hover:text-blue-800">Comparison of effects of valyl3-oxytocin and syntocinon on the cardiovascular system of man</a>, Br J Pharmacol Chemother. 14(4): 567–70.</li>
+        <li>Brummer HC. 1971: <a href="https://pubmed.ncbi.nlm.nih.gov/5558314/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Interaction of E prostaglandins and syntocinon on the pregnant human myometrium</a>, J Obstet Gynaecol Br Commonw. 78(4): 305-9.</li>
+        <li>McCormack SE, et al. 2019: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7012298/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Metabolic effects of oxytocin</a>, Endocr Rev. 41(2): 121–45.</li>
+        <li>Moberg KU. 2024: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11492126/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Oxytocin in growth, reproduction, restoration and health</a>, Compr Psychoneuroendocrinol. 20: 100268.</li>
+        <li>Young WS. 2013: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3800764/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Shedding Heat on Oxytocin</a>, Endocrinology. 154(11): 3961–2.</li>
+      </ol>
+    </section>
   </main>
-  <script>
-    function pagination() {
-      return {
-        page: 1,
-        perPage: 10,
-        data: [
-          { name: "Aprotinin", cas: "9087-70-1", synonyms: "Basic trypsin inhibitor, bovine pancreatic trypsin inhibitor (BPTI), kallikrein inactivator, kunitz-type trypsin inhibitor, MGC148815, pancreatic trypsin inhibitor, protease inhibitor from bovine lung, PTI, serine protease inhibitor aprotinin, TKI, Trasylol® (brand name), trypsin-kallikrein inhibitor", form: "Powder", url:"aprotinin.html"},
-          { name: "Asparaginase", cas: "9015-68-3", synonyms: "L-asparagine amidohydrolase, Colaspase, Elspar, Erwinase, Leunase, Kidrolase", form: "Powder", url:"asparaginase.html"},
-          { name: "Beta Glucanase", cas: "9074-98-0", synonyms: "Endo-1,3(4)-beta-glucanase, endoglucanase, 1,3-1,4-beta-glucanase, 1,3-beta-D-glucanase, beta 1,3-14-glucanase", form: "Powder", url:"beta-glucanase.html"},
-          { name: "Bromelain", cas: "9001-00-7", synonyms: "Ananase, Pineapple Protease, Bromelin", form: "Powder", url: "bromelain.html" },
-          { name: "Chymotrypsin", cas: "9004-07-3", synonyms: "α-chymotrypsin, chymotrypsin A, pancreatic chymotrypsin", form: "Powder", url:"chymotrypsin.html" },
-          { name: "Deoxyribonuclease (DNase I)", cas: "9003-98-9", synonyms: "Deoxyribonuclease I, Deoxyribonucleate 5'-oligonucleotido-hydrolase, Pancreatic deoxyribonuclease, Thymonuclease", form: "Powder", url:"dnase.html" },
-          { name: "Hyaluronidase", cas: "9001-54-1", synonyms: "hyaluronate lyase, hyase, hyase-1, hyalase, mucolase", form: "Powder", url: "hyaluronidase.html"},
-          { name: "Kallikrein", cas: "9001-01-8", synonyms: "Pancreatic kallikrein, Kallikrein, Kininogenin, Kininogenase, Kallidinogenase, Kallikrein from porcine pancreas, Kallikrein from hog pancreas", form: "Powder", url:"kallikrein.html"},
-          { name: "Lysozyme", cas: "9001-63-2", synonyms: "Muramidase,  N-acetylmuramide glycanhydrolase, egg-white lysozyme, peptidoglycan N-acetylmuramoylhydrolase", form: "Powder", url:"lysozyme.html"},
-          { name: "Pancreatin", cas: "8049-47-6", synonyms: "Pancreatic enzymes, pancreatic extract, pancreatin from porcine pancreas, pancreatin from hog pancreas", form: "Powder", url: "pancreatin.html"},
-          { name: "Papain", cas: "9001-73-4", synonyms: "Papaya Proteinase I, Papainase, Papaya Peptidase I, Papayotin, Papainum, Vegetable Pepsin", form: "Powder", url: "papain.html"},
-          { name: "Pepsin", cas: "9001-75-6", synonyms: "Gastrase, lactopepsin, pepsin A, pepsin from porcine gastric mucosa, pepsin from hog stomach mucosa, pepsini pulvis, pepsinum", form: "Powder", url: "pepsin.html" },
-          { name: "Ribonuclease A", cas: "9001-99-4", synonyms:"RNase A, ribonuclease A, bovine pancreatic ribonuclease, RNase A from bovine pancreas", form: "Powder", url:"rnase-a.html"},
-          { name: "Streptokinase", cas: "9002-01-1", synonyms: "SK, Streptase®, Varidase®, Streptase-Akzonobel ", form: "Powder", url:"streptokinase.html"},
-          { name: "Thrombin", cas: "9002-04-4", synonyms: "Activated Factor II, coagulation Factor IIa, Factor IIa, serine protease thrombin, thrombic enzyme    ", form: "Powder", url:"thrombin.html"},
-          { name: "Trypsin", cas: "9002-07-7", synonyms: "Bovine pancreas trypsin, porcine pancreas trypsin, pancreatic protease, pancreatic trypsin, parenzyme, serine protease trypsin, trypsin 1, trypsin serine endopeptidase, trypsinase, trypsinum, trypase", form: "Powder", url:"trypsin.html" },
-          { name: "Trypsin-Chymotrypsin", cas: "trypsin 9002-07-7 / chymotrypsin 9004-07-3", synonyms: "Mixed pancreatic enzymes, pancreatic protease blend, protease complex from pancreas, protease enzyme mix, proteolytic enzyme compound, trypsin-chymotrypsin complex/mixture", form: "Powder", url:"trypsin-chymotrypsin.html"},
-          { name: "Urokinase", cas:"9039-53-6", synonyms: "High molecular weight urokinase, plasminogen activator, tissue culture urokinase, U-PA, urochinasi (Italian-derived term), URK, urokinase-type plasminogen activator (uPA), urinary-type plasminogen activator, urokinase plasminogen activator, urokinase-type PA, uroquinase, hUK", form:"Powder", url:"urokinase.html"}
-        ],
-        get totalPages() {
-          return Math.ceil(this.data.length / this.perPage);
-        },
-        get start() {
-          return (this.page - 1) * this.perPage;
-        },
-        get paginatedData() {
-          const start = (this.page - 1) * this.perPage;
-          return this.data.slice(start, start + this.perPage);
-        },
-        goToPage(n) {
-          this.page = n;
-        },
-        prevPage() {
-          if (this.page > 1) this.page--;
-        },
-        nextPage() {
-          if (this.page < this.totalPages) this.page++;
-        }
-      }
-    }
-  </script>
+  
+  
+  
 
   <!-- start cta -->
   <section
   class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 text-center md:text-left">
   <div class="md:flex md:items-center md:justify-center">
-    <h2 class="text-xl font-bold text-white">Contact us at <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> to place an order.</h2>
+    <h2 class="text-xl font-bold text-white">Jiagen Biotechnologies supplies quality oxytocin acetate of various specifications. <br>Contact us at <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> to place an order.</h2>
     <a href="../../order.html"
       class="px-8 py-4 bg-white text-blue-600 rounded inline-block font-semibold md:ml-8 mt-4 md:mt-0 
       hover:bg-teal-500 hover:text-white transition-colors duration-300">Order</a>
@@ -407,8 +326,7 @@
               </svg>
             </span>
             <span class="ml-3">
-              info@jiagen.com<br>
-              sales@jiagen.com
+              info@jiagen.com
             </span>
           </a>
         </li>
