@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+    <meta name="language" content="fr">
+    <link rel="alternate" hreflang="en" href="https://jiagen.ca/products/proteins/gastric-mucin.html">
+    <link rel="alternate" hreflang="fr" href="https://jiagen.ca/fr/products/proteins/gastric-mucin.html">
+    <meta name="google" content="notranslate">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jiagen Biotechnologies</title>
+  <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <link href="../../../dist/output.css" rel="stylesheet" />
+
+  
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Announcement Bar -->
+  <div class="bg-brandblue text-white text-sm py-1 px-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="hidden md:flex"><span>Renforcer la recherche en sciences de la vie</span></div>
+      <div class="flex space-x-6 md:hidden">
+        <!-- Mobile: show just one link -->
+        <span>Téléphone: <span class="font-semibold">514-779-9623</span></span>
+        <span>Commandes: <span class="font-semibold">sales@jiagen.com</span></span>
+      </div>
+        <!-- Desktop: show full info -->
+        <div class="hidden md:flex space-x-6">
+          <span>Téléphone: <span class="font-semibold">514-779-9623</span></span>
+          <span>Contact: <span class="font-semibold">info@jiagen</span></span>
+          <span>Commandes: <span class="font-semibold">sales@jiagen.com</span></span>
+        </div>
+    </div>
+  </div>
+ <!-- Header -->
+<header class="sticky top-0 z-50 bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-1 flex justify-between items-center relative">
+      <a href="../../index.html">
+        <img src="../../../assets/logo.svg" alt="Logo" class="h-20 w-auto" />
+      </a>
+     <!-- Mobile Menu Toggle Button -->
+    <div class="md:hidden" x-data="{ open: false }">
+        <button @click="open = !open" class="text-slate-800 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        </button>
+    
+       <!-- Mobile Dropdown Menu -->
+        <div x-show="open" @click.away="open = false" class="absolute left-0 top-full w-full bg-white shadow-md z-50 border-t mt-2">
+        <ul class="p-4 space-y-2 font-medium text-sm">
+            
+            <!-- PRODUCTS dropdown -->
+            <li x-data="{ openSub: false }">
+            
+               <button @click="openSub = !openSub" class="w-full text-left flex justify-between items-center py-2 text-slate-800 hover:text-slate-900">Produits <svg class="w-4 h-4 transform transition-transform" :class="{ 'rotate-180': openSub }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+                </svg></button><ul x-show="openSub" class="pl-4 mt-2 space-y-1 text-sm" x-cloak>
+              <li><a href="../proteins/proteins.html" class="block py-1 hover:text-blue-700">Peptides / Protéines</a></li>
+              <li><a href="../enzymes/enzymes.html" class="block py-1 hover:text-blue-700">Enzymes</a></li>
+              <li><a href="../coenzymes/coenzymes.html" class="block py-1 hover:text-blue-700">Coenzymes</a></li>
+              <li><a href="../carbohydrates/carbohydrates.html" class="block py-1 hover:text-blue-700">Glucides</a></li>
+              <li><a href="../chemicals/chemicals.html" class="block py-1 hover:text-blue-700">Produits chimiques</a></li>
+            </ul>
+            </li>
+    
+            <!-- Other links -->
+            <li><a href="../../order.html" class="block py-2 text-slate-800 hover:text-slate-900">Ordre</a></li>
+        </ul>
+        </div>
+    </div>
+    
+  
+     <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-6 items-center w-full">
+        <ul class="flex flex-nowrap items-center font-medium text-base">
+          <li class="p-4 lg:px-8 relative flex items-center space-x-1"
+              x-data="{ open: false }"
+              @mouseenter="open = true"
+              @mouseleave="open = false">
+           <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">Produits</a> <button class="shrink-0 p-1" :aria-expanded="open"> <span class="sr-only">Montrer le sous-menu pour les "produits"</span> <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                <path d="M10 2.586 11.414 4 6 9.414.586 4 2 2.586l4 4z" />
+              </svg></button><ul class="origin-top-right absolute top-full left-1/2 -translate-x-1/2 min-w-[240px] 
+                       bg-white border border-slate-200 p-2 rounded-lg shadow-xl [&[x-cloak]]:hidden"
+                x-show="open"
+                x-transition:enter="transition ease-out duration-200 transform"
+                x-transition:enter-start="opacity-0 -translate-y-2"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-out duration-200"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                x-cloak>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../proteins/proteins.html"><span>Peptides / Protéines</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../enzymes/enzymes.html"><span>Enzymes</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../coenzymes/coenzymes.html"><span>Coenzymes</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../carbohydrates/carbohydrates.html"><span>Glucides</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../chemicals/chemicals.html"><span>Produits chimiques</span></a></li>
+
+              </ul>
+          </li>
+  
+          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../order.html">Commande</a></li>
+        </ul>
+        <div class="flex items-center space-x-1">
+          <!-- Search -->
+          <div class="w-full max-w-xs min-w-[200px]">
+              <div class="relative flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="absolute w-5 h-5 top-2.5 left-2.5 text-slate-600">
+                  <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
+              </svg>
+          
+              <input
+              class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+              placeholder="Search Product" 
+              />
+      
+              </div>
+          </div>
+          <ul class="flex flex-nowrap items-center font-medium text-sm">
+              <li class="p-4 lg:px-8 relative flex items-center space-x-1"
+                  x-data="{ open: false }"
+                  @mouseenter="open = true"
+                  @mouseleave="open = false">
+               <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">FR</a> <button class="shrink-0 p-1" :aria-expanded="open"> <span class="sr-only">Afficher le sous-menu des langues</span> <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                    <path d="M10 2.586 11.414 4 6 9.414.586 4 2 2.586l4 4z" />
+                  </svg></button><ul class="origin-top-right absolute top-full left-1/2 -translate-x-1/2 min-w-[120px] 
+                           bg-white border border-slate-200 p-2 rounded-lg shadow-xl [&[x-cloak]]:hidden"
+                    x-show="open"
+                    x-transition:enter="transition ease-out duration-200 transform"
+                    x-transition:enter-start="opacity-0 -translate-y-2"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-out duration-200"
+                    x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0"
+                    x-cloak>
+                    <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../../../products/proteins/gastric-mucin.html"><span>Anglais</span></a></li>
+                    <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="#"><span>Français</span></a></li>
+                </ul>
+              </li>
+            </ul>
+        </div>
+      </nav>
+
+    
+  </header>
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-6 py-12 text-slate-800 font-sans leading-relaxed">
+    <div class="mb-8">
+        
+         <a href="proteins.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium"> <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+          </svg>
+         </a> <a href="proteins.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium">Protéines </a>     </div>
+      <section>
+        <h2 class="text-3xl font-bold text-brandblue border-b border-gray-300 pb-2 mb-4">Mucine gastrique</h2>
+        <p class="text-base text-gray-600 mb-2">
+         <strong>N° CAS :</strong> 84082-64-4 9016-61-3 | <strong>N° CE :</strong> 282-010-7 | <strong>N° EINECS :</strong> 232-738-1        </p>
+        <p class="mb-4"><strong>Synonymes :</strong> Mucus gastrique, glycoprotéine du mucus gastrique, mucine de surface gastrique, mucine glycoprotéique, mucine gastrique de porc, MUC5AC (sous-type de mucine prédominant dans le mucus gastrique), mucine de la muqueuse gastrique porcine, mucine de l'estomac porcin, PGM, mucine de l'estomac.</p>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Résumé du produit</h3>
+        <p>
+            La mucine gastrique est une glycoprotéine de poids moléculaire élevé, principalement responsable de la formation de la barrière protectrice de mucus dans l'estomac. Il s'agit d'une molécule complexe présentant une importante glycosylation qui lui confère des propriétés viscoélastiques, adhésives et de piégeage des agents pathogènes. Dans la recherche scientifique, la mucine gastrique est largement utilisée pour modéliser la couche de mucus gastro-intestinale dans le cadre d'études sur l'administration de médicaments, l'analyse de l'adhésion des agents pathogènes et le développement de biomatériaux mucoadhésifs. Elle est sensible à l'humidité et à la température, ce qui nécessite des conditions de stockage au froid et au sec. Ses propriétés biologiques et biophysiques polyvalentes en font un élément essentiel de la recherche en gastro-entérologie, en microbiologie et en pharmacie.  
+        </p>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Fonction biochimique</h3>
+        <p class="text-base text-gray-600 mb-2">La structure unique de la mucine gastrique permet directement plusieurs actions de protection et de régulation :</p>
+        <ul class="list-disc list-outside space-y-2 text-base text-slate-700 pl-5">
+          <li><strong>Barrière physique primaire</strong>: La mucine gastrique forme une couche de gel continue et visqueuse recouvrant l'ensemble de l'épithélium gastrique, qui sépare physiquement les délicates cellules épithéliales de l'environnement luminal hostile, notamment l'acide gastrique (pH ~1,5-3,5), les enzymes digestives, les particules alimentaires abrasives, les agents pathogènes). Le glycocalyx dense et le gel de mucus empêchent la diffusion de la pepsine vers l'épithélium, empêchant ainsi l'autodigestion. </li>
+          <li><strong>Défense contre les agents pathogènes</strong>: Le gel collant piège physiquement les bactéries, les virus et autres agents pathogènes, les empêchant d'adhérer à l'épithélium et de l'envahir. La structure glycannique spécifique de la mucine peut agir comme un leurre pour les récepteurs, en se liant aux agents pathogènes (comme H. Pylori), empêchant ainsi l'attachement à l'épithélium.</li>
+          <li><strong>Lubrification</strong>: Réduit la friction pendant le brassage de l'estomac, prévenant ainsi les dommages mécaniques.</li>
+          <li><strong>Perméabilité sélective</strong>: Tout en agissant comme une barrière contre les grosses molécules, les agents pathogènes et l'acide, elle permet le passage des nutriments, des ions et des gaz nécessaires au fonctionnement des cellules épithéliales.</li>
+        </ul>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Mécanisme d'action</h3>
+        <ul class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700">
+          <li><strong>Barrière protectrice</strong>: <p class="text-base text-gray-600 mt-2">La mucine gastrique forme un gel viscoélastique épais qui recouvre l'épithélium gastrique, servant de première ligne de défense contre l'acide gastrique et les enzymes digestives, telles que la pepsine. Cette barrière minimise le contact direct entre l'épithélium et le contenu luminal nocif, prévenant ainsi les lésions tissulaires induites par l'acide, la dégradation protéolytique et l'abrasion mécanique due aux particules alimentaires. Sa consistance gélatineuse permet également de piéger les particules et de faciliter leur élimination. </p>
+          </li>
+          <li><strong>Interaction médiée par les glycans</strong>: <p class="text-base text-gray-600 mt-2">Le réseau dense de glycanes liés en O sur le squelette protéique de la mucine fournit une interface structurelle et fonctionnelle pour interagir avec les micro-organismes et les facteurs immunitaires. Ces glycanes servent de ligands pour les adhésines bactériennes, notamment celles d'Helicobacter pylori, qui exploitent des motifs de sucre spécifiques pour s'ancrer sur la muqueuse gastrique. En outre, les glycanes des mucines peuvent moduler les réponses immunitaires en engageant des lectines et des récepteurs de reconnaissance des formes, jouant ainsi un rôle dans la surveillance et la tolérance immunitaires. </p>
+          </li>
+          <li><strong>Hydratation et gélification</strong>: <p class="text-base text-gray-600 mt-2">Les mucines gastriques sont très hydrophiles en raison de leur glycosylation, ce qui leur permet d'absorber et de retenir de grandes quantités d'eau, ce qui est essentiel pour former une matrice gélifiée hydratée. Cette gélification est encore stabilisée par des liaisons disulfures intermoléculaires entre les monomères de mucine, créant un réseau réticulé qui maintient l'intégrité du mucus sous le stress mécanique du péristaltisme et de la motilité gastrique. Ce gel hydraté facilite également la lubrification du contenu gastrique, facilitant la digestion et prévenant la friction des muqueuses.  </p>
+          </li>
+          <li><strong>Comportement sensible au pH</strong>: <p class="text-base text-gray-600 mt-2">Les propriétés physicochimiques de la mucine, notamment sa conformation, la distribution de ses charges et sa viscosité, changent dynamiquement en fonction du pH. Dans l'environnement très acide de la lumière de l'estomac (pH ~1,5-3), les mucines ont tendance à former des gels plus serrés et plus compacts, ce qui renforce leur fonction de barrière. Plus près de l'épithélium, où le pH est proche de la neutralité, les mucines adoptent une conformation plus étendue et plus détendue, permettant une diffusion sélective des nutriments et des médicaments tout en limitant la pénétration des acides et des protéases. Ce comportement sensible au pH est essentiel pour maintenir un gradient fonctionnel de la muqueuse et soutenir le double rôle de l'estomac en matière de digestion et de protection.  </p>
+          </li>
+        </ul>
+
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Applications dans la recherche scientifique</h3>
+        <ol class="list-decimal list-outside pl-5 space-y-2 text-base text-slate-700">
+            <li><strong>Études sur l'administration de médicaments</strong>: <ul class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700 mt-2">
+                    <li>La mucine gastrique est largement utilisée pour imiter la couche de mucus gastrique in vitro, ce qui permet aux chercheurs d'évaluer dans quelle mesure les médicaments, en particulier les composés administrés par voie orale, pénètrent à travers la barrière de mucus.  </li>
+                    <li>La mucine est utilisée pour tester et optimiser les systèmes d'administration de médicaments mucoadhésifs, tels que les nanoparticules, les liposomes et les hydrogels, conçus pour prolonger le temps de séjour dans l'estomac et améliorer la libération localisée des médicaments. L'interaction entre les surfaces des nanoparticules et les glycoprotéines de la mucine est étudiée pour identifier les matériaux qui peuvent se lier efficacement à la couche de mucus sans être éliminés prématurément par le péristaltisme ou le renouvellement du mucus. </li>
+                </ul>
+            </li>
+            <li><strong>Recherche sur les maladies microbiologiques et infectieuses</strong>: <ul class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700 mt-2">
+                    <li>Étude des mécanismes d'adhésion d'<i>Helicobacter pylori</i> et d'autres pathogènes gastriques : La mucine gastrique joue un rôle essentiel dans la compréhension de la manière dont des pathogènes comme <i>H. pylori</i> naviguent et colonisent la paroi de l'estomac. Elle fournit un environnement glycannique de type natif pour l'étude des adhésines bactériennes (par exemple BabA, SabA), ce qui permet aux chercheurs de déchiffrer les structures glucidiques spécifiques qui médient l'attachement bactérien et de développer des stratégies pour inhiber l'adhésion et l'infection. 
+                         </li>
+                    <li>En raison de sa nature viscoélastique, la mucine est utilisée pour simuler les propriétés physiques du mucus natif, ce qui permet aux chercheurs de suivre et de quantifier la façon dont les bactéries se déplacent dans cet environnement complexe. Ces études permettent d'élucider la motilité médiée par les flagelles, la chimiotaxie et le rôle de la viscosité du mucus dans la mobilité et la persistance des pathogènes dans l'estomac.  </li>
+                </ul>
+            </li>
+            <li><strong>Physiologie gastro-intestinale</strong>: <ul class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700 mt-2">
+                    <li>En étudiant la mucine gastrique isolée ou en l'utilisant comme composant dans des modèles ex vivo et in vitro, les chercheurs peuvent étudier comment les mucines sont synthétisées, sécrétées et régulées dans des conditions physiologiques et pathologiques. Cette recherche permet de mieux comprendre les mécanismes de défense de l'hôte, en particulier la façon dont la sécrétion de mucine répond aux blessures, aux infections, aux inflammations et aux stimuli alimentaires. </li>
+                    <li>Les altérations de l'expression, de la glycosylation et de la sécrétion des mucines sont étroitement associées à diverses maladies gastriques. Les études utilisant de la mucine gastrique purifiée permettent d'explorer la façon dont la composition de la mucine change au cours de la gastrite chronique, de l'ulcère gastroduodénal, de la métaplasie intestinale et du carcinome gastrique. Ces connaissances contribuent à l'identification de biomarqueurs et de cibles thérapeutiques pour les troubles gastro-intestinaux. </li>
+                </ul>
+            </li>
+            <li><strong>Essais de biomatériaux</strong>: <ul class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700 mt-2">
+                    <li>Utilisée dans les essais <i>in vitro</i> de biocapteurs, d'échafaudages et de revêtements pour l'interaction avec le mucus : la mucine gastrique est utilisée pour évaluer la façon dont les dispositifs médicaux, les implants ou les surfaces de biocapteurs interagissent avec des environnements ressemblant à du mucus. Il s'agit notamment d'évaluer les propriétés de non-encrassement, la biocompatibilité et l'adhésion aux muqueuses, en particulier pour les dispositifs destinés à des applications gastro-intestinales. Les essais avec la mucine permettent d'affiner les modifications de surface (p. ex. PEGylation, revêtements zwitterioniques) afin de minimiser l'encrassement et l'activation immunitaire. 
+                         </li>
+                </ul>
+            </li>
+            <li><strong>Enzymologie et glycobiologie</strong>: <ul class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700 mt-2">
+                    <li>Utilisées pour étudier les schémas de glycosylation des mucines, les enzymes dégradant les mucines (par exemple les mucinases). 
+                        La mucine gastrique sert de substrat biologique pour l'étude des structures glycanniques, des voies de glycosylation enzymatique et de l'activité des glycosidases. Elle est couramment utilisée pour identifier et caractériser les mucinases bactériennes, qui dégradent le réseau de mucines pendant l'infection, et pour étudier la spécificité et la cinétique des enzymes hôtes et microbiennes impliquées dans le métabolisme des mucines. Ces études sont cruciales pour comprendre les interactions hôte-microbe et l'homéostasie intestinale. 
+                         </li>
+                </ul>
+            </li>
+        </ol>
+       
+        
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Conditionnement et stockage</h3>
+        <ul class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700">
+          <li>Sources : purifiées à partir de l'estomac porcin  </li>
+          <li>Disponible sous forme de poudre lyophilisée blanche à légèrement jaune</li>
+          <li>Conserver dans un récipient hermétique, dans un endroit frais et sec.  </li>
+        </ul>
+      </section>
+      
+      <section class="mt-10">
+        <h3 class="text-2xl font-semibold text-brandblue mb-4">Références</h3>
+        <ol class="list-decimal list-inside space-y-2 text-sm text-slate-700">
+          <li>Corfield AP. 2015 : <a href="https://pubmed.ncbi.nlm.nih.gov/24821013/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Mucins : a biologically relevant glycan barrier in mucosal protection</a>, Biochim Biophys Acta. 1850(1) : 236-52.</li>
+          <li>McGuckin MA, et al. 2011 : <a href="https://pubmed.ncbi.nlm.nih.gov/21407243/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Mucin dynamics and enteric pathogens</a>, Nat Rev Microbiol. 9(4) : 265-78.</li>
+          <li>Corfield AP, et al. 2001 : <a href="https://pubmed.ncbi.nlm.nih.gov/11578958/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Mucins in the gastrointestinal tract in health and disease</a>, Front Biosci. 6 : D1321-57.</li>
+          <li>Lee S, et al. 2005 : <a href="https://pubs.acs.org/doi/10.1021/la050779w" target="_blank" class="text-blue-600 underline hover:text-blue-800">Porcine gastric mucin (PGM) at the water/poly(dimethylsiloxane) (PDMS) interface :Influence du pH et de la force ionique sur sa conformation, son adsorption et ses propriétés de lubrification aqueuse</a>, Langmuir. 21(18) : 8344-53.</li>
+          <li>Hoffmann W. 2015 : <a href="https://pubmed.ncbi.nlm.nih.gov/26201258/" target="_blank" class="text-blue-600 underline hover:text-blue-800">TFF2, a MUC6-binding lectin stabilizing the gastric mucus barrier and more (Review)</a>, Int J Oncol. 47(3) : 806-16.</li>
+          <li>Benson KK, et al. 2023 : <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9856870/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Understanding the clinical significance of MUC5AC in biliary tract cancers</a>, Cancers (Basel). 15(2) : 433.</li>
+          <li>Dekker J, et al. 1991 : <a href="https://pubmed.ncbi.nlm.nih.gov/1859370/" target="_blank" class="text-blue-600 underline hover:text-blue-800">The oligomeric structure of rat and human gastric mucins</a>, Biochem J. 277(Pt 2) : 423-7.</li>
+          <li>Bara J, et al. 1998 : <a href="https://pubmed.ncbi.nlm.nih.gov/9495247/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Gastric M1 mucin, an early oncofetal marker of colon carcinogenesis, is encoded by the MUC5AC gene</a>, Int J Cancer. 75(5) : 767-73.</li>
+          <li>Nordman H, et al. 1998 : <a href="https://pubmed.ncbi.nlm.nih.gov/9560293/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Mucus glycoproteins from pig gastric mucosa : different mucins are produced by the surface epithelium and the glands</a>, Biochem J. 331(Pt 3) : 687-94.</li>
+          <li>Van den Brink GR, et al. 2000 : <a href="https://pubmed.ncbi.nlm.nih.gov/10764701/" target="_blank" class="text-blue-600 underline hover:text-blue-800">H. pylori colocalises with MUC5AC in the human stomach</a>, Gut. 46(5) : 601-7.</li>
+          <li>Hoffmann W. 2020 : <a href="https://pubmed.ncbi.nlm.nih.gov/32630599/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Trefoil factor family (TFF) peptides and their diverse molecular functions in mucus barrier protection and more : Changing the paradigm</a>, Int J Mol Sci. 21(12) : 4535.</li>
+          <li>Niv Y. 2015 : <a href="https://pubmed.ncbi.nlm.nih.gov/26309370/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Helicobacter pylori et l'expression de la mucine gastrique : A systematic review and meta-analysis</a>, World J Gastroenterol. 21(31) : 9430-6.</li>
+          <li>Jessberger N, et al. 2019 : <a href="https://journals.asm.org/doi/10.1128/iai.00765-18" target="_blank" class="text-blue-600 underline hover:text-blue-800">Porcine gastric mucin triggers toxin production of enteropathogenic Bacillus cereus</a>, Infect Immun. 87(4).</li>
+          <li>Santos L, Lindén SK. 2025 : <a href="https://pubmed.ncbi.nlm.nih.gov/40498305/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Mucins as inhibitors against bacterial adhesion to epithelial cells</a>, Methods Mol Biol. 2942 : 45-53.</li>
+          <li>Arai J, et al. 2024 : <a href="https://pubmed.ncbi.nlm.nih.gov/39031976/" target="_blank" class="text-blue-600 underline hover:text-blue-800">The role of gastric mucins and mucin-related glycans in gastric cancers</a>, Cancer Sci. 115(9) : 2853-61.</li>
+          <li>Kobayashi M, et al. 2009 : <a href="https://pubmed.ncbi.nlm.nih.gov/19150806/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Roles of gastric mucin-type O-glycans in the pathogenesis of Helicobacter pylori infection</a>, Glycobiology. 19(5) : 453-61.</li>
+          <li>Tamura M, et al. 2020 : <a href="https://pubmed.ncbi.nlm.nih.gov/32009121/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Potential interaction between Galectin-2 and MUC5AC in mouse gastric mucus</a>, Biol Pharm Bull. 43(2) : 356-60.</li>
+          <li>Dam TK, et al. 2022 : <a href="https://pubmed.ncbi.nlm.nih.gov/35320526/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Mechanism of mucin recognition by lectins : A thermodynamic study</a>, Methods Mol Biol. 2442 : 169-85.</li>
+          <li>Kétyi I. 1990 : <a href="https://pubmed.ncbi.nlm.nih.gov/1702253/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Binding of enteric bacteria to hog gastric mucin</a>, Acta Microbiol Hung. 37(1) : 45-53.</li>
+          <li>Smith H. 1950 : <a href="https://doi.org/10.1038/165077a0" target="_blank" class="text-blue-600 underline hover:text-blue-800">Virulence-enhancing factor of hog gastric mucin</a>, Nature. 165 : 77.</li>
+          <li>Libao-Mercado AJ, de Lange CFM. 2007 : <a href="https://www.sciencedirect.com/science/article/abs/pii/S1871141307001278" target="_blank" class="text-blue-600 underline hover:text-blue-800">Refined methodology to purify mucins from pig colonic mucosa</a>, Livestock Sci. 109(1-3) : 141-4.</li>
+          <li>Veronika J, et al. 2016 : <a href="https://pubs.rsc.org/en/content/articlehtml/2016/ra/c6ra07424c" target="_blank" class="text-blue-600 underline hover:text-blue-800">An optimized purification process for porcine gastric mucin with preservation of its native functional properties</a>, RSC Adv. 6 : 44932-43.</li>
+        </ol>
+      </section>
+      
+      
+      
+  </main>
+  
+  
+
+  <!-- start cta -->
+  <section
+  class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 text-center md:text-left">
+  <div class="md:flex md:items-center md:justify-center">
+    <h2 class="text-xl font-bold text-white">Jiagen Biotechnologies fournit de la mucine gastrique de qualité avec différentes spécifications. <br>Contactez-nous à l'adresse <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> pour passer une commande.</h2>
+   <a href="../../order.html"
+      class="px-8 py-4 bg-white text-blue-600 rounded inline-block font-semibold md:ml-8 mt-4 md:mt-0 
+      hover:bg-teal-500 hover:text-white transition-colors duration-300">Commande</a></div>
+</section>
+<!-- end cta -->
+
+<!-- start footer -->
+<footer class="relative bg-[#ececec] text-gray-500 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 lg:py-24">
+  <div class="flex flex-col md:flex-row">
+    <div class="w-full lg:w-auto lg:mx-4 lg:pr-8">
+     <img src="../../../assets/logo.svg" alt="Jiagen Biotechnologies" class="h-40 mb-2">
+
+      <p class="text-gray-400">Favoriser la découverte grâce à des matériaux de qualité fiable.</p>
+
+    </div>
+
+    <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
+      <h5 class="uppercase tracking-wider font-semibold text-gray-500">Produits</h5>
+      <ul class="mt-4">
+        <li class="mt-2"><a href="../proteins/proteins.html" title="" class="opacity-75 hover:opacity-100">Peptides/Protéines</a></li>
+        <li class="mt-2"><a href="../enzymes/enzymes.html" title="" class="opacity-75 hover:opacity-100">Enzymes</a></li>
+        <li class="mt-2"><a href="../coenzymes/coenzymes.html" title="" class="opacity-75 hover:opacity-100">Coenzymes</a></li>
+        <li class="mt-2"><a href="../carbohydrates/carbohydrates.html" title="" class="opacity-75 hover:opacity-100">Glucides</a></li>
+        <li class="mt-2"><a href="../chemicals/chemicals.html" title="" class="opacity-75 hover:opacity-100">Produits chimiques</a></li>
+
+      </ul>
+    </div>
+
+    <div class="w-full lg:w-2/6 mt-8 lg:mt-0 lg:mx-4 lg:pr-8">
+      <h5 class="uppercase tracking-wider font-semibold text-gray-500">Coordonnées de l'entreprise</h5>
+      <ul class="mt-4">
+        <li>
+          
+           <a title="" class="block flex items-center opacity-75 hover:opacity-100"> <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M12,2C7.589,2,4,5.589,4,9.995C3.971,16.44,11.696,21.784,12,22c0,0,8.029-5.56,8-12C20,5.589,16.411,2,12,2z M12,14 c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4S14.21,14,12,14z" />
+              </svg>
+            </span>
+            
+           <span class="ml-3">958 Montée de Liesse, Saint-Laurent, QC, CAN </span> </a>  </li>
+
+        <li class="mt-4">
+          
+           <a title="" class="block flex items-center opacity-75 hover:opacity-100"> <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M14.594,13.994l-1.66,1.66c-0.577-0.109-1.734-0.471-2.926-1.66c-1.193-1.193-1.553-2.354-1.661-2.926l1.661-1.66 l0.701-0.701L5.295,3.293L4.594,3.994l-1,1C3.42,5.168,3.316,5.398,3.303,5.643c-0.015,0.25-0.302,6.172,4.291,10.766 C11.6,20.414,16.618,20.707,18,20.707c0.202,0,0.326-0.006,0.358-0.008c0.245-0.014,0.476-0.117,0.649-0.291l1-1l0.697-0.697 l-5.414-5.414L14.594,13.994z" />
+              </svg>
+            </span>
+            
+             <span class="ml-3">+1 514-779-9623 </span> </a>           </li>
+        <li class="mt-4">
+          
+           <a title="" class="block flex items-center opacity-75 hover:opacity-100"> <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M20,4H4C2.896,4,2,4.896,2,6v12c0,1.104,0.896,2,2,2h16c1.104,0,2-0.896,2-2V6C22,4.896,21.104,4,20,4z M20,8.7l-8,5.334 L4,8.7V6.297l8,5.333l8-5.333V8.7z" />
+              </svg>
+            </span>
+            
+            <span class="ml-3">
+              info@jiagen.com<br>
+              sales@jiagen.com
+            </span>            </li>
+      </ul>
+    </div>
+    <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
+      
+
+      <p class="text-sm text-gray-400 mt-12">2025 Jiagen Biotechnologies. <br class="hidden lg:block">Tous droits réservés.      </p>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->
+
+</body>
+</html>

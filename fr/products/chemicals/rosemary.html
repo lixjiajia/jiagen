@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+    <meta name="language" content="fr">
+    <link rel="alternate" hreflang="en" href="https://jiagen.ca/products/chemicals/rosemary.html">
+    <link rel="alternate" hreflang="fr" href="https://jiagen.ca/fr/products/chemicals/rosemary.html">
+    <meta name="google" content="notranslate">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jiagen Biotechnologies</title>
+  <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <link href="../../../dist/output.css" rel="stylesheet" />
+
+  
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <!-- Announcement Bar -->
+    <div class="bg-brandblue text-white text-sm py-1 px-4">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="hidden md:flex"><span>Renforcer la recherche en sciences de la vie</span></div>
+        <div class="flex space-x-6 md:hidden">
+          <!-- Mobile: show just one link -->
+          <span>Téléphone: <span class="font-semibold">514-779-9623</span></span>
+          <span>Commandes: <span class="font-semibold">sales@jiagen.com</span></span>
+        </div>
+          <!-- Desktop: show full info -->
+          <div class="hidden md:flex space-x-6">
+            <span>Téléphone: <span class="font-semibold">514-779-9623</span></span>
+            <span>Contact: <span class="font-semibold">info@jiagen</span></span>
+            <span>Commandes: <span class="font-semibold">sales@jiagen.com</span></span>
+          </div>
+      </div>
+    </div>
+   <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white shadow">
+      <div class="max-w-7xl mx-auto px-4 py-1 flex justify-between items-center relative">
+        <a href="../../index.html">
+          <img src="../../../assets/logo.svg" alt="Logo" class="h-20 w-auto" />
+        </a>
+       <!-- Mobile Menu Toggle Button -->
+      <div class="md:hidden" x-data="{ open: false }">
+          <button @click="open = !open" class="text-slate-800 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          </button>
+      
+         <!-- Mobile Dropdown Menu -->
+          <div x-show="open" @click.away="open = false" class="absolute left-0 top-full w-full bg-white shadow-md z-50 border-t mt-2">
+          <ul class="p-4 space-y-2 font-medium text-sm">
+              
+              <!-- PRODUCTS dropdown -->
+              <li x-data="{ openSub: false }">
+              
+                 <button @click="openSub = !openSub" class="w-full text-left flex justify-between items-center py-2 text-slate-800 hover:text-slate-900">Produits <svg class="w-4 h-4 transform transition-transform" :class="{ 'rotate-180': openSub }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+                  </svg></button><ul x-show="openSub" class="pl-4 mt-2 space-y-1 text-sm" x-cloak>
+                <li><a href="../proteins/proteins.html" class="block py-1 hover:text-blue-700">Peptides / Protéines</a></li>
+                <li><a href="../enzymes/enzymes.html" class="block py-1 hover:text-blue-700">Enzymes</a></li>
+                <li><a href="../coenzymes/coenzymes.html" class="block py-1 hover:text-blue-700">Coenzymes</a></li>
+                <li><a href="../carbohydrates/carbohydrates.html" class="block py-1 hover:text-blue-700">Glucides</a></li>
+                <li><a href="../chemicals/chemicals.html" class="block py-1 hover:text-blue-700">Produits chimiques</a></li>
+              </ul>
+              </li>
+      
+              <!-- Other links -->
+              <li><a href="../../order.html" class="block py-2 text-slate-800 hover:text-slate-900">Ordre</a></li>
+          </ul>
+          </div>
+      </div>
+      
+    
+       <!-- Desktop Nav -->
+        <nav class="hidden md:flex space-x-6 items-center w-full">
+          <ul class="flex flex-nowrap items-center font-medium text-base">
+            <li class="p-4 lg:px-8 relative flex items-center space-x-1"
+                x-data="{ open: false }"
+                @mouseenter="open = true"
+                @mouseleave="open = false">
+             <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">Produits</a> <button class="shrink-0 p-1" :aria-expanded="open"> <span class="sr-only">Montrer le sous-menu pour les "produits"</span> <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                  <path d="M10 2.586 11.414 4 6 9.414.586 4 2 2.586l4 4z" />
+                </svg></button><ul class="origin-top-right absolute top-full left-1/2 -translate-x-1/2 min-w-[240px] 
+                         bg-white border border-slate-200 p-2 rounded-lg shadow-xl [&[x-cloak]]:hidden"
+                  x-show="open"
+                  x-transition:enter="transition ease-out duration-200 transform"
+                  x-transition:enter-start="opacity-0 -translate-y-2"
+                  x-transition:enter-end="opacity-100 translate-y-0"
+                  x-transition:leave="transition ease-out duration-200"
+                  x-transition:leave-start="opacity-100"
+                  x-transition:leave-end="opacity-0"
+                  x-cloak>
+                  <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../proteins/proteins.html"><span>Peptides / Protéines</span></a></li>
+                  <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../enzymes/enzymes.html"><span>Enzymes</span></a></li>
+                  <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../coenzymes/coenzymes.html"><span>Coenzymes</span></a></li>
+                  <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../carbohydrates/carbohydrates.html"><span>Glucides</span></a></li>
+                  <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../chemicals/chemicals.html"><span>Produits chimiques</span></a></li>
+
+              </ul>
+            </li>
+    
+            <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../order.html">Commande</a></li>
+          </ul>
+          <div class="flex items-center space-x-1">
+            <!-- Search -->
+            <div class="w-full max-w-xs min-w-[200px]">
+                <div class="relative flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="absolute w-5 h-5 top-2.5 left-2.5 text-slate-600">
+                    <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
+                </svg>
+            
+                <input
+                class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+                placeholder="Search Product" 
+                />
+        
+                </div>
+            </div>
+            <ul class="flex flex-nowrap items-center font-medium text-sm">
+                <li class="p-4 lg:px-8 relative flex items-center space-x-1"
+                    x-data="{ open: false }"
+                    @mouseenter="open = true"
+                    @mouseleave="open = false">
+                 <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">FR</a> <button class="shrink-0 p-1" :aria-expanded="open"> <span class="sr-only">Afficher le sous-menu des langues</span> <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                      <path d="M10 2.586 11.414 4 6 9.414.586 4 2 2.586l4 4z" />
+                    </svg></button><ul class="origin-top-right absolute top-full left-1/2 -translate-x-1/2 min-w-[120px] 
+                             bg-white border border-slate-200 p-2 rounded-lg shadow-xl [&[x-cloak]]:hidden"
+                      x-show="open"
+                      x-transition:enter="transition ease-out duration-200 transform"
+                      x-transition:enter-start="opacity-0 -translate-y-2"
+                      x-transition:enter-end="opacity-100 translate-y-0"
+                      x-transition:leave="transition ease-out duration-200"
+                      x-transition:leave-start="opacity-100"
+                      x-transition:leave-end="opacity-0"
+                      x-cloak>
+                      <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../../../products/chemicals/rosemary.html"><span>Anglais</span></a></li>
+                      <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="#"><span>Français</span></a></li>
+                  </ul>
+                </li>
+              </ul>
+          </div>
+        </nav>
+  
+      
+    </header>
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-6 py-12 text-slate-800 font-sans leading-relaxed">
+    <div class="mb-8">
+        
+         <a href="chemicals.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium"> <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+          </svg>
+         </a> <a href="chemicals.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium">Produits chimiques </a>     </div>
+      <section>
+        <h2 class="text-3xl font-bold text-brandblue border-b border-gray-300 pb-2 mb-4">
+            Extrait de romarin       </h2>
+      
+        <p class="text-base text-slate-700 mb-2">
+           <strong>No CAS :</strong> 84604-14-8 | <strong>No EINECS :</strong> 283-291-9         </p>
+          
+        <p class="text-base text-gray-600 mb-2">
+         <strong>Synonymes :</strong> Extraits de romarin (additif alimentaire UE E392), extrait de feuilles de romarin, antioxydant de romarin, extrait de <i>Rosmarinus</i> <i>officinalis</i>, extrait de feuilles de <i>Rosmarinus officinalis</i>, extrait de feuilles/fleurs/fleurs/tiges de <i>R. officinalis</i>, extrait d'huile de romarin, extrait de <i>Rosmarinus officinalis</i> L.  </p>
+        <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mt-4 mb-2">Résumé du produit :</h3>
+        <p class="text-base text-gray-600 mb-2">
+            L'extrait de romarin est un mélange botanique standardisé de <i>R. officinalis</i> riche en diterpènes phénoliques (notamment l'acide carnosique et le carnosol) et en polyphénols (par exemple, l'acide rosmarinique). En tant qu'antioxydant naturel (E392), il protège les systèmes lipidiques de l'oxydation et, dans la recherche biomédicale, module les voies redox et inflammatoires - principalement en activant Nrf2 et en supprimant NF-κB. Les applications couvrent les modèles de conservation des aliments, la biologie redox, la neuroprotection, les études antimicrobiennes et les travaux sur le microbiome/métabolisme. Il fait également l'objet de recherches scientifiques en cours en raison de ses effets neuroprotecteurs, antitumoraux et anti-inflammatoires potentiels. Comme il s'agit d'un UVCB, il n'a pas de formule moléculaire unique ; les chercheurs doivent signaler la composition/standardisation et suivre le stockage spécifique au SDS (frais, sec, à l'abri de la lumière ; contrôles plus stricts pour les actifs purifiés). 
+        </p>
+        </section>
+
+        <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mt-4 mb-2">Fonction et mécanisme d'activité</h3>
+        <ol class="list-decimal list-outside pl-5 space-y-3 text-base text-slate-700">
+            <li><strong>Activité antioxydante</strong>           <p class="text-base text-gray-600 mb-2 mt-2">La principale fonction de l'extrait de romarin est sa puissante activité antioxydante. Il agit en piégeant les radicaux libres et en inhibant la peroxydation des lipides, qui est le processus de dégradation oxydative des graisses. Cela en fait un conservateur naturel très efficace pour les aliments contenant des huiles, des graisses et des aliments riches en lipides, prévenant le rancissement et prolongeant la durée de conservation. L'effet neuroprotecteur de l'extrait de romarin provient de ses mécanismes antioxydants. </p>
+                <p>Le principal mécanisme implique ses diterpènes phénoliques, en particulier l'acide carnosique et son dérivé, le carnosol. Ces composés sont très efficaces pour donner des atomes d'hydrogène afin de stabiliser les radicaux libres, mettant ainsi fin à la réaction en chaîne de l'oxydation des lipides. L'acide rosmarinique, un autre composant clé, est également un puissant antioxydant qui contribue à l'efficacité globale de l'extrait.  </p>
+            </li>
+            <li>
+               <strong>Effets antimicrobiens</strong>             <p class="text-base text-gray-600 mb-2 mt-2">L'extrait de romarin présente une puissante activité antimicrobienne contre un large spectre de micro-organismes, y compris les bactéries et les champignons. Cet effet est principalement dû à ses diterpènes phénoliques, tels que l'acide carnosique et le carnosol. Ces composés agissent en perturbant l'intégrité de la membrane cellulaire des microbes. En pénétrant et en endommageant la membrane cellulaire, ils provoquent une fuite des composants intracellulaires vitaux, ce qui conduit finalement à la mort des cellules microbiennes.</p>
+            </li>
+            <li>
+               <strong>Action anti-inflammatoire</strong>               <p class="text-base text-gray-600 mb-2 mt-2">Les propriétés anti-inflammatoires de l'extrait sont liées à sa capacité à moduler les principales voies inflammatoires. Ses composants actifs, en particulier l'acide rosmarinique et le carnosol, peuvent inhiber l'activité des enzymes pro-inflammatoires. Plus précisément, il a été démontré qu'ils suppriment la production de cyclooxygénase-2 (COX-2) et de lipoxygénase (LOX), qui sont responsables de la synthèse de médiateurs inflammatoires tels que les prostaglandines et les leucotriènes. En bloquant ces enzymes, l'extrait de romarin contribue à réduire la douleur et le gonflement associés aux conditions inflammatoires.</p>
+            </li>
+        </ul>
+        </section>
+
+
+        <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mt-4 mb-2">Applications dans la recherche scientifique :</h3>
+        <ul class="list-disc list-inside pl-5 space-y-2 text-base text-slate-700">
+          <li><strong>Science alimentaire et modèles d'oxydation des lipides</strong>      <p class="text-base text-gray-600 mt-2 pl-5">Largement utilisé comme antioxydant naturel dans les huiles alimentaires, les huiles de poisson/algues, les systèmes de viande/graisse ; l'efficacité et les limites d'exposition ont été évaluées par l'EFSA pour le E392. </p>
+          </li>
+          <li><strong>Biologie redox / cytoprotection</strong>           <p class="text-base text-gray-600 mt-2 pl-5">Les extraits riches en acide carnosique sont utilisés pour étudier l'activation de Nrf2, la protection de la ferroptose et la résistance au stress oxydatif dans les cellules et les modèles animaux. </p>
+          </li>
+          <li><strong>Inflammation et immunité</strong>        <p class="text-base text-gray-600 mt-2 pl-5">L'acide rosmarinique et les extraits de romarin ont été évalués pour moduler la signalisation NF-κB et les marqueurs inflammatoires in vitro et in vivo. </p>
+          </li>
+          <li><strong>Neurosciences</strong>           <p class="text-base text-gray-600 mt-2 pl-5">Les actifs du romarin (en particulier l'acide carnosique) sont étudiés pour la neuroprotection et les modèles cognitifs, y compris les souris 5xFAD Alzheimer (les travaux sur les pro-médicaments ciblant directement Nrf2 sont également référencés).  </p>
+          </li>
+          <li><strong>Études sur le microbiome et le métabolisme</strong>           <p class="text-base text-gray-600 mt-2 pl-5">Les extraits riches en acide carnosique modulent les enzymes du microbiote intestinal et les profils SCFA dans des modèles de rongeurs.  </p>
+          </li>
+    
+        </ul>
+        </section>
+
+        <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mt-4 mb-2">Conditionnement et stockage :</h3>
+        <ul class="list-disc list-inside pl-5 space-y-2 text-base text-gray-600 mb-2">
+          <li><strong>Sources</strong>: feuilles et/ou sommités fleuries de Rosmarinus officinalis L. (Lamiaceae).  </li>
+          <li><strong>Stockage</strong>: à température ambiante, à l'abri de la lumière et de l'humidité.</li>
+        </ul>
+        </section>
+
+        <section class="mt-10">
+            <h3 class="text-2xl font-semibold text-brandblue mb-4">Références</h3>
+            <ol class="list-decimal list-inside space-y-2 text-sm text-slate-700">
+              <li>Luo C, et al. 2020 : <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7059186/" target="_blank" class="text-blue-600 underline hover:text-blue-800">A review of the anti-inflammatory effects of rosmarinic acid on inflammatory diseases</a>, Front Pharmacol. 11 : 153.</li>
+              <li>Moufakkir C, et al. 2023 : <a href="https://pubmed.ncbi.nlm.nih.gov/37007843/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Preserving soybean oil for the frying of breaded butterfly shrimp using natural rosemary antioxidant</a>, Int J Food Sci. 2023 : 5984636.</li>
+              <li>Ribeiro CCS, et al. 2023 : <a href="https://pubmed.ncbi.nlm.nih.gov/36981229/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Improvement of color and oxidative stabilities in nellore bull dark meat in high-oxygen package by lactate and rosemary oil extract</a>, Foods. 12(6) : 1302.</li>
+              <li>Ozarowski M, et al. 2013 : <a href="https://pubmed.ncbi.nlm.nih.gov/24080468/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Rosmarinus officinalis L. leaf extract improves memory impairment and affects acetylcholinesterase and butyrylcholinesterase activities in rat brain</a>, Fitoterapia. 91 : 261-271.</li>
+              <li>de Oliveira JR, et al. 2017 : <a href="https://pubmed.ncbi.nlm.nih.gov/28093936/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Biological activities of Rosmarinus officinalis L. (rosemary) extract as analyzed in microorganisms and cells</a>, Exp Biol Med (Maywood). 242(6) : 625-634.</li>
+              <li>González-Vallinas M, et al. 2015 : <a href="https://pubmed.ncbi.nlm.nih.gov/26452641/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Rosemary (Rosmarinus officinalis L.) extract as a potential complementary agent in anticancer therapy</a>, Nutr Cancer. 67(8) : 1221-9.</li>
+              <li>Zappalà A, et al. 2021 : <a href="https://pubmed.ncbi.nlm.nih.gov/30938188/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Neuroprotective effects of Rosmarinus officinalis L. extract in oxygen glucose deprivation (OGD)-injured human neural-like cells</a>, Nat Prod Res. 35(4) : 669-675.</li>
+              <li>Meccatti VM, et al. 2021 : <a href="https://pubmed.ncbi.nlm.nih.gov/33950151/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Rosmarinus officinalis L. (extrait de romarin) a un effet antibiofilm similaire à l'antifongique nystatine sur des échantillons de Candida</a>, An Acad Bras Cienc. 93(2) : e20190366.</li>
+              <li>Tu Z, et al. 2013 : <a href="https://pubmed.ncbi.nlm.nih.gov/23432097/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Rosemary (Rosmarinus officinalis L.) extract regulates glucose and lipid metabolism by activating AMPK and PPAR pathways in HepG2 cells</a>, J Agric Food Chem. 61(11) : 2803-10.</li>
+              <li>Ibañez E, et al. 2003 : <a href="https://pubmed.ncbi.nlm.nih.gov/12517098/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Subcritical water extraction of antioxidant compounds from rosemary plants</a>, J Agric Food Chem. 51(2) : 375-82.</li>
+              <li>Ielciu I, et al. 2024 : <a href="https://pubmed.ncbi.nlm.nih.gov/39796593/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Effects of a Rosmarinus officinalis L. extract and rosmarinic acid in improving streptozotocin-induced aortic tissue damages in rats</a>, Nutrients. 17(1) : 158.</li>
+              <li>Madsen S, et al. 2023 : <a href="https://pubmed.ncbi.nlm.nih.gov/37755254/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Unravelling effects of rosemary (Rosmarinus officinalis L.) extract on hepatic fat accumulation and plasma lipid profile in rats fed a high-fat western-style diet</a>, Metabolites. 13(9) : 974.</li>
+              <li>Erkan N, et al. 2008 : <a href="https://www.sciencedirect.com/science/article/abs/pii/S0308814608001520" target="_blank" class="text-blue-600 underline hover:text-blue-800">Antioxidant activities of rosemary (Rosmarinus Officinalis L.) extract, blackseed (Nigella sativa L.) essential oil, carnosic acid, rosmarinic acid and sesamol</a>, Food Chem. 110(1) : 76-82.</li>
+            </ol>
+        </section>
+          
+          
+          
+         
+  </main>
+  
+  
+
+  <!-- start cta -->
+  <section
+  class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 text-center md:text-left">
+  <div class="md:flex md:items-center md:justify-center">
+    <h2 class="text-xl font-bold text-white">Jiagen Biotechnologies fournit de l'extrait de romarin de qualité avec différentes spécifications. <br>Contactez-nous à l'adresse <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> pour passer une commande.</h2>
+      
+   <a href="../../order.html"
+      class="px-8 py-4 bg-white text-blue-600 rounded inline-block font-semibold md:ml-8 mt-4 md:mt-0 
+      hover:bg-teal-500 hover:text-white transition-colors duration-300">Commande</a></div>
+</section>
+<!-- end cta -->
+
+<!-- start footer -->
+<footer class="relative bg-[#ececec] text-gray-500 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 lg:py-24">
+  <div class="flex flex-col md:flex-row">
+    <div class="w-full lg:w-auto lg:mx-4 lg:pr-8">
+     <img src="../../../assets/logo.svg" alt="Jiagen Biotechnologies" class="h-40 mb-2">
+
+      <p class="text-gray-400">Favoriser la découverte grâce à des matériaux de qualité fiable.</p>
+
+    </div>
+
+    <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
+      <h5 class="uppercase tracking-wider font-semibold text-gray-500">Produits</h5>
+      <ul class="mt-4">
+        <li class="mt-2"><a href="../proteins/proteins.html" title="" class="opacity-75 hover:opacity-100">Peptides/Protéines</a></li>
+        <li class="mt-2"><a href="../enzymes/enzymes.html" title="" class="opacity-75 hover:opacity-100">Enzymes</a></li>
+        <li class="mt-2"><a href="../coenzymes/coenzymes.html" title="" class="opacity-75 hover:opacity-100">Coenzymes</a></li>
+        <li class="mt-2"><a href="../carbohydrates/carbohydrates.html" title="" class="opacity-75 hover:opacity-100">Glucides</a></li>
+        <li class="mt-2"><a href="../chemicals/chemicals.html" title="" class="opacity-75 hover:opacity-100">Produits chimiques</a></li>
+
+      </ul>
+    </div>
+
+    <div class="w-full lg:w-2/6 mt-8 lg:mt-0 lg:mx-4 lg:pr-8">
+      <h5 class="uppercase tracking-wider font-semibold text-gray-500">Coordonnées de l'entreprise</h5>
+      <ul class="mt-4">
+        <li>
+          
+           <a title="" class="block flex items-center opacity-75 hover:opacity-100"> <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M12,2C7.589,2,4,5.589,4,9.995C3.971,16.44,11.696,21.784,12,22c0,0,8.029-5.56,8-12C20,5.589,16.411,2,12,2z M12,14 c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4S14.21,14,12,14z" />
+              </svg>
+            </span>
+            
+           <span class="ml-3">958 Montée de Liesse, Saint-Laurent, QC, CAN </span> </a>  </li>
+
+        <li class="mt-4">
+          
+           <a title="" class="block flex items-center opacity-75 hover:opacity-100"> <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M14.594,13.994l-1.66,1.66c-0.577-0.109-1.734-0.471-2.926-1.66c-1.193-1.193-1.553-2.354-1.661-2.926l1.661-1.66 l0.701-0.701L5.295,3.293L4.594,3.994l-1,1C3.42,5.168,3.316,5.398,3.303,5.643c-0.015,0.25-0.302,6.172,4.291,10.766 C11.6,20.414,16.618,20.707,18,20.707c0.202,0,0.326-0.006,0.358-0.008c0.245-0.014,0.476-0.117,0.649-0.291l1-1l0.697-0.697 l-5.414-5.414L14.594,13.994z" />
+              </svg>
+            </span>
+            
+             <span class="ml-3">+1 514-779-9623 </span> </a>           </li>
+        <li class="mt-4">
+          
+           <a title="" class="block flex items-center opacity-75 hover:opacity-100"> <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M20,4H4C2.896,4,2,4.896,2,6v12c0,1.104,0.896,2,2,2h16c1.104,0,2-0.896,2-2V6C22,4.896,21.104,4,20,4z M20,8.7l-8,5.334 L4,8.7V6.297l8,5.333l8-5.333V8.7z" />
+              </svg>
+            </span>
+            
+            <span class="ml-3">
+              info@jiagen.com<br>
+              sales@jiagen.com
+            </span>            </li>
+      </ul>
+    </div>
+
+    <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
+      
+
+      <p class="text-sm text-gray-400 mt-12">2025 Jiagen Biotechnologies. <br class="hidden lg:block">Tous droits réservés.      </p>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->
+
+</body>
+</html>

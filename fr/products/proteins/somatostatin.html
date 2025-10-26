@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+    <meta name="language" content="fr">
+    <link rel="alternate" hreflang="en" href="https://jiagen.ca/products/proteins/somatostatin.html">
+    <link rel="alternate" hreflang="fr" href="https://jiagen.ca/fr/products/proteins/somatostatin.html">
+    <meta name="google" content="notranslate">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jiagen Biotechnologies</title>
+  <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <link href="../../../dist/output.css" rel="stylesheet" />
+
+  
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <!-- Announcement Bar -->
+    <div class="bg-brandblue text-white text-sm py-1 px-4">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="hidden md:flex"><span>Renforcer la recherche en sciences de la vie</span></div>
+        <div class="flex space-x-6 md:hidden">
+          <!-- Mobile: show just one link -->
+          <span>Téléphone: <span class="font-semibold">514-779-9623</span></span>
+          <span>Commandes: <span class="font-semibold">sales@jiagen.com</span></span>
+        </div>
+          <!-- Desktop: show full info -->
+          <div class="hidden md:flex space-x-6">
+            <span>Téléphone: <span class="font-semibold">514-779-9623</span></span>
+            <span>Contact: <span class="font-semibold">info@jiagen</span></span>
+            <span>Commandes: <span class="font-semibold">sales@jiagen.com</span></span>
+          </div>
+      </div>
+    </div>
+   <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white shadow">
+      <div class="max-w-7xl mx-auto px-4 py-1 flex justify-between items-center relative">
+        <a href="../../index.html">
+          <img src="../../../assets/logo.svg" alt="Logo" class="h-20 w-auto" />
+        </a>
+       <!-- Mobile Menu Toggle Button -->
+      <div class="md:hidden" x-data="{ open: false }">
+          <button @click="open = !open" class="text-slate-800 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          </button>
+      
+         <!-- Mobile Dropdown Menu -->
+          <div x-show="open" @click.away="open = false" class="absolute left-0 top-full w-full bg-white shadow-md z-50 border-t mt-2">
+          <ul class="p-4 space-y-2 font-medium text-sm">
+              
+              <!-- PRODUCTS dropdown -->
+              <li x-data="{ openSub: false }">
+              
+                 <button @click="openSub = !openSub" class="w-full text-left flex justify-between items-center py-2 text-slate-800 hover:text-slate-900">Produits <svg class="w-4 h-4 transform transition-transform" :class="{ 'rotate-180': openSub }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+                  </svg></button><ul x-show="openSub" class="pl-4 mt-2 space-y-1 text-sm" x-cloak>
+                <li><a href="../proteins/proteins.html" class="block py-1 hover:text-blue-700">Peptides / Protéines</a></li>
+                <li><a href="../enzymes/enzymes.html" class="block py-1 hover:text-blue-700">Enzymes</a></li>
+                <li><a href="../coenzymes/coenzymes.html" class="block py-1 hover:text-blue-700">Coenzymes</a></li>
+                <li><a href="../carbohydrates/carbohydrates.html" class="block py-1 hover:text-blue-700">Glucides</a></li>
+                <li><a href="../chemicals/chemicals.html" class="block py-1 hover:text-blue-700">Produits chimiques</a></li>
+              </ul>
+              </li>
+      
+              <!-- Other links -->
+              <li><a href="../../order.html" class="block py-2 text-slate-800 hover:text-slate-900">Ordre</a></li>
+          </ul>
+          </div>
+      </div>
+      
+    
+       <!-- Desktop Nav -->
+        <nav class="hidden md:flex space-x-6 items-center w-full">
+          <ul class="flex flex-nowrap items-center font-medium text-base">
+            <li class="p-4 lg:px-8 relative flex items-center space-x-1"
+                x-data="{ open: false }"
+                @mouseenter="open = true"
+                @mouseleave="open = false">
+             <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">Produits</a> <button class="shrink-0 p-1" :aria-expanded="open"> <span class="sr-only">Montrer le sous-menu pour les "produits"</span> <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                  <path d="M10 2.586 11.414 4 6 9.414.586 4 2 2.586l4 4z" />
+                </svg></button><ul class="origin-top-right absolute top-full left-1/2 -translate-x-1/2 min-w-[240px] 
+                         bg-white border border-slate-200 p-2 rounded-lg shadow-xl [&[x-cloak]]:hidden"
+                  x-show="open"
+                  x-transition:enter="transition ease-out duration-200 transform"
+                  x-transition:enter-start="opacity-0 -translate-y-2"
+                  x-transition:enter-end="opacity-100 translate-y-0"
+                  x-transition:leave="transition ease-out duration-200"
+                  x-transition:leave-start="opacity-100"
+                  x-transition:leave-end="opacity-0"
+                  x-cloak>
+                  <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../proteins/proteins.html"><span>Peptides / Protéines</span></a></li>
+                  <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../enzymes/enzymes.html"><span>Enzymes</span></a></li>
+                  <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../coenzymes/coenzymes.html"><span>Coenzymes</span></a></li>
+                  <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../carbohydrates/carbohydrates.html"><span>Glucides</span></a></li>
+                  <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../chemicals/chemicals.html"><span>Produits chimiques</span></a></li>
+
+                </ul>
+            </li>
+    
+            <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../order.html">Commande</a></li>
+          </ul>
+          <div class="flex items-center space-x-1">
+            <!-- Search -->
+            <div class="w-full max-w-xs min-w-[200px]">
+                <div class="relative flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="absolute w-5 h-5 top-2.5 left-2.5 text-slate-600">
+                    <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
+                </svg>
+            
+                <input
+                class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+                placeholder="Search Product" 
+                />
+        
+                </div>
+            </div>
+            <ul class="flex flex-nowrap items-center font-medium text-sm">
+                <li class="p-4 lg:px-8 relative flex items-center space-x-1"
+                    x-data="{ open: false }"
+                    @mouseenter="open = true"
+                    @mouseleave="open = false">
+                 <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">FR</a> <button class="shrink-0 p-1" :aria-expanded="open"> <span class="sr-only">Afficher le sous-menu des langues</span> <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                      <path d="M10 2.586 11.414 4 6 9.414.586 4 2 2.586l4 4z" />
+                    </svg></button><ul class="origin-top-right absolute top-full left-1/2 -translate-x-1/2 min-w-[120px] 
+                             bg-white border border-slate-200 p-2 rounded-lg shadow-xl [&[x-cloak]]:hidden"
+                      x-show="open"
+                      x-transition:enter="transition ease-out duration-200 transform"
+                      x-transition:enter-start="opacity-0 -translate-y-2"
+                      x-transition:enter-end="opacity-100 translate-y-0"
+                      x-transition:leave="transition ease-out duration-200"
+                      x-transition:leave-start="opacity-100"
+                      x-transition:leave-end="opacity-0"
+                      x-cloak>
+                      <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../../../products/proteins/somatostatin.html"><span>Anglais</span></a></li>
+                      <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="#"><span>Français</span></a></li>
+                  </ul>
+                </li>
+              </ul>
+          </div>
+        </nav>
+  
+      
+    </header>
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-6 py-12 text-slate-800 font-sans leading-relaxed">
+    <div class="mb-8">
+        
+         <a href="proteins.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium"> <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+          </svg>
+         </a> <a href="proteins.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium">Protéines </a>     </div>
+      <section>
+        <h2 class="text-3xl font-bold text-brandblue border-b border-gray-300 pb-2 mb-4">Somatostatine</h2>
+        <p class="text-base text-gray-600 mb-2">
+         <strong>N° CAS :</strong> 38916-34-6 | <strong>N° EINECS :</strong> 254-186-5        </p>
+        <p class="mb-4"><strong>Synonymes :</strong> hormone inhibitrice de l'hormone de croissance (GHIH), hormone inhibitrice de la libération de l'hormone de croissance (GHRIH), facteur hypothalamique, somatostatine-14 , facteur inhibiteur de la libération de la somatotropine (SRIF), hormone inhibitrice de la libération de la somatotropine (SRIH), SST, SRIF-14/SRIF-28</p>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Résumé du produit</h3>
+        <p>
+            La somatostatine est une hormone peptidique inhibitrice à large spectre qui joue un rôle essentiel dans la régulation neuroendocrinienne, la signalisation cellulaire et l'homéostasie hormonale. Sa capacité à supprimer de multiples voies hormonales en fait un outil indispensable à la recherche scientifique, notamment en endocrinologie, en oncologie et en gastro-entérologie. La somatostatine synthétisée dans le commerce (généralement la version à 14 résidus) est stable dans des conditions appropriées et largement utilisée dans des applications in vitro et in vivo pour étudier la suppression des hormones, les cascades de signalisation et la modulation des maladies. 
+        </p> 
+        <ul class="list-disc list-inside pl-5 text-slate-700 mt-2">
+            <li><strong>Formule</strong>: <sub>C76H104N18O19S2</sub></li>
+            <li><strong>Poids moléculaire de la formule</strong>: 1637.88</li>
+        </ul>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Fonction</h3>
+        <p>
+            La somatostatine est une hormone peptidique régulatrice qui inhibe la sécrétion de plusieurs autres hormones, notamment l'hormone de croissance (GH), l'insuline, le glucagon, la gastrine, la thyréostimuline (TSH), la corticotrophine (ACTH) et les peptides castro-intestinaux.        </p>
+       
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Mécanisme d'action</h3>
+        <ul class="list-disc list-inside pl-5 space-y-2 text-base text-slate-700">
+            <li>Agit par l'intermédiaire des récepteurs couplés aux protéines G (SSTR1-5) sur les cellules cibles.</li>
+            <li>Inhibe l'adénylyl cyclase, diminuant les niveaux d'AMPc.</li>
+            <li>Réduit les niveaux de calcium intracellulaire, inhibant l'exocytose des hormones.</li>
+            <li>Joue un rôle paracrine, endocrine et autocrine.</li>
+            <li>Effets anti-prolifératifs, anti-sécrétoires et immunomodulateurs.</li>
+           
+          </ul>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Applications dans la recherche scientifique</h3>
+        <ul class="list-disc list-inside pl-5 space-y-2 text-base text-slate-700">
+          <li><strong>Endocrinologie</strong>: Études de la régulation hormonale, de la dynamique de la GH et de l'insuline.</li>
+          <li><strong>Neurobiologie</strong>: Compréhension des réseaux de neurotransmetteurs et de neuropeptides.</li>
+          <li><strong>Recherche sur le cancer</strong>: Effets antiprolifératifs, en particulier dans les tumeurs endocrines.</li>
+          <li><strong>Gastro-entérologie</strong>: Inhibition des sécrétions et de la motilité gastro-intestinales.</li>
+          <li><strong>Recherche sur le diabète</strong>: Études portant sur la fonction des cellules des îlots de Langerhans et le métabolisme du glucose.</li>
+          <li><strong>Pharmacologie</strong>: Liaison avec les récepteurs, signalisation et développement d'analogues (par exemple, octréotide).</li> 
+          <li><strong>Immunologie</strong>: Étude des rôles immunosuppresseur et anti-inflammatoire de l'octréotide.</li>
+         
+        </ul>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Conditionnement et stockage</h3>
+        <ul class="list-disc list-inside pl-5 space-y-2 text-base text-slate-700">
+            <li>Source : synthétique</li>
+            <li>Disponible sous forme de poudre lyophilisée </li>
+            <li>Stocker à -20°C pour un stockage à long terme </li>
+        
+        </ul>
+      </section>
+      
+      <section class="mt-10">
+        <h3 class="text-2xl font-semibold text-brandblue mb-4">Références</h3>
+        <ol class="list-decimal list-inside space-y-2 text-sm text-slate-700">
+          <li>Olias G, et al. 2004 : 
+           <a href="https://pubmed.ncbi.nlm.nih.gov/15147500/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Regulation and function of somatostatin receptors</a>, J Neurochem. 89(5):1057-91.          </li>
+      
+          <li>Heo Y, et al. 2022 : 
+           <a href="https://pubmed.ncbi.nlm.nih.gov/35446253/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Cryo-EM structure of the human somatostatin receptor 2 complex with its agonist somatostatin delineates the ligand-binding specificity</a>, Elife. 11:e76823.          </li>
+      
+          <li>Mandarino L, et al. 1981 : 
+           <a href="https://pubmed.ncbi.nlm.nih.gov/6112710/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Selective effects of somatostatin-14, -25 and -28 on in vitro insulin and glucagon secretion</a>, Nature. 291(5810):76-7.          </li>
+      
+          <li>Schonbrunn A, et al. 1985 : 
+           <a href="https://pubmed.ncbi.nlm.nih.gov/2863938/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Mechanisms of somatostatin action in pituitary cells</a>, Adv Exp Med Biol. 188:305-24.          </li>
+      
+          <li>Castaño JP, et al. 2005 : 
+           <a href="https://pubmed.ncbi.nlm.nih.gov/16114268/" target="_blank" class="text-blue-600 underline hover:text-blue-800">New insights in the mechanism by which SRIF influences GH secretion</a>, J Endocrinol Invest. 28(5 Suppl):10-3.          </li>
+      
+          <li>Redekopp C, et al. 1984 : 
+           <a href="https://pubmed.ncbi.nlm.nih.gov/6150052/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Suppression et stimulation de la libération de l'hormone de croissance chez le mouton par les analogues de la somatostatine</a>, J Endocrinol Invest. 7(4):277-81.          </li>
+      
+          <li>Ranke MB, et al. 2011 : 
+           <a href="https://www.nature.com/articles/pr198158#:~:text=Somatostatin%20inhibited%20secretion%20GH%2Cinsulin,of%20GH%20and%20insulin%20levels." target="_blank" class="text-blue-600 underline hover:text-blue-800">A longitudinal study of the effects of SRIF on growth and peripheral hormones in the male rat during pubertal development</a>, Pediatr Res. 15:81.      </li>
+      
+          <li>Rogoza O, et al. 2022 : 
+           <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8836266/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Role of somatostatin signalling in neuroendocrine tumours</a>, Int J Mol Sci. 23(3):1447.          </li>
+      
+          <li>Chen F. 1993 : 
+           <a href="https://pubmed.ncbi.nlm.nih.gov/8097891/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Mechanisms of action of long-acting analogs of somatostatin</a>, Regul Pept. 44(3):285-95.          </li>
+      
+          <li>G-García ME, et al. 2025 : 
+           <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12018673/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Assessing the diagnostic, prognostic, and therapeutic potential of the somatostatin/cortistatin system in glioblastoma</a>, Cell Mol Life Sci. 82(1):173.          </li>
+      
+          <li>Chen F, et al. 2023 : 
+           <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10579019/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Ulinastatin combined with somatostatin enhances disease control and modulates serum inflammatory factors in patients with severe pancreatitis</a>, Am J Transl Res. 15(9):5797-807.          </li>
+      
+          <li>Chiti A, et al. 2000 : 
+           <a href="https://pubmed.ncbi.nlm.nih.gov/10932600/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Results and potential of somatostatin receptor imaging in gastroenteropancreatic tract tumours</a>, Q J Nucl Med. 44(1):42-9.          </li>
+        </ol>
+      </section>
+      
+      
+      
+      
+      
+  </main>
+  
+  
+
+  <!-- start cta -->
+  <section
+  class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 text-center md:text-left">
+  <div class="md:flex md:items-center md:justify-center">
+    <h2 class="text-xl font-bold text-white">Jiagen Biotechnologies fournit de la somatostatine de qualité avec différentes spécifications. <br>Contactez-nous à l'adresse <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> pour passer une commande.</h2>
+   <a href="../../order.html"
+      class="px-8 py-4 bg-white text-blue-600 rounded inline-block font-semibold md:ml-8 mt-4 md:mt-0 
+      hover:bg-teal-500 hover:text-white transition-colors duration-300">Commande</a></div>
+</section>
+<!-- end cta -->
+
+<!-- start footer -->
+<footer class="relative bg-[#ececec] text-gray-500 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 lg:py-24">
+  <div class="flex flex-col md:flex-row">
+    <div class="w-full lg:w-auto lg:mx-4 lg:pr-8">
+     <img src="../../../assets/logo.svg" alt="Jiagen Biotechnologies" class="h-40 mb-2">
+
+      <p class="text-gray-400">Favoriser la découverte grâce à des matériaux de qualité fiable.</p>
+
+    </div>
+
+    <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
+      <h5 class="uppercase tracking-wider font-semibold text-gray-500">Produits</h5>
+      <ul class="mt-4">
+        <li class="mt-2"><a href="../proteins/proteins.html" title="" class="opacity-75 hover:opacity-100">Peptides/Protéines</a></li>
+        <li class="mt-2"><a href="../enzymes/enzymes.html" title="" class="opacity-75 hover:opacity-100">Enzymes</a></li>
+        <li class="mt-2"><a href="../coenzymes/coenzymes.html" title="" class="opacity-75 hover:opacity-100">Coenzymes</a></li>
+        <li class="mt-2"><a href="../carbohydrates/carbohydrates.html" title="" class="opacity-75 hover:opacity-100">Glucides</a></li>
+        <li class="mt-2"><a href="../chemicals/chemicals.html" title="" class="opacity-75 hover:opacity-100">Produits chimiques</a></li>
+
+      </ul>
+    </div>
+
+    <div class="w-full lg:w-2/6 mt-8 lg:mt-0 lg:mx-4 lg:pr-8">
+      <h5 class="uppercase tracking-wider font-semibold text-gray-500">Coordonnées de l'entreprise</h5>
+      <ul class="mt-4">
+        <li>
+          
+           <a title="" class="block flex items-center opacity-75 hover:opacity-100"> <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M12,2C7.589,2,4,5.589,4,9.995C3.971,16.44,11.696,21.784,12,22c0,0,8.029-5.56,8-12C20,5.589,16.411,2,12,2z M12,14 c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4S14.21,14,12,14z" />
+              </svg>
+            </span>
+            
+           <span class="ml-3">958 Montée de Liesse, Saint-Laurent, QC, CAN </span> </a>  </li>
+
+        <li class="mt-4">
+          
+           <a title="" class="block flex items-center opacity-75 hover:opacity-100"> <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M14.594,13.994l-1.66,1.66c-0.577-0.109-1.734-0.471-2.926-1.66c-1.193-1.193-1.553-2.354-1.661-2.926l1.661-1.66 l0.701-0.701L5.295,3.293L4.594,3.994l-1,1C3.42,5.168,3.316,5.398,3.303,5.643c-0.015,0.25-0.302,6.172,4.291,10.766 C11.6,20.414,16.618,20.707,18,20.707c0.202,0,0.326-0.006,0.358-0.008c0.245-0.014,0.476-0.117,0.649-0.291l1-1l0.697-0.697 l-5.414-5.414L14.594,13.994z" />
+              </svg>
+            </span>
+            
+             <span class="ml-3">+1 514-779-9623 </span> </a>           </li>
+        <li class="mt-4">
+          
+           <a title="" class="block flex items-center opacity-75 hover:opacity-100"> <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M20,4H4C2.896,4,2,4.896,2,6v12c0,1.104,0.896,2,2,2h16c1.104,0,2-0.896,2-2V6C22,4.896,21.104,4,20,4z M20,8.7l-8,5.334 L4,8.7V6.297l8,5.333l8-5.333V8.7z" />
+              </svg>
+            </span>
+            
+            <span class="ml-3">
+              info@jiagen.com<br>
+              sales@jiagen.com
+            </span>            </li>
+      </ul>
+    </div>
+
+    <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
+      
+
+      <p class="text-sm text-gray-400 mt-12">2025 Jiagen Biotechnologies. <br class="hidden lg:block">Tous droits réservés.      </p>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->
+
+</body>
+</html>

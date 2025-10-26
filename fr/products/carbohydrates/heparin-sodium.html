@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+    <meta name="language" content="fr">
+    <link rel="alternate" hreflang="en" href="https://jiagen.ca/products/carbohydrates/heparin-sodium.html">
+    <link rel="alternate" hreflang="fr" href="https://jiagen.ca/fr/products/carbohydrates/heparin-sodium.html">
+    <meta name="google" content="notranslate">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jiagen Biotechnologies</title>
+  <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <link href="../../../dist/output.css" rel="stylesheet" />
+
+  
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <!-- Announcement Bar -->
+    <div class="bg-brandblue text-white text-sm py-1 px-4">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="hidden md:flex"><span>Renforcer la recherche en sciences de la vie</span></div>
+        <div class="flex space-x-6 md:hidden">
+          <!-- Mobile: show just one link -->
+          <span>Téléphone: <span class="font-semibold">514-779-9623</span></span>
+          <span>Commandes: <span class="font-semibold">sales@jiagen.com</span></span>
+        </div>
+          <!-- Desktop: show full info -->
+          <div class="hidden md:flex space-x-6">
+            <span>Téléphone: <span class="font-semibold">514-779-9623</span></span>
+            <span>Contact: <span class="font-semibold">info@jiagen</span></span>
+            <span>Commandes: <span class="font-semibold">sales@jiagen.com</span></span>
+          </div>
+      </div>
+    </div>
+   <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white shadow">
+      <div class="max-w-7xl mx-auto px-4 py-1 flex justify-between items-center relative">
+        <a href="../../index.html">
+          <img src="../../../assets/logo.svg" alt="Logo" class="h-20 w-auto" />
+        </a>
+       <!-- Mobile Menu Toggle Button -->
+      <div class="md:hidden" x-data="{ open: false }">
+          <button @click="open = !open" class="text-slate-800 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          </button>
+      
+         <!-- Mobile Dropdown Menu -->
+          <div x-show="open" @click.away="open = false" class="absolute left-0 top-full w-full bg-white shadow-md z-50 border-t mt-2">
+          <ul class="p-4 space-y-2 font-medium text-sm">
+              
+              <!-- PRODUCTS dropdown -->
+              <li x-data="{ openSub: false }">
+              
+                 <button @click="openSub = !openSub" class="w-full text-left flex justify-between items-center py-2 text-slate-800 hover:text-slate-900">Produits <svg class="w-4 h-4 transform transition-transform" :class="{ 'rotate-180': openSub }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+                  </svg></button><ul x-show="openSub" class="pl-4 mt-2 space-y-1 text-sm" x-cloak>
+                <li><a href="../proteins/proteins.html" class="block py-1 hover:text-blue-700">Peptides / Protéines</a></li>
+                <li><a href="../enzymes/enzymes.html" class="block py-1 hover:text-blue-700">Enzymes</a></li>
+                <li><a href="../coenzymes/coenzymes.html" class="block py-1 hover:text-blue-700">Coenzymes</a></li>
+                <li><a href="../carbohydrates/carbohydrates.html" class="block py-1 hover:text-blue-700">Glucides</a></li>
+                <li><a href="../chemicals/chemicals.html" class="block py-1 hover:text-blue-700">Produits chimiques</a></li>
+              </ul>
+              </li>
+      
+              <!-- Other links -->
+              <li><a href="../../order.html" class="block py-2 text-slate-800 hover:text-slate-900">Ordre</a></li>
+          </ul>
+          </div>
+      </div>
+      
+    
+       <!-- Desktop Nav -->
+        <nav class="hidden md:flex space-x-6 items-center w-full">
+          <ul class="flex flex-nowrap items-center font-medium text-base">
+            <li class="p-4 lg:px-8 relative flex items-center space-x-1"
+                x-data="{ open: false }"
+                @mouseenter="open = true"
+                @mouseleave="open = false">
+             <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">Produits</a> <button class="shrink-0 p-1" :aria-expanded="open"> <span class="sr-only">Montrer le sous-menu pour les "produits"</span> <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                  <path d="M10 2.586 11.414 4 6 9.414.586 4 2 2.586l4 4z" />
+                </svg></button><ul class="origin-top-right absolute top-full left-1/2 -translate-x-1/2 min-w-[240px] 
+                         bg-white border border-slate-200 p-2 rounded-lg shadow-xl [&[x-cloak]]:hidden"
+                  x-show="open"
+                  x-transition:enter="transition ease-out duration-200 transform"
+                  x-transition:enter-start="opacity-0 -translate-y-2"
+                  x-transition:enter-end="opacity-100 translate-y-0"
+                  x-transition:leave="transition ease-out duration-200"
+                  x-transition:leave-start="opacity-100"
+                  x-transition:leave-end="opacity-0"
+                  x-cloak>
+                  <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../proteins/proteins.html"><span>Peptides / Protéines</span></a></li>
+                  <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../enzymes/enzymes.html"><span>Enzymes</span></a></li>
+                  <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../coenzymes/coenzymes.html"><span>Coenzymes</span></a></li>
+                  <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../carbohydrates/carbohydrates.html"><span>Glucides</span></a></li>
+                  <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../chemicals/chemicals.html"><span>Produits chimiques</span></a></li>
+
+                </ul>
+            </li>
+    
+            <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../order.html">Commande</a></li>
+          </ul>
+          <div class="flex items-center space-x-1">
+            <!-- Search -->
+            <div class="w-full max-w-xs min-w-[200px]">
+                <div class="relative flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="absolute w-5 h-5 top-2.5 left-2.5 text-slate-600">
+                    <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
+                </svg>
+            
+                <input
+                class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+                placeholder="Search Product" 
+                />
+        
+                </div>
+            </div>
+            <ul class="flex flex-nowrap items-center font-medium text-sm">
+                <li class="p-4 lg:px-8 relative flex items-center space-x-1"
+                    x-data="{ open: false }"
+                    @mouseenter="open = true"
+                    @mouseleave="open = false">
+                 <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">FR</a> <button class="shrink-0 p-1" :aria-expanded="open"> <span class="sr-only">Afficher le sous-menu des langues</span> <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                      <path d="M10 2.586 11.414 4 6 9.414.586 4 2 2.586l4 4z" />
+                    </svg></button><ul class="origin-top-right absolute top-full left-1/2 -translate-x-1/2 min-w-[120px] 
+                             bg-white border border-slate-200 p-2 rounded-lg shadow-xl [&[x-cloak]]:hidden"
+                      x-show="open"
+                      x-transition:enter="transition ease-out duration-200 transform"
+                      x-transition:enter-start="opacity-0 -translate-y-2"
+                      x-transition:enter-end="opacity-100 translate-y-0"
+                      x-transition:leave="transition ease-out duration-200"
+                      x-transition:leave-start="opacity-100"
+                      x-transition:leave-end="opacity-0"
+                      x-cloak>
+                      <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../../../products/carbohydrates/heparin-sodium.html"><span>Anglais</span></a></li>
+                      <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="#"><span>Français</span></a></li>
+                  </ul>
+                </li>
+              </ul>
+          </div>
+        </nav>
+  
+      
+    </header>
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-6 py-12 text-slate-800 font-sans leading-relaxed">
+    <div class="mb-8">
+        
+         <a href="carbohydrates.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium"> <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+          </svg>
+         </a> <a href="carbohydrates.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium">Glucides </a>     </div>
+      <section>
+        <h2 class="text-3xl font-bold text-brandblue border-b border-gray-300 pb-2 mb-4">Héparine sodique </h2>
+        <p class="text-base text-gray-600 mb-2">
+         <strong>N° CAS</strong>: 9041-08-1 | <strong>N° EINECS</strong>: 232-681-7        </p>
+        <p class="mb-4"><strong>Synonymes</strong>: Héparine glycosaminoglycane, sel sodique d'héparine, sel sodique d'héparine provenant de la muqueuse intestinale porcine, sulfate d'héparine, héparine sodique.        </p>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Résumé du produit</h3>
+        <p>L'héparine sodique est un glycosaminoglycane hautement sulfaté dérivé de tissus animaux, qui possède de fortes propriétés anticoagulantes, principalement grâce à l'activation de l'antithrombine III. Outre son utilisation clinique dans la prévention de la thrombose, elle est largement utilisée dans la recherche biomédicale, en particulier dans la biologie de la coagulation, l'administration de médicaments, l'inhibition de l'angiogenèse et l'ingénierie tissulaire.   </p>
+        
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Fonction</h3>
+        <p>L'héparine sodique agit comme un anticoagulant puissant, empêchant la formation de caillots sanguins. Elle possède également des effets anti-inflammatoires, antiprolifératifs (dans les cellules musculaires lisses vasculaires), antiviraux potentiels et antiangiogéniques.</p>
+     
+
+      </section>
+
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Mécanisme d'action</h3>
+        <p>La cible principale de l'héparine sodique est l'augmentation de l'activité de l'antithrombine III (AT-III), ce qui entraîne :</p>
+        <ul class="list-disc list-inside pl-5 space-y-2 text-base text-slate-700 mt-2">
+            <li>l'inhibition de la thrombine (facteur IIa) et du facteur Xa, ce qui perturbe la cascade de la coagulation.</li>
+            <li>L'inactivation d'autres protéases à sérine impliquées dans la coagulation sanguine.</li>
+        </ul>
+        <p class="mt-2">L'héparine ne lyse pas les caillots. Elle empêche la formation de nouveaux caillots ou l'extension des caillots existants.</p>
+       
+
+      </section>
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Applications dans la recherche scientifique</h3>
+        <ul class="list-disc list-inside pl-5 space-y-2 text-base text-slate-700">
+          <li><strong>Études sur l'anticoagulation</strong>: Composé modèle pour évaluer l'administration de médicaments anticoagulants, anti-inflammatoires ou à base de GAG.</li>
+          <li><strong>Biologie cellulaire</strong>: 
+            <ul class="list-disc list-inside pl-5 space-y-2 text-base text-slate-700 mt-2">
+                <li>Prévient la coagulation lors de la collecte d'échantillons de sang.</li>
+                <li>Maintient la viabilité des cellules dérivées du sang (par exemple, les PBMC).</li>
+            </ul>
+        </li>
+          <li><strong>Inhibition virale</strong>: Bloque l'interaction entre les particules virales et les protéoglycanes de la surface des cellules hôtes (par exemple, dans les études sur le VIH ou le SARS-CoV-2).</li>
+          <li><strong>Ingénierie tissulaire </strong>: Incorporation dans des hydrogels ou des échafaudages pour une libération soutenue de facteurs de croissance (par exemple, FGF, VEGF). </li>
+          <li><strong>Recherche sur le cancer</strong>: Inhibe les métastases, l'angiogenèse et la progression tumorale via les voies de l'héparanase et de la sélectine.</li>
+        </ul>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Conditionnement et stockage</h3>
+        <ul class="list-disc list-inside pl-5 space-y-2 text-base text-slate-700">
+            <li>Sources : muqueuse intestinale porcine</li>
+            <li>Poudre lyophilisée blanche à blanc cassé</li>
+            <li>Stocker dans un récipient hermétique à température ambiante.</li>
+        </ul>
+      </section>
+      
+      <section class="mt-10">
+        <h3 class="text-2xl font-semibold text-brandblue mb-4">Références</h3>
+        <ol class="list-decimal list-inside space-y-2 text-sm text-slate-700">
+          <li>Oduah EI, et al. 2016 : <a href="https://pubmed.ncbi.nlm.nih.gov/27384570/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Heparin : past, present, and future</a>, Pharmaceuticals (Basel). 9(3):38.</li>
+          <li>Linhardt RJ, et al. 2007 : <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4140616/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Enzymatic synthesis of glycosaminoglycan heparin</a>, Semin Thromb Hemost. 33(5):453-65.</li>
+          <li>Miao Q, et al. 2022 : <a href="https://pubmed.ncbi.nlm.nih.gov/36286469/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Preparation, anticoagulant and antioxidant properties of glucosamine-heparin salt</a>, Mar Drugs. 20(10):646.</li>
+          <li>Sieme D, et al. 2022 : <a href="https://pubmed.ncbi.nlm.nih.gov/36361973/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Metal binding to sodium heparin monitored by quadrupolar NMR</a>, Int J Mol Sci. 23(21):13185.</li>
+          <li>Severin IC, et al. 2019 : <a href="https://pubmed.ncbi.nlm.nih.gov/23087686/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Glycosaminoglycan analogs as a novel anti-inflammatory strategy</a>, Front Immunol. 3:293.</li>
+          <li>Demeter F, et al. 2024 : <a href="https://pubmed.ncbi.nlm.nih.gov/39334821/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Synthèse et profilage biologique de sept trisaccharides analogues de l'héparine et de l'héparane sulfate</a>, Biomolecules. 14(9):1052.</li>
+          <li>Lima M, et al. 2017 : <a href="https://pubmed.ncbi.nlm.nih.gov/28481236/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Nouvelles applications de l'héparine et d'autres glycosaminoglycanes</a>, Molecules. 22(5):749.</li>
+          <li>Hogwood J, et al. 2023 : <a href="https://pubmed.ncbi.nlm.nih.gov/36792365/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Pharmacologie de l'héparine et des médicaments apparentés : An update</a>, Pharmacol Rev. 75(2):328-79.</li>
+          <li>Zang L, et al. 2022 : <a href="https://pubmed.ncbi.nlm.nih.gov/36296562/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Not just anticoagulation-new and old applications of heparin</a>, Molecules. 27(20):6968.</li>
+          <li>Onishi A, et al. 2016 : <a href="https://pubmed.ncbi.nlm.nih.gov/27100512/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Heparin and anticoagulation</a>, Front Biosci (Landmark Ed). 21(7):1372-92.</li>
+          <li>Wang P, et al. 1984 : <a href="https://pubmed.ncbi.nlm.nih.gov/35989029/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Heparin : An old drug for new clinical applications</a>, Carbohydr Polym. 295:119818.</li>
+          <li>Derbalah A, et al. 2019 : <a href="https://pubmed.ncbi.nlm.nih.gov/30850987/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Revisiting the pharmacology of unfractionated heparin</a>, Clin Pharmacokinet. 58(8):1015-28.</li>
+        </ol>
+      </section>
+      
+      
+      
+      
+       
+      
+  
+  </main>
+  
+  
+
+  <!-- start cta -->
+  <section
+  class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 text-center md:text-left">
+  <div class="md:flex md:items-center md:justify-center">
+    <h2 class="text-xl font-bold text-white">Jiagen Biotechnologies fournit de l'héparine sodique de qualité avec différentes spécifications. <br>Contactez-nous à l'adresse <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> pour passer une commande.</h2>
+
+   <a href="../../order.html"
+      class="px-8 py-4 bg-white text-blue-600 rounded inline-block font-semibold md:ml-8 mt-4 md:mt-0 
+      hover:bg-teal-500 hover:text-white transition-colors duration-300">Commande</a></div>
+</section>
+<!-- end cta -->
+
+<!-- start footer -->
+<footer class="relative bg-[#ececec] text-gray-500 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 lg:py-24">
+  <div class="flex flex-col md:flex-row">
+    <div class="w-full lg:w-auto lg:mx-4 lg:pr-8">
+     <img src="../../../assets/logo.svg" alt="Jiagen Biotechnologies" class="h-40 mb-2">
+
+      <p class="text-gray-400">Favoriser la découverte grâce à des matériaux de qualité fiable.</p>
+
+    </div>
+
+    <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
+      <h5 class="uppercase tracking-wider font-semibold text-gray-500">Produits</h5>
+      <ul class="mt-4">
+        <li class="mt-2"><a href="../proteins/proteins.html" title="" class="opacity-75 hover:opacity-100">Peptides/Protéines</a></li>
+        <li class="mt-2"><a href="../enzymes/enzymes.html" title="" class="opacity-75 hover:opacity-100">Enzymes</a></li>
+        <li class="mt-2"><a href="../coenzymes/coenzymes.html" title="" class="opacity-75 hover:opacity-100">Coenzymes</a></li>
+        <li class="mt-2"><a href="../carbohydrates/carbohydrates.html" title="" class="opacity-75 hover:opacity-100">Glucides</a></li>
+        <li class="mt-2"><a href="../chemicals/chemicals.html" title="" class="opacity-75 hover:opacity-100">Produits chimiques</a></li>
+
+      </ul>
+    </div>
+
+    <div class="w-full lg:w-2/6 mt-8 lg:mt-0 lg:mx-4 lg:pr-8">
+      <h5 class="uppercase tracking-wider font-semibold text-gray-500">Coordonnées de l'entreprise</h5>
+      <ul class="mt-4">
+        <li>
+          
+           <a title="" class="block flex items-center opacity-75 hover:opacity-100"> <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M12,2C7.589,2,4,5.589,4,9.995C3.971,16.44,11.696,21.784,12,22c0,0,8.029-5.56,8-12C20,5.589,16.411,2,12,2z M12,14 c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4S14.21,14,12,14z" />
+              </svg>
+            </span>
+            
+           <span class="ml-3">958 Montée de Liesse, Saint-Laurent, QC, CAN </span> </a>  </li>
+
+        <li class="mt-4">
+          
+           <a title="" class="block flex items-center opacity-75 hover:opacity-100"> <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M14.594,13.994l-1.66,1.66c-0.577-0.109-1.734-0.471-2.926-1.66c-1.193-1.193-1.553-2.354-1.661-2.926l1.661-1.66 l0.701-0.701L5.295,3.293L4.594,3.994l-1,1C3.42,5.168,3.316,5.398,3.303,5.643c-0.015,0.25-0.302,6.172,4.291,10.766 C11.6,20.414,16.618,20.707,18,20.707c0.202,0,0.326-0.006,0.358-0.008c0.245-0.014,0.476-0.117,0.649-0.291l1-1l0.697-0.697 l-5.414-5.414L14.594,13.994z" />
+              </svg>
+            </span>
+            
+             <span class="ml-3">+1 514-779-9623 </span> </a>           </li>
+        <li class="mt-4">
+          
+           <a title="" class="block flex items-center opacity-75 hover:opacity-100"> <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M20,4H4C2.896,4,2,4.896,2,6v12c0,1.104,0.896,2,2,2h16c1.104,0,2-0.896,2-2V6C22,4.896,21.104,4,20,4z M20,8.7l-8,5.334 L4,8.7V6.297l8,5.333l8-5.333V8.7z" />
+              </svg>
+            </span>
+            
+            <span class="ml-3">
+              info@jiagen.com<br>
+              sales@jiagen.com
+            </span>            </li>
+      </ul>
+    </div>
+
+    <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
+      
+
+      <p class="text-sm text-gray-400 mt-12">2025 Jiagen Biotechnologies. <br class="hidden lg:block">Tous droits réservés.      </p>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->
+
+</body>
+</html>

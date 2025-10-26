@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+    <meta name="language" content="fr">
+    <link rel="alternate" hreflang="en" href="https://jiagen.ca/products/proteins/fsh.html">
+    <link rel="alternate" hreflang="fr" href="https://jiagen.ca/fr/products/proteins/fsh.html">
+    <meta name="google" content="notranslate">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jiagen Biotechnologies</title>
+  <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <link href="../../../dist/output.css" rel="stylesheet" />
+
+  
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Announcement Bar -->
+  <div class="bg-brandblue text-white text-sm py-1 px-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="hidden md:flex"><span>Renforcer la recherche en sciences de la vie</span></div>
+      <div class="flex space-x-6 md:hidden">
+        <!-- Mobile: show just one link -->
+        <span>Téléphone: <span class="font-semibold">514-779-9623</span></span>
+        <span>Commandes: <span class="font-semibold">sales@jiagen.com</span></span>
+      </div>
+        <!-- Desktop: show full info -->
+        <div class="hidden md:flex space-x-6">
+          <span>Téléphone: <span class="font-semibold">514-779-9623</span></span>
+          <span>Contact: <span class="font-semibold">info@jiagen</span></span>
+          <span>Commandes: <span class="font-semibold">sales@jiagen.com</span></span>
+        </div>
+    </div>
+  </div>
+ <!-- Header -->
+<header class="sticky top-0 z-50 bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-1 flex justify-between items-center relative">
+      <a href="../../index.html">
+        <img src="../../../assets/logo.svg" alt="Logo" class="h-20 w-auto" />
+      </a>
+     <!-- Mobile Menu Toggle Button -->
+    <div class="md:hidden" x-data="{ open: false }">
+        <button @click="open = !open" class="text-slate-800 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        </button>
+    
+       <!-- Mobile Dropdown Menu -->
+        <div x-show="open" @click.away="open = false" class="absolute left-0 top-full w-full bg-white shadow-md z-50 border-t mt-2">
+        <ul class="p-4 space-y-2 font-medium text-sm">
+            
+            <!-- PRODUCTS dropdown -->
+            <li x-data="{ openSub: false }">
+            
+               <button @click="openSub = !openSub" class="w-full text-left flex justify-between items-center py-2 text-slate-800 hover:text-slate-900">Produits <svg class="w-4 h-4 transform transition-transform" :class="{ 'rotate-180': openSub }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+                </svg></button><ul x-show="openSub" class="pl-4 mt-2 space-y-1 text-sm" x-cloak>
+              <li><a href="../proteins/proteins.html" class="block py-1 hover:text-blue-700">Peptides / Protéines</a></li>
+              <li><a href="../enzymes/enzymes.html" class="block py-1 hover:text-blue-700">Enzymes</a></li>
+              <li><a href="../coenzymes/coenzymes.html" class="block py-1 hover:text-blue-700">Coenzymes</a></li>
+              <li><a href="../carbohydrates/carbohydrates.html" class="block py-1 hover:text-blue-700">Glucides</a></li>
+              <li><a href="../chemicals/chemicals.html" class="block py-1 hover:text-blue-700">Produits chimiques</a></li>
+            </ul>
+            </li>
+    
+            <!-- Other links -->
+            <li><a href="../../order.html" class="block py-2 text-slate-800 hover:text-slate-900">Ordre</a></li>
+        </ul>
+        </div>
+    </div>
+    
+  
+     <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-6 items-center w-full">
+        <ul class="flex flex-nowrap items-center font-medium text-base">
+          <li class="p-4 lg:px-8 relative flex items-center space-x-1"
+              x-data="{ open: false }"
+              @mouseenter="open = true"
+              @mouseleave="open = false">
+           <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">Produits</a> <button class="shrink-0 p-1" :aria-expanded="open"> <span class="sr-only">Montrer le sous-menu pour les "produits"</span> <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                <path d="M10 2.586 11.414 4 6 9.414.586 4 2 2.586l4 4z" />
+              </svg></button><ul class="origin-top-right absolute top-full left-1/2 -translate-x-1/2 min-w-[240px] 
+                       bg-white border border-slate-200 p-2 rounded-lg shadow-xl [&[x-cloak]]:hidden"
+                x-show="open"
+                x-transition:enter="transition ease-out duration-200 transform"
+                x-transition:enter-start="opacity-0 -translate-y-2"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-out duration-200"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                x-cloak>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../proteins/proteins.html"><span>Peptides / Protéines</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../enzymes/enzymes.html"><span>Enzymes</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../coenzymes/coenzymes.html"><span>Coenzymes</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../carbohydrates/carbohydrates.html"><span>Glucides</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../chemicals/chemicals.html"><span>Produits chimiques</span></a></li>
+
+              </ul>
+          </li>
+  
+          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../order.html">Commande</a></li>
+        </ul>
+        <div class="flex items-center space-x-1">
+          <!-- Search -->
+          <div class="w-full max-w-xs min-w-[200px]">
+              <div class="relative flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="absolute w-5 h-5 top-2.5 left-2.5 text-slate-600">
+                  <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
+              </svg>
+          
+              <input
+              class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+              placeholder="Search Product" 
+              />
+      
+              </div>
+          </div>
+          <ul class="flex flex-nowrap items-center font-medium text-sm">
+              <li class="p-4 lg:px-8 relative flex items-center space-x-1"
+                  x-data="{ open: false }"
+                  @mouseenter="open = true"
+                  @mouseleave="open = false">
+               <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">FR</a> <button class="shrink-0 p-1" :aria-expanded="open"> <span class="sr-only">Afficher le sous-menu des langues</span> <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                    <path d="M10 2.586 11.414 4 6 9.414.586 4 2 2.586l4 4z" />
+                  </svg></button><ul class="origin-top-right absolute top-full left-1/2 -translate-x-1/2 min-w-[120px] 
+                           bg-white border border-slate-200 p-2 rounded-lg shadow-xl [&[x-cloak]]:hidden"
+                    x-show="open"
+                    x-transition:enter="transition ease-out duration-200 transform"
+                    x-transition:enter-start="opacity-0 -translate-y-2"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-out duration-200"
+                    x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0"
+                    x-cloak>
+                    <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../../../products/proteins/fsh.html"><span>Anglais</span></a></li>
+                    <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="#"><span>Français</span></a></li>
+                </ul>
+              </li>
+            </ul>
+        </div>
+      </nav>
+
+    
+  </header>
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-6 py-12 text-slate-800 font-sans leading-relaxed">
+    <div class="mb-8">
+        
+         <a href="proteins.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium"> <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+          </svg>
+         </a> <a href="proteins.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium">Protéines </a>     </div>
+      <section>
+        <h2 class="text-3xl font-bold text-brandblue border-b border-gray-300 pb-2 mb-4">Hormone folliculo-stimulante (FSH)</h2>
+        <p class="text-base text-gray-600 mb-2">
+         <strong>N° CAS :</strong> 9002-68-0 | <strong>N° EINECS :</strong> 232-706-8        </p>
+        <p class="mb-4"><strong>Synonymes :</strong> Gonadotrophine folliculostimulante, follitropine, FSH, hFSH, huFSH, FSH humaine, FSH recombinante (rFSH, follitropine alpha ou bêta), urofollitropine (FSH urinaire).  </p>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Résumé du produit</h3>
+        <p>
+            L'hormone folliculo-stimulante (FSH) est une glycoprotéine hétérodimérique composée de deux sous-unités et vitale pour les processus reproductifs. Elle joue un rôle essentiel dans la maturation des follicules ovariens et la spermatogenèse testiculaire. La FSH, qu'elle soit purifiée à partir de l'urine humaine (urofollitropine) ou produite par recombinaison (follitropine alpha/beta), est largement utilisée dans les traitements cliniques tels que la thérapie de fertilité et dans la recherche fondamentale. Elle fonctionne par l'intermédiaire de récepteurs couplés aux protéines G et joue un rôle central dans l'étude de la physiologie de la reproduction, des troubles endocriniens et des cancers hormono-dépendants. 
+        </p>
+        <div class="text-slate-700 text-base pl-5 mt-2">
+            <p><span class="font-semibold">Formule (approximative) :</span> Sous-unité α, <sub>C960H1499N263O285S7</sub>; sous-unité β, <sub>C907H1408N248O270S6</sub></p>
+            <p class="mt-1"><span class="font-semibold">Poids moléculaire :</span> ~30-35 kDa (protéine hétérodimérique fortement glycosylée)</p>
+        </div>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Fonction biochimique</h3>
+        <ul class="list-disc list-outside space-y-1 text-base text-slate-700 pl-5 mb-2">
+          <li>Favorise la croissance et la maturation des follicules ovariens (primordiaux -&gt; primaires -&gt; secondaires -&gt; antraux) et stimule la prolifération des cellules de la granulosa, augmentant ainsi la taille des follicules.</li>
+          <li>Induit l'enzyme aromatase dans les cellules de la granulosa, convertissant les androgènes (provenant des cellules de la thèque) en estradiol (<sub>E2</sub>).</li>
+          <li>Participe à la régulation du cycle menstruel.</li>
+          <li>Stimule la production par les cellules de Sertoli de la protéine de liaison aux androgènes (ABP), qui maintient des niveaux élevés de testostérone dans les testicules, et active ensuite la spermatogenèse chez les hommes par l'intermédiaire de la protéine de liaison aux androgènes (ABP). </li>
+          <li>Elle favorise l'alimentation et le développement des spermatozoïdes (spermatogonies -&gt; spermatocytes -&gt; spermatides).</li>
+        </ul>
+        <p>La FSH est également un régulateur essentiel de l'axe hypothalamo-hypophyso-gonadique.</p>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Mécanisme d'action</h3>
+        <p>La FSH se lie aux récepteurs de la FSH (FSHR) situés sur les cellules de la granulosa (ovaire) ou les cellules de Sertoli (testicules). L'interaction FSH-FSHR active la signalisation des récepteurs couplés aux protéines G, ce qui entraîne :</p>
+        <ul class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700 mt-2">
+          <li>une augmentation de la production d'AMPc -&gt; activation de la protéine kinase A (PKA) -&gt; phosphorylation de facteurs de transcription (par exemple CREB) et ensuite</li>
+          <li>une production accrue d'enzymes stéroïdogènes (aromatase, CYP19A1), de facteurs de croissance (IGF-1, activine), d'œstrogènes et d'inhibine, ce qui</li>
+          <li>favorise le développement folliculaire et la gamétogenèse.          </li>
+        </ul>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Applications dans la recherche scientifique</h3>
+        <ul class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700">
+          <li>Études d'endocrinologie de la reproduction (par exemple, développement folliculaire, mécanismes d'ovulation).</li>
+          <li>Utilisé dans des études visant à développer des variantes de protocoles de techniques de procréation assistée (PPA).</li>
+          <li>Études sur la signalisation et les mutations des récepteurs de la FSH, aidant à concevoir des agonistes/antogonistes sélectifs.</li>
+          <li>Recherche sur le traitement de l'infertilité et la thérapie de remplacement hormonal.</li>
+          <li>Études sur la régulation des gonadotrophines et les mécanismes de rétroaction dans l'axe HPG.</li>
+          <li>Endocrinologie comparative chez les mammifères et les vertébrés.</li>
+          <li>Évaluation du rôle de la FSH dans le vieillissement, le métabolisme osseux et certains cancers.</li>
+        </ul>
+      </section>
+      
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Conditionnement et stockage</h3>
+        <ul class="list-disc list-outside pl-5 space-y-2 text-base text-slate-700">
+          <li>Sources : purifié à partir d'urine humaine (femmes ménopausées - urofollitropine)  </li>
+          <li>Disponible sous forme de poudre lyophilisée presque blanche à légèrement jaunâtre.</li>
+          <li>Conserver dans un récipient stérile, hermétique et inviolable, à l'abri de la lumière, à une température comprise entre 2°C et 8°C. </li>
+        </ul>
+      </section>
+      
+      <section class="mt-10">
+        <h3 class="text-2xl font-semibold text-brandblue mb-4">Références</h3>
+        <ol class="list-decimal list-inside space-y-2 text-sm text-slate-700">
+          <li>Mahony MC, et al. 2021 : <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8696034/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Recombinant human follicle-stimulating hormone alfa dose adjustment in US clinical practice : An observational, retrospective analysis of a real-world electronic medical records database</a>, Front Endocrinol (Lausanne) 12 : 742089.</li>
+      
+          <li>Gibreel A, Bhattacharya S. 2010 : <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2819896/#:~:text=Follitropin%20alpha%20can%20be%20used,)%20or%20idiopathic%20oligo%2Dasthenospermia." target="_blank" class="text-blue-600 underline hover:text-blue-800">Recombinant follitropin alfa/lutropin alfa in fertility treatment</a>, Biologics 4 : 5-17.</li>
+      
+          <li>Bouloux P, et al. 2002 : <a href="https://pubmed.ncbi.nlm.nih.gov/11821082/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Efficacité et sécurité de l'hormone folliculo-stimulante humaine recombinante chez les hommes présentant un hypogonadisme hypogonadotrope isolé</a>, Fertil Steril. 77(2) : 270-3.</li>
+      
+          <li>Liu X. 2015 : <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4355925/?utm_source=chatgpt.com" target="_blank" class="text-blue-600 underline hover:text-blue-800">Efficacité de la FSH urinaire hautement purifiée par rapport à la FSH recombinante chez les femmes chinoises de plus de 37 ans bénéficiant de techniques de procréation assistée</a>, Int J Fertil Steril. 8(4) : 385-92.</li>
+      
+          <li>Bordewijk EM, et al. 2019 : <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6561325/?utm_source=chatgpt.com" target="_blank" class="text-blue-600 underline hover:text-blue-800">Quantité requise de rFSH, HP-hMG et HP-FSH pour atteindre une naissance vivante : une revue systématique et une méta-analyse</a>, Hum Reprod Open. 2019(3) : hoz008.</li>
+      
+          <li>Lispi M, et al. 2006 : <a href="https://pubmed.ncbi.nlm.nih.gov/16895630/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Comparative assessment of the consistency and quality of a highly purified FSH extracted from human urine (urofollitropin) and a recombinant human FSH (follitropin alpha)</a>, Reprod Biomed Online. 13(2) : 179-93.</li>
+      
+          <li>Vitt VA, et al. 1998 : <a href="https://pubmed.ncbi.nlm.nih.gov/9746735/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Isoformes of human recombinant follicle-stimulating hormone : comparison of effects on murine follicle development in vitro</a>, Biol Reprod. 59(4) : 854-61.</li>
+      
+          <li>Dias JA, van Roey P. 2001 : <a href="https://pubmed.ncbi.nlm.nih.gov/11750726/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Structural biology of human follitropin and its receptor</a>, Arch Med Res. 32(6) : 510-9.</li>
+      
+          <li>De Pascali F, et al. 2018 : <a href="https://pubmed.ncbi.nlm.nih.gov/29699689/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Récepteur de l'hormone folliculo-stimulante : Advances and remaining challenges</a>, Int Rev Cell Mol Biol. 338 : 1-58.</li>
+      
+          <li>Ayoub MA, et al. 2016 : <a href="https://pubmed.ncbi.nlm.nih.gov/27165991/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Computational modeling approaches in gonadotropin signaling</a>, Theriogenology 86(1) : 22-31.</li>
+      
+          <li>Hungues N-J. 2001 : <a href="https://www.sciencedirect.com/science/article/abs/pii/S1472648310621888#:~:text=The%20use%20of%20r%2DhFSH%20has%20been%20shown%20to%20lead,rates%20with%20the%20recombinant%20product." target="_blank" class="text-blue-600 underline hover:text-blue-800">Recombinant human follicle-stimulating hormone : a scientific step to clinical improvement</a>, Reprod BioMed Online. 2(1) : 54-64.</li>
+      
+          <li>Smitz J, et al. 2016 : <a href="https://pubmed.ncbi.nlm.nih.gov/26446000/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Follicle-stimulating hormone : A review of form and function in the treatment of infertility</a>, Reprod Sci. 23(6) : 706-16.</li>
+      
+          <li>Pang SC. 2005 : <a href="https://pubmed.ncbi.nlm.nih.gov/19803949/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Use of follicle-stimulating hormone for the treatment of female infertility - current concepts</a>, Womens Health (Lond) 1(1) : 87-95.</li>
+      
+          <li>Casarini L, et al. 2020 : <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7177393/" target="_blank" class="text-blue-600 underline hover:text-blue-800">FSH for the treatment of male infertility</a>, Int J Mol Sci. 21(7) : 2270.</li>
+      
+          <li>Hascalik S, et al. 2010 : <a href="https://pubmed.ncbi.nlm.nih.gov/19720661/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Effects of highly purified urinary FSH and human menopausal FSH on uterine myoelectrical dynamics</a>, Mol Hum Reprod. 16(3) : 200-6.</li>
+      
+          <li>Phipps WR, et al. 1996 : <a href="https://pubmed.ncbi.nlm.nih.gov/8752627/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Use of recombinant human follicle-stimulating hormone for in vitro fertilization-embryo transfer after severe systemic immunoglobulin E-mediated reaction to urofollitropin</a>, Fertil Steril. 66(1) : 148-50.</li>
+      
+          <li>Riccetti L, et al. 2019 : <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6667556/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Glycosylation pattern and in vitro bioactivity of reference follitropin alfa and biosimilars</a>, Front Endocrinol (Lausanne) 10 : 503.</li>
+      
+          <li>Casarini L, Simoni M. 2021 : <a href="https://pubmed.ncbi.nlm.nih.gov/34046645/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Recent advances in understanding gonadotropin signaling</a>, Fac Rev. 10 : 41.</li>
+      
+          <li>Rose TH, et al. 2016 : <a href="https://pubmed.ncbi.nlm.nih.gov/27139012/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Characterisation of population pharmacokinetics and endogenous follicle-stimulating hormone (FSH) levels after multiple dosing of a recombinant human FSH (FE 999049) in healthy women</a>, Drugs R D. 16(2) : 165-72.</li>
+      
+          <li>Das N, et al. 2018 : <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5851872/#:~:text=More%20acidic%20mixtures%20of%20FSH,2002" target="_blank" class="text-blue-600 underline hover:text-blue-800">Molecular regulation of follicle-stimulating hormone synthesis, secretion and action</a>, J Mol Endocrinol. 60(3) : R131-55.</li>
+        </ol>
+      </section>
+      
+      
+      
+  </main>
+  
+  
+
+  <!-- start cta -->
+  <section
+  class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 text-center md:text-left">
+  <div class="md:flex md:items-center md:justify-center">
+    <h2 class="text-xl font-bold text-white">Jiagen Biotechnologies fournit de l'hormone folliculo-stimulante (FSH) de qualité et de spécifications variées. <br>Contactez-nous à l'adresse <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> pour passer une commande.</h2>
+   <a href="../../order.html"
+      class="px-8 py-4 bg-white text-blue-600 rounded inline-block font-semibold md:ml-8 mt-4 md:mt-0 
+      hover:bg-teal-500 hover:text-white transition-colors duration-300">Commande</a></div>
+</section>
+<!-- end cta -->
+
+<!-- start footer -->
+<footer class="relative bg-[#ececec] text-gray-500 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 lg:py-24">
+  <div class="flex flex-col md:flex-row">
+    <div class="w-full lg:w-auto lg:mx-4 lg:pr-8">
+     <img src="../../../assets/logo.svg" alt="Jiagen Biotechnologies" class="h-40 mb-2">
+
+      <p class="text-gray-400">Des matériaux de qualité fiable au service de la découverte.</p>
+
+    </div>
+
+    <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
+      <h5 class="uppercase tracking-wider font-semibold text-gray-500">Produits</h5>
+      <ul class="mt-4">
+        <li class="mt-2"><a href="../proteins/proteins.html" title="" class="opacity-75 hover:opacity-100">Peptides/Protéines</a></li>
+        <li class="mt-2"><a href="../enzymes/enzymes.html" title="" class="opacity-75 hover:opacity-100">Enzymes</a></li>
+        <li class="mt-2"><a href="../coenzymes/coenzymes.html" title="" class="opacity-75 hover:opacity-100">Coenzymes</a></li>
+        <li class="mt-2"><a href="../carbohydrates/carbohydrates.html" title="" class="opacity-75 hover:opacity-100">Glucides</a></li>
+        <li class="mt-2"><a href="../chemicals/chemicals.html" title="" class="opacity-75 hover:opacity-100">Produits chimiques</a></li>
+
+      </ul>
+    </div>
+
+    <div class="w-full lg:w-2/6 mt-8 lg:mt-0 lg:mx-4 lg:pr-8">
+      <h5 class="uppercase tracking-wider font-semibold text-gray-500">Coordonnées de l'entreprise</h5>
+      <ul class="mt-4">
+        <li>
+          
+           <a title="" class="block flex items-center opacity-75 hover:opacity-100"> <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M12,2C7.589,2,4,5.589,4,9.995C3.971,16.44,11.696,21.784,12,22c0,0,8.029-5.56,8-12C20,5.589,16.411,2,12,2z M12,14 c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4S14.21,14,12,14z" />
+              </svg>
+            </span>
+            
+           <span class="ml-3">958 Montée de Liesse, Saint-Laurent, QC, CAN </span> </a>  </li>
+
+        <li class="mt-4">
+          
+           <a title="" class="block flex items-center opacity-75 hover:opacity-100"> <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M14.594,13.994l-1.66,1.66c-0.577-0.109-1.734-0.471-2.926-1.66c-1.193-1.193-1.553-2.354-1.661-2.926l1.661-1.66 l0.701-0.701L5.295,3.293L4.594,3.994l-1,1C3.42,5.168,3.316,5.398,3.303,5.643c-0.015,0.25-0.302,6.172,4.291,10.766 C11.6,20.414,16.618,20.707,18,20.707c0.202,0,0.326-0.006,0.358-0.008c0.245-0.014,0.476-0.117,0.649-0.291l1-1l0.697-0.697 l-5.414-5.414L14.594,13.994z" />
+              </svg>
+            </span>
+            
+             <span class="ml-3">+1 514-779-9623 </span> </a>           </li>
+        <li class="mt-4">
+          
+           <a title="" class="block flex items-center opacity-75 hover:opacity-100"> <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M20,4H4C2.896,4,2,4.896,2,6v12c0,1.104,0.896,2,2,2h16c1.104,0,2-0.896,2-2V6C22,4.896,21.104,4,20,4z M20,8.7l-8,5.334 L4,8.7V6.297l8,5.333l8-5.333V8.7z" />
+              </svg>
+            </span>
+            
+            <span class="ml-3">
+              info@jiagen.com<br>
+              sales@jiagen.com
+            </span>            </li>
+      </ul>
+    </div>
+    <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
+      
+
+      <p class="text-sm text-gray-400 mt-12">2025 Jiagen Biotechnologies. <br class="hidden lg:block">Tous droits réservés.      </p>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->
+
+</body>
+</html>

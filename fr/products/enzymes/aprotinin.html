@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+    <meta name="language" content="fr">
+    <link rel="alternate" hreflang="en" href="https://jiagen.ca/products/enzymes/aprotinin.html">
+    <link rel="alternate" hreflang="fr" href="https://jiagen.ca/fr/products/enzymes/aprotinin.html">
+    <meta name="google" content="notranslate">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jiagen Biotechnologies</title>
+  <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <link href="../../../dist/output.css" rel="stylesheet" />
+
+  
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Announcement Bar -->
+  <div class="bg-brandblue text-white text-sm py-1 px-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="hidden md:flex"><span>Renforcer la recherche en sciences de la vie</span></div>
+      <div class="flex space-x-6 md:hidden">
+        <!-- Mobile: show just one link -->
+        <span>Téléphone: <span class="font-semibold">514-779-9623</span></span>
+        <span>Commandes: <span class="font-semibold">sales@jiagen.com</span></span>
+      </div>
+        <!-- Desktop: show full info -->
+        <div class="hidden md:flex space-x-6">
+          <span>Téléphone: <span class="font-semibold">514-779-9623</span></span>
+          <span>Contact: <span class="font-semibold">info@jiagen</span></span>
+          <span>Commandes: <span class="font-semibold">sales@jiagen.com</span></span>
+        </div>
+    </div>
+  </div>
+ <!-- Header -->
+<header class="sticky top-0 z-50 bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-1 flex justify-between items-center relative">
+      <a href="../../index.html">
+        <img src="../../../assets/logo.svg" alt="Logo" class="h-20 w-auto" />
+      </a>
+     <!-- Mobile Menu Toggle Button -->
+    <div class="md:hidden" x-data="{ open: false }">
+        <button @click="open = !open" class="text-slate-800 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        </button>
+    
+       <!-- Mobile Dropdown Menu -->
+        <div x-show="open" @click.away="open = false" class="absolute left-0 top-full w-full bg-white shadow-md z-50 border-t mt-2">
+        <ul class="p-4 space-y-2 font-medium text-sm">
+            
+            <!-- PRODUCTS dropdown -->
+            <li x-data="{ openSub: false }">
+            
+               <button @click="openSub = !openSub" class="w-full text-left flex justify-between items-center py-2 text-slate-800 hover:text-slate-900">Produits <svg class="w-4 h-4 transform transition-transform" :class="{ 'rotate-180': openSub }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+                </svg></button><ul x-show="openSub" class="pl-4 mt-2 space-y-1 text-sm" x-cloak>
+              <li><a href="../proteins/proteins.html" class="block py-1 hover:text-blue-700">Peptides / Protéines</a></li>
+              <li><a href="../enzymes/enzymes.html" class="block py-1 hover:text-blue-700">Enzymes</a></li>
+              <li><a href="../coenzymes/coenzymes.html" class="block py-1 hover:text-blue-700">Coenzymes</a></li>
+              <li><a href="../carbohydrates/carbohydrates.html" class="block py-1 hover:text-blue-700">Glucides</a></li>
+              <li><a href="../chemicals/chemicals.html" class="block py-1 hover:text-blue-700">Produits chimiques</a></li>
+            </ul>
+            </li>
+    
+            <!-- Other links -->
+            <li><a href="../../order.html" class="block py-2 text-slate-800 hover:text-slate-900">Ordre</a></li>
+        </ul>
+        </div>
+    </div>
+    
+  
+     <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-6 items-center w-full">
+        <ul class="flex flex-nowrap items-center font-medium text-base">
+          <li class="p-4 lg:px-8 relative flex items-center space-x-1"
+              x-data="{ open: false }"
+              @mouseenter="open = true"
+              @mouseleave="open = false">
+           <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">Produits</a> <button class="shrink-0 p-1" :aria-expanded="open"> <span class="sr-only">Montrer le sous-menu pour les "produits"</span> <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                <path d="M10 2.586 11.414 4 6 9.414.586 4 2 2.586l4 4z" />
+              </svg></button><ul class="origin-top-right absolute top-full left-1/2 -translate-x-1/2 min-w-[240px] 
+                       bg-white border border-slate-200 p-2 rounded-lg shadow-xl [&[x-cloak]]:hidden"
+                x-show="open"
+                x-transition:enter="transition ease-out duration-200 transform"
+                x-transition:enter-start="opacity-0 -translate-y-2"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-out duration-200"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                x-cloak>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../proteins/proteins.html"><span>Peptides / Protéines</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../enzymes/enzymes.html"><span>Enzymes</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../coenzymes/coenzymes.html"><span>Coenzymes</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../carbohydrates/carbohydrates.html"><span>Glucides</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../chemicals/chemicals.html"><span>Produits chimiques</span></a></li>
+
+              </ul>
+          </li>
+  
+          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../order.html">Commande</a></li>
+        </ul>
+        <div class="flex items-center space-x-1">
+          <!-- Search -->
+          <div class="w-full max-w-xs min-w-[200px]">
+              <div class="relative flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="absolute w-5 h-5 top-2.5 left-2.5 text-slate-600">
+                  <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
+              </svg>
+          
+              <input
+              class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+              placeholder="Search Product" 
+              />
+      
+              </div>
+          </div>
+          <ul class="flex flex-nowrap items-center font-medium text-sm">
+              <li class="p-4 lg:px-8 relative flex items-center space-x-1"
+                  x-data="{ open: false }"
+                  @mouseenter="open = true"
+                  @mouseleave="open = false">
+               <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">FR</a> <button class="shrink-0 p-1" :aria-expanded="open"> <span class="sr-only">Afficher le sous-menu des langues</span> <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                    <path d="M10 2.586 11.414 4 6 9.414.586 4 2 2.586l4 4z" />
+                  </svg></button><ul class="origin-top-right absolute top-full left-1/2 -translate-x-1/2 min-w-[120px] 
+                           bg-white border border-slate-200 p-2 rounded-lg shadow-xl [&[x-cloak]]:hidden"
+                    x-show="open"
+                    x-transition:enter="transition ease-out duration-200 transform"
+                    x-transition:enter-start="opacity-0 -translate-y-2"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-out duration-200"
+                    x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0"
+                    x-cloak>
+                    <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../../../products/enzymes/aprotinin.html"><span>Anglais</span></a></li>
+                    <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="#"><span>Français</span></a></li>
+                </ul>
+              </li>
+            </ul>
+        </div>
+      </nav>
+
+    
+  </header>
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-6 py-12 text-slate-800 font-sans leading-relaxed">
+    <div class="mb-8">
+        
+         <a href="enzymes.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium"> <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+          </svg>
+         </a> <a href="enzymes.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium">Enzymes </a>     </div>
+    <section>
+      <h2 class="text-3xl font-bold text-brandblue border-b border-gray-300 pb-2 mb-4">Aprotinine  </h2>
+      <p class="text-base text-gray-600 mb-2">
+       <strong>N° CAS :</strong> 9087-70-1 | <strong>N° EINECS :</strong> 232-994-9      </p>
+      <p class="mb-4"><strong>Synonymes :</strong> Inhibiteur de base de la trypsine, inhibiteur de la trypsine pancréatique bovine (BPTI), inactivateur de la kallikréine, inhibiteur de la trypsine de type kunitz, MGC148815, inhibiteur de la trypsine pancréatique, inhibiteur de la protéase du poumon bovin, PTI, inhibiteur de la protéase à sérine aprotinine, TKI, Trasylol® (nom de marque), inhibiteur de la trypsine-kallikréine.</p>
+    </section>
+  
+    <section class="mt-8">
+      <h3 class="text-2xl font-semibold text-brandblue mb-2">Résumé du produit</h3>
+      <p>
+        L'aprotinine est un puissant inhibiteur de sérine-protéase bien caractérisé, dérivé du poumon de bovin. Grâce à sa petite taille, à sa structure étroite et à sa grande stabilité, elle inhibe efficacement plusieurs protéases clés impliquées dans la protéolyse, la coagulation et l'inflammation. Il est largement utilisé en biochimie et en recherche biomédicale pour protéger les protéines de la dégradation et pour étudier la fonction et la régulation des protéases. 
+        <p class="pl-5 mt-2">Formule : <sub>C284H432N84O79S7</sub></span></p>
+        <p class="pl-5">Poids moléculaire : ~6512 Da</p>
+      </p>
+    </section>
+  
+    <section class="mt-8">
+      <h3 class="text-2xl font-semibold text-brandblue mb-2">Fonction biochimique</h3>
+      <p class="mb-2">L'aprotinine est un inhibiteur de sérine protéase à large spectre qui inhibe des enzymes telles que : </p>
+      <ul class="list-disc list-outside space-y-2 text-base text-slate-700 pl-5">
+        <li>Trypsine</li>
+        <li>la chymotrypsine</li>
+        <li>la plasmine</li>
+        <li>la kallikréine</li>
+        <li>Elastase (faiblement)</li>
+      </ul>
+    </section>
+  
+    <section class="mt-8">
+      <h3 class="text-2xl font-semibold text-brandblue mb-2">Mécanisme d'action</h3>
+      <ol class="list-decimal list-inside space-y-2 text-base text-slate-700">
+        <li><strong>Liaison réversible aux sites actifs</strong>     <p class="mt-2 pl-5">L'activité inhibitrice de l'aprotinine est largement due à sa capacité à imiter le substrat naturel de l'enzyme : l'aprotinine présente une boucle peptidique spécifique (autour de sa séquence Lys15-Ala16) qui imite le substrat de l'enzyme. Cette boucle s'insère précisément dans la poche de spécificité S1 des protéases à sérine, qui est généralement le principal site de liaison pour le résidu chargé positivement (par exemple, la lysine ou l'arginine) du substrat. Cette conformation semblable à celle d'un substrat permet à l'aprotinine d'être reconnue et liée par l'enzyme comme s'il s'agissait d'un véritable substrat. 	L'aprotinine se lie au site actif de la sérine protéase cible de manière réversible, ce qui signifie que l'interaction est non covalente et peut être dissociée dans des conditions appropriées (par exemple, dilution, changement de pH ou de force ionique).</p>
+        </li>
+        <li><strong>Formation d'un complexe enzyme-inhibiteur étroit et non covalent</strong>       <p class="mt-2 pl-5">Une fois arrimée au site actif, l'aprotinine forme un complexe non covalent à haute affinité avec l'enzyme : l'inhibiteur interagit avec la triade catalytique (généralement Ser-His-Asp) dans le site actif de la protéase. Cependant, comme l'aprotinine est structurellement stabilisée par trois ponts disulfures internes, elle résiste au clivage protéolytique, "gelant" effectivement l'enzyme dans un complexe inactif. Le complexe résultant est exceptionnellement stable (avec des constantes de dissociation de l'ordre du sub-nanomolaire), bloquant ainsi efficacement l'activité de l'enzyme, même à de faibles concentrations.            </p>
+        </li>
+        <li><strong>Inhibition de l'activité protéolytique</strong>           <p class="mt-2 pl-5">En occupant le site actif, l'aprotinine empêche l'accès des substrats naturels à la triade catalytique. Elle arrête l'hydrolyse des liaisons peptidiques par l'enzyme. Supprime les cascades protéolytiques en aval, telles que la fibrinolyse ou les réponses inflammatoires médiées par la kallikréine.</p>
+        </li>
+        </ol>
+    </section>
+  
+    <section class="mt-8">
+      <h3 class="text-2xl font-semibold text-brandblue mb-2">Applications dans la recherche scientifique</h3>
+      <ol class="list-decimal list-inside space-y-2 text-base text-slate-700">
+        <li><strong>Recherche biochimique et moléculaire </strong>           <p class="mt-2 pl-5">L'aprotinine est largement utilisée dans les laboratoires de biochimie pour sa capacité à inhiber la protéolyse indésirable au cours des procédures expérimentales. Dans de nombreux protocoles de préparation d'échantillons, des protéases endogènes peuvent être libérées et activées, entraînant la dégradation des protéines cibles. L'aprotinine aide à préserver l'intégrité des protéines dans les contextes suivants : </p>
+             <ul class="list-disc list-outside space-y-2 text-base text-slate-700 pl-10 mt-2">
+                <li>Lyse cellulaire : Lorsque les cellules sont perturbées (mécaniquement ou chimiquement), des protéases intracellulaires sont libérées. L'aprotinine empêche ces enzymes de dégrader les protéines cytosoliques ou membranaires.</li>
+                <li>Purification des protéines : Au cours de la chromatographie d'affinité ou d'autres étapes de purification, les protéines sont exposées à des environnements où les protéases peuvent être actives. L'aprotinine maintient la stabilité et la bioactivité de la protéine cible.</li>
+                <li>Homogénéisation des tissus : L'homogénéisation des tissus (par exemple, cerveau, foie, muscle) peut entraîner la libération d'enzymes protéolytiques. L'ajout d'aprotinine garantit l'intégrité des protéines de signalisation délicates, des enzymes ou des récepteurs.</li>
+                <li>Cocktails d'inhibition de la protéase : L'aprotinine est un composant clé des cocktails commerciaux et personnalisés d'inhibiteurs de protéases utilisés dans les tampons d'extraction de protéines, souvent en combinaison avec la leupeptine, la pepstatine A et l'EDTA, pour fournir une protection à large spectre contre la sérine et d'autres classes de protéases.</li>
+            </ul>
+        </li>
+        <li><strong>Biologie cellulaire</strong>         <p class="mt-2 pl-5">L'aprotinine est utilisée dans les expériences de culture cellulaire et d'ingénierie tissulaire où la régulation protéolytique de l'environnement extracellulaire est critique :</p>
+            <ul class="list-disc list-outside space-y-2 text-base text-slate-700 pl-10 mt-2">
+               <li>Remodelage de la matrice extracellulaire (MEC) : L'aprotinine est utilisée pour moduler l'activité protéolytique dans les études impliquant le collagène, la fibronectine ou l'activité de la métalloprotéinase matricielle (MMP).</li>
+               <li>Études sur l'inflammation : En inhibant la kallikréine, l'aprotinine permet d'étudier la régulation des médiateurs inflammatoires tels que la bradykinine et les prostaglandines.</li>
+               <li>Recherche sur l'angiogenèse : L'aprotinine module les processus induits par les protéases qui influencent la migration des cellules endothéliales et la néovascularisation, ce qui la rend utile dans les essais d'angiogenèse et les études sur les métastases cancéreuses.</li>
+           </ul>
+       </li>
+       <li><strong>Recherche en hématologie et en thrombose</strong>       <p class="mt-2 pl-5">L'aprotinine joue un rôle important dans la recherche sur la coagulation et la fibrinolyse en raison de sa capacité à bloquer les sérines protéases impliquées dans la coagulation sanguine :</p>
+        <ul class="list-disc list-outside space-y-2 text-base text-slate-700 pl-10 mt-2">
+           <li>Inhibition de la fibrinolyse : L'aprotinine inhibe la plasmine, la principale enzyme responsable de la décomposition des caillots de fibrine, et est utilisée pour étudier la régulation de la stabilité et de la décomposition des caillots.</li>
+           <li>Études de la cascade de la coagulation : En inhibant la kallikréine, l'aprotinine affecte indirectement la voie de coagulation intrinsèque et le système de contact, ce qui aide les chercheurs à disséquer les rôles des protéases individuelles.</li>
+           <li>Recherche sur le système kallikréine-kinine : L'aprotinine permet d'étudier la production de bradykinine, un puissant vasodilatateur, en bloquant le clivage du kininogène par la kallikréine.</li>
+        </ul>
+    </li>
+    <li><strong>Cinétique enzymatique et études mécanistiques</strong>       <ul class="list-disc list-outside space-y-2 text-base text-slate-700 pl-10 mt-2">
+            <li>L'aprotinine est un modèle d'inhibiteur de protéase de type Kunitz, souvent utilisé dans les essais cinétiques pour déterminer les constantes d'inhibition (Ki) des protéases à sérine.</li>
+            <li>Elle aide à établir la spécificité de l'enzyme, les taux catalytiques et les modes de liaison de l'inhibiteur en servant d'inhibiteur compétitif bien caractérisé.</li>
+            <li>Les études de cristallographie et de RMN portant sur les complexes aprotinine-enzyme sont fondamentales pour comprendre les interactions enzyme-inhibiteur et sont citées dans de nombreuses publications de biologie structurale.</li>
+        </ul>
+    </li>
+    <li><strong>Préservation des tissus et des organes</strong>      <ul class="list-disc list-outside space-y-2 text-base text-slate-700 pl-10 mt-2">
+            <li>L'aprotinine a été étudiée pour son rôle dans la transplantation d'organes, en particulier dans la préservation des reins, du foie et du pancréas.</li>
+            <li>Lors d'une ischémie froide, les protéases libérées par les cellules endommagées peuvent dégrader les protéines structurelles et fonctionnelles. L'inclusion d'aprotinine dans les solutions de conservation permet de réduire la dégradation enzymatique et d'améliorer les résultats post-transplantation.</li>
+        </ul>
+    </li>
+      </ol>
+     
+    </section>
+  
+    <section class="mt-8">
+      <h3 class="text-2xl font-semibold text-brandblue mb-2">Conditionnement et stockage</h3>
+      <ul class="list-disc list-inside space-y-1 text-base text-slate-700">
+        <li>Sources : purifiée à partir de poumons de bovins </li>
+        <li>Disponible sous forme de poudre hygroscopique blanche à blanc cassé</li>
+        <li>Stocker dans un récipient hermétique et inviolable, à l'abri de la lumière, à une température comprise entre 2&deg;C et 8&deg;C. </li>
+      </ul>
+    </section>
+  
+    <section class="mt-10">
+        <h3 class="text-2xl font-semibold text-brandblue mb-4">Références</h3>
+      
+        <ol class="list-decimal list-inside space-y-2 text-sm text-slate-700">
+          <li>Ascenzi P, et al. 2003 : <a href="https://pubmed.ncbi.nlm.nih.gov/12769721/" target="_blank" class="text-blue-600 underline hover:text-blue-800">The bovine basic pancreatic trypsin inhibitor (Kunitz inhibitor) : a milestone protein</a>, Curr Protein Pept Sci. 4(3) : 231-51.</li>
+          <li>Fritz H, Wunderer G. 1983 : <a href="https://pubmed.ncbi.nlm.nih.gov/6191764/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Biochemistry and applications of aprotinin, the kallikrein inhibitor from bovine organs</a>, Arzneimittelforschung 33(4) : 479-94.</li>
+          <li>Wegner J. 2003 : <a href="https://pubmed.ncbi.nlm.nih.gov/14979425/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Biochemistry of serine protease inhibitors and their mechanisms of action : a review</a>, J Extra Corpor Technol. 35(4) : 326-38.</li>
+          <li>Creighton TE. 1992 : <a href="https://pubmed.ncbi.nlm.nih.gov/1373519/" target="_blank" class="text-blue-600 underline hover:text-blue-800">The disulfide folding pathway of BPTI</a>, Science 256(5053) : 111-4.</li>
+          <li>Weissman JS, Kim PS. 1991 : <a href="https://pubmed.ncbi.nlm.nih.gov/1716783/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Reexamination of the folding of BPTI : predominance of native intermediates</a>, Science 253(5026) : 1386-93.</li>
+          <li>States DJ, et al. 1980 : <a href="https://pubmed.ncbi.nlm.nih.gov/7402343/" target="_blank" class="text-blue-600 underline hover:text-blue-800">A conformational isomer of bovine pancreatic trypsin inhibitor protein produced by refolding</a>, Nature 286(5773) : 630-2.</li>
+          <li>Zakharova E, et al. 2008 : <a href="https://pubmed.ncbi.nlm.nih.gov/18692070/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Functional and structural roles of the Cys14-Cys38 disulfide of bovine pancreatic trypsin inhibitor</a>, J Mol Biol. 382(4) : 998-1013.</li>
+          <li>Schwarz H, et al. 1987 : <a href="https://pubmed.ncbi.nlm.nih.gov/2443162/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Stability studies on derivatives of the bovine pancreatic trypsin inhibitor</a>, Biochemistry 26(12) : 3544-51.</li>
+          <li>Botos I, et al. 2001 : <a href="https://pubmed.ncbi.nlm.nih.gov/11734212/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Crystal structure of a cyclic form of bovine pancreatic trypsin inhibitor</a>, FEBS Lett. 509(1) : 90-4.</li>
+          <li>Wagner G, et al. 1976 : <a href="https://pubmed.ncbi.nlm.nih.gov/9165/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Dynamique des résidus d'acides aminés aromatiques dans la conformation globulaire de l'inhibiteur basique de la trypsine pancréatique (BPTI). I. 1H NMR studies</a>, Biophys Struct Mech. 2(2) : 139-58.</li>
+          <li>Ilyina E, et al. 1997 : <a href="https://pubmed.ncbi.nlm.nih.gov/9116018/" target="_blank" class="text-blue-600 underline hover:text-blue-800">A pulsed-field gradient NMR study of bovine pancreatic trypsin inhibitor self-association</a>, Biochemistry 36(11) : 3383-8.</li>
+          <li>Lu W, et al. 1998 : <a href="https://pubmed.ncbi.nlm.nih.gov/9657378/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Total chemical synthesis of bovine pancreatic trypsin inhibitor by native chemical ligation</a>, FEBS Lett. 429(1) : 31-5.</li>
+          <li>Ferrer M, et al. 1992 : <a href="https://pubmed.ncbi.nlm.nih.gov/1282503/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Solid-phase synthesis of bovine pancreatic trypsin inhibitor (BPTI) and two analogues : A chemical approach for evaluating the role of disulfide bridges in protein folding and stability</a>, Int J Pept Protein Res. 40(3-4) : 194-207.</li>
+          <li>Alexander J. 2020 : <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/pep2.24166" target="_blank" class="text-blue-600 underline hover:text-blue-800">Total synthesis of bovine pancreatic trypsin inhibitor and the protein diastereomer [Gly37D-Ala]BPTI using Boc chemistry solid phase peptide synthesis</a>, Peptide Science 112(4).</li>
+          <li>Bleackley MR, et al. 2014 : <a href="https://pubmed.ncbi.nlm.nih.gov/24750237/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Bovine pancreatic trypsin inhibitor is a new antifungal peptide that inhibits cellular magnesium uptake</a>, Mol Microbiol. 92(6) : 1188-97.</li>
+          <li>Ferreira GC, et al. 2023 : <a href="https://pubmed.ncbi.nlm.nih.gov/36037882/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Structural and functional properties of rBmTI-A : A Kunitz-BPTI serine protease inhibitor with therapeutical potential</a>, Biochimie 204 : 1-7.</li>
+          <li>Chang JY. 2011 : <a href="https://pubmed.ncbi.nlm.nih.gov/20831444/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Distinct folding pathways of two homologous disulfide proteins : bovine pancreatic trypsin inhibitor and tick anticoagulant peptide</a>, Antioxid Redox Signal 14(1) : 127-35.</li>
+          <li>Peräkylä M, Kollman PA. 2000 : <a href="https://pubs.acs.org/doi/10.1021/ja991602p" target="_blank" class="text-blue-600 underline hover:text-blue-800">Why does trypsin cleave BPTI so slowly</a>, J. Am. Chem. Soc. 122(14) : 3436-44.</li>
+          <li>Zakharova E, et al. 2008 : <a href="https://pubmed.ncbi.nlm.nih.gov/18692070/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Functional and structural roles of the Cys14-Cys38 disulfide of bovine pancreatic trypsin inhibitor</a>, J Mol Biol. 382(4) : 998-1013.</li>
+          <li>Czapinska H, et al. 2000 : <a href="https://pubmed.ncbi.nlm.nih.gov/10653700/" target="_blank" class="text-blue-600 underline hover:text-blue-800">High-resolution structure of bovine pancreatic trypsin inhibitor with altered binding loop sequence</a>, J Mol Biol. 295(5) : 1237-49.</li>
+        </ol>
+      </section>
+      
+      
+  
+  </main>
+  
+  
+
+  <!-- start cta -->
+  <section
+  class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 text-center md:text-left">
+  <div class="md:flex md:items-center md:justify-center">
+    <h2 class="text-xl font-bold text-white">Jiagen Biotechnologies fournit de l'aprotinine de qualité avec différentes spécifications. <br>Contactez-nous à l'adresse <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> pour passer une commande.</h2>
+
+   <a href="../../order.html"
+      class="px-8 py-4 bg-white text-blue-600 rounded inline-block font-semibold md:ml-8 mt-4 md:mt-0 
+      hover:bg-teal-500 hover:text-white transition-colors duration-300">Commande</a></div>
+</section>
+<!-- end cta -->
+
+<!-- start footer -->
+<footer class="relative bg-[#ececec] text-gray-500 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 lg:py-24">
+  <div class="flex flex-col md:flex-row">
+    <div class="w-full lg:w-auto lg:mx-4 lg:pr-8">
+     <img src="../../../assets/logo.svg" alt="Jiagen Biotechnologies" class="h-40 mb-2">
+
+      <p class="text-gray-400">Favoriser la découverte grâce à des matériaux de qualité fiable.</p>
+
+    </div>
+
+    <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
+      <h5 class="uppercase tracking-wider font-semibold text-gray-500">Produits</h5>
+      <ul class="mt-4">
+        <li class="mt-2"><a href="../proteins/proteins.html" title="" class="opacity-75 hover:opacity-100">Peptides/Protéines</a></li>
+        <li class="mt-2"><a href="../enzymes/enzymes.html" title="" class="opacity-75 hover:opacity-100">Enzymes</a></li>
+        <li class="mt-2"><a href="../coenzymes/coenzymes.html" title="" class="opacity-75 hover:opacity-100">Coenzymes</a></li>
+        <li class="mt-2"><a href="../carbohydrates/carbohydrates.html" title="" class="opacity-75 hover:opacity-100">Glucides</a></li>
+        <li class="mt-2"><a href="../chemicals/chemicals.html" title="" class="opacity-75 hover:opacity-100">Produits chimiques</a></li>
+
+      </ul>
+    </div>
+
+    <div class="w-full lg:w-2/6 mt-8 lg:mt-0 lg:mx-4 lg:pr-8">
+      <h5 class="uppercase tracking-wider font-semibold text-gray-500">Coordonnées de l'entreprise</h5>
+      <ul class="mt-4">
+        <li>
+          
+           <a title="" class="block flex items-center opacity-75 hover:opacity-100"> <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M12,2C7.589,2,4,5.589,4,9.995C3.971,16.44,11.696,21.784,12,22c0,0,8.029-5.56,8-12C20,5.589,16.411,2,12,2z M12,14 c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4S14.21,14,12,14z" />
+              </svg>
+            </span>
+            
+           <span class="ml-3">958 Montée de Liesse, Saint-Laurent, QC, CAN </span> </a>  </li>
+
+        <li class="mt-4">
+          
+           <a title="" class="block flex items-center opacity-75 hover:opacity-100"> <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M14.594,13.994l-1.66,1.66c-0.577-0.109-1.734-0.471-2.926-1.66c-1.193-1.193-1.553-2.354-1.661-2.926l1.661-1.66 l0.701-0.701L5.295,3.293L4.594,3.994l-1,1C3.42,5.168,3.316,5.398,3.303,5.643c-0.015,0.25-0.302,6.172,4.291,10.766 C11.6,20.414,16.618,20.707,18,20.707c0.202,0,0.326-0.006,0.358-0.008c0.245-0.014,0.476-0.117,0.649-0.291l1-1l0.697-0.697 l-5.414-5.414L14.594,13.994z" />
+              </svg>
+            </span>
+            
+             <span class="ml-3">+1 514-779-9623 </span> </a>           </li>
+        <li class="mt-4">
+          
+           <a title="" class="block flex items-center opacity-75 hover:opacity-100"> <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M20,4H4C2.896,4,2,4.896,2,6v12c0,1.104,0.896,2,2,2h16c1.104,0,2-0.896,2-2V6C22,4.896,21.104,4,20,4z M20,8.7l-8,5.334 L4,8.7V6.297l8,5.333l8-5.333V8.7z" />
+              </svg>
+            </span>
+            
+            <span class="ml-3">
+              info@jiagen.com<br>
+              sales@jiagen.com
+            </span>            </li>
+      </ul>
+    </div>
+
+    <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
+      
+
+      <p class="text-sm text-gray-400 mt-12">2025 Jiagen Biotechnologies. <br class="hidden lg:block">Tous droits réservés.      </p>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->
+
+</body>
+</html>

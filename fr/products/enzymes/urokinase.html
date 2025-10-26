@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+    <meta name="language" content="fr">
+    <link rel="alternate" hreflang="en" href="https://jiagen.ca/products/enzymes/urokinase.html">
+    <link rel="alternate" hreflang="fr" href="https://jiagen.ca/fr/products/enzymes/urokinase.html">
+    <meta name="google" content="notranslate">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jiagen Biotechnologies</title>
+  <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <link href="../../../dist/output.css" rel="stylesheet" />
+
+  
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Announcement Bar -->
+  <div class="bg-brandblue text-white text-sm py-1 px-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="hidden md:flex"><span>Renforcer la recherche en sciences de la vie</span></div>
+      <div class="flex space-x-6 md:hidden">
+        <!-- Mobile: show just one link -->
+        <span>Téléphone: <span class="font-semibold">514-779-9623</span></span>
+        <span>Commandes: <span class="font-semibold">sales@jiagen.com</span></span>
+      </div>
+        <!-- Desktop: show full info -->
+        <div class="hidden md:flex space-x-6">
+          <span>Téléphone: <span class="font-semibold">514-779-9623</span></span>
+          <span>Contact: <span class="font-semibold">info@jiagen</span></span>
+          <span>Commandes: <span class="font-semibold">sales@jiagen.com</span></span>
+        </div>
+    </div>
+  </div>
+ <!-- Header -->
+<header class="sticky top-0 z-50 bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-1 flex justify-between items-center relative">
+      <a href="../../index.html">
+        <img src="../../../assets/logo.svg" alt="Logo" class="h-20 w-auto" />
+      </a>
+     <!-- Mobile Menu Toggle Button -->
+    <div class="md:hidden" x-data="{ open: false }">
+        <button @click="open = !open" class="text-slate-800 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        </button>
+    
+       <!-- Mobile Dropdown Menu -->
+        <div x-show="open" @click.away="open = false" class="absolute left-0 top-full w-full bg-white shadow-md z-50 border-t mt-2">
+        <ul class="p-4 space-y-2 font-medium text-sm">
+            
+            <!-- PRODUCTS dropdown -->
+            <li x-data="{ openSub: false }">
+            
+               <button @click="openSub = !openSub" class="w-full text-left flex justify-between items-center py-2 text-slate-800 hover:text-slate-900">Produits <svg class="w-4 h-4 transform transition-transform" :class="{ 'rotate-180': openSub }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+                </svg></button><ul x-show="openSub" class="pl-4 mt-2 space-y-1 text-sm" x-cloak>
+              <li><a href="../proteins/proteins.html" class="block py-1 hover:text-blue-700">Peptides / Protéines</a></li>
+              <li><a href="../enzymes/enzymes.html" class="block py-1 hover:text-blue-700">Enzymes</a></li>
+              <li><a href="../coenzymes/coenzymes.html" class="block py-1 hover:text-blue-700">Coenzymes</a></li>
+              <li><a href="../carbohydrates/carbohydrates.html" class="block py-1 hover:text-blue-700">Glucides</a></li>
+              <li><a href="../chemicals/chemicals.html" class="block py-1 hover:text-blue-700">Produits chimiques</a></li>
+            </ul>
+            </li>
+    
+            <!-- Other links -->
+            <li><a href="../../order.html" class="block py-2 text-slate-800 hover:text-slate-900">Ordre</a></li>
+        </ul>
+        </div>
+    </div>
+    
+  
+     <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-6 items-center w-full">
+        <ul class="flex flex-nowrap items-center font-medium text-base">
+          <li class="p-4 lg:px-8 relative flex items-center space-x-1"
+              x-data="{ open: false }"
+              @mouseenter="open = true"
+              @mouseleave="open = false">
+           <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">Produits</a> <button class="shrink-0 p-1" :aria-expanded="open"> <span class="sr-only">Montrer le sous-menu pour les "produits"</span> <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                <path d="M10 2.586 11.414 4 6 9.414.586 4 2 2.586l4 4z" />
+              </svg></button><ul class="origin-top-right absolute top-full left-1/2 -translate-x-1/2 min-w-[240px] 
+                       bg-white border border-slate-200 p-2 rounded-lg shadow-xl [&[x-cloak]]:hidden"
+                x-show="open"
+                x-transition:enter="transition ease-out duration-200 transform"
+                x-transition:enter-start="opacity-0 -translate-y-2"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-out duration-200"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                x-cloak>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../proteins/proteins.html"><span>Peptides / Protéines</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../enzymes/enzymes.html"><span>Enzymes</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../coenzymes/coenzymes.html"><span>Coenzymes</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../carbohydrates/carbohydrates.html"><span>Glucides</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../chemicals/chemicals.html"><span>Produits chimiques</span></a></li>
+
+              </ul>
+          </li>
+  
+          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../order.html">Commande</a></li>
+        </ul>
+        <div class="flex items-center space-x-1">
+          <!-- Search -->
+          <div class="w-full max-w-xs min-w-[200px]">
+              <div class="relative flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="absolute w-5 h-5 top-2.5 left-2.5 text-slate-600">
+                  <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
+              </svg>
+          
+              <input
+              class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+              placeholder="Search Product" 
+              />
+      
+              </div>
+          </div>
+          <ul class="flex flex-nowrap items-center font-medium text-sm">
+              <li class="p-4 lg:px-8 relative flex items-center space-x-1"
+                  x-data="{ open: false }"
+                  @mouseenter="open = true"
+                  @mouseleave="open = false">
+               <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">FR</a> <button class="shrink-0 p-1" :aria-expanded="open"> <span class="sr-only">Afficher le sous-menu des langues</span> <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                    <path d="M10 2.586 11.414 4 6 9.414.586 4 2 2.586l4 4z" />
+                  </svg></button><ul class="origin-top-right absolute top-full left-1/2 -translate-x-1/2 min-w-[120px] 
+                           bg-white border border-slate-200 p-2 rounded-lg shadow-xl [&[x-cloak]]:hidden"
+                    x-show="open"
+                    x-transition:enter="transition ease-out duration-200 transform"
+                    x-transition:enter-start="opacity-0 -translate-y-2"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-out duration-200"
+                    x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0"
+                    x-cloak>
+                    <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../../../products/enzymes/urokinase.html"><span>Anglais</span></a></li>
+                    <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="#"><span>Français</span></a></li>
+                </ul>
+              </li>
+            </ul>
+        </div>
+      </nav>
+
+    
+  </header>
+  <!-- Main Content -->
+<main class="max-w-6xl mx-auto px-6 py-12 text-slate-800 font-sans leading-relaxed">
+    <div class="mb-8">
+      
+       <a href="enzymes.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium"> <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+        </svg>
+       </a> <a href="enzymes.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium">Enzymes </a>   </div>
+  
+    <!-- Header -->
+    <section>
+      <h2 class="text-3xl font-bold text-brandblue border-b border-gray-300 pb-2 mb-4">Urokinase</h2>
+      <p class="text-base text-gray-600 mb-2">
+       <strong>N° CAS :</strong> 9039-53-6 | <strong>N° CE :</strong> 3.4.21.73 | <strong>N° EINECS :</strong> 232-894-1      </p>
+      <p class="mb-4"><strong>Synonymes :</strong> urokinase de haut poids moléculaire, activateur du plasminogène, urokinase de culture tissulaire, U-PA, urochinasi (terme dérivé de l'italien), URK, activateur du plasminogène de type urokinase (uPA), activateur du plasminogène de type urinaire, activateur du plasminogène de type urokinase, PA de type urokinase, uroquinase, hUK</p>
+    </section>
+  
+    <section class="mt-8">
+      <h3 class="text-2xl font-semibold text-brandblue mb-2">Résumé du produit</h3>
+      <p>
+        L'urokinase est une sérine protéase humaine principalement responsable de l'activation du plasminogène en plasmine, ce qui entraîne la rupture du caillot de fibrine. Elle joue un rôle crucial dans la thrombolyse, le remodelage des tissus et la biologie du cancer. Avec un poids moléculaire d'environ 54 kDa (forme à chaîne unique), elle fonctionne de manière optimale au pH et à la température physiologiques. L'urokinase est largement utilisée dans le traitement clinique des maladies thromboemboliques et dans des domaines de recherche tels que l'oncologie, la migration cellulaire et la cicatrisation des plaies. 
+      </p>
+    </section>
+  
+    <section class="mt-8">
+      <h3 class="text-2xl font-semibold text-brandblue mb-2">Fonction biochimique</h3>
+      <p class="mt-2 mb-2">
+        L'urokinase catalyse la conversion du plasminogène, un zymogène circulant (précurseur inactif), en plasmine, une puissante protéase à large spectre. La réaction catalytique implique un clivage protéolytique au niveau d'une liaison Arg-Val spécifique dans la molécule de plasminogène, exposant ainsi son site actif et activant sa fonction enzymatique.      </p>
+      <p class="mb-2">
+        Une fois activée, la plasmine dégrade la fibrine, la matrice protéique structurelle des caillots sanguins, ainsi que divers composants de la matrice extracellulaire (MEC) tels que la fibronectine et la laminine. 
+      </p>
+      <p class="mb-2">Au-delà de la dégradation de la fibrine, l'urokinase joue de multiples rôles physiologiques et physiopathologiques, grâce à son activité protéolytique et à son interaction avec des récepteurs spécifiques à la surface des cellules, en particulier le récepteur de l'urokinase (uPAR).</p>
+      <ul class="list-disc list-inside space-y-2 text-base text-slate-700 pl-5 mt-2">
+        <li>
+           <strong>Fibrinolyse</strong> (dissolution du caillot)        <p class="mt-2 pl-5">L'urokinase est un activateur majeur du plasminogène, avec l'activateur du plasminogène de type tissulaire (tPA). 	Elle initie la cascade fibrinolytique, un système étroitement régulé qui dissout les caillots de fibrine au cours de la cicatrisation normale, de la résolution post-thrombotique et des interventions médicales telles que la thérapie thrombolytique.</p>
+        </li>
+        <li>
+           <strong>Remodelage tissulaire et dégradation de la matrice extracellulaire</strong>           <p class="mt-2 pl-5">En activant la plasmine, l'urokinase permet indirectement la dégradation des protéines de la matrice extracellulaire, ce qui facilite l'angiogenèse (formation de nouveaux vaisseaux sanguins), le développement embryonnaire, l'involution utérine et le remodelage post-lésionnel.</p>
+        </li>
+        <li>
+           <strong>Cicatrisation des plaies et inflammation </strong>           <p class="mt-2 pl-5">L'urokinase contribue à la cicatrisation des plaies en permettant la migration des kératinocytes, en modulant les réponses inflammatoires par l'interaction avec les cellules immunitaires et en éliminant la fibrine et d'autres débris sur le site de la plaie.</p>
+        </li>
+        <li>
+           <strong>Migration cellulaire et invasion</strong>       <p class="mt-2 pl-5">Grâce à l'interaction uPA-uPAR, l'urokinase joue également un rôle non protéolytique dans la régulation de l'adhésion cellulaire et de la signalisation, en favorisant l'invasion des cellules tumorales et la formation de métastases, et en influençant le chimiotactisme des macrophages et des neutrophiles. Ces fonctions sont particulièrement importantes en biologie du cancer, où le système uPA/uPAR est associé à un mauvais pronostic dans plusieurs cancers, notamment les cancers du sein, de la prostate et colorectal. </p>
+        </li>
+      </ul>
+      <p class="mt-2">
+        Les conditions optimales pour l'urokinase sont un pH de 7,4 à 8,0 et une température de 37°C.      </p>
+    </section>
+  
+    <section class="mt-8">
+      <h3 class="text-2xl font-semibold text-brandblue mb-2">Mécanisme d'action</h3>
+     
+      <ol class="list-decimal list-inside space-y-2 text-base text-slate-700 pl-5 mt-2">
+        <li><strong>Activité catalytique </strong><br>
+          <p class="mt-2">L'urokinase présente une activité protéolytique hautement spécifique en tant que sérine protéase de type trypsine. Elle hydrolyse une liaison peptidique spécifique - la liaison Arg^560-Val^561 - dans le plasminogène, le transformant ainsi en plasmine. Ce clivage expose le site catalytique de la plasmine et la libère sous une forme enzymatiquement active. La plasmine nouvellement formée initie alors la dégradation des caillots de fibrine, ainsi que l'activation d'autres cascades protéolytiques. </p>
+        </li>
+        <li><strong>Mécanisme en tant que sérine endopeptidase </strong><br>
+            <p class="mt-2">En tant qu'endopeptidase, l'urokinase clive les liaisons peptidiques internes des substrats, plutôt que les acides aminés terminaux (exopeptidases). Son mécanisme d'action repose sur une triade catalytique, un motif conservé typique des sérine-protéases. L'histidine (His) agit comme une base générale, déprotonant la sérine. L'aspartate (Asp) stabilise l'histidine et l'oriente correctement. La sérine (Ser) est le nucléophile qui attaque le carbone du peptide du substrat. Cette triade His-Asp-Ser forme un système de relais de charge qui facilite l'attaque nucléophile sur le carbone de la liaison peptidique, conduisant à la coupure de la liaison et à l'hydrolyse du substrat. </p>
+        </li>
+        <li><strong>Activation </strong><br>
+            <p class="mt-2">L'urokinase est initialement produite sous la forme d'un précurseur inactif à chaîne unique, appelé scuPA (activateur du plasminogène de type urokinase à chaîne unique), dont l'activité protéolytique est minime. Il existe deux méthodes d'activation :</p>
+            <ul class="list-disc space-y-2 text-base text-slate-700 list-outside pl-10 mt-2">
+                <li>L'activation se produit par clivage protéolytique entre Lys158 et Ile159, produisant une enzyme active à deux chaînes (tcuPA) : La chaîne légère (~20 kDa) contient le domaine de la protéase. La chaîne lourde (~33-34 kDa) contient les domaines de liaison au récepteur et de reconnaissance du substrat. Les deux chaînes sont maintenues ensemble par une liaison disulfure, formant l'enzyme pleinement active.</li>
+                <li>L'activation peut également se faire par le biais d'une boucle de rétroaction positive de la plasmine. La plasmine, une fois générée, peut cliver et activer d'autres molécules de scuPA, formant une boucle d'amplification autocatalytique : scuPA→ tcuPA. Ce mécanisme de rétroaction positive renforce considérablement l'activité fibrinolytique localisée, en particulier sur les sites de lésions tissulaires ou de formation de caillots.</li>
+            </ul>
+        </li>
+        <li><strong>Régulation et inhibition </strong><br>
+            <p class="mt-2">L'activité de l'urokinase est étroitement contrôlée par des inhibiteurs endogènes et par la localisation à la surface des cellules afin d'éviter une protéolyse systémique : </p>
+            <ul class="list-disc space-y-2 text-base text-slate-700 list-outside pl-10 mt-2">
+                <li>L'inhibiteur de l'activateur du plasminogène 1 (PAI-1) et le PAI-2 (serpines, inhibiteurs de protéase à thésérine) se lient et inhibent de manière irréversible la tcuPA active et maintiennent l'équilibre entre la formation et la dégradation du caillot.</li>
+                <li>Le récepteur de l'activateur du plasminogène de type urokinase (uPAR) ancre l'uPA à la surface des cellules, ce qui favorise la protéolyse locale. Il facilite l'activation du plasminogène dans l'espace péricellulaire, ce qui est important pour l'invasion tumorale, l'angiogenèse et la réparation des tissus.</li>
+            </ul>
+        </li>
+      </ol>
+    </section>
+  
+    <section class="mt-8">
+      <h3 class="text-2xl font-semibold text-brandblue mb-2">Applications dans la recherche scientifique</h3>
+      <ul class="list-disc list-outside pl-5 mt-1 space-y-2 text-slate-700 text-base">
+        <li>Les chercheurs utilisent l'urokinase pour disséquer les mécanismes moléculaires de la dégradation des caillots, en étudiant son rôle dans l'équilibre avec les facteurs procoagulants. L'urokinase aide à élucider la façon dont l'organisme dissout naturellement les thrombus et dont les déséquilibres peuvent entraîner des hémorragies ou des maladies thrombotiques.</li>
+        <li>En tant que sérine protéase modèle, l'urokinase est utilisée pour étudier l'activation du zymogène, la régulation de la protéase et les interactions avec les inhibiteurs endogènes tels que PAI-1/PAI-2.</li>
+        <li>Certains pathogènes détournent l'urokinase de l'hôte ou son récepteur (uPAR) pour faciliter la pénétration des tissus et l'évasion immunitaire - un sujet de recherche sur les maladies infectieuses.</li>
+        <li>L'uPA, souvent surexprimée dans les cancers agressifs, facilite la migration des cellules tumorales, la dégradation de la matrice extracellulaire (MEC) et la rupture de la membrane basale, étapes clés de la métastase.</li>
+        <li>En remodelant la matrice extracellulaire, l'urokinase permet la croissance vasculaire et la libération de facteurs de croissance liés à la matrice, ce qui favorise la vascularisation de la tumeur.</li>
+        <li>Développement d'inhibiteurs de l'uPA, d'anticorps monoclonaux et d'agents d'imagerie ciblant l'uPA.</li>
+        <li>Utilisation de systèmes d'administration de médicaments basés sur l'uPAR pour le ciblage sélectif des cellules cancéreuses.</li>
+        <li>Les études sur l'urokinase permettent d'optimiser les schémas posologiques dans des applications cliniques telles que l'embolie pulmonaire, l'infarctus aigu du myocarde, la thrombose veineuse profonde et l'occlusion des cathéters veineux centraux, en réduisant les risques de saignement et en améliorant l'efficacité de la thrombolyse.</li>
+        <li>L'urokinase sert de modèle pour la conception de nouveaux agents plus spécifiques au caillot ou moins immunogènes.</li>
+        <li>Dans le remodelage de la matrice, la génération de plasmine médiée par l'uPA facilite la dégradation des protéines de la MEC, ce qui permet la migration cellulaire, l'intégration des matériaux d'échafaudage et l'angiogenèse dans les tissus artificiels.</li>
+        <li>Dans les études sur les cellules souches, la signalisation uPA/uPAR influence l'adhésion, la migration et la différenciation des cellules souches, ce qui la rend précieuse dans la recherche sur la réparation des tissus à base de cellules souches.</li>
+        <li>Dans la recherche sur les biomatériaux, l'urokinase est utilisée pour évaluer la biocompatibilité et la dégradation des échafaudages tissulaires dans des environnements protéolytiques dynamiques.</li>
+        <li><strong>Réparation neuronale : l</strong> 'uPA favorise la régénération des axones, la migration neuronale et le remodelage des cicatrices gliales après une lésion du système nerveux central (SNC).</li>
+        <li><strong>Neuroinflammation : l</strong> 'uPA influence l'activation microgliale, la libération de cytokines et la perméabilité de la barrière hémato-encéphalique, en rapport avec des maladies telles que la sclérose en plaques, les accidents vasculaires cérébraux et la maladie d'Alzheimer.</li>
+        <li><strong>Couplage neurovasculaire :</strong> Son implication dans le remodelage vasculaire contribue à la compréhension de la dynamique des unités neurovasculaires après une blessure.</li>
+        <li>L'urokinase facilite les études sur la réépithélialisation pendant la cicatrisation des plaies.</li>
+        <li>L'urokinase est utilisée pour simuler le bourgeonnement capillaire dans les modèles de culture de matrigel ou de cellules endothéliales.</li>
+        <li>La signalisation de l'uPA contribue à la transition épithélio-mésenchymateuse (EMT), un processus vital pour la recherche en biologie du développement et en métastases cancéreuses.</li>
+        <li>L'urokinase est utilisée pour les essais in vitro : essais de grattage, essais de migration et d'invasion transwell et études de dégradation du matrigel.</li>
+    
+      </ul>
+      
+    </section>
+  
+    <section class="mt-8">
+      <h3 class="text-2xl font-semibold text-brandblue mb-2">Conditionnement et stockage</h3>
+      <ul class="list-disc list-inside space-y-1 text-base text-slate-700">
+        <li>Disponible sous forme de poudre amorphe blanche ou presque blanche.</li>
+        <li>Conserver dans un récipient stérile, hermétique et inviolable, à l'abri de la lumière et à une température ne dépassant pas 8 °C.  </li>
+      </ul>
+    </section>
+  
+  
+    <section class="mt-10">
+        <h3 class="text-2xl font-semibold text-brandblue mb-4">Références</h3>
+        <ol class="list-decimal list-inside space-y-2 text-sm text-slate-700">
+          <li>Stump DC, et al. 1986 : <a href="https://pubmed.ncbi.nlm.nih.gov/3097021/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Purification and characterization of a novel low molecular weight form of single-chain urokinase-type plasminogen activator</a>, J Biol Chem. 261(36) : 17120-6.</li>
+          <li>White WF, et al. 1966 : <a href="https://pubmed.ncbi.nlm.nih.gov/4959959/" target="_blank" class="text-blue-600 underline hover:text-blue-800">The isolation and characterization of plasminogen activators (urokinase) from human urine</a>, Biochemistry 5(7) : 2160-9.</li>
+          <li>Liu JN, Gurewich V. 1992 : <a href="https://pubmed.ncbi.nlm.nih.gov/1385727/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Fragment E-2 from fibrin substantially enhances pro-urokinase-induced Glu-plasminogen activation. A kinetic study using the plasmin-resistant mutant pro-urokinase Ala-158-rpro-UK</a>, Biochemistry 31(27) : 6311-7.</li>
+          <li>Novokhatny V, et al. 1995 : <a href="https://pubmed.ncbi.nlm.nih.gov/7721771/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Tissue-type plasminogen activator (tPA) interacts with urokinase-type plasminogen activator (uPA) via tPA's lysine binding site. An explanation of the poor fibrin affinity of recombinant tPA/uPA chimeric molecules</a>, J Biol Chem. 270(15) : 8680-5.</li>
+          <li>Zhang Y, et al. 2007 : <a href="https://pubmed.ncbi.nlm.nih.gov/17709546/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Urokinase-type plasminogen activator stimulation of monocyte matrix metalloproteinase-1 production is mediated by plasmin-dependent signaling through annexin A2 and inhibited by inactive plasmin</a>, J Immunol. 179(5) : 3297-304.</li>
+          <li>Koolwijk P, et al. 2001 : <a href="https://pubmed.ncbi.nlm.nih.gov/11342439/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Proteolysis of the urokinase-type plasminogen activator receptor by metalloproteinase-12 : implication for angiogenesis in fibrin matrices</a>, Blood 97(10) : 3123-31.</li>
+          <li>Khan MM, et al. 2006 : <a href="https://pubmed.ncbi.nlm.nih.gov/16902163/" target="_blank" class="text-blue-600 underline hover:text-blue-800">High-molecular-weight kininogen fragments stimulate the secretion of cytokines and chemokines through uPAR, Mac-1, and gC1qR in monocytes</a>, Arterioscler Thromb Vasc Biol. 26(10) : 2260-6.</li>
+          <li>Degryse B. 2011 : <a href="https://pubmed.ncbi.nlm.nih.gov/21711231/" target="_blank" class="text-blue-600 underline hover:text-blue-800">The urokinase receptor system as strategic therapeutic target : challenges for the 21st century</a>, Curr Pharm Des. 17(19) : 1872-3.</li>
+          <li>Xu X, et al. 2014 : <a href="https://pubmed.ncbi.nlm.nih.gov/24465541/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Identification of a new epitope in uPAR as a target for the cancer therapeutic monoclonal antibody ATN-658, a structural homolog of the uPAR binding integrin CD11b (αM)</a>, PLoS One 9(1) : e85349.</li>
+          <li>Niu FY, et al. 2021 : <a href="https://pubmed.ncbi.nlm.nih.gov/34532133/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Urokinase plasminogen activator predicts poor prognosis in hepatocellular carcinoma</a>, J Gastrointest Oncol. 12(4) : 1851-9.</li>
+          <li>Tang L, Han X. 2013 : <a href="https://pubmed.ncbi.nlm.nih.gov/23201006/" target="_blank" class="text-blue-600 underline hover:text-blue-800">The urokinase plasminogen activator system in breast cancer invasion and metastasis</a>, Biomed Pharmacother. 67(2) : 179-82.</li>
+          <li>Mahmood N, et al. 2018 : <a href="https://pubmed.ncbi.nlm.nih.gov/29484286/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Rôle multiforme de l'activateur du plasminogène de type urokinase (uPA) et de son récepteur (uPAR) : Applications diagnostiques, pronostiques et thérapeutiques</a>, Front Oncol. 8 : 24.</li>
+          <li>Nassir AM, Kamel HFM. 2020 : <a href="https://pubmed.ncbi.nlm.nih.gov/32714021/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Explication of the roles of prostate health index (PHI) and urokinase plasminogen activator (uPA) as diagnostic and predictor tools for prostate cancer in equivocal PSA range of 4-10 ng/mL</a>, Saudi J Biol Sci. 27(8) : 1975-84.</li>
+          <li>Ploug M, et al. 2002 : <a href="https://pubmed.ncbi.nlm.nih.gov/12023847/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Structural analysis of the interaction between urokinase-type plasminogen activator and its receptor : a potential target for anti-invasive cancer therapy</a>, Biochem Soc Trans. 30(2) : 177-83.</li>
+          <li>Alfano M, et al. 2003 : <a href="https://pubmed.ncbi.nlm.nih.gov/12960238/" target="_blank" class="text-blue-600 underline hover:text-blue-800">The role of urokinase-type plasminogen activator (uPA)/uPA receptor in HIV-1 infection</a>, J Leukoc Biol. 74(5) : 750-6.</li>
+          <li>D'mello V, et al. 2009 : <a href="https://pubmed.ncbi.nlm.nih.gov/19383607/" target="_blank" class="text-blue-600 underline hover:text-blue-800">The urokinase plasminogen activator receptor promotes efferocytosis of apoptotic cells</a>, J Biol Chem. 284(25) : 17030-8.</li>
+          <li>Harbeck N, et al. 2004 : <a href="https://pubmed.ncbi.nlm.nih.gov/14983219/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Urokinase-type plasminogen activator (uPA) and its inhibitor PAI-I : novel tumor-derived factors with a high prognostic and predictive impact in breast cancer</a>, Thromb Haemost. 91(3) : 450-6.</li>
+          <li>Kumar AA, et al. 2023 : <a href="https://pubs.acs.org/doi/10.1021/acs.molpharmaceut.3c00055" target="_blank" class="text-blue-600 underline hover:text-blue-800">Recent advances in targeting the urokinase plasminogen activator with nanotherapeutics</a>, Mol Pharmaceutics. 20(6) : 2766-80.</li>
+          <li>Gao C, et al. 2021 : <a href="https://pubmed.ncbi.nlm.nih.gov/33804930/" target="_blank" class="text-blue-600 underline hover:text-blue-800">In vitro study of the fibrinolytic activity via single chain urokinase-type plasminogen activator and molecular docking of FGFC1</a>, Molecules 26(7) : 1816.</li>
+          <li>Dreymann N, et al. 2022 : <a href="https://pubmed.ncbi.nlm.nih.gov/35563278/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Inhibition of human urokinase-type plasminogen activator (uPA) enzyme activity and receptor binding by DNA aptamers as potential therapeutics through binding to the different forms of uPA</a>, Int J Mol Sci. 23(9) : 4890.</li>
+        </ol>
+      </section>
+      
+      
+      
+      
+  
+  </main>
+  
+  
+
+  <!-- start cta -->
+  <section
+  class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 text-center md:text-left">
+  <div class="md:flex md:items-center md:justify-center">
+    <h2 class="text-xl font-bold text-white">Jiagen Biotechnologies fournit de l'urokinase de qualité avec différentes spécifications. <br>Contactez-nous à l'adresse <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> pour passer une commande.</h2>
+
+   <a href="../../order.html"
+      class="px-8 py-4 bg-white text-blue-600 rounded inline-block font-semibold md:ml-8 mt-4 md:mt-0 
+      hover:bg-teal-500 hover:text-white transition-colors duration-300">Commande</a></div>
+</section>
+<!-- end cta -->
+
+<!-- start footer -->
+<footer class="relative bg-[#ececec] text-gray-500 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 lg:py-24">
+  <div class="flex flex-col md:flex-row">
+    <div class="w-full lg:w-auto lg:mx-4 lg:pr-8">
+     <img src="../../../assets/logo.svg" alt="Jiagen Biotechnologies" class="h-40 mb-2">
+
+      <p class="text-gray-400">Favoriser la découverte grâce à des matériaux de qualité fiable.</p>
+
+    </div>
+
+    <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
+      <h5 class="uppercase tracking-wider font-semibold text-gray-500">Produits</h5>
+      <ul class="mt-4">
+        <li class="mt-2"><a href="../proteins/proteins.html" title="" class="opacity-75 hover:opacity-100">Peptides/Protéines</a></li>
+        <li class="mt-2"><a href="../enzymes/enzymes.html" title="" class="opacity-75 hover:opacity-100">Enzymes</a></li>
+        <li class="mt-2"><a href="../coenzymes/coenzymes.html" title="" class="opacity-75 hover:opacity-100">Coenzymes</a></li>
+        <li class="mt-2"><a href="../carbohydrates/carbohydrates.html" title="" class="opacity-75 hover:opacity-100">Glucides</a></li>
+        <li class="mt-2"><a href="../chemicals/chemicals.html" title="" class="opacity-75 hover:opacity-100">Produits chimiques</a></li>
+
+      </ul>
+    </div>
+
+    <div class="w-full lg:w-2/6 mt-8 lg:mt-0 lg:mx-4 lg:pr-8">
+      <h5 class="uppercase tracking-wider font-semibold text-gray-500">Coordonnées de l'entreprise</h5>
+      <ul class="mt-4">
+        <li>
+          
+           <a title="" class="block flex items-center opacity-75 hover:opacity-100"> <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M12,2C7.589,2,4,5.589,4,9.995C3.971,16.44,11.696,21.784,12,22c0,0,8.029-5.56,8-12C20,5.589,16.411,2,12,2z M12,14 c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4S14.21,14,12,14z" />
+              </svg>
+            </span>
+            
+           <span class="ml-3">958 Montée de Liesse, Saint-Laurent, QC, CAN </span> </a>  </li>
+
+        <li class="mt-4">
+          
+           <a title="" class="block flex items-center opacity-75 hover:opacity-100"> <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M14.594,13.994l-1.66,1.66c-0.577-0.109-1.734-0.471-2.926-1.66c-1.193-1.193-1.553-2.354-1.661-2.926l1.661-1.66 l0.701-0.701L5.295,3.293L4.594,3.994l-1,1C3.42,5.168,3.316,5.398,3.303,5.643c-0.015,0.25-0.302,6.172,4.291,10.766 C11.6,20.414,16.618,20.707,18,20.707c0.202,0,0.326-0.006,0.358-0.008c0.245-0.014,0.476-0.117,0.649-0.291l1-1l0.697-0.697 l-5.414-5.414L14.594,13.994z" />
+              </svg>
+            </span>
+            
+             <span class="ml-3">+1 514-779-9623 </span> </a>           </li>
+        <li class="mt-4">
+          
+           <a title="" class="block flex items-center opacity-75 hover:opacity-100"> <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M20,4H4C2.896,4,2,4.896,2,6v12c0,1.104,0.896,2,2,2h16c1.104,0,2-0.896,2-2V6C22,4.896,21.104,4,20,4z M20,8.7l-8,5.334 L4,8.7V6.297l8,5.333l8-5.333V8.7z" />
+              </svg>
+            </span>
+            
+            <span class="ml-3">
+              info@jiagen.com<br>
+              sales@jiagen.com
+            </span>            </li>
+      </ul>
+    </div>
+
+    <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
+      
+
+      <p class="text-sm text-gray-400 mt-12">2025 Jiagen Biotechnologies. <br class="hidden lg:block">Tous droits réservés.      </p>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->
+
+</body>
+</html>

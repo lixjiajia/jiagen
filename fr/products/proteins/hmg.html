@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+    <meta name="language" content="fr">
+    <link rel="alternate" hreflang="en" href="https://jiagen.ca/products/proteins/hmg.html">
+    <link rel="alternate" hreflang="fr" href="https://jiagen.ca/fr/products/proteins/hmg.html">
+    <meta name="google" content="notranslate">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jiagen Biotechnologies</title>
+  <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <link href="../../../dist/output.css" rel="stylesheet" />
+
+  
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Announcement Bar -->
+  <div class="bg-brandblue text-white text-sm py-1 px-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="hidden md:flex"><span>Renforcer la recherche en sciences de la vie</span></div>
+      <div class="flex space-x-6 md:hidden">
+        <!-- Mobile: show just one link -->
+        <span>Téléphone: <span class="font-semibold">514-779-9623</span></span>
+        <span>Commandes: <span class="font-semibold">sales@jiagen.com</span></span>
+      </div>
+        <!-- Desktop: show full info -->
+        <div class="hidden md:flex space-x-6">
+          <span>Téléphone: <span class="font-semibold">514-779-9623</span></span>
+          <span>Contact: <span class="font-semibold">info@jiagen</span></span>
+          <span>Commandes: <span class="font-semibold">sales@jiagen.com</span></span>
+        </div>
+    </div>
+  </div>
+ <!-- Header -->
+<header class="sticky top-0 z-50 bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-1 flex justify-between items-center relative">
+      <a href="../../index.html">
+        <img src="../../../assets/logo.svg" alt="Logo" class="h-20 w-auto" />
+      </a>
+     <!-- Mobile Menu Toggle Button -->
+    <div class="md:hidden" x-data="{ open: false }">
+        <button @click="open = !open" class="text-slate-800 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        </button>
+    
+       <!-- Mobile Dropdown Menu -->
+        <div x-show="open" @click.away="open = false" class="absolute left-0 top-full w-full bg-white shadow-md z-50 border-t mt-2">
+        <ul class="p-4 space-y-2 font-medium text-sm">
+            
+            <!-- PRODUCTS dropdown -->
+            <li x-data="{ openSub: false }">
+            
+               <button @click="openSub = !openSub" class="w-full text-left flex justify-between items-center py-2 text-slate-800 hover:text-slate-900">Produits <svg class="w-4 h-4 transform transition-transform" :class="{ 'rotate-180': openSub }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+                </svg></button><ul x-show="openSub" class="pl-4 mt-2 space-y-1 text-sm" x-cloak>
+              <li><a href="../proteins/proteins.html" class="block py-1 hover:text-blue-700">Peptides / Protéines</a></li>
+              <li><a href="../enzymes/enzymes.html" class="block py-1 hover:text-blue-700">Enzymes</a></li>
+              <li><a href="../coenzymes/coenzymes.html" class="block py-1 hover:text-blue-700">Coenzymes</a></li>
+              <li><a href="../carbohydrates/carbohydrates.html" class="block py-1 hover:text-blue-700">Glucides</a></li>
+              <li><a href="../chemicals/chemicals.html" class="block py-1 hover:text-blue-700">Produits chimiques</a></li>
+            </ul>
+            </li>
+    
+            <!-- Other links -->
+            <li><a href="../../order.html" class="block py-2 text-slate-800 hover:text-slate-900">Ordre</a></li>
+        </ul>
+        </div>
+    </div>
+    
+  
+     <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-6 items-center w-full">
+        <ul class="flex flex-nowrap items-center font-medium text-base">
+          <li class="p-4 lg:px-8 relative flex items-center space-x-1"
+              x-data="{ open: false }"
+              @mouseenter="open = true"
+              @mouseleave="open = false">
+           <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">Produits</a> <button class="shrink-0 p-1" :aria-expanded="open"> <span class="sr-only">Montrer le sous-menu pour les "produits"</span> <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                <path d="M10 2.586 11.414 4 6 9.414.586 4 2 2.586l4 4z" />
+              </svg></button><ul class="origin-top-right absolute top-full left-1/2 -translate-x-1/2 min-w-[240px] 
+                       bg-white border border-slate-200 p-2 rounded-lg shadow-xl [&[x-cloak]]:hidden"
+                x-show="open"
+                x-transition:enter="transition ease-out duration-200 transform"
+                x-transition:enter-start="opacity-0 -translate-y-2"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-out duration-200"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                x-cloak>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../proteins/proteins.html"><span>Peptides / Protéines</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../enzymes/enzymes.html"><span>Enzymes</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../coenzymes/coenzymes.html"><span>Coenzymes</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../carbohydrates/carbohydrates.html"><span>Glucides</span></a></li>
+                <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../chemicals/chemicals.html"><span>Produits chimiques</span></a></li>
+
+              </ul>
+          </li>
+  
+          <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="../../order.html">Commande</a></li>
+        </ul>
+        <div class="flex items-center space-x-1">
+          <!-- Search -->
+          <div class="w-full max-w-xs min-w-[200px]">
+              <div class="relative flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="absolute w-5 h-5 top-2.5 left-2.5 text-slate-600">
+                  <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
+              </svg>
+          
+              <input
+              class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+              placeholder="Search Product" 
+              />
+      
+              </div>
+          </div>
+          <ul class="flex flex-nowrap items-center font-medium text-sm">
+              <li class="p-4 lg:px-8 relative flex items-center space-x-1"
+                  x-data="{ open: false }"
+                  @mouseenter="open = true"
+                  @mouseleave="open = false">
+               <a class="text-slate-800 hover:text-slate-900" href="#0" :aria-expanded="open">FR</a> <button class="shrink-0 p-1" :aria-expanded="open"> <span class="sr-only">Afficher le sous-menu des langues</span> <svg class="w-3 h-3 fill-slate-500" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                    <path d="M10 2.586 11.414 4 6 9.414.586 4 2 2.586l4 4z" />
+                  </svg></button><ul class="origin-top-right absolute top-full left-1/2 -translate-x-1/2 min-w-[120px] 
+                           bg-white border border-slate-200 p-2 rounded-lg shadow-xl [&[x-cloak]]:hidden"
+                    x-show="open"
+                    x-transition:enter="transition ease-out duration-200 transform"
+                    x-transition:enter-start="opacity-0 -translate-y-2"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-out duration-200"
+                    x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0"
+                    x-cloak>
+                    <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="../../../products/proteins/hmg.html"><span>Anglais</span></a></li>
+                    <li><a class="text-slate-800 hover:bg-slate-50 flex items-center p-2" href="#"><span>Français</span></a></li>
+                </ul>
+              </li>
+            </ul>
+        </div>
+      </nav>
+
+    
+  </header>
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-6 py-12 text-slate-800 font-sans leading-relaxed">
+        <div class="mb-8">
+        
+           <a href="proteins.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium"> <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+            </svg>
+           </a> <a href="proteins.html" class="inline-flex items-center text-productblue hover:text-brandblue font-medium">Protéines </a>       </div>
+    
+        <!-- Header -->
+        <section>
+        <h2 class="text-3xl font-bold text-brandblue border-b border-gray-300 pb-2 mb-4">
+            Gonadotrophine ménopausique humaine (HMG)     </h2>
+        <p class="text-base text-gray-600 mb-2">
+           <strong>N° CAS :</strong> 61489-71-2 | <strong>N° EINECS :</strong> 232-722-1        </p>
+        <p class="mb-4">
+           <strong>Synonymes :</strong> hMG, gonadotrophine ménopausique, ménotrophine, ménotropines, uHMG (HMG dérivée de l'urine), gonadotrophines dérivées de l'urine.        </p>
+        </section>
+    
+        <!-- Product Summary -->
+        <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Résumé du produit</h3>
+        <p>
+            La gonadotrophine ménopausique humaine (HMG) est une hormone urinaire composée de l'hormone folliculo-stimulante (FSH) et de l'hormone lutéinisante (LH), utilisée pour stimuler l'ovulation et favoriser la fertilité dans le cadre de la procréation assistée. Sa double action sur les follicules ovariens et l'axe endocrinien en fait un agent clé dans les protocoles de traitement de la fertilité. Avec des applications allant de la fécondation in vitro (FIV) à la reproduction animale et aux études endocrinologiques, la HMG reste un outil biologique essentiel.        </p>
+        </section>
+    
+        <!-- Biochemical Function -->
+        <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Fonction biochimique</h3>
+        <p>La HMG présente l'activité biologique combinée de deux hormones hypophysaires essentielles, la FSH et la LH.</p>
+        <ul class="list-disc list-outside space-y-2 text-base text-slate-700 pl-5 mt-2">
+            <li><strong>Composante FSH :</strong> Stimule la croissance folliculaire et la production d'œstrogènes dans l'ovaire.</li>
+            <li><strong>Composante LH :</strong> Stimule l'ovulation, la formation du corps jaune et la stéroïdogenèse.</li>
+        </ul>
+        <p class="mt-2">En combinant les activités de la FSH et de la LH, HMG assure un développement folliculaire et une ovulation coordonnés, ce qui le rend idéal pour les protocoles d'induction de l'ovulation, en particulier dans les cas d'anovulation hypogonadotrope ou d'hyperstimulation ovarienne contrôlée (HOC) dans les cycles de FIV.</p>
+        </section>
+    
+        <!-- Mechanism of Action -->
+        <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Mécanisme d'action</h3>
+        <p class="mb-4">
+            Les hormones HMG interagissent avec des récepteurs spécifiques des cellules gonadiques. La FSH agit sur les cellules de la granulosa entourant les follicules ovariens en développement. Elle se lie aux récepteurs de la FSH, qui sont des récepteurs couplés aux protéines G (RCPG), et active la voie AMPc/PKA. Cela entraîne        </p>
+        <ul class="list-disc list-outside space-y-1 text-base text-slate-700 pl-5 mb-3">
+            <li>La prolifération des cellules de la granulosa et l'expansion de la structure folliculaire.</li>
+            <li>L'induction de l'enzyme aromatase (CYP19A1), qui convertit les androgènes (provenant des cellules de la thèque) en œstrogènes, principalement l'œstradiol (E2).</li>
+            <li>Augmentation des récepteurs de la LH sur les cellules matures de la granulosa, préparant le follicule dominant à l'ovulation.</li>
+        </ul>
+    
+        <p class="mb-4 mt-2">
+            La LH se lie aux récepteurs de la LH sur les cellules de la thèque (entourant le follicule) et sur les cellules matures de la granulosa (après l'expression des récepteurs de la LH induite par la FSH), ce qui entraîne les réponses suivantes : 
+        </p>
+        <ul class="list-disc list-outside space-y-1 text-base text-slate-700 pl-5">
+            <li>La LH régule l'enzyme de clivage de la chaîne latérale du cholestérol (CYP11A1) et la 17α-hydroxylase/lyase (CYP17), ce qui stimule la production d'androgènes (principalement l'androstènedione et la testostérone) dans les cellules de la thèque. Ces androgènes servent de substrats pour la synthèse des œstrogènes dans les cellules de la granulosa.</li>
+            <li>Une poussée de LH en milieu de cycle conduit à l'ouverture du follicule dominant, libérant un ovocyte mature dans la trompe de Fallope. En l'absence d'une activité LH suffisante, même un follicule bien développé peut ne pas ovuler.</li>
+            <li>Sous la stimulation de la LH, les restes du follicule rompu se transforment en corps jaune, qui sécrète de la progestérone. La progestérone est essentielle à la maturation de l'endomètre et au maintien d'une grossesse précoce en cas de fécondation.</li>
+        </ul>
+        </section>
+    
+        <!-- Applications -->
+        <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Applications dans la recherche scientifique</h3>
+        <ul class="list-disc list-outside space-y-2 text-base text-slate-700 pl-5">
+            <li>Induction de l'ovulation chez les femmes souffrant d'anovulation ou du syndrome des ovaires polykystiques (SOPK).</li>
+            <li>Stimulation ovarienne contrôlée dans le cadre de la FIV et d'autres protocoles de procréation médicalement assistée (PMA).</li>
+            <li>Induction de la spermatogenèse chez les hommes souffrant d'hypogonadisme hypogonadotrope.</li>
+            <li>Modèles animaux de superovulation (par exemple, souris, rats, lapins) dans les études de reproduction.</li>
+            <li>Études mécanistes sur les voies de signalisation des récepteurs de la FSH et de la LH.</li>
+            <li>Études comparatives avec des gonadotrophines recombinantes (par exemple, rFSH, rLH).</li>
+            <li>Recherche sur les perturbations endocriniennes, le contrôle de la fertilité et les technologies de reproduction assistée.</li>
+            <li>Expériences de culture cellulaire sur les réponses hormonales des cellules de la granulosa ou de Leydig.</li>
+        </ul>
+        </section>
+    
+        <!-- Packaging & Storage -->
+        <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-brandblue mb-2">Conditionnement et stockage</h3>
+        <ul class="list-disc list-inside space-y-1 text-base text-slate-700">
+            <li>Disponible sous forme de poudre lyophilisée presque blanche à légèrement jaunâtre.</li>
+            <li>Conserver dans un récipient stérile, hermétique et inviolable, à l'abri de la lumière, entre 2°C et 8°C.</li>
+        </ul>
+        </section>
+
+    
+  
+        <section class="mt-10">
+            <h3 class="text-2xl font-semibold text-brandblue mb-4">Références</h3>
+            <ol class="list-decimal list-inside space-y-2 text-sm text-slate-700">
+              <li>Al-Inany HG, et al. 2008 : <a href="https://pubmed.ncbi.nlm.nih.gov/18252052/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Efficacité et sécurité des gonadotrophines ménopausiques humaines par rapport à la FSH recombinante : une méta-analyse</a>, Reprod Biomed Online 16(1) : 81-8.</li>
+              <li>Platteau P, et al. 2008 : <a href="https://pubmed.ncbi.nlm.nih.gov/18681992/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Highly purified HMG versus recombinant FSH for ovarian stimulation in IVF cycles</a>, Reprod Biomed Online 17(2) : 190-8.</li>
+              <li>Gleicher N, Karande V. 2000 : <a href="https://pubmed.ncbi.nlm.nih.gov/11155320/#:~:text=Conclusions%3A%20Generic%20hMG%20products%20do,to%20more%20expensive%20FSH%20products." target="_blank" class="text-blue-600 underline hover:text-blue-800">Generic human menopausal gonadotropin (hMG) in place of more costly follicle-stimulating hormone (FSH) for routine ovulation induction</a>, J Assist Reprod Genet. 17(9) : 489-95.</li>
+              <li>Filicori M, et al. 2002 : <a href="https://pubmed.ncbi.nlm.nih.gov/12151429/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Modulation of folliculogenesis and steroidogenesis in women by graded menotrophin administration</a>, Hum Reprod. 17(8) : 2009-15.</li>
+              <li>Kilani Z, et al. 2003 : <a href="https://pubmed.ncbi.nlm.nih.gov/12773445/" target="_blank" class="text-blue-600 underline hover:text-blue-800">A prospective, randomized, controlled trial comparing highly purified hMG with recombinant FSH in women undergoing ICSI : ovarian response and clinical outcomes</a>, Hum Reprod. 18(6) : 1194-9.</li>
+              <li>Keye WR, et al. 2005 : <a href="https://pubmed.ncbi.nlm.nih.gov/16280073/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Subcutaneously administered Menopur, a new highly purified human menopausal gonadotropin, causes significantly less injection site reactions than Repronex in subjects undergoing in vitro fertilization</a>, Reprod Biol Endocrinol. 3 : 62.</li>
+              <li>van de Weijer BH, et al. 2003 : Compositional analyses of a human menopausal gonadotrophin preparation extracted from urine (menotropin). Identification of some of its major impurities, Reprod Biomed Online 7(5) : 547-57.</li>
+              <li>Pacchiarotti A, et al. 2010 : <a href="https://pubmed.ncbi.nlm.nih.gov/20537626/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Urinary hMG (Meropur) versus recombinant FSH plus recombinant LH (Pergoveris) in IVF : a multicenter, prospective, randomized controlled trial</a>, Fertil Steril. 94(6) : 2467-9.</li>
+              <li>Coomarasamy A, et al. 2008 : <a href="https://pubmed.ncbi.nlm.nih.gov/18056719/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Urinary hMG versus recombinant FSH for controlled ovarian hyperstimulation following an agonist long down-regulation protocol in IVF or ICSI treatment : a systematic review and meta-analysis</a>, Hum Reprod. 23(2) : 310-5.</li>
+              <li>Lloyd A, et al. 2003 : <a href="https://pubmed.ncbi.nlm.nih.gov/14607557/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Economic evaluation of highly purified menotropin compared with recombinant follicle-stimulating hormone in assisted reproduction</a>, Fertil Steril. 80(5) : 1108-13.</li>
+              <li>Bühler KF, et al. 2021 : <a href="https://pubmed.ncbi.nlm.nih.gov/34134695/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Comparative effectiveness of recombinant human follicle-stimulating hormone alfa (r-hFSH-alfa) versus highly purified urinary human menopausal gonadotropin (hMG HP) in assisted reproductive technology (ART) treatments : a non-interventional study in Germany</a>, Reprod Biol Endocrinol. 19(1) : 90.</li>
+              <li>Esteves SC, et al. 2009 : <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2768716/" target="_blank" class="text-blue-600 underline hover:text-blue-800">A comparison of menotropin, highly-purified menotropin and follitropin alfa in cycles of intracytoplasmic sperm injection</a>, Reprod Biol Endocrinol. 7 : 111.</li>
+              <li>Wu CH. 1989 : <a href="https://pubmed.ncbi.nlm.nih.gov/2507780/" target="_blank" class="text-blue-600 underline hover:text-blue-800">A short course of menotropin after clomiphene failure in in infertile women with luteal phase defects</a>, J Reprod Med. 34(10) : 807-10.</li>
+              <li>Capolupo A, et al. 2024 : <a href="https://pubmed.ncbi.nlm.nih.gov/39273352/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Analytical investigation of the profile of human chorionic gonadotropin in highly purified human menopausal gonadotrophin preparations</a>, Int J Mol Sci. 25(17) : 9405.</li>
+              <li>Filicori M, et al. 2002 : <a href="https://pubmed.ncbi.nlm.nih.gov/12498424/" target="_blank" class="text-blue-600 underline hover:text-blue-800">The use of LH activity to drive folliculogenesis : exploring uncharted territories in ovulation induction</a>, Hum Reprod Update. 8(6) : 543-57.</li>
+              <li>Balasch J, et al. 2003 : <a href="https://pubmed.ncbi.nlm.nih.gov/12930572/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Ovarian responses to recombinant FSH or HMG in normogonadotrophic women following pituitary desensitization by a depot GnRH agonist for assisted reproduction</a>, Reprod Biomed Online 7(1) : 35-42.</li>
+              <li>Teissier MP, et al. 1999 : <a href="https://pubmed.ncbi.nlm.nih.gov/10469686/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Recombinant human follicle stimulating hormone versus human menopausal gonadotrophin induction : effects in mature follicle endocrinology</a>, Hum Reprod. 14(9) : 2236-41.</li>
+              <li>Kirshenbaum M, et al. 2021 : <a href="https://pubmed.ncbi.nlm.nih.gov/34886872/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Recombinant follicular stimulating hormone plus recombinant luteinizing hormone versus human menopausal gonadotropins- does the source of LH bioactivity affect ovarian stimulation outcome</a>, Reprod Biol Endocrinol. 19(1) : 182.</li>
+              <li>Westergaard LG, et al. 1996 : <a href="https://pubmed.ncbi.nlm.nih.gov/8671425/" target="_blank" class="text-blue-600 underline hover:text-blue-800">The effect of human menopausal gonadotrophin and highly purified, urine-derived follicle stimulating hormone on the outcome of in-vitro fertilization in down-regulated normogonadotrophic women</a>, Hum Reprod. 11(6) : 1209-13.</li>
+            </ol>
+          </section>
+          
+      
+  
+  </main>
+  
+  
+
+  <!-- start cta -->
+  <section
+  class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 text-center md:text-left">
+  <div class="md:flex md:items-center md:justify-center">
+    <h2 class="text-xl font-bold text-white">Jiagen Biotechnologies fournit de la gonadotrophine ménopausique humaine (HMG) de qualité et de spécifications variées. <br>Contactez-nous à l'adresse <a href="mailto:sales@jiagen.com">sales@jiagen.com</a> pour passer une commande.</h2>
+
+   <a href="../../order.html"
+      class="px-8 py-4 bg-white text-blue-600 rounded inline-block font-semibold md:ml-8 mt-4 md:mt-0 
+      hover:bg-teal-500 hover:text-white transition-colors duration-300">Commande</a></div>
+</section>
+<!-- end cta -->
+
+<!-- start footer -->
+<footer class="relative bg-[#ececec] text-gray-500 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 lg:py-24">
+  <div class="flex flex-col md:flex-row">
+    <div class="w-full lg:w-auto lg:mx-4 lg:pr-8">
+     <img src="../../../assets/logo.svg" alt="Jiagen Biotechnologies" class="h-40 mb-2">
+
+      <p class="text-gray-400">Favoriser la découverte grâce à des matériaux de qualité fiable.</p>
+
+    </div>
+
+    <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
+      <h5 class="uppercase tracking-wider font-semibold text-gray-500">Produits</h5>
+      <ul class="mt-4">
+        <li class="mt-2"><a href="../proteins/proteins.html" title="" class="opacity-75 hover:opacity-100">Peptides/Protéines</a></li>
+        <li class="mt-2"><a href="../enzymes/enzymes.html" title="" class="opacity-75 hover:opacity-100">Enzymes</a></li>
+        <li class="mt-2"><a href="../coenzymes/coenzymes.html" title="" class="opacity-75 hover:opacity-100">Coenzymes</a></li>
+        <li class="mt-2"><a href="../carbohydrates/carbohydrates.html" title="" class="opacity-75 hover:opacity-100">Glucides</a></li>
+        <li class="mt-2"><a href="../chemicals/chemicals.html" title="" class="opacity-75 hover:opacity-100">Produits chimiques</a></li>
+
+      </ul>
+    </div>
+
+    <div class="w-full lg:w-2/6 mt-8 lg:mt-0 lg:mx-4 lg:pr-8">
+      <h5 class="uppercase tracking-wider font-semibold text-gray-500">Coordonnées de l'entreprise</h5>
+      <ul class="mt-4">
+        <li>
+          
+           <a title="" class="block flex items-center opacity-75 hover:opacity-100"> <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M12,2C7.589,2,4,5.589,4,9.995C3.971,16.44,11.696,21.784,12,22c0,0,8.029-5.56,8-12C20,5.589,16.411,2,12,2z M12,14 c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4S14.21,14,12,14z" />
+              </svg>
+            </span>
+            
+           <span class="ml-3">958 Montée de Liesse, Saint-Laurent, QC, CAN </span> </a>  </li>
+
+        <li class="mt-4">
+          
+           <a title="" class="block flex items-center opacity-75 hover:opacity-100"> <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M14.594,13.994l-1.66,1.66c-0.577-0.109-1.734-0.471-2.926-1.66c-1.193-1.193-1.553-2.354-1.661-2.926l1.661-1.66 l0.701-0.701L5.295,3.293L4.594,3.994l-1,1C3.42,5.168,3.316,5.398,3.303,5.643c-0.015,0.25-0.302,6.172,4.291,10.766 C11.6,20.414,16.618,20.707,18,20.707c0.202,0,0.326-0.006,0.358-0.008c0.245-0.014,0.476-0.117,0.649-0.291l1-1l0.697-0.697 l-5.414-5.414L14.594,13.994z" />
+              </svg>
+            </span>
+            
+             <span class="ml-3">+1 514-779-9623 </span> </a>           </li>
+        <li class="mt-4">
+          
+           <a title="" class="block flex items-center opacity-75 hover:opacity-100"> <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                  d="M20,4H4C2.896,4,2,4.896,2,6v12c0,1.104,0.896,2,2,2h16c1.104,0,2-0.896,2-2V6C22,4.896,21.104,4,20,4z M20,8.7l-8,5.334 L4,8.7V6.297l8,5.333l8-5.333V8.7z" />
+              </svg>
+            </span>
+            
+            <span class="ml-3">
+              info@jiagen.com<br>
+              sales@jiagen.com
+            </span>            </li>
+      </ul>
+    </div>
+
+    <div class="w-full lg:w-1/6 mt-8 lg:mt-0 lg:mx-4">
+      
+
+      <p class="text-sm text-gray-400 mt-12">2025 Jiagen Biotechnologies. <br class="hidden lg:block">Tous droits réservés.      </p>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->
+
+</body>
+</html>
