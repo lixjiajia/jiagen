@@ -147,7 +147,7 @@
   </header>
   <!-- Main Content -->
   <main class="p-8 flex-grow max-w-7xl mx-auto">
-    <h2 class="text-2xl font-bold text-slate-800 mb-12 mt-4">Protéines</h2>
+    <h2 class="text-2xl font-bold text-slate-800 mb-12 mt-4">Protéines et Peptides</h2>
     <!-- Pagination -->
     <div x-data="pagination()" class="w-full overflow-x-auto">
       <div class="mt-4 mb-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -267,25 +267,25 @@
         page: 1,
         perPage: 10,
         data: [
-          { name: "Bilirubin (unconjugated)", cas: "635-65-4", synonyms: "Bilirubin Ixα, bilirubin free, bilirubina, bilirubine, Unconjugated Bilirubin, BU, cholerythrin, haematoidin, hematoidin, indirect bilirubin, indirect reacting bilirubin, Ixα-bilirubin, NSC26685, UCB, UCBR", form: "Powder", url:"bilirubin.html"}, 
-          { name: "Calcitonin Salmon", cas: "47931-85-1", synonyms: "Salcatonin, salmon calcitonin, sCT", form: "Powder", url: "calcitonin.html" },
-          { name: "Chymotrypsinogen", cas: "9035-75-0", synonyms: "Zymogen of chymotrypsin, pancreatic chymotrypsinogen A", form: "Powder", url: "chymotrypsinogen.html"},
-          { name: "Collagen", cas: "9007-34-5", synonyms: "Hydrolyzed collagen, collagen peptides, gelatin, native collagen, Atelocollagen, type I/II/III collagen, bovine/porcine/fish collagen", form: "Powder", url:"collagen.html"},
+          { name: "Bilirubine", cas: "635-65-4", synonyms: "Bilirubin Ixα, bilirubin free, bilirubina, bilirubine, Unconjugated Bilirubin, BU, cholerythrin, haematoidin, hematoidin, indirect bilirubin, indirect reacting bilirubin, Ixα-bilirubin, NSC26685, UCB, UCBR", form: "Powder", url:"bilirubin.html"}, 
+          { name: "Calcitonine de saumon", cas: "47931-85-1", synonyms: "Salcatonin, salmon calcitonin, sCT", form: "Powder", url: "calcitonin.html" },
+          { name: "Chymotrypsinogène", cas: "9035-75-0", synonyms: "Zymogen of chymotrypsin, pancreatic chymotrypsinogen A", form: "Powder", url: "chymotrypsinogen.html"},
+          { name: "Collagène", cas: "9007-34-5", synonyms: "Hydrolyzed collagen, collagen peptides, gelatin, native collagen, Atelocollagen, type I/II/III collagen, bovine/porcine/fish collagen", form: "Powder", url:"collagen.html"},
           { name: "Cytochrome C", cas:"9007-43-6", synonyms:"CYC, Cytochrome C oxidase substrate, Cyt C, ferrocytochrome C, ferricytochrome C", form:"Powder", url:"cytochromec.html"},
-          { name: "FSH-Follicle Stimulating Hormone", cas: "9002-68-0", synonyms: "Follicle-stimulating gonadotropin, follitropin, FSH, hFSH, huFSH, human FSH, recombinant FSH (rFSH, follitropin alpha or beta), urofollitropin (urinary FSH)", form: "Powder", url:"fsh.html"},     
-          { name: "Gastric Mucin", cas:"84082-64-4 9016-61-3", synonyms: "Gastric mucus, gastric mucus glycoprotein, gastric surface mucin, glycoprotein mucin, hog gastric mucin, MUC5AC (predominant mucin subtype in gastric mucus), mucin from porcine gastric mucosa, mucin from porcine stomach, PGM, stomach mucin", form: "Powder", url:"gastric-mucin.html"},
+          { name: "Hormone folliculo-stimulante (FSH)", cas: "9002-68-0", synonyms: "Follicle-stimulating gonadotropin, follitropin, FSH, hFSH, huFSH, human FSH, recombinant FSH (rFSH, follitropin alpha or beta), urofollitropin (urinary FSH)", form: "Powder", url:"fsh.html"},     
+          { name: "Mucine gastrique", cas:"84082-64-4 9016-61-3", synonyms: "Gastric mucus, gastric mucus glycoprotein, gastric surface mucin, glycoprotein mucin, hog gastric mucin, MUC5AC (predominant mucin subtype in gastric mucus), mucin from porcine gastric mucosa, mucin from porcine stomach, PGM, stomach mucin", form: "Powder", url:"gastric-mucin.html"},
           { name: "Glucagon", cas: "16941-32-5", synonyms: "GCG, glucagon hydrochloride, recombinant human glucagon", form:"Powder", url: "glucagon.html"},
-          { name: "Hemin", cas:"16009-13-5", synonyms: "Chlorohemin, ferriheme, ferriprotoporphyrin IX chloride, hematin chloride, hemin B, heme chloride, panhematin, protoferriheme, protohemin, iron (III)-protoporphyrin IX chloride", form: "Powder", url:"hemin.html"},
-          { name: "Human Chorionic Gonadotropin", cas: "9002-61-3", synonyms: "CGH, choriogonin, chorionic gonadotropin, hCG, human chorionic gonadotrophin, gonadotropinum chorionicum", form: "Powder", url:"hcg.html" },
-          { name: "Human Menopausal Gonadotropin", cas:"61489-71-2", synonyms: "hMG, menopausal gonadotrophin, menotrophin, menotropins, uHMG (urinary-derived HMG), urinary-derived gonadotrophins", form:"Powder", url:"hmg.html"},
-          { name: "Insulin (porcine)", cas:"12584-58-6", synonyms: "Insulin from porcine pancreas; insulin from hog pancreas; insulin (pork), insulin (swine)", form: "Powder", url:"insulin.html"},
-          { name: "Lactoferrin", cas: "936541-36-5", synonyms: "Human lactoferrin (hLF) / bovine lactoferrin (bLF), lactoferrin B, lactoferrine, lactotransferrin (LTF), LF, milk transferrin, serotransferrin-like protein", form: "Powder", url:"lactoferrin.html"},
-          { name: "Nisin", cas: "1414-45-5", synonyms: "Lacticin 481, lantibiotic nisin, nisin A, nisin peptide, nisin Z", form: "Powder", url: "nisin.html"},
-          { name: "Oxytocin Acetate", cas: "6233-83-6", synonyms:"α-hypophamine acetate, oxytocin acetate salt, oxytocin acetate salt hydrate, oxytocin acetate syntocinon, oxytoxin acetate, oxytocic hormone acetate", form:"Powder", url:"oxytocin.html"},
-          { name: "Pregnant Mare Serum Gonadotropin", cas:"9002-70-4", synonyms:"Chorionic gonadotropin from pregnant mare serum, pregnant mare serum Gonadotrophin, eCG, equine chorionic gonadotropin, equine gonadotropin, PMSG, serum gonadotropin, Gonadotropinum sericum equinum", form:"Powder", url:"pmsg.html"},
-          { name: "Protamine Sulfate", cas: "53597-25-4 / 9009-65-8", synonyms: "Protamine sulfate salt, heparin antagonist, arginine-rich basic protein, salmine sulfate", form: "Powder", url: "protamine-sulfate.html"},
+          { name: "Hémine", cas:"16009-13-5", synonyms: "Chlorohemin, ferriheme, ferriprotoporphyrin IX chloride, hematin chloride, hemin B, heme chloride, panhematin, protoferriheme, protohemin, iron (III)-protoporphyrin IX chloride", form: "Powder", url:"hemin.html"},
+          { name: "Gonadotrophine chorionique humaine (HCG)", cas: "9002-61-3", synonyms: "CGH, choriogonin, chorionic gonadotropin, hCG, human chorionic gonadotrophin, gonadotropinum chorionicum", form: "Powder", url:"hcg.html" },
+          { name: "Gonadotrophine ménopausique humaine (HMG)", cas:"61489-71-2", synonyms: "hMG, menopausal gonadotrophin, menotrophin, menotropins, uHMG (urinary-derived HMG), urinary-derived gonadotrophins", form:"Powder", url:"hmg.html"},
+          { name: "Insuline (Porcine)", cas:"12584-58-6", synonyms: "Insulin from porcine pancreas; insulin from hog pancreas; insulin (pork), insulin (swine)", form: "Powder", url:"insulin.html"},
+          { name: "Lactoferrine", cas: "936541-36-5", synonyms: "Human lactoferrin (hLF) / bovine lactoferrin (bLF), lactoferrin B, lactoferrine, lactotransferrin (LTF), LF, milk transferrin, serotransferrin-like protein", form: "Powder", url:"lactoferrin.html"},
+          { name: "Nisine", cas: "1414-45-5", synonyms: "Lacticin 481, lantibiotic nisin, nisin A, nisin peptide, nisin Z", form: "Powder", url: "nisin.html"},
+          { name: "Acétate d'ocytocine", cas: "6233-83-6", synonyms:"α-hypophamine acetate, oxytocin acetate salt, oxytocin acetate salt hydrate, oxytocin acetate syntocinon, oxytoxin acetate, oxytocic hormone acetate", form:"Powder", url:"oxytocin.html"},
+          { name: "Gonadotrophine chorionique équine (PMSG)", cas:"9002-70-4", synonyms:"Chorionic gonadotropin from pregnant mare serum, pregnant mare serum Gonadotrophin, eCG, equine chorionic gonadotropin, equine gonadotropin, PMSG, serum gonadotropin, Gonadotropinum sericum equinum", form:"Powder", url:"pmsg.html"},
+          { name: "Sulfate de protamine", cas: "53597-25-4 / 9009-65-8", synonyms: "Protamine sulfate salt, heparin antagonist, arginine-rich basic protein, salmine sulfate", form: "Powder", url: "protamine-sulfate.html"},
           { name: "Rennin (Chymosin)", cas:"9001-98-3", synonyms: "Chymosin, rennase, milk-clotting enzyme", form:"Powder", url:"rennin.html"},
-          { name: "Somatostatin", cas: "38916-34-6", synonyms: "growth hormone–inhibiting hormone (GHIH), growth hormone release-inhibiting hormone (GHRIH), hypothalamic factor, somatostatin-14 , somatotropin release-inhibiting factor (SRIF), somatotropin release-inhibiting hormone (SRIH), SST, SRIF-14/SRIF-28", form: "Powder", url:"somatostatin.html"},
+          { name: "Somatostatine", cas: "38916-34-6", synonyms: "growth hormone–inhibiting hormone (GHIH), growth hormone release-inhibiting hormone (GHRIH), hypothalamic factor, somatostatin-14 , somatotropin release-inhibiting factor (SRIF), somatotropin release-inhibiting hormone (SRIH), SST, SRIF-14/SRIF-28", form: "Powder", url:"somatostatin.html"},
      
          
           

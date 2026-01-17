@@ -104,9 +104,9 @@
     
             <li class="p-4 lg:px-8"><a class="text-slate-800 hover:text-slate-900" href="order.html">Commander</a></li>
           </ul>
-          <div class="flex items-center space-x-1">
+          <div class="flex items-center space-x-1 ml-8">
             <!-- Search -->
-            <div class="w-full max-w-xs min-w-[200px]">
+            <div class="w-full max-w-2xl mx-auto min-w-[200px]" x-data="{ query: '', results: [] }">
                 <div class="relative flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="absolute w-5 h-5 top-2.5 left-2.5 text-slate-600">
                     <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
@@ -114,8 +114,18 @@
             
                 <input
                 class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+                @input="results = products.filter(p => p.name.toLowerCase().includes(query.toLowerCase())).slice(0, 8)"
+                x-model="query"
                 placeholder="Search Product" 
                 />
+                <!-- Dropdown Results -->
+                <div x-show="results.length > 0 && query.length > 0" @click.away="query = ''; results = []" class="absolute top-full left-0 right-0 bg-white border border-slate-200 rounded-md shadow-lg z-50 mt-1 max-h-80 overflow-y-auto">
+                    <ul class="py-1">
+                        <template x-for="result in results" :key="result.url">
+                            <li><a :href="result.url" class="text-slate-800 hover:bg-slate-50 flex items-center px-4 py-2 text-sm" x-text="result.name" @click="query = ''"></a></li>
+                        </template>
+                    </ul>
+                </div>
         
                 </div>
             </div>
@@ -152,7 +162,7 @@
   
       <!-- start hero -->
       <div class="bg-gray-100">
-        <section class="cover bg-blue-teal-gradient relative bg-blue-600 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 overflow-hidden py-48 flex
+        <section class="cover bg-blue-teal-gradient relative bg-blue-600 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 overflow-hidden py-45 flex
         items-center min-h-screen">
           <div class="absolute inset-0 z-0">
             <img src="../assets/pexels-mikhail-nilov-8851547.jpg" alt="" class="w-full h-full object-cover opacity-20">
@@ -160,10 +170,13 @@
   
           <div class="lg:w-3/4 xl:w-2/4 relative z-10 h-100 lg:mt-16">
             <div class="animate-fade-in-up">
-              <h1 class="text-white text-4xl md:text-5xl xl:text-6xl font-bold leading-tight">Votre partenaire de confiance pour la recherche en sciences de la vie   </h1>
-              <p class="text-blue-100 text-xl md:text-2xl leading-snug mt-4">Chez Jiagen Biotechnologies, nous savons que la précision et la qualité sont importantes. C'est pourquoi nous fournissons des protéines, des enzymes, des coenzymes, des hydrates de carbone, des lipides, des antigènes et des anticorps de haute pureté, auxquels font confiance les chercheurs en sciences de la vie, en biotechnologie et dans l'industrie pharmaceutique.              </p>
-              
-             <a href="order.html" class="px-8 py-4 bg-teal-500 text-white rounded-3xl border border-transparent hover:bg-white hover:text-teal-500 hover:border-teal-500 rounded inline-block mt-8 font-semibold transition duration-200">Commander</a>       </div>
+                <h1 class="text-white text-3xl md:text-5xl xl:text-5xl font-bold leading-tight">
+Votre partenaire de confiance en sciences de la vie et en recherche pharmaceutique </h1>
+              <p class="text-blue-100 text-xl md:text-2xl leading-snug mt-4">
+                Chez Jiagen Biotechnologies, nous accordons la plus grande importance à la qualité de nos produits. C'est pourquoi nos peptides, protéines, enzymes, coenzymes, glucides, lipides et anticorps sont reconnus et utilisés par les scientifiques dans les domaines des sciences de la vie, des biotechnologies et de la recherche pharmaceutique.
+              </p>
+             <a href="order.html" class="cursor-pointer px-8 py-4 bg-teal-500 text-white rounded-full border border-transparent hover:bg-white hover:text-teal-500 hover:border-white rounded inline-block mt-8 font-semibold transition duration-200">Commander</a> 
+            </div>
           </div>
         </section>
       </div>
@@ -173,36 +186,26 @@
       <section class="relative px-4 py-16 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 lg:py-32">
         <div class="flex flex-col lg:flex-row lg:-mx-8">
           <div class="w-full lg:w-1/2 lg:px-8">
-            <h2 class="text-3xl leading-tight font-bold mt-4">Notre engagement en faveur de l'excellence scientifique</h2>
-            <p class="text-lg mt-4 font-semibold">Jiagen Biotechnologies fournit des matériaux de qualité auxquels les scientifiques du monde entier font confiance.</p>
-            <p class="mt-2 leading-relaxed">Nous sommes fiers de soutenir les chercheurs en sciences de la vie et les sociétés pharmaceutiques avec un portefeuille diversifié de peptides, de protéines, d'enzymes, d'hydrates de carbone, de lipides et d'anticorps de haute pureté.        </p>
+            <h2 class="text-3xl leading-tight font-bold mt-4">Notre engagement envers l'excellence scientifique</h2>
+            <p class="text-lg mt-4 font-semibold">Jiagen Biotechnologies fournit des produits de haute qualité auxquels font confiance les scientifiques du monde entier.</p>
+            <p class="mt-2 leading-relaxed">
+              Nous sommes fiers d'appuyer les chercheurs en sciences de la vie et les entreprises pharmaceutiques grâce à un portefeuille diversifié de peptides, de protéines, d'enzymes, de glucides, de lipides et d'anticorps de haute qualité.
+            </p>
           </div>
   
-          <div class="w-full lg:w-1/2 lg:px-8 mt-12 lg:mt-0">
-            <div class="md:flex">
-              <div class="w-full max-w-[80px] text-brandblue">
-                <svg class="w-full h-auto fill-current" viewBox="...">
-                  <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 512.026"><path fill-rule="nonzero" d="M83.327 359.792c-3.802-3.803-3.802-9.972 0-13.774 3.802-3.802 9.971-3.802 13.773 0l100.825 100.821c7.214-9.467 13.228-18.923 18.216-28.376l-79.836-79.84c-3.803-3.802-3.803-9.971 0-13.773 3.802-3.803 9.971-3.803 13.773 0l74.709 74.713c4.752-12.143 8.017-24.294 10.174-36.474a9.23 9.23 0 01-.673-.614L197.509 325.7c-3.803-3.802-3.803-9.971 0-13.773 3.802-3.803 9.971-3.803 13.773 0l26.638 26.634c1.447-20.915.394-41.961-1.233-63.237-33.661-2.58-66.711-3.732-99.389 4.031-33.613 7.988-67.163 25.493-101.159 60.789a5.831 5.831 0 01-8.241.158l-.085-.074-26.104-26.097a5.843 5.843 0 010-8.259l.224-.214c40.821-42.094 80.879-62.507 120.447-71.536 37.452-8.543 74.187-6.81 110.7-3.674-5.035-71.359-2.363-145.991 72.644-228.121l.538-.618a5.843 5.843 0 018.259 0l26.101 26.1c2.238 2.257 2.271 5.908.048 8.194a280.132 280.132 0 00-12.25 13.38l87.526 87.525c3.802 3.802 3.802 9.971 0 13.774-3.802 3.802-9.972 3.802-13.774 0l-85.928-85.929c-7.571 10.399-13.807 20.771-18.916 31.118l71.956 71.956c3.802 3.802 3.802 9.971 0 13.773-3.802 3.803-9.971 3.803-13.773 0l-66.454-66.453c-4.891 13.321-8.123 26.62-10.144 39.893l.096.092 29.115 29.115c3.803 3.802 3.803 9.971 0 13.773-3.802 3.803-9.971 3.803-13.773 0l-17.933-17.932c-.935 18.271-.118 36.524 1.28 54.796 31.574 2.234 63.944 2.433 96.253-5.323 33.934-8.149 68.117-25.154 101.804-57.95l.199-.21a5.845 5.845 0 018.259 0l26.263 26.303a5.822 5.822 0 01-.364 8.219c-42.006 38.479-82.748 57.936-122.159 67.09-36.79 8.539-72.21 8.068-106.393 5.739 6.489 75.327 7.188 151.427-75.18 231.323l-.229.243a5.845 5.845 0 01-8.259 0l-26.171-26.189a5.831 5.831 0 01.158-8.241 271.275 271.275 0 0013.553-13.995L83.327 359.792z"/></svg>
-                </svg>
-              </div>
-                          
-              <div class="md:ml-8 mt-4 md:mt-0">
-                <h4 class="text-xl font-bold leading-tight">Des matériaux de recherche de confiance, tous réunis au même endroit</h4>
-                <p class="mt-2 leading-relaxed">Nous fournissons aux scientifiques et aux innovateurs des peptides, des protéines, des enzymes, des lipides, des glucides et des anticorps de haute pureté, livrés avec précision et cohérence. 
-                  Notre portefeuille complet soutient à la fois la recherche en sciences de la vie et les diagnostics in vitro.</p>
-              </div>
-            </div>
-  
-            <div class="md:flex mt-8">
-              <div class="w-full max-w-[80px] text-brandblue">
+          <div class="w-full lg:w-1/2 lg:px-8 mt-10 lg:mt-0">
+            <div class="flex items-start mt-8">
+              <div class="flex-shrink-0 w-[80px] text-brandblue">
                 <svg class="w-full h-auto fill-current" viewBox="...">
                   <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 512.026"><path fill-rule="nonzero" d="M83.327 359.792c-3.802-3.803-3.802-9.972 0-13.774 3.802-3.802 9.971-3.802 13.773 0l100.825 100.821c7.214-9.467 13.228-18.923 18.216-28.376l-79.836-79.84c-3.803-3.802-3.803-9.971 0-13.773 3.802-3.803 9.971-3.803 13.773 0l74.709 74.713c4.752-12.143 8.017-24.294 10.174-36.474a9.23 9.23 0 01-.673-.614L197.509 325.7c-3.803-3.802-3.803-9.971 0-13.773 3.802-3.803 9.971-3.803 13.773 0l26.638 26.634c1.447-20.915.394-41.961-1.233-63.237-33.661-2.58-66.711-3.732-99.389 4.031-33.613 7.988-67.163 25.493-101.159 60.789a5.831 5.831 0 01-8.241.158l-.085-.074-26.104-26.097a5.843 5.843 0 010-8.259l.224-.214c40.821-42.094 80.879-62.507 120.447-71.536 37.452-8.543 74.187-6.81 110.7-3.674-5.035-71.359-2.363-145.991 72.644-228.121l.538-.618a5.843 5.843 0 018.259 0l26.101 26.1c2.238 2.257 2.271 5.908.048 8.194a280.132 280.132 0 00-12.25 13.38l87.526 87.525c3.802 3.802 3.802 9.971 0 13.774-3.802 3.802-9.972 3.802-13.774 0l-85.928-85.929c-7.571 10.399-13.807 20.771-18.916 31.118l71.956 71.956c3.802 3.802 3.802 9.971 0 13.773-3.802 3.803-9.971 3.803-13.773 0l-66.454-66.453c-4.891 13.321-8.123 26.62-10.144 39.893l.096.092 29.115 29.115c3.803 3.802 3.803 9.971 0 13.773-3.802 3.803-9.971 3.803-13.773 0l-17.933-17.932c-.935 18.271-.118 36.524 1.28 54.796 31.574 2.234 63.944 2.433 96.253-5.323 33.934-8.149 68.117-25.154 101.804-57.95l.199-.21a5.845 5.845 0 018.259 0l26.263 26.303a5.822 5.822 0 01-.364 8.219c-42.006 38.479-82.748 57.936-122.159 67.09-36.79 8.539-72.21 8.068-106.393 5.739 6.489 75.327 7.188 151.427-75.18 231.323l-.229.243a5.845 5.845 0 01-8.259 0l-26.171-26.189a5.831 5.831 0 01.158-8.241 271.275 271.275 0 0013.553-13.995L83.327 359.792z"/></svg>
                 </svg>
               </div>
               
-              <div class="md:ml-8 mt-4 md:mt-0">
-                <h4 class="text-xl font-bold leading-tight">Une qualité sur laquelle vous pouvez compter</h4>
-                <p class="mt-2 leading-relaxed">Les chercheurs du monde entier font confiance à nos réactifs et biomatériaux pour leur pureté, leurs performances et leur fiabilité. Que vous fassiez progresser la science fondamentale ou que vous développiez des thérapies de nouvelle génération, nous nous engageons à soutenir vos percées.         </p>
+              <div class="ml-8 lg:ml-8 md:ml-8 md:mt-0">
+                <h4 class="text-xl font-bold leading-tight">Qualité, prix et service sur lesquels vous pouvez compter</h4>
+                <p class="mt-2 leading-relaxed">
+                  Nos produits sont reconnus par les chercheurs du monde entier pour leur qualité, leurs performances et leur fiabilité exceptionnelles. Que vous meniez des recherches fondamentales ou que vous développiez des thérapies de nouvelle génération, nous nous engageons à soutenir vos progrès grâce à des prix compétitifs et une livraison rapide.
+                </p>
               </div>
             </div>
           </div>
@@ -214,7 +217,8 @@
             <div class="bg-white rounded-lg border border-gray-300 p-6 text-center h-full flex flex-col">
               <h4 class="text-2xl font-bold mt-4">Protéines et peptides</h4>
               <p class="mt-2 text-base text-gray-700">
-                Protéines et peptides de haute qualité pour la recherche, le diagnostic et le développement thérapeutique, soutenant la biologie structurale, les études moléculaires et la découverte de médicaments.             </p>
+                Les produits incluent : <a href="products/proteins/bilirubin.html" class="text-blue-600 hover:underline">Bilirubine</a>, <a href="products/proteins/cytochromec.html" class="text-blue-600 hover:underline">Cytochrome C</a>, <a href="products/proteins/gastric-mucin.html" class="text-blue-600 hover:underline">Mucine gastrique</a>, <a href="products/proteins/hcg.html" class="text-blue-600 hover:underline">HCG</a>, <a href="products/proteins/fsh.html" class="text-blue-600 hover:underline">FSH</a>, <a href="products/proteins/insulin.html" class="text-blue-600 hover:underline">Insuline</a>, <a href="products/proteins/pmsg.html" class="text-blue-600 hover:underline">PMSG</a> et plus encore.
+              </p>
               <div class="mt-auto">
                 
                  <a href="products/proteins/proteins.html" class="inline-flex items-center mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition">Voir les produits <svg class="rtl:rotate-180 w-3 h-3 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
@@ -227,7 +231,8 @@
             <div class="bg-white rounded-lg border border-gray-300 p-6 text-center h-full flex flex-col">
               <h4 class="text-2xl font-bold mt-4">Enzymes</h4>
               <p class="mt-2 text-base text-gray-700">
-                Enzymes fiables et pures conçues pour les essais biochimiques, la fabrication de diagnostics et les applications de recherche industrielle.             </p>
+                Parmi les produits, on trouve : <a href="products/enzymes/aprotinin.html" class="text-blue-600 hover:underline">Aprotinine</a>, <a href="products/enzymes/asparaginase.html" class="text-blue-600 hover:underline">Asparaginase</a>, <a href="products/enzymes/beta-glucanase.html" class="text-blue-600 hover:underline">Bêta-glucanase</a>, <a href="products/enzymes/bromelain.html" class="text-blue-600 hover:underline">Broméline</a>, <a href="products/enzymes/chymotrypsin.html" class="text-blue-600 hover:underline">Chymotrypsine</a>, <a href="products/enzymes/kallikrein.html" class="text-blue-600 hover:underline">Kallikrein</a>, <a href="products/enzymes/lysozyme.html" class="text-blue-600 hover:underline">Lysozyme</a>, <a href="products/enzymes/pancreatin.html" class="text-blue-600 hover:underline">Pancréatine</a>, <a href="products/enzymes/papain.html" class="text-blue-600 hover:underline">Papaïne</a>, <a href="products/enzymes/pepsin.html" class="text-blue-600 hover:underline">Pepsin</a>, <a href="products/enzymes/streptokinase.html" class="text-blue-600 hover:underline">Streptokinase</a>, <a href="products/enzymes/trypsin.html" class="text-blue-600 hover:underline">Trypsine</a>, <a href="products/enzymes/urokinase.html" class="text-blue-600 hover:underline">Urokinase</a> et plus encore.
+              </p>
               <div class="mt-auto">
                 
                  <a href="products/enzymes/enzymes.html" class="inline-flex items-center mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition">Voir les produits <svg class="rtl:rotate-180 w-3 h-3 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
@@ -240,7 +245,8 @@
             <div class="bg-white rounded-lg border border-gray-300 p-6 text-center h-full flex flex-col">
               <h4 class="text-2xl font-bold mt-4">Coenzymes</h4>
               <p class="mt-2 text-base text-gray-700">
-                Cofacteurs essentiels d'une grande stabilité et d'une grande pureté, permettant des réactions enzymatiques clés dans les études du métabolisme et le développement de médicaments.             <div class="mt-auto">
+                Parmi les produits, on trouve: <a href="products/coenzymes/coenzymea.html" class="text-blue-600 hover:underline">Coenzyme A</a>, la <a href="products/coenzymes/coenzyme-a-trilithium.html" class="text-blue-600 hover:underline">Sel de trilithium de coenzyme A</a>, la <a href="products/coenzymes/coenzyme-q10.html" class="text-blue-600 hover:underline">Coenzyme Q10</a> et bien d'autres.
+                <div class="mt-auto">
                 
                  <a href="products/coenzymes/coenzymes.html" class="inline-flex items-center mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition">Voir les produits <svg class="rtl:rotate-180 w-3 h-3 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -250,9 +256,10 @@
     
           <div class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/3 2xl:w-1/3 p-2">
             <div class="bg-white rounded-lg border border-gray-300 p-6 text-center h-full flex flex-col">
-              <h4 class="text-2xl font-bold mt-4">Hydrates de carbone</h4>
+              <h4 class="text-2xl font-bold mt-4">Glucides</h4>
               <p class="mt-2 text-base text-gray-700">
-                Glucides produits avec précision pour la glycobiologie, le diagnostic et la recherche pharmaceutique, soutenant les études de voies et le développement de biomarqueurs.             <div class="mt-auto">
+                Les produits incluent : <a href="products/carbohydrates/beta-glucans.html" class="text-blue-600 hover:underline">Bêta-glucanes</a>, <a href="products/carbohydrates/chitosan.html" class="text-blue-600 hover:underline">Chitosane</a>, <a href="products/carbohydrates/chondroitin-sulfate.html" class="text-blue-600 hover:underline">Sulfate de chondroïtine</a>, <a href="products/carbohydrates/dextran.html" class="text-blue-600 hover:underline">Dextran</a>, <a href="products/carbohydrates/dextran-sulfate-sodium.html" class="text-blue-600 hover:underline">Sulfate de dextran sodique</a>, <a <a href="products/carbohydrates/glucosamine-hydrochloride.html" class="text-blue-600 hover:underline">Chlorhydrate de glucosamine</a>, <a href="products/carbohydrates/heparin-sodium.html" class="text-blue-600 hover:underline">Héparine sodique</a>, <a href="products/carbohydrates/heparinoid.html" class="text-blue-600 hover:underline">Héparinoïde</a>, <a href="products/carbohydrates/hyaluronic-acid-sodium-salt.html" class="text-blue-600 hover:underline">Sel de sodium d'acide hyaluronique</a> et plus encore.
+                <div class="mt-auto">
                 
                  <a href="products/carbohydrates/carbohydrates.html" class="inline-flex items-center mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition">Voir les produits <svg class="rtl:rotate-180 w-3 h-3 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -264,7 +271,8 @@
             <div class="bg-white rounded-lg border border-gray-300 p-6 text-center h-full flex flex-col">
               <h4 class="text-2xl font-bold mt-4">Produits chimiques</h4>
               <p class="mt-2 text-base text-gray-700">
-                Autres produits chimiques.          <div class="mt-auto">
+                    Parmi les produits, on trouve: <a href="products/chemicals/rosemary.html" class="text-blue-600 hover:underline">Extrait de romarin</a>, <a href="products/chemicals/sodium-cholate.html" class="text-blue-600 hover:underline">Cholate de sodium</a> et bien d'autres.     
+                <div class="mt-auto">
                 
                  <a href="products/chemicals/chemicals.html" class="inline-flex items-center mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition">Voir les produits <svg class="rtl:rotate-180 w-3 h-3 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -318,7 +326,7 @@
                     </svg>
                   </span>
                   
-                 <span class="ml-3">958 Montée de Liesse, Saint-Laurent, QC, CAN </span> </a>  </li>
+                 <span class="ml-3">958 Montée de Liesse, Saint-Laurent, QC H4T 1W7 CAN </span> </a>  </li>
     
               <li class="mt-4">
                 
