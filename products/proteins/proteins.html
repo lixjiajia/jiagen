@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jiagen Biotechnologies</title>
-  <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <link href="../../dist/output.css" rel="stylesheet" />
 
@@ -217,7 +217,7 @@
           <tbody>
             <template x-for="row in paginatedData" :key="row.name">
               <tr class="hover:bg-slate-50">
-                <td class="p-4 font-bold text-sm" x-text="row.name"></td>
+                <td class="p-4 font-bold text-sm"><a :href="row.url" class="font-semibold hover:underline" x-text="row.name"></a></td>
                 <td class="p-4 text-sm whitespace-nowrap" x-text="row.cas"></td>
                 <td class="p-4 text-sm" x-text="row.synonyms"></td>
                 <td class="p-4 text-sm" x-text="row.form"></td>
