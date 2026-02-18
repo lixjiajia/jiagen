@@ -18,7 +18,7 @@ const products = [
   { name: 'Ocytocine', url: 'products/proteins/oxytocin.html' },
   { name: 'PMSG', url: 'products/proteins/pmsg.html' },
   { name: 'Sulfate de protamine', url: 'products/proteins/protamine-sulfate.html' },
-  { name: 'Protéines', url: 'products/proteins/proteins.html' },
+  { name: 'Protéines', url: 'products/proteins/index.html' },
   { name: 'Présure', url: 'products/proteins/rennin.html' },
   { name: 'Somatostatine', url: 'products/proteins/somatostatin.html' },
   
@@ -29,7 +29,7 @@ const products = [
   { name: 'Bromélaïne', url: 'products/enzymes/bromelain.html' },
   { name: 'Chymotrypsine', url: 'products/enzymes/chymotrypsin.html' },
   { name: 'DNase', url: 'products/enzymes/dnase.html' },
-  { name: 'Enzymes', url: 'products/enzymes/enzymes.html' },
+  { name: 'Enzymes', url: 'products/enzymes/index.html' },
   { name: 'Hyaluronidase', url: 'products/enzymes/hyaluronidase.html' },
   { name: 'Kallikréine', url: 'products/enzymes/kallikrein.html' },
   { name: 'Lysozyme', url: 'products/enzymes/lysozyme.html' },
@@ -47,11 +47,11 @@ const products = [
   { name: 'Coenzyme A Trilithium', url: 'products/coenzymes/coenzyme-a-trilithium.html' },
   { name: 'Coenzyme Q10', url: 'products/coenzymes/coenzyme-q10.html' },
   { name: 'Coenzyme A', url: 'products/coenzymes/coenzymea.html' },
-  { name: 'Coenzymes', url: 'products/coenzymes/coenzymes.html' },
+  { name: 'Coenzymes', url: 'products/coenzymes/index.html' },
   
   // Glucides
   { name: 'Glucanes bêta', url: 'products/carbohydrates/beta-glucans.html' },
-  { name: 'Glucides', url: 'products/carbohydrates/carbohydrates.html' },
+  { name: 'Glucides', url: 'products/carbohydrates/index.html' },
   { name: 'Chitosane HCL', url: 'products/carbohydrates/chitosan-hcl.html' },
   { name: 'Chitosane Oligo', url: 'products/carbohydrates/chitosan-oligo.html' },
   { name: 'Chitosane', url: 'products/carbohydrates/chitosan.html' },
@@ -71,7 +71,7 @@ const products = [
   { name: 'LMWH', url: 'products/carbohydrates/lmwh.html' },
   
   // Produits chimiques
-  { name: 'Produits chimiques', url: 'products/chemicals/chemicals.html' },
+  { name: 'Produits chimiques', url: 'products/chemicals/index.html' },
   { name: 'Cholécalciférol', url: 'products/chemicals/cholecalciferol.html' },
   { name: 'Estriol', url: 'products/chemicals/estriol.html' },
   { name: 'Extrait de romarin', url: 'products/chemicals/rosemary.html' },

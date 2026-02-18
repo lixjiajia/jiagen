@@ -18,7 +18,7 @@ const products = [
   { name: 'Oxytocin', url: 'products/proteins/oxytocin.html' },
   { name: '(PMSG) Pregnant Mare Serum Gonadotropin', url: 'products/proteins/pmsg.html' },
   { name: 'Protamine Sulfate', url: 'products/proteins/protamine-sulfate.html' },
-  { name: 'Proteins', url: 'products/proteins/proteins.html' },
+  { name: 'Proteins', url: 'products/proteins/index.html' },
   { name: 'Rennin', url: 'products/proteins/rennin.html' },
   { name: 'Somatostatin', url: 'products/proteins/somatostatin.html' },
   
@@ -29,7 +29,7 @@ const products = [
   { name: 'Bromelain', url: 'products/enzymes/bromelain.html' },
   { name: 'Chymotrypsin', url: 'products/enzymes/chymotrypsin.html' },
   { name: 'DNase', url: 'products/enzymes/dnase.html' },
-  { name: 'Enzymes', url: 'products/enzymes/enzymes.html' },
+  { name: 'Enzymes', url: 'products/enzymes/index.html' },
   { name: 'Hyaluronidase', url: 'products/enzymes/hyaluronidase.html' },
   { name: 'Kallikrein', url: 'products/enzymes/kallikrein.html' },
   { name: 'Lysozyme', url: 'products/enzymes/lysozyme.html' },
@@ -47,11 +47,11 @@ const products = [
   { name: 'Coenzyme A Trilithium', url: 'products/coenzymes/coenzyme-a-trilithium.html' },
   { name: 'Coenzyme Q10', url: 'products/coenzymes/coenzyme-q10.html' },
   { name: 'Coenzyme A', url: 'products/coenzymes/coenzymea.html' },
-  { name: 'Coenzymes', url: 'products/coenzymes/coenzymes.html' },
+  { name: 'Coenzymes', url: 'products/coenzymes/index.html' },
   
   // Carbohydrates
   { name: 'Beta Glucans', url: 'products/carbohydrates/beta-glucans.html' },
-  { name: 'Carbohydrates', url: 'products/carbohydrates/carbohydrates.html' },
+  { name: 'Carbohydrates', url: 'products/carbohydrates/index.html' },
   { name: 'Chitosan HCL', url: 'products/carbohydrates/chitosan-hcl.html' },
   { name: 'Chitosan Oligo', url: 'products/carbohydrates/chitosan-oligo.html' },
   { name: 'Chitosan', url: 'products/carbohydrates/chitosan.html' },
@@ -71,7 +71,7 @@ const products = [
   { name: '(LMWH) Low Molecular Weight Heparins', url: 'products/carbohydrates/lmwh.html' },
   
   // Chemicals
-  { name: 'Chemicals', url: 'products/chemicals/chemicals.html' },
+  { name: 'Chemicals', url: 'products/chemicals/index.html' },
   { name: 'Cholecalciferol', url: 'products/chemicals/cholecalciferol.html' },
   { name: 'Estriol', url: 'products/chemicals/estriol.html' },
   { name: 'Rosemary Extract', url: 'products/chemicals/rosemary.html' },
