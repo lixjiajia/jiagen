@@ -34,11 +34,7 @@ module.exports = {
       screens: {
         '2xl': '1600px',
       },
-      spacing: {
-        '72': '18rem',
-        '84': '21rem',
-        '96': '24rem',
-      },
+      
       maxWidth: theme => ({
         'screen-2xl': theme('screens.2xl'),
       }),
